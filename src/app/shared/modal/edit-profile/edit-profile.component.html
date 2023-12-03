@@ -1,0 +1,59 @@
+<div class="modal-container editProfile-container">
+    <div class="modalHeader">
+        <h1>Edit Company Details</h1>
+    </div>
+    <div class="modalBody">
+        <div class="modalInner">
+            <div class="profile-row">
+                <div class="customInput flex50">
+                    <label>Company Name</label>
+                    <input type="text" placeholder="Enter Company Name">
+                </div>
+                <div class="customInput flex50 customSelect">
+                    <label>Business Type</label>
+                    <select name="" id="">
+                    <option value="">Employee</option>
+                    <option value="">HUF</option>
+                    <option value="">joint Venture</option>
+                    <option value="">Limited</option>
+                    <option value="">Partenership</option>
+                    <option value="">Private Limited Companay</option>
+                    <option value="">Sole Proprietership</option>
+                    </select>
+                </div>
+            </div>
+            <div class="customInput">
+                <label>Company Address</label>
+                <input type="text" placeholder="Company Address">
+            </div>
+            <div class="profile-row">
+            <div class="customInput flex33">
+                <label>City</label>
+                <input type="text" placeholder="City">
+            </div>
+            <div class="customInput flex33">
+                <label>State</label>
+                <input type="text" placeholder="State">
+            </div>
+            <div class="customInput flex33">
+                <label>Pincode</label>
+                <input type="text" placeholder="123456">
+            </div>
+            </div>
+            <div class="customInput">
+            <label>Secondry Email ID</label>
+            <input type="text" placeholder="Enter Your Secondary Email ID">
+            </div>
+            <div class="customInput">
+            <label>Secondary Mobile Number</label>
+            <input type="text" placeholder="Enter Your Secondary Mobile Number">
+            </div>
+        </div>
+    </div>
+    <div class="modalFooter">
+        <button class="cancelBtn" mat-flat-button (click)="close()">Cancel</button>
+        <button mat-raised-button class="modalBotton saveBtn">SAVE</button>
+        <!-- <div class="buttons">
+          </div> -->
+    </div>
+</div>

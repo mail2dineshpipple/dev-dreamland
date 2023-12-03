@@ -1,0 +1,168 @@
+<div class="whyDreamland-section">
+    <div class="section-title dNone">
+        <h3>Why book {{type}} with Dreamland Travel?</h3>
+    </div>
+    <div class="trips-section">
+        <div class="section-title">
+            <h3>Why book {{type}} with Dreamland Travel?</h3>
+        </div>
+        <owl-carousel-o [options]="tripsOptions" class="homepageSlider">
+            <ng-container *ngFor="let slide of tripsList; let i=index">
+                <ng-template class="slide" carouselSlide [id]="slide.Id">
+                    <div class="item-inner">
+                        <img class="whyImage" src="{{slide.img}}">
+                        <h5>{{slide.h5}}</h5>
+                        <p>{{slide.p}}</p>
+                    </div>
+                </ng-template>
+            </ng-container>
+        </owl-carousel-o>
+    </div>
+    <div class="whyDreamland-body">
+        <div class="dl-item">
+            <div class="item-inner">
+                <img class="whyImage" src="assets/images/wtf1.png">
+                <h5>Customers Satisfaction</h5>
+                <p>Superior customer service,24x7 dedicated helpline and over 1 Lakhs delighted custome.</p>
+            </div>
+        </div>
+        <div class="dl-item">
+            <div class="item-inner">
+                <img class="whyImage" src="assets/images/wtf2.png">
+                <h5>India’s Upcoming Travel Brand</h5>
+                <p>Established in 2006 and growing stronger by the day.</p>
+            </div>
+        </div>
+        <div class="dl-item">
+            <div class="item-inner">
+                <img class="whyImage" src="assets/images/wtf3.png">
+                <h5>Best Price Guaranteed</h5>
+                <p>Find guaranteed lowest price to worlwide destinations.</p>
+            </div>
+        </div>
+        <div class="dl-item">
+            <div class="item-inner">
+                <img class="whyImage" src="assets/images/wtf4.png">
+                <h5>Easy Booking</h5>
+                <p>Search, select and save-the fastest way to book your trip.</p>
+            </div>
+        </div>
+        <div class="dl-item">
+            <div class="item-inner">
+                <img class="whyImage" src="assets/images/wtf5.png">
+                <h5>International Coverage</h5>
+                <p>Search over 500 airlines & 13,00,000 flight routes in 210 countries.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="dreamHoneymoon-section" *ngIf="isWhyyouget">
+    <img src="assets/images/dreammoon.png" alt="bg-image" (click)="commonService.openUrl(honeymoon)">
+</div>
+<div class="whyDreamland-section WhatYouGet" *ngIf="isWhyyouget">
+    <div class="section-title dNone">
+        <h3>What You Get?</h3>
+    </div>
+    <div class="whyDreamland-body">
+        <div class="dl-item">
+            <div class="item-inner">
+                <img class="whyImage" src="assets/images/celebrity.png">
+                <h5>Travel Like A Celebrity</h5>
+                <div class="sanhoverget">
+                    <p>Extra premium modules & other luxuries are auto-included in all our packages. Feel like a celebrity wherever you go.</p>
+                </div>
+            </div>
+        </div>
+        <div class="dl-item">
+            <div class="item-inner">
+                <img class="whyImage" src="assets/images/guidence.png">
+                <h5>Guidance Not Sales</h5>
+                <div class="sanhoverget">
+                    <p>Free & Fair guidance from destination specialists, whether you buy from us or not.</p>
+                </div>
+            </div>
+        </div>
+        <div class="dl-item">
+            <div class="item-inner">
+                <img class="whyImage" src="assets/images/honeymoon2.png">
+                <h5>Honeymoon Plus</h5>
+                <div class="sanhoverget">
+                    <p>Freebies & Goodies to Honeymooners. Spl services like candle light dinner, flower, bed arrangements, wine etc included. Honeymooners just love us.</p>
+                </div>
+            </div>
+        </div>
+        <div class="dl-item">
+            <div class="item-inner">
+                <img class="whyImage" src="assets/images/service.png">
+                <h5>Services & Freebies</h5>
+                <div class="sanhoverget">
+                    <p>Free Safety, Accidental insurance, Extra sightseeings &amp; activities at best rates, Trusted vendors &amp; 100% satisfaction guarantee.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="green-slider" *ngIf="isWhyyouget">
+    <div class="section-title">
+        <h3>What You Get?</h3>
+    </div>
+    <owl-carousel-o [options]="tripsOptions" class="homepageSlider">
+        <ng-container *ngFor="let slide of WhatYouGet; let i=index">
+            <ng-template class="slide" carouselSlide [id]="slide.Id">
+                <div class="item-inner">
+                    <img class="whyImage" src="{{slide.img}}">
+                    <h5>{{slide.h5}}</h5>
+                    <div class="sanhoverget">
+                        <p>{{slide.p}}</p>
+                    </div>
+                </div>
+            </ng-template>
+        </ng-container>
+    </owl-carousel-o>
+</div>
+<div class="newsletter-section">
+    <div class="row">
+        <div class="col-lg-8 col-md-8">
+            <div class="dowload-appnow">
+                <div class="dl-left">
+                    <div>
+                        <h3>Download App Now !</h3>
+                        <p>Get the Dreamland mobile App and Save More!</p>
+                    </div>
+                    <div class="serachbar">
+                        <div class="dropdown custom-dropdown">
+                            <button class="btn dropdown-toggle" type="button" id="dropdownFlag" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img [src]="selectedFlag">
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownFlag">
+                              <ul>
+                                <li class="dropdown-item" *ngFor="let flag of flagList" (click)="onSelect(flag)">
+                                    <img [src]="flag.Icon"> {{flag.Name}}
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        <input matInput type="text" placeholder="Enter your mobile number">
+                        <button mat-flat-button>Get App link</button>
+                    </div>
+                    <p>More ways to get the App</p>
+                    <div class="applogo">
+                        <img src="assets/images/downloadapp.png">
+                    </div>
+                </div>
+                <div class="dl-right">
+                    <img src="assets/images/mbapp.png">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4">
+            <div class="newsletter">
+                <h3>Sign up to receive our newsletter and receive exclusive offers and discounts:</h3>
+                <div class="serachbar">
+                    <input matInput type="text" placeholder="Enter your email address">
+                    <button mat-flat-button>Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

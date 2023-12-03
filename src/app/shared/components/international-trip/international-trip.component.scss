@@ -1,0 +1,131 @@
+@import "./../../../../assets/scss/variable.scss";
+
+.trips-section {
+    margin-bottom: 50px;
+    .green-btn {
+        width: 110px;
+        background-color: $themeOrange;
+        font-size: 12px;
+        line-height: 20px;
+        outline: 0;
+        min-height: 30px;
+        padding: 0px 10px;
+        border-radius: 4px;
+        color: #fff;
+        font-family: 'Segoe-Bold';
+        text-transform: uppercase;
+        @media only screen and (max-width: 576px) {
+            padding: 0 6px;
+            // font-size: 12px;
+            line-height: 16px;
+        }
+    }
+    .section-title {
+        margin-bottom: 10px;
+    }
+    .trips-card {
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: #ffffff;
+        box-shadow: 0px 3px 5px rgb(0 0 0 / 15%);
+        position: relative;
+        cursor: pointer;
+        .trips-img {
+            width: 100%;
+            height: 350px;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .trips-body {
+            position: absolute;
+            bottom: 0px;
+            background-image: linear-gradient(to top, #fff 50%, transparent);
+            width: 100%;
+            padding: 70px 16px 10px 16px;
+            .title {
+                display: block;
+                font-family: "Segoe-Bold";
+                text-align: center;
+                max-width: max-content;
+                background-color: brown;
+                // background-color: #ff0404;
+                color: #fff;
+                padding: 3px 14px 4px;
+                font-size: 16px;
+                line-height: 20px;
+                border-radius: 10px;
+                margin: 0 auto 4px;
+                cursor: pointer;
+            }
+            .trips-info {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                .trips-from {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 4px;
+                    .duration {
+                        font-size: 13px;
+                        line-height: 18px;
+                        // color: $themeGreen;
+                        white-space: nowrap;
+                    }
+                    span {
+                        font-size: 13px;
+                        line-height: 18px;
+                        display: block;
+                    }
+                }
+                .trips-prices {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-direction: row;
+                    align-items: center;
+                    .price {
+                        display: block;
+                        font-size: 18px;
+                        line-height: 22px;
+                        margin: 3px 0;
+                        font-family: "Segoe-Bold";
+                        cursor: pointer;
+                        sub {
+                            font-family: "Segoe-Regular";
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ::ng-deep owl-carousel-o {
+        .owl-item {
+            // &:nth-child(4) {
+            //     .title {
+            //         background-color: brown !important;
+            //     }
+            // }
+            // &:nth-child(1) {
+            //     .title {
+            //         background-color: darkblue !important;
+            //     }
+            // }
+            // &:nth-child(2) {
+            //     .title {
+            //         background-color: darkgreen !important;
+            //     }
+            // }
+            // &:nth-child(3) {
+            //     .title {
+            //         background-color: darkviolet !important;
+            //     }
+            // }
+        }
+    }
+    // ::ng-deep.owl-nav {
+    //     top: -30px;
+    // }
+}

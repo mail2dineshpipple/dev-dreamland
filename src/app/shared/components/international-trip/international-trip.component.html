@@ -1,0 +1,31 @@
+<div class="trips-section">
+    <div class="section-title">
+        <h3>Trending Holiday</h3>
+    </div>
+    <div class="trips-slider">
+        <owl-carousel-o [options]="tripsOptions" class="homepageSlider">
+            <ng-container *ngFor="let slide of tripsList; let i=index">
+                <ng-template class="slide" carouselSlide [id]="slide.Id">
+                    <div class="trips-card" (click)="gotoNext()">
+                        <div class="trips-img">
+                            <img src="{{slide.img}}">
+                        </div>
+                        <div class="trips-body">
+                            <label class="title">{{slide.Name}}</label>
+                            <div class="trips-info">
+                                <div class="trips-from">
+                                    <span>Starting from</span>
+                                    <span class="duration">{{slide.duration}}</span>
+                                </div>
+                                <div class="trips-prices">
+                                    <label class="price">{{slide.Price}}<sub>/pp</sub></label>
+                                    <button mat-flat-button class="green-btn">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </ng-container>
+        </owl-carousel-o>
+    </div>
+</div>

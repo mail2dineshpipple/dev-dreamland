@@ -1,0 +1,390 @@
+@import "./../../../assets/scss/variable.scss";
+
+.profile-page {
+    position: relative;
+    background: #f2f2f2;
+    padding: 30px 0;
+    @media only screen and (max-width: 767px) {
+        padding-bottom: 0;
+    }
+    &::after {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        content: '';
+        background-color: #f47920;
+        background-image: linear-gradient(to bottom, #005494, #04A7EA);
+        height: 200px;
+        z-index: 0;
+    }
+    .container{
+        position: relative;
+        z-index: 1;
+        @media only screen and (max-width: 767px) {
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+    }
+    .profileInner {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        .profile-pageInner {
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 30px 0px;
+            padding: 20px;
+            width: 284px;
+            @media only screen and (max-width: 991px) {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            @media only screen and (max-width: 767px) {
+                padding: 16px;
+                margin-bottom: 10px;
+            }
+            .picture-inner{
+                width: 160px;
+                height: 160px;
+                display: flex;
+                -webkit-box-align: center;
+                align-items: center;
+                -webkit-box-pack: center;
+                justify-content: center;
+                border-radius: 8px;
+                background-image: linear-gradient(45deg, rgb(172, 225, 67), rgb(33, 147, 147));
+                position: relative;
+                margin: 0 auto 16px;
+                img {
+                    width: 160px;
+                    height: auto;
+                }
+                .addlogobtn {
+                    background-color: rgb(255, 255, 255);
+                    padding: 10px;
+                    border-radius: 20px;
+                    box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px 0px;
+                    cursor: pointer;
+                    align-self: center;
+                    position: absolute;
+                    bottom: -16px;
+                    input {
+                        display: none;
+                    }
+                    p {
+                        font-size: 16px;
+                        color: rgb(0, 140, 255);
+                        margin: 0;
+                    }
+                }
+            }
+            .profileName {
+                font-size: 20px;
+                color: rgb(0, 0, 0);
+                font-family: 'Segoe-Bold';
+                text-align: center;
+                padding: 20px 0px;
+                @media only screen and (max-width: 991px) {
+                    font-size: 16px;
+                    line-height: 20px;
+                }
+            }
+            .profileMenu {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                li {
+                    width: 100%;
+                    display: flex;
+                    padding: 10px 25px;
+                    cursor: pointer;
+                    align-items: center;
+                    font-size: 14px;
+                    color: rgb(74, 74, 74);
+                    border-radius: 4px;
+                    &.active {
+                        background-color: rgba(0, 140, 255, 0.1);
+                        color: rgb(0, 140, 255) !important;
+                    }
+                    svg {
+                        width: 22px;
+                        height: 22px;
+                        margin: 0px 10px 0 0;
+                    }
+                }
+            }
+        }
+        .profile-info {
+            flex: 1;
+            position: relative;
+            margin-left: 40px;
+            // margin: 30px 15px 45px 33px;
+            @media only screen and (max-width: 991px) {
+                width: 100%;
+                margin-bottom: 20px;
+                margin-left: 0;
+            }
+            @media only screen and (max-width: 767px) {
+                margin-bottom: 0;
+            }
+            .profileSection {
+                background-color: rgb(255, 255, 255);
+                border: 1px solid rgb(231, 231, 231);
+                border-radius: 10px;
+                margin-bottom: 15px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                @media only screen and (max-width: 767px) {
+                    margin-bottom: 10px;
+                }
+                .profilePad {
+                    padding: 20px 30px !important;
+                    @media only screen and (max-width: 767px) {
+                       padding: 16px !important;
+                    }
+                    .loadingBar {
+                        width: 280px;
+                        @media only screen and (max-width: 767px) {
+                            width: 100%;
+                         }
+                        .f-bold {
+                            color: #000;
+                            font-weight: 500;
+                        }
+                        .progressBar {
+                            margin-bottom: 10px;
+                            border-radius: 10px;
+                            height: 6px;
+                            ::ng-deep.mat-progress-bar-buffer {
+                                background-color: #e2e2e2;
+                            }
+                            ::ng-deep.mat-progress-bar-fill::after {
+                                background-color: #31b79c;
+                            }
+                        }
+                    }
+                    .progressPara {
+                        color: #4a4a4a !important;
+                    }
+                    .process {
+                        border-radius: 10px;
+                        background-color: #eff3f7;
+                        padding: 18px 10px;
+                        display: flex;
+                        margin-top: 27px;
+                        @media only screen and (max-width: 767px) {
+                            flex-direction: column;
+                            padding: 10px;
+                        }
+                        .processInner {
+                            width: 33.33%;
+                            font-size: 14px;
+                            line-height: 18px;
+                            font-weight: 500;
+                            @media only screen and (max-width: 767px) {
+                                width: 100%;
+                                margin-bottom: 6px;
+                                &:last-child {
+                                    margin-bottom: 0;
+                                }
+                            }
+                        }
+                        span {
+                            margin-left: 10px;
+                        }
+                         .F-blue {
+                            color: #008cff;
+                         }
+                        .Verified {
+                            background-image: url(/../../../assets/images/mytrip.png);
+                            background-size: 850px 1050px !important;
+                            background-repeat: no-repeat;
+                            min-width: 25px;
+                            height: 25px;
+                        }
+                        .Email {
+                            background-position: -230px -902px !important;
+                        }
+                        .CompleteInfo {
+                        display: flex;
+                        align-items: center;
+                        }
+                    }
+                }
+                .profileHeadding {
+                    width: 100%;
+                    display: flex;
+                    padding: 20px 30px 20px 0;
+                    @media only screen and (max-width: 767px) {
+                        padding: 16px 0;
+                    }
+                    .heading-inner {
+                        width: 90%;
+                        display: flex;
+                        flex-direction: column;
+                        border-left: 6px solid rgb(186, 186, 186);
+                        padding-left: 30px;
+                        p {
+                            font-size: 30px;
+                            color: rgb(0, 0, 0);
+                            line-height: 34px;
+                            margin: 0;
+                            @media only screen and (max-width: 767px) {
+                                font-size: 24px;
+                                line-height: 28px;
+                            }
+                        }
+                        span {
+                            font-size: 18px;
+                            color: rgb(74, 74, 74);
+                            padding-top: 5px;
+                            @media only screen and (max-width: 767px) {
+                                font-size: 14px;
+                                line-height: 18px;
+                            }
+                        }
+                    }
+                }
+               
+                .profile-inner {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 0px 0px 0px 30px;
+                    .details {
+                        display: flex;
+                        -webkit-box-align: center;
+                        align-items: center;
+                        width: 100%;
+                        padding: 20px 30px 20px 0;
+                        border-bottom: 1px solid rgb(231, 231, 231);
+                        &:hover {       
+                            background: #f6f6f6;
+                        }
+                        &:last-child {
+                            border-bottom: none;
+                        }
+                        @media only screen and (max-width: 767px) {
+                            flex-direction: column;
+                            align-items: flex-start;
+                            padding: 16px 16px 16px 0;
+                        }
+                        .left-details {
+                            width: 40%;
+                            display: flex;
+                            flex-direction: column;
+                            @media only screen and (max-width: 767px) {
+                                width: 100%;
+                            }
+                            p {
+                                font-size: 11px;
+                                color: rgb(74, 74, 74);
+                                text-transform: uppercase;
+                                margin: 0;
+                            }
+                            span {
+                                font-size: 10px;
+                                color: rgb(74, 74, 74);
+                                line-height: 12px;
+                                margin-top: 8px;
+                                padding: 0 20px 0 0;
+                                @media only screen and (max-width: 767px) {
+                                    padding: 0;
+                                }
+                            }
+                        }
+                        .right-details {
+                            display: flex;
+                            -webkit-box-align: center;
+                            align-items: center;
+                            -webkit-box-pack: justify;
+                            justify-content: space-between;
+                            width: 60%;
+                            @media only screen and (max-width: 767px) {
+                                width: 100%;
+                            }
+                            p {
+                                font-size: 16px;
+                                line-height: 20px;
+                                color: rgb(0, 0, 0);
+                                margin: 0;
+                                @media only screen and (max-width: 767px) {
+                                    font-size: 14px;
+                                    line-height: 18px;
+                                }
+                            }
+                            .update {
+                                display: flex;
+                                justify-content: flex-end;
+                                align-items: center;
+                                @media only screen and (max-width: 767px) {
+                                 margin-left: 10px;
+                                }
+                            }
+                            .updateDetails {
+                                font-size: 14px;
+                                color: rgb(0, 145, 255);
+                                font-weight: 600;
+                                cursor: pointer;
+                                margin: 0;
+                                line-height: 16px;
+                            }
+                            .Verified,i {
+                                font-size: 14px;
+                                font-weight: 500;
+                                padding-left: 5px;
+                                margin: 0;
+                                color: rgb(47, 200, 175);
+                            }
+                            i {
+                                font-size: 17px;
+                            }
+                            span {
+                                font-size: 10px;
+                                color: rgb(74, 74, 74);
+                                line-height: 12px;
+                                margin-left: 10px;
+                                @media only screen and (max-width: 767px) {
+                                    margin-left: 30px;
+                                    padding: 0;
+                                }
+                                &.fs-11 {
+                                    font-size: 11px;
+                                    @media only screen and (max-width: 767px) {
+                                        margin-left: 0px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .edit-btn {
+                display: flex;
+                justify-content: flex-end;
+                border: 1px solid rgb(231, 231, 231);
+                padding: 10px 20px;
+                border-radius: 30px;
+                height: 40px;
+                -webkit-box-align: center;
+                align-items: center;
+                -webkit-box-pack: center;
+                cursor: pointer;
+                color: #008cff;
+                @media only screen and (max-width: 767px) {
+                    height: 35px;
+                    width: 75px;
+                    margin-right: 15px;
+                }
+                i {
+                    font-size: 17px;
+                }
+                p {
+                    font-size: 16px;
+                    list-style: 21px;
+                    margin: 0 0 0 3px;
+                }
+            }
+        }
+    }
+}

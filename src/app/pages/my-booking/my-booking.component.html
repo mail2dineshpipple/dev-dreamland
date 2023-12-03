@@ -1,0 +1,581 @@
+<div id="myBooking">
+    <div class="container">
+        <h1>My Bookings</h1>
+        <div class="rightside">
+            <img src="assets/images/world.png">
+        </div>
+        <div class="pageInner">
+            <div class="bookingHeader">
+                <div class="bookingType">
+                    <div class="headType">
+                        <div class="headTitle active">
+                            <div class="headImg bookImg"></div>
+                            <span class="customSpan">Flights</span>
+                        </div>
+                        <!-- <div class="headTitle">
+                            <div class="headImg"></div>
+                            <span class="customSpan">Flights</span>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="bookingTabing">
+                    <div class="d-flex mr-2 customScroll HideScroll tabingInner">
+                        <ng-container *ngFor="let tab of tabList">
+                            <div class="bookingTab" [ngClass]="{'active': tab?.isActive}" (click)="onChangeTab(tab)">
+                                <div class="tabImg bookImg"[ngClass]="{'tabImg0': tab?.isTabImg0, 'tabImg1': tab?.isTabImg1, 'tabImg2': tab?.isTabImg2, 'tabImg3': tab?.isTabImg3}"></div>
+                                <div>
+                                    <span>{{tab.name}}</span>
+                                    <label class="dNone">{{tab?.label}}</label>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                    <div class="bookingSearch">
+                        <input type="text" placeholder="Search for a booking">
+                        <button mat-flat-button class="modalBotton">
+                            <i class="material-icons">search</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <ng-container *ngFor="let tab of tabList">
+                <div class="bookingBody" *ngIf="tab?.isActive">
+                    <div *ngIf="tab?.id === 1">
+                        <div class="bookContainer">
+                            <div class="bookingDetail">
+                                <div class="planeImg">
+                                    <span class="bookImg upcoming"></span>
+                                </div>
+                                <div class="plane">
+                                    <span class="bookImg upcoming"></span>
+                                </div>
+                                <div class="w-100">
+                                    <div class="detailRow">
+                                        <div>
+                                            <div class="Route">
+                                                <h3>Dubai</h3>
+                                                <span class="borderArrow"></span>
+                                                <h3>Patna</h3>
+                                            </div>
+                                            <div class="flightInfo mb-1">
+                                                <span class="customSpan">Round Trip Flight</span>
+                                                <span class="customSpan dNone">Booking ID - MN2YF0XTT5008D3P6370</span>
+                                                <span class="customSpan Date">17 apr - 18 jul</span>                                       
+                                            </div>
+                                        </div>
+                                        <div class="downArrow" (click)="gotoDetail('1')"></div>
+                                        <button mat-flat-button class="modalBotton m-0" (click)="gotoDetail('1')">View & Manage Booking</button>
+                                    </div>
+                                    <span class="custom">We have received information that some of the flight(s) in the booking has been rescheduled by the airline.</span>
+                                </div>
+                            </div>
+                            <div class="bookingpart">
+                                <div class="bookingLeft curser">
+                                    <div>
+                                        <span class="customSpan">Departure Flight - Mon, 17 Apr<span class="chip">Today</span></span>
+                                        <div class="bottom">
+                                            <div class="bookInfo">
+                                                <span class="customSpan cSpan mb-1">17 Apr`23 11:10 AM</span>
+                                                <label class="customLabel"><b>DXB</b>-Dubai<span class="yellow"> Terminal </span>1</label>
+                                            </div>
+                                            <div class="bookInfo">
+                                                <span class="customSpan cSpan mb-1">18 Apr`23 03:25 PM</span>
+                                                <label class="customLabel black"><b>PAT</b>-Patna</label>
+                                            </div>
+                                            <div class="bookInfo">
+                                                <div class="planeName">
+                                                    <span class="bookImg"></span>
+                                                    <span class="customSpan blue">AI 930, AI 407</span>
+                                                    <div class="hoverCard">
+                                                        <div class="cardInner">
+                                                            <div class="d-flex justify-content-between">
+                                                                <span class="title">AIR INDIA AI 930</span>
+                                                                <div class="images">
+                                                                    <img src="assets/images/ai.gif" alt="">
+                                                                </div>   
+                                                            </div>
+                                                            <div class="d-flex justify-content-between">
+                                                                <div class="mr-3">
+                                                                    <span class="customSpan mb-1"><b>DXB</b> Dubai</span>
+                                                                    <span class="customSpan">17 Apr`23 11:10 AM</span>
+                                                                </div>
+                                                                <span class="MArrow"></span>
+                                                                <div class="ml-3">
+                                                                    <span class="customSpan"><b>DEL</b> New Delhi</span>
+                                                                    <span class="customSpan">17 Apr`23 04:00 PM</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cardInner">
+                                                            <div class="d-flex justify-content-between">
+                                                                <span class="title">AIR INDIA AI 407</span>
+                                                                <div class="images">
+                                                                    <img src="assets/images/ai.gif" alt="">
+                                                                </div>   
+                                                            </div>
+                                                            <div class="d-flex justify-content-between">
+                                                                <div class="mr-3">
+                                                                    <span class="customSpan mb-1"><b>DEL</b> New Delhi</span>
+                                                                    <span class="customSpan">18 Apr`23 01:45 PM</span>
+                                                                </div>
+                                                                <span class="MArrow"></span>
+                                                                <div class="ml-3">
+                                                                    <span class="customSpan"><b>PAT</b> Patna</span>
+                                                                    <span class="customSpan">18 Apr`23 03:25 PM</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="bookImg img1"></span>
+                                                    <span class="customSpan"><b>Biraj</b></span>
+                                                </div>
+                                            </div>
+                                            <div class="images">
+                                                <img src="assets/images/ai.gif" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span class="customSpan">RETURN  Flight - Mon, 17 Jul<span class="chip">In 70 Days</span></span>
+                                        <div class="bottom">
+                                            <div class="bookInfo">
+                                                <span class="customSpan cSpan mb-1">17 Jul`23 04:00 PM</span>
+                                                <label class="customLabel black"><b>PAT</b>-Patna</label>
+                                            </div>
+                                            <div class="bookInfo">
+                                                <span class="customSpan cSpan mb-1">17 Jul`23 10:45 PM</span>
+                                                <label class="customLabel"><b>DXB</b>-Dubai<span class="yellow"> Terminal </span>1</label>
+                                            </div>
+                                            <div>
+                                                <div class="planeName">
+                                                    <span class="bookImg"></span>
+                                                    <span class="customSpan blue"> AI 408, AI 995</span>
+                                                    <div class="hoverCard">
+                                                        <div class="cardInner">
+                                                            <div class="d-flex justify-content-between">
+                                                                <span class="title">AI 408, AI 995</span>
+                                                                <div class="images">
+                                                                    <img src="assets/images/ai.gif" alt="">
+                                                                </div>   
+                                                            </div>
+                                                            <div class="d-flex justify-content-between">
+                                                                <div class="mr-3">
+                                                                    <span class="customSpan mb-1"><b>DXB</b> Dubai</span>
+                                                                    <span class="customSpan">17 Apr`23 11:10 AM</span>
+                                                                </div>
+                                                                <span class="MArrow"></span>
+                                                                <div class="ml-3">
+                                                                    <span class="customSpan"><b>DEL</b> New Delhi</span>
+                                                                    <span class="customSpan">17 Apr`23 04:00 PM</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="cardInner">
+                                                            <div class="d-flex justify-content-between">
+                                                                <span class="title">AI 408, AI 995</span>
+                                                                <div class="images">
+                                                                    <img src="assets/images/ai.gif" alt="">
+                                                                </div>   
+                                                            </div>
+                                                            <div class="d-flex justify-content-between">
+                                                                <div class="mr-3">
+                                                                    <span class="customSpan mb-1"><b>DEL</b> New Delhi</span>
+                                                                    <span class="customSpan">18 Apr`23 01:45 PM</span>
+                                                                </div>
+                                                                <span class="MArrow"></span>
+                                                                <div class="ml-3">
+                                                                    <span class="customSpan"><b>PAT</b> Patna</span>
+                                                                    <span class="customSpan">18 Apr`23 03:25 PM</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="bookImg img1"></span>
+                                                    <span class="customSpan"><b>Biraj</b></span>
+                                                </div>
+                                            </div>
+                                            <div class="images">
+                                                <img src="assets/images/ai.gif" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hoverText">
+                                        <i class="fa fa-check" aria-hidden="true"></i>
+                                        <label>Is subjected to a cancellation penalty</label>
+                                    </div> 
+                                </div>
+                                <div class="bookingRight">
+                                    <div class="d-flex align-items-center mt-2 cursor">
+                                        <div class="bookImg"></div>
+                                        <span class="customSpan">Cancel Booking</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mt-2 cursor">
+                                        <div class="bookImg img1"></div>
+                                        <span class="customSpan">Change Travel Dates</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bookContainer">
+                            <div class="bookingDetail">
+                                <div class="planeImg">
+                                    <span class="bookImg upcoming"></span>
+                                </div>
+                                <div class="plane">
+                                    <span class="bookImg upcoming"></span>
+                                </div>
+                                <div class="w-100">
+                                    <div class="detailRow">
+                                        <div>
+                                            <div class="Route flex-wrap">
+                                                <h3>Ranchi</h3>
+                                                <span class="borderArrow"></span>
+                                                <h3>New Delhi</h3>
+                                                <span class="chip">In 52 Days</span>
+                                                <span class="chip">Web Check-in Open</span>
+                                            </div>
+                                            <div class="flightInfo">
+                                                <span class="customSpan">One Way Flight</span>
+                                                <span class="customSpan dNone">Booking ID - MN2YF0XTT5008D3P6370</span>
+                                                <span class="customSpan Date">30 jun - 18 jul</span>
+                                            </div>
+                                        </div>
+                                        <div class="downArrow" (click)="gotoDetail('1')"></div>
+                                        <button mat-flat-button class="modalBotton m-0" (click)="gotoDetail('1')">View & Manage Booking</button>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                            <div class="bookingpart">
+                                <div class="bookingLeft curser">
+                                    <div>
+                                        <div class="bottom">
+                                            <div class="bookInfo">
+                                                <span class="customSpan">From</span>
+                                                <span class="customSpan cSpan mb-1">30 Jun`23 04:15 PM</span>
+                                                <label class="customLabel"><b>IXR</b>-Ranchi</label>
+                                            </div>
+                                            <div class="bookInfo">
+                                                <span class="customSpan">To</span>
+                                                <span class="customSpan cSpan mb-1">18 Jul`23 03:25 PM</span>
+                                                <label class="customLabel"><b>DEL</b>-New Delhi<span class="yellow"> Terminal </span>2</label>
+                                            </div>
+                                            <div class="bookInfo">
+                                                <div class="planeName">
+                                                    <span class="bookImg"></span>
+                                                    <span class="customSpan">IndiGo 6E 2094</span>
+                                                </div>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="bookImg img1"></span>
+                                                    <span class="customSpan"><b>Mustaqim + 2</b></span>
+                                                </div>
+                                            </div>
+                                            <div class="images">
+                                                <img src="../../../assets/images/6E.gif">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hoverText">
+                                        <i class="fa fa-check" aria-hidden="true"></i>
+                                        <label>Is subjected to a cancellation penalty</label>
+                                    </div> 
+                                </div>
+                                <div class="bookingRight">
+                                    <button mat-flat-button class="modalBotton" (click)="gotoNext('webCheckin')" >Complete Web Check-in</button>
+                                    <div class="d-flex align-items-center mt-2 cursor">
+                                        <div class="bookImg"></div>
+                                        <span class="customSpan">Cancel Booking</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mt-2 cursor">
+                                        <div class="bookImg img1"></div>
+                                        <span class="customSpan cursor">Change Travel Dates</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="tab?.id === 2">
+                        <div class="bookContainer">
+                            <div class="bookingDetail">
+                                <div class="planeImg">
+                                    <span class="bookImg"></span>
+                                </div>
+                                <div class="plane">
+                                    <span class="bookImg"></span>
+                                </div>
+                                <div class="w-100">
+                                    <div class="detailRow">
+                                        <div>
+                                            <div class="detailsInner">
+                                                <h3>New Delhi</h3>
+                                                <span class="rightArrow"></span>
+                                                <h3>Hong Kong</h3>
+                                                <span class="rightArrow"></span>
+                                                <h3>Singapore</h3>
+                                                <span class="chip color">Refund is being processed</span>
+                                            </div>
+                                            <div class="flightInfo flightinfoInner">
+                                                <span class="customSpan color">Cancelled on 07 Apr</span>
+                                                <span class="customSpan">One Way Flight</span>
+                                                <span class="customSpa dNone">Booking ID - MN24UB2WSW2RXWOE4876</span>
+                                            </div>
+                                        </div>
+                                        <div class="downArrow" (click)="gotoDetail('2')"></div>
+                                        <button mat-flat-button class="modalBotton m-0" (click)="gotoDetail('2')">View Booking</button>
+                                    </div>
+                                    <span class="custom color d-block">Your flight booking has been cancelled.</span>
+                                </div>
+                            </div>
+                            <div class="bookingpart">
+                                <div class="bookingLeft">
+                                    <p class="para">Sorry, your booking was cancelled, no refund is applicable after deductions.</p>
+                                    <div class="vBorder">
+                                        <div class="bookingleftInner cancelled">
+                                            <div class="bookIcon">
+                                                <i class="fa fa-check" aria-hidden="true"></i>
+                                            </div>
+                                            <div>
+                                                <span class="customSpan mb-1"><b>Booking cancelled</b></span>
+                                                <label class="customLabel">07 Apr 2023, 19:09</label>
+                                            </div>
+                                        </div>
+                                        <div class="bookingleftInner refund">
+                                            <div class="bookIcon closeIcon">
+                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                            </div>
+                                            <div>
+                                                <span class="customSpan mb-1"><b>No refund applicable</b></span>
+                                                <label class="customLabel">07 Apr 2023, 19:09</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bookingRight">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="tab?.id === 3">
+                        <div class="bookContainer">
+                            <div class="bookingDetail">
+                                <div class="planeImg">
+                                    <span class="bookImg complete"></span>
+                                </div>
+                                <div class="plane">
+                                    <span class="bookImg complete"></span>
+                                </div>
+                                <div class="w-100">
+                                    <div class="detailRow">
+                                        <div>
+                                            <div class="Route">
+                                                <h3>Darbhanga</h3>
+                                                <span class="rightArrow"></span>
+                                                <h3>New Delhi</h3>
+                                            </div>
+                                            <div class="flightInfo flightinfoInner">
+                                                <span class="customSpan"><b>Completed</b></span>
+                                                <span class="customSpan">One Way Flight</span>
+                                                <span class="customSpan dNone">Booking ID - MN2YF0XTT5008D3P6370</span>
+                                                <span class="customSpan Date">30 jun - 18 jul</span>
+                                            </div>
+                                        </div>
+                                        <div class="downArrow" (click)="gotoDetail('3')"></div>
+                                        <button mat-flat-button class="modalBotton m-0"  (click)="gotoDetail('3')">View & Manage Booking</button>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="bookingpart">
+                                <div class="bookingLeft curser">
+                                    <div>
+                                        <div class="bottom">
+                                            <div class="bookInfo">
+                                                <span class="customSpan">From</span>
+                                                <span class="customSpan cSpan mb-1">04 May`23 01:50 PM</span>
+                                                <label class="customLabel"><b>DBR</b>-Darbhanga<span class="yellow"> Terminal </span>1</label>
+                                            </div>
+                                            <div class="bookInfo">
+                                                <span class="customSpan">To</span>
+                                                <span class="customSpan cSpan mb-1">18 Apr`23 03:25 PM</span>
+                                                <label class="customLabel"><b>DEL</b>-New Delhi<span class="yellow"> Terminal </span>3</label>
+                                            </div>
+                                            <div class="bookInfo">
+                                                <div class="planeName">
+                                                    <span class="bookImg"></span>
+                                                    <span class="customSpan">SPICE JET SG 8752</span>
+                                                </div>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="bookImg img1"></span>
+                                                    <span class="customSpan"><b>Bablu</b></span>
+                                                </div>
+                                            </div>
+                                            <div class="images">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bookingRight">
+                                    <div class="d-flex align-items-center mt-2">
+                                        <div class="bookImg"></div>
+                                        <span class="customSpan">Raise a Claim</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bookContainer">
+                            <div class="bookingDetail">
+                                <div class="planeImg">
+                                    <span class="bookImg complete"></span>
+                                </div>
+                                <div class="plane">
+                                    <span class="bookImg complete"></span>
+                                </div>
+                                <div class="w-100">
+                                    <div class="detailRow">
+                                        <div>
+                                            <div class="Route">
+                                                <h3>Dubai</h3>
+                                                <span class="borderArrow"></span>
+                                                <h3>Patna</h3>
+                                            </div>
+                                            <div class="flightInfo">
+                                                <span class="customSpan">Round Trip Flight</span>
+                                                <span class="customSpan mb-1 dNone">Booking ID - MN2YF0XTT5008D3P6370</span>
+                                                <span class="customSpan Date">1 Apr - 2 Apr</span>
+                                            </div>
+                                        </div>
+                                        <div class="downArrow"></div>
+                                        <button mat-flat-button class="modalBotton m-0">View & Manage Booking</button>
+                                    </div>
+                                    <span class="custom">We have received information that some of the flight(s) in the booking has been rescheduled by the airline.</span>
+                                </div>
+                            </div>
+                            <div class="bookingpart">
+                                <div class="bookingLeft curser">
+                                    <div>
+                                        <span class="customSpan">Departure Flight - Sat, 01 Apr</span>
+                                        <div class="bottom">
+                                            <div class="bookInfo">
+                                                <span class="customSpan cSpan mb-1">01 Apr`23 07:35 AM</span>
+                                                <label class="customLabel"><b>DEL</b>-New Delhi<span class="yellow"> Terminal </span>1</label>
+                                            </div>
+                                            <div class="bookInfo">
+                                                <span class="customSpan cSpan mb-1">01 Apr`23 09:00 AM</span>
+                                                <label class="customLabel"><b>IXJ</b>-Jammu<span class="yellow"> Terminal </span>1</label>
+                                            </div>
+                                            <div class="bookInfo">
+                                                <div class="planeName">
+                                                    <span class="bookImg"></span>
+                                                    <span class="customSpan">IndiGo 6E 554</span>
+                                                </div>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="bookImg img1"></span>
+                                                    <span class="customSpan"><b>Jasbir + 1</b></span>
+                                                </div>
+                                            </div>
+                                            <div class="images">
+                                                <img src="assets/images/6E.gif" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span class="customSpan">RETURN  Flight - Sun, 02 Apr</span>
+                                        <div class="bottom">
+                                            <div class="bookInfo">
+                                                <span class="customSpan cSpan mb-1">02 Apr`23 06:50 PM</span>
+                                                <label class="customLabel black"><b>IXJ</b>-Jammu</label>
+                                            </div>
+                                            <div class="bookInfo">
+                                                <span class="customSpan cSpan mb-1">02 Apr`23 08:20 PM</span>
+                                                <label class="customLabel"><b>DEL</b>-New Delhi<span class="yellow"> Terminal </span>2</label>
+                                            </div>
+                                            <div class="bookInfo">
+                                                <div class="planeName">
+                                                    <span class="bookImg"></span>
+                                                    <span class="customSpan">Go First G8 277</span>
+                                                </div>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="bookImg img1"></span>
+                                                    <span class="customSpan"><b>Jasbir + 1</b></span>
+                                                </div>
+                                            </div>
+                                            <div class="images">
+                                                <img src="assets/images/6E.gif" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bookingRight">
+                                    <div class="d-flex align-items-center mt-2">
+                                        <div class="bookImg"></div>
+                                        <span class="customSpan">Raise a Claim</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="tab?.id === 4">
+                        <div class="bookContainer">
+                            <div class="bookingDetail">
+                                <div class="planeImg">
+                                    <span class="bookImg uncomplete"></span>
+                                </div>
+                                <div class="plane">
+                                    <span class="bookImg uncomplete"></span>
+                                </div>
+                                <div class="w-100">
+                                    <div class="detailRow">
+                                        <div>
+                                            <div class="Route flex-wrap">
+                                                <h3>Flight Booking</h3>
+                                                <span class="chip color">PAYMENT STATUS AWAITED</span>                                        </div>
+                                            <div class="flightInfo flightinfoInner">
+                                                <span class="customSpan colorRed">Payment of ₹25 from My Wallet</span>
+                                                <span class="customSpan dNone">Booking ID - MF2RGKE1SPJMR4PY0562</span>
+                                            </div>
+                                        </div>
+                                        <div class="downArrow" (click)="gotoDetail('4')"></div>
+                                        <button mat-flat-button class="modalBotton m-0" (click)="gotoDetail('4')">View Details</button>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="bookingpart">
+                                <div class="bookingLeft">
+                                    <p class="para">Booking unsuccessful on 5 May, 4:54 PM</p>
+                                    <div class="customSpan mb-4">We are checking the payment status with your bank. A refund will be initiated in 2-3 days if the amount has already been deducted. Rest assured, your money is safe.</div>
+                                    <div class="vBorder">
+                                        <div class="bookingleftInner cancelled">
+                                            <div class="bookIcon">
+                                                <i class="fa fa-check" aria-hidden="true"></i>
+                                            </div>
+                                            <div>
+                                                <span class="customSpan mb-1"><b>Booking failed</b></span>
+                                                <label class="customLabel">05 May, 04:54 PM</label>
+                                            </div>
+                                        </div>
+                                        <div class="bookingleftInner refund">
+                                            <div class="bookIcon closeIcon">
+                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                            </div>
+                                            <div>
+                                                <span class="customSpan mb-1"><b>Checking Payment Status</b></span>
+                                                <label class="customLabel">Expected in 2-3 days</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bookingRight">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

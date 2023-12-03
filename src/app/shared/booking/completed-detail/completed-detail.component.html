@@ -1,0 +1,307 @@
+<div id="completed">
+    <div class="container">
+        <div class="pageInner">
+            <div class="pageHeader">
+                <div class="title">
+                    <span class="titleHead cursor" (click)=" gotoNext('myBooking')">My Bookings</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    <span class="titleHead"><b>completed</b></span>
+                </div>
+                <h1>Your Flight booking has completed!</h1>
+                <div class="bookData">
+                    <label class="customLabel mr-4">Booking ID <span class="customSpan">MF26FY6AR24YVZI77066</span></label>
+                    <label class="customLabel pr-2">Booking On <span class="customSpan">25 Apr, 2023</span></label>
+                </div>
+                <div class="rightside">
+                    <img src="assets/images/world.png">
+                </div>
+            </div>
+            <div class="pageBody">
+                <div class="pageLeft">
+                    <div class="pageContent">
+                        <div class="contentHead" (click)="onOpen('content')">
+                            <h2>Darbhanga</h2>
+                            <span class="rightArrow"></span>
+                            <h2>Delhi</h2>
+                            <span class="rightArrow"></span>
+                            <div class="bookImg" [ngClass]="{'active': showContent}"></div>
+                        </div>
+                        <div class="contentBody" *ngIf="showContent">
+                            <div>
+                                <div class="bodyTitle">
+                                    <div class="mb-4">
+                                        <div class="d-flex mr-4">
+                                            <div class="BodyImg">
+                                                <img src="assets/images/spice.png" alt="">
+                                            </div>
+                                            <div>
+                                                <span class="customSpan cGrey mb-1">SPICE JET</span>
+                                                <span class="customSpan cGrey">SG-8752</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="flightTime">
+                                            <span class="customText"><b>Darbhanga</b> - DBR</span>
+                                            <div class="d-flex mt-1">
+                                                <span class="customFont">13:50, 04 May`23</span>
+                                            </div>
+                                            <span class="customSpan">Darbhanga Airport, Terminal 1</span>
+                                        </div>
+                                        <div class="planeTag">
+                                            <div class="bookImg planeImg"></div>
+                                            <div class="borderLine"></div>
+                                            <span class="customSpan">1h 35m</span>
+                                        </div>
+                                        <div class="flightTime fly">
+                                            <span class="customText"><b>Delhi</b> - DEL</span>
+                                            <div class="d-flex mt-1">
+                                                <span class="customFont">15:25, 04 May`23</span>
+                                            </div>
+                                            <span class="customSpan">Indira Gandhi International Airport, Terminal 3<label>View Location</label></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bodyType">
+                                    <div class="typeInner">
+                                        <div class="ticket">
+                                            <div class="bookImg tImg"></div>
+                                            <span class="customSpan grey">Regular Fare</span>
+                                        </div>
+                                        <div class="ticket">
+                                            <div class="bookImg tImg"></div>
+                                            <span class="customSpan grey">SPICESAVER</span>
+                                        </div>
+                                    </div>
+                                    <div class="typeInner">
+                                        <div class="ticket">
+                                            <div class="bookImg tImg"></div>
+                                            <span class="customSpan grey">Economy</span>
+                                        </div>
+                                        <div class="ticket">
+                                            <div class="bookImg tImg baggage"></div>
+                                            <div class="check">
+                                                <span class="customSpan grey">Check In - </span>
+                                                <span class="customSpan grey">15 Kgs (1 piece only) per adult</span>
+                                            </div>
+                                        </div>
+                                        <div class="ticket">
+                                            <div class="bookImg tImg bag"></div>
+                                            <span class="customSpan grey">Carry On - 7 Kgs (1 piece only) per adult</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="passData">
+                                    <div class="d-flex mb-1">
+                                        <div class="blank"></div>
+                                        <div class="passName">
+                                            <label class="customLabel">TRAVELLER</label>
+                                        </div>
+                                        <div class="passPnr">
+                                            <label class="customLabel">PNR</label>
+                                        </div>
+                                        <div class="tNumber">
+                                            <label class="customLabel">E-TICKET NUMBER</label>
+                                        </div>
+                                        <div class="seat">
+                                            <label class="customLabel">SEAT</label>
+                                        </div>
+                                        <div class="meal">
+                                            <label class="customLabel">MEAL</label>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <div class="bookImg passImg"></div>
+                                        <div class="passName">
+                                            <span class="customSpan"><b>BABLU SHARMA </b><label>Adult,Male</label></span>
+                                        </div>
+                                        <div class="passPnr">GJ3K6R</div>
+                                        <div class="tNumber">
+                                            <span class="customSpan">GJ3K6R</span>
+                                        </div>
+                                        <div class="seat">
+                                            <label class="customSpan">18B</label>
+                                        </div>
+                                        <div class="meal">
+                                            <label class="customSpan">-</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pageContent content2">
+                        <h5>IMPORTANT INFORMATION</h5>
+                        <span class="customSpan dot">Valid ID proof needed :</span>
+                        <span class="customSpan">Carry a valid photo identification proof (Driver Licence, Aadhar Card, Pan Card or any other Government recognised photo identification)</span>
+                    </div>
+                    <div class="pageContent content3">
+                        <h5>REQUEST A REFUND</h5>
+                        <span class="titleHead">Information about primary traveller. Any communication by airlines will be sent to these details.</span>
+                        <div class="request">
+                            <span class="bookImg"></span>
+                            <span class="customSpan">If the airline cancelled your flight, or you cancelled your flight directly with airline, please <label>submit a request for refund</label></span>
+                        </div>
+                    </div>
+                    <div class="pageContent content4">
+                        <h5>SUBMIT REFUND REQUEST</h5>
+                        <span class="titleHead pb-4 m-0">Raise a request for refund, if you didn't or can't travel because of flight cancellation, schedule change or you have directly cancelled your ticket with airline.</span>
+                        <div class="tabList">
+                            <ng-container *ngFor="let tab of tabList">
+                                <div class="tabName" [ngClass]="{'active': tab?.isActive}" (click)="onChangeTab(tab)">{{tab.title}}</div>
+                            </ng-container>
+                        </div>
+                        <ng-container *ngFor="let tab of tabList">
+                            <div class="tabBody" *ngIf="tab?.isActive">
+                                <div class="tab1">
+                                    <span class="titleHead p-0">{{tab.text}}</span>
+                                    <button mat-flat-button class="modalBotton">Raise Claim</button>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                    <div class="pageContent content4 content5">
+                        <h5>CONTACT INFORMATION</h5>
+                        <span class="titleHead">Information about primary traveller. Any communication by airlines will be sent to these details.</span>
+                        <div class="d-flex justify-content-between flex-wrap">
+                            <div>
+                                <div class="d-flex mb-3">
+                                    <div class="bookImg"></div>
+                                    <span class="customSpan">Bablu Sharma</span>
+                                </div>
+                                <div class="d-flex mb-3">
+                                    <div class="bookImg img1"></div>
+                                    <span class="customSpan">info@dreamlandtravel.co.in</span>
+                                </div>
+                                <div class="d-flex">
+                                    <div class="bookImg img2"></div>
+                                    <span class="customSpan">082 8562  4833</span>
+                                </div>
+                            </div>
+                            <div class="d-flex mt-2">
+                                <span class="bookImg img3"></span>
+                                <span class="customSpan blue">Send E-Ticket on Email.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pageRight">
+                    <div class="rightContent">
+                        <div class="rightInner">
+                            <div class="content1">
+                                <span class="titleHead">Submit Refund Request</span>
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="bookImg"></div>
+                                    <span class="customSpan blue">I directly cancelled with the airline</span>
+                                </div>
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="bookImg img1"></div>
+                                    <span class="customSpan blue">My flight was cancelled by the airline</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="bookImg img2"></div>
+                                    <span class="customSpan blue">Flight rescheduled & did not travel</span>
+                                </div>
+                            </div>
+                            <div class="content1">
+                                <span class="titleHead">Ticket(s)</span>
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="bookImg img3"></div>
+                                    <span class="customSpan cursor blue" (click)="gotoNext('flightPreview')">Download E-ticket(s)</span>
+                                </div>
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="bookImg img4"></div>
+                                    <span class="customSpan cursor blue">Email E-Tickets(s)</span>
+                                </div>
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="bookImg img5"></div>
+                                    <span class="customSpan cursor blue" (click)="gotoNext('flightInvoice')">Download Invoice(s)</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="bookImg img6"></div>
+                                    <span class="customSpan cursor blue">Customer Booking Confirmation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rightContent Content2">
+                        <div class="d-flex justify-content-between mb-3">
+                            <span class="customSpan black">Airline Contact</span>
+                            <div class="bookImg img7"></div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="rightImg">
+                                <img src="assets/images/spice.png">
+                            </div>
+                            <div>
+                                <label class="customLabel">SPICE JET</label>
+                                <span class="customSpan mt-2">0124-4983410 0124-7101 600</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rightContent content3">
+                        <span class="titleHead">Price Breakup</span>
+                        <div class="custom">
+                            <span class="customSpan">Airline Base Fare</span>
+                            <span class="customSpan">₹ 4239</span>
+                        </div>
+                        <div class="custom">
+                            <span class="customSpan">Airline Taxes</span>
+                            <span class="customSpan">₹ 761</span>
+                        </div>
+                        <div class="custom">
+                            <span class="customSpan">Convenience Fee</span>
+                            <span class="customSpan">₹ 5</span>
+                        </div>
+                        <div class="custom">
+                            <div class="d-flex align-items-center">
+                                <span class="customSpan">Partner Commission</span>
+                                <div class="bookImg img8">
+                                    <div class="details">
+                                        <div class="d-flex justify-content-between">
+                                            <span class="customSpan">Commission Via Promo Cash</span>
+                                            <span class="customSpan">₹ 0</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <span class="customSpan">Commission Via Discount</span>
+                                            <span class="customSpan">₹ 76</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="customSpan">₹ 76</span>
+                        </div>
+                        <div class="custom">
+                            <span class="customSpan">TDS on Commission Amount</span>
+                            <span class="customSpan">₹ 4</span>
+                        </div>
+                        <div class="custom custom1">
+                            <span>Total Amount</span>
+                            <span>₹ 4933</span>
+                        </div>
+                    </div>
+                    <div class="rightContent content3">
+                        <div class="ammount">
+                            <span class="titleHead p-0">Amount Paid</span>
+                            <span class="titleHead p-0">₹ 4933</span>
+                        </div>
+                        <div class="idText">
+                            <span class="customSpan">ybl 8285624833@ybl</span>
+                            <span class="customSpan">₹ 4933</span>
+                        </div>
+                        <div class="reward">
+                            <div class="rewardImg">
+                                <img src="assets/images/reward.png">
+                            </div>
+                            <label class="customLabel"><b>Congratulations! Cashback of INR 25.0 has been processed </b> to your Wallet and shall reflect in a few days.</label>
+                        </div>
+                    </div>
+                    <div class="rightContent Content4">
+                        <div class="bookImg img9"></div>
+                        <div class="customSpan">This booking was made by Dreamland certified travel agent with email address info@dreamlandtravel.co.in and phone number 082 8562  4833.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

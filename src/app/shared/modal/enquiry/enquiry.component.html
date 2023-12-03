@@ -1,0 +1,32 @@
+<div class="modal-container enquiry-container">
+    <div class="modalHeader">
+        <h1>Enquiry</h1>
+        <span class="closeBtn" (click)="close()">
+            <img src="assets/images/close.png" alt="">
+        </span>
+    </div>
+    <div class="modalBody">
+        <div class="modalInner">
+            <div class="customInput">
+                <label>Full name</label>
+                <input type="text" placeholder="Full name">
+            </div>
+            <div class="customInput">
+                <label>Email</label>
+                <input type="Email" placeholder="Email">
+            </div>
+            <div class="customInput">
+                <label>Mobile Number</label>
+                <input type="Number" class="no-spinner" placeholder="Mobile Number">
+            </div>
+            <div class="customInput">
+                <label>Message</label>
+                <textarea type="text" placeholder="Query"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="modalFooter">
+        <button class="cancelBtn" mat-flat-button (click)="close()">Cancel</button>
+        <button mat-raised-button class="modalBotton saveBtn">Enquiry Now</button>
+    </div>
+</div>

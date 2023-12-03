@@ -1,0 +1,20 @@
+@import "./../../../assets/scss/variable.scss";
+@import '../../pages/home/home.component.scss';
+
+#Holidays {
+    .positionClass {
+        @media only screen and (max-width: 1366px) {
+            bottom: -240px;
+        }
+        @media only screen and (max-width: 768px) {
+            bottom: -210px;
+        }
+        @media only screen and (max-width: 767px) {
+            bottom: -170px;
+            left: 16px;
+            right: unset;
+            width: calc(100% - 32px);
+            height: 210px;
+        }
+    }
+}

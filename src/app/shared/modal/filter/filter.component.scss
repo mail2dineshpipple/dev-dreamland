@@ -1,0 +1,328 @@
+@import "../../components/onewaylist/onewaylist.component.scss";
+
+::ng-deep .filterModal {
+    overflow-y: auto;
+    // max-width: 510px !important;
+    width: 100%;
+    max-width: 100% !important;
+    height: 100%;
+    @media only screen and (max-width: 767px) {
+        height: 100%;
+        min-width: 100%;
+    }
+    .mat-dialog-container{
+        background-color: rgb(255, 255, 255);
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 7px 0px;
+        border-radius: 0px;
+        padding: 0;
+        @media only screen and (max-width: 767px) {
+            border-radius: 0;
+        }
+    }
+}
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .modalHeader {
+        .filter-head {
+            background-color: $themeDark;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            // border-radius: 10px 10px 0 0;
+            padding: 2px 2px 2px 12px;
+            color: #fff;
+            font-family: "Segoe-Bold";
+            min-height: 60px;
+        }
+        .tf-left {
+            font-size: 14px;
+            line-height: 16px;
+        }
+        .clear-btn {
+            border-radius: 20px;
+            min-height: 24px;
+            padding: 0 10px;
+            outline: 0;
+            font-size: 14px;
+            line-height: 16px;
+            min-width: auto;
+            font-family: "Rubik", sans-serif;
+            @media only screen and (max-width: 767px) {
+                font-size: 13px;
+                line-height: 15px;
+            }
+        }    
+    }
+    .modalBody {
+        flex: 1;
+        overflow-y: auto;
+        .modalInner {
+            span {
+                font-size: 10px;
+                line-height: 13px;
+                font-weight: 400;
+                color: #000;
+            }
+            .ngx {
+                font-size: 11px;
+                line-height: 14px;
+                font-weight: 400;
+                color: #000;  
+            }
+            .search-filter {
+                // box-shadow: 0px 1px 3px rgb(0 0 0 / 35%);
+                // border-radius: 12px;
+                background-color: #fff;
+             
+                .filterTab {
+                    display: flex;
+                    background-color: #daf2fc;
+                    margin-top: 10px;
+                    .tabItem {
+                        width: 50%;
+                        padding: 9px 15px;
+                        text-align: center;
+                        background-color: #daf2fc;
+                        cursor: pointer;
+                        font-family: "Segoe-Bold";
+                        font-size: 16px;
+                        &.active {
+                            background-color: #0254a0;
+                            color: #ffffff;
+                        }
+                    }
+                }
+              
+                #themeDark {
+                    color: $themeDark !important;
+                    font-size: 13px;
+                    outline: 0;
+                    .plusIcon {
+                        font-size: 13px;
+                    }
+                }
+                .filter-row {
+                    .filter-box {
+                        padding: 14px 0px;
+                        margin: 0px 12px;
+                        border-bottom: 2px solid #f9f9f9;
+                        .ft-head {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            margin-bottom: 4px;
+                            .tf-left {
+                                font-family: "Segoe-Bold";
+                                font-size: 12px;
+                                line-height: 14px;
+                            }
+                            .clear-btn {
+                                margin-right: -10px;
+                                color: $themeDark;
+                                font-size: 12px;
+                                line-height: 14px;
+                                outline: 0;
+                            }
+                        }
+                        .applied {
+                            background: #ECF8FD;
+                            display: inline-flex;
+                            align-items: center;
+                            padding: 4px 5px 4px 8px;
+                            border-radius: 15px;
+                            margin-bottom: 5px;
+                            .tabClose {
+                                width: 16px;
+                                height: 16px;
+                                background: #04A2E4;
+                                color: #fff;
+                                border-radius: 50%;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                margin-left: 8px;
+                                i {
+                                    font-size: 11px;
+                                    line-height: 12px;
+                                    cursor: pointer;
+                                }
+                            }
+                            .plane {
+                                margin-right: 4px;
+                                font-size: 15px;
+                            }
+                        }
+                        .checkbox-container {
+                            .mat-checkbox {
+                                display: block;
+                            }
+                        }
+                        .airline {
+                            margin-top: 10px;
+                            ::ng-deep .customCheckbox {
+                                display: flex;
+                                margin-right: 0;
+                                .mat-checkbox-layout {
+                                    flex: 1;
+                                    display: flex;
+                                    flex-direction: row;
+                                    align-items: center;
+                                    .mat-checkbox-inner-container {
+                                        margin: 0;
+                                    }
+                                    .mat-checkbox-label {
+                                        flex: 1;
+                                        display: flex;
+                                        justify-content: space-between;
+                                        img {
+                                            width: 20px;
+                                            margin:0 12px;
+                                        }
+                                        span {
+                                            font-size: 11px;
+                                            line-height: 15px;
+                                            font-weight: 400;
+                                            color: #000;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .range-slider {
+                            ::ng-deep ngx-slider {
+                                .ngx-slider-bar {
+                                    height: 7px;
+                                    border-radius: 10px;
+                                }
+                                .ngx-slider-pointer {
+                                    width: 24px;
+                                    height: 24px;
+                                    top: -9px;
+                                    background-color: #ffffff;
+                                    border: 2px solid #dfdfdf;
+                                }
+                                .ngx-slider-limit {
+                                    display: none;
+                                    visibility: hidden !important;
+                                }
+                                .ngx-slider-pointer{
+                                    outline: 0;
+                                    &::after {
+                                        top: 7px;
+                                        left: 7px;
+                                        background: #fff;
+                                    }
+                                }
+                                .ngx-slider-bubble {
+                                    bottom: -35px;
+                                    opacity: 0 !important;
+                                }
+                                .ngx-slider-selection {
+                                    background: linear-gradient(to right, #005494, #04A7EA);
+                                    height: 7px;
+                                }
+                                .ngx-slider-model-value,.ngx-slider-model-high {
+                                    display: none;
+                                }
+                            }
+                        }
+                        mat-slider {
+                            height: 40px;
+                            min-width: 100%;
+                        }
+                        ::ng-deep .mat-slider-thumb-label {
+                            display: flex;
+                            top: -43px;
+                            height: 25px;
+                            width: 25px;
+                            .mat-slider-thumb-label-text {
+                                font-size: 10px;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                    .flight-timeing {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: flex-start;
+                        .time-item {
+                            border: 1px solid #e7e7e7;
+                            padding: 4px 4px;
+                            text-align: center;
+                            width: calc(25% - 0px);
+                            cursor: pointer;
+                            // display: flex;
+                            align-items: center;
+                            margin: 5px 0;
+                            cursor: pointer;
+                            &:first-child {
+                                border-radius: 4px 0 0 4px;
+                            }
+                            &:last-child {
+                                border-radius: 0 4px 4px 0
+                            }spanmat-checkbox-label
+                            &.stop {
+                                width: calc(33.33% - 5px);
+                                height: 55px;
+                                justify-content: center;
+                                border-radius: 4px;
+                                span {
+                                    text-align: center;
+                                }
+                            }
+                            &.active {
+                                background-color: $themeLight;
+                                color: #fff;
+                            }
+                            img {
+                                width: 34px;
+                                // margin-right: 4px;
+                            }
+                            label {
+                                font-size: 9px;
+                                line-height: 14px;
+                                font-family: "Rubik", sans-serif;
+                                font-weight: 500;
+                                margin: 0;
+                                cursor: pointer;
+                            }
+                            span {
+                                font-size: 10px;
+                                line-height: 14px;
+                                font-family: "Rubik", sans-serif;
+                                font-weight: 500;
+                                display: block;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .modalFooter {
+        display: flex;
+        justify-content: flex-end;
+        font-family: "Rubik", sans-serif;
+        border-top: 2px solid #f4f4f4;
+        // padding: 20px 30px;
+        .footerBtn {
+            width: 50%;
+            height: 50px;
+        }
+        .cancelBtn {
+            font-weight: 600;
+            font-size: 16PX;
+            color: rgb(74, 74, 74);
+            cursor: pointer;
+            outline: 0;
+        }
+        .saveBtn {
+            border-radius: 0px !important;
+            margin: 0 !important;
+            // width: 140px;
+        }
+    }
+}

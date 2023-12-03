@@ -1,0 +1,534 @@
+@import "./../../../assets/scss/variable.scss";
+
+#wallet {
+    position: relative;
+    background: #f2f2f2 !important;  
+     &::after {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        content: '';
+        background-color: #1b2b4f;
+        background-image: linear-gradient(to bottom, #005494, #04A7EA);
+        height: 200px;
+        z-index: 0;
+    }
+    .container {
+        position: relative;
+        z-index: 1;
+        @media only screen and (max-width: 767px) {
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+    }
+    h3 {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 700;
+        margin: 0;
+        color: #000;
+        @media only screen and (max-width: 767px) {
+            font-size: 20px;
+            line-height: 24px;
+        }
+    }
+    .font20 {
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 500;
+        color: #4a4a4a;
+    }
+    .white {
+        color: #fff;
+    }
+    .green {
+        color: #198b7d;
+    }
+    .light {
+        color: #9b9b9b;
+    }
+    .blue {
+        color: #008cff;
+    }
+    .pageInner {
+        padding: 30px 0 50px;
+        display: flex;
+        justify-content: space-between;
+        @media only screen and (max-width: 1024px) {
+            width: 100%;
+            // flex-wrap: wrap;
+            flex-direction: column-reverse;
+        }
+        @media only screen and (max-width: 767px) {
+            padding: 16px 0 18px;
+        }
+        .Leftcontent {
+            box-shadow: rgba(138, 107, 118, 0.08) 0px 4px 8px 0px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 8px;
+            margin-bottom: 16px;
+            .title {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border-bottom: 1px solid rgb(216, 216, 216);
+                padding: 16px;
+                &:last-child {
+                    border: none;
+                }
+                svg {
+                    width: 35px;
+                    height: 35px;
+                    margin-right: 10px;
+                }
+            }
+        }
+        .pageLeft {
+            min-width: 250px;
+            flex: 1;
+            @media only screen and (max-width: 1024px) {
+                width: 100%;
+                margin-top: 20px;
+            }
+            @media only screen and (max-width: 767px) {
+                margin-top: 16px;
+            }
+            .Leftcontent {
+                display: block;
+                @media only screen and (max-width: 1024px) {
+                   display: none;
+                }
+            }
+            .faq{
+                padding: 20px 15px;
+                background-color: #fff;
+                border-radius: 10px;
+                box-shadow: 0px 3px 30px 0px rgba(0, 0, 0, 0.1);
+                @media only screen and (max-width: 767px) {
+                    padding: 16px;
+                }
+                .font20 {
+                    margin-bottom: 10px;
+                }
+                .faqItem {
+                    padding: 20px 0px;
+                    border-bottom: 1px solid rgb(231, 231, 231);
+                    cursor: pointer;
+                    &:last-child {
+                        border: none;
+                    }
+                    .faqHead {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        i {
+                            font-size: 15px;
+                            color: #008cff;
+                        }
+                        .active {
+                            transform: rotate(180deg);
+                        }
+                        .title {
+                            font-size: 16px;
+                            line-height: 22px;
+                            font-weight: 500;
+                            color: #4a4a4a;
+                            flex-wrap: wrap;
+                        }
+                    }
+                    .faqBody {
+                        padding-top: 10px;
+                    }
+                }
+            }
+        }
+        .pageRight {
+            margin-left: 20px;
+            // max-width: 800px;
+            min-width: 150px;
+            width: 100%;
+            @media only screen and (max-width: 1024px) {
+                margin:0;
+            }
+            .Leftcontent {
+                display: none;
+                @media only screen and (max-width: 1024px) {
+                   display: block;
+                }
+            }
+            .rightContent {
+                background: linear-gradient(92.91deg, rgb(25, 138, 125) 0%, rgb(41, 184, 142) 97.89%);
+                border: 1px solid #3acca3;
+                padding: 20px;
+                border-radius: 8px;
+                margin-bottom: 20px;
+                @media only screen and (max-width: 767px) {
+                    padding: 16px;
+                    margin-bottom: 16px;
+                }
+                .font20 {
+                    color: #fff;
+                    line-height: 30px;
+                    margin: 0;
+                }
+                .rightStep {
+                    background: #f0f8ff;
+                    border-radius: 8px;
+                    padding: 20px;
+                    box-shadow: rgba(138, 107, 118, 0.08) 0px 4px 8px;
+                    @media only screen and (max-width: 767px) {
+                        padding: 16px;
+                    }
+                    .note {
+                        color: #141823;
+                        font-size: 10px;
+                        line-height: 14px;
+                        font-weight: 400;
+                        display: block;
+                    }
+                }
+            }
+            .rightAdd {
+                padding: 23px 20px 20px;
+                box-shadow: rgba(138, 107, 118, 0.08) 0px 4px 8px 0px;
+                background-color: rgb(255, 255, 255);
+                border-radius: 8px;
+                margin-bottom: 30px;
+                @media only screen and (max-width: 767px) {
+                    padding: 16px;
+                    margin-bottom: 16px;
+                }
+                svg {
+                    margin-right: 10px;
+                    width: 35px;
+                    height: 35px;
+                }
+                .rightAdd-inner {
+                    @media only screen and (max-width: 768px) {
+                        flex-direction: column;
+                    }
+                }
+                .recharge {
+                    // width: 468px;
+                    width: auto;
+                    padding: 16px 37px 16px 16px;
+                    background-color: #f8f8f8;
+                    border-radius: 4px;
+                    .customSpan {
+                        margin-bottom: 20px;
+                        font-weight: 500;
+                        color: #000;
+                        @media only screen and (max-width: 576px) {
+                            margin-bottom: 0px;
+                        }
+                    }
+                    .customLabel {
+                        color: #198b7d;
+                        margin-top: 8px;
+                    }
+                    .tablist {
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 24px;
+                        flex-wrap: wrap;
+                        .tabName {
+                            border-radius: 4px;
+                            box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 7px;
+                            background-color: #fff;
+                            cursor: pointer;
+                            padding: 6px 16px;
+                            font-size: 14px;
+                            line-height: 20px;
+                            font-weight: 400;
+                            color: #232323;
+                            min-width: 90px;
+                            position: relative;
+                            &.active {
+                                background-color: #008cff;
+                                color: #fff;
+                            }
+                            @media only screen and (max-width: 768px) {
+                                font-size: 12px;
+                            }
+                            @media only screen and (max-width:576px) {
+                                margin-top: 20px;
+                                margin-right: 20px;
+                            }
+                            @media only screen and (max-width:360px) {
+                               width: 100%;
+                               margin-right: 0px;
+                            }
+                            label {
+                                display: flex;
+                                background: linear-gradient(67.62deg, rgb(67, 225, 168) 0%, rgb(33, 147, 147) 58.33%);
+                                border-radius: 10px;
+                                align-items: center;
+                                height: 15px;
+                                padding: 0px 6px;
+                                font-size: 10px;
+                                line-height: 10px;
+                                color: #fff;
+                                font-weight: 400;
+                                position: absolute;
+                                left: 4px;
+                                top: -11px;
+                                margin: 0;
+                                @media only screen and (max-width: 768px) {
+                                    font-size: 9px;
+                                }
+                            }
+                        }
+                    }
+                    .tabBody {
+                        display: flex;
+                        align-items: flex-end;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        .modalBotton {
+                            border-radius: 4px !important;
+                            @media only screen and (max-width: 576px) {
+                              margin: 10px 20px 0 20px;
+                            }
+                        }
+                        .customInput {
+                            padding: 0;
+                            width: 230px;
+                            label {
+                                font-size: 12px;
+                                margin-bottom: 10px;
+                                padding: 0;
+                                font-weight: 400;
+                            }
+                            input {
+                                font-size: 20px;
+                                line-height: 24px;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+                .text-black{
+                    margin: 0 5px;
+                    display: flex;
+                    align-items: center;
+                    @media only screen and (max-width: 768px) {
+                        justify-content: center;
+                        margin: 10px 5px;
+                    }
+                }
+                .rechargeVia {
+                    flex: 1;
+                    padding: 26px 20px;
+                    border: 1px solid rgb(231, 240, 255);
+                    background-color: rgb(241, 246, 253);
+                    position: relative;
+                    border-radius: 4px;
+                    @media only screen and (max-width: 767px) {
+                        padding: 16px;
+                    }
+                    .label {
+                        height: 18px;
+                        padding: 3px 10px;
+                        background-image: linear-gradient(83deg, rgb(200, 109, 215), rgb(48, 35, 174) 100%);
+                        color: rgb(255, 255, 255);
+                        font-size: 10px;
+                        font-weight: 400;
+                        text-transform: uppercase;
+                        border-radius: 10px;
+                        position: absolute;
+                        top: -9px;
+                    }
+                    .customSpan {
+                        line-height: 24px;
+                    }
+                }
+            }
+            .statement {
+                // display: flex;
+                border-radius: 10px;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 7px 0px;
+                background-color: #fff;
+                .statementData {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 18px 20px 15px;
+                    @media only screen and (max-width:768px) {
+                        flex-direction: column;
+                    }
+                    @media only screen and (max-width: 767px) {
+                        padding: 16px;
+                    }
+                }
+                .SMDate {
+                    width: 300px;
+                    border: 1px solid #e7e7e7;
+                    border-radius: 4px;
+                    padding: 12px 20px;
+                    margin: 0 ;
+                    display: flex;
+                    align-items: center;
+                    // @media only screen and (max-width:420px) {
+                    //     flex-direction: column;
+                    //     align-items :flex-start
+                    // }
+                    ::ng-deep .custom-datePicker{
+                        .mat-form-field-wrapper {
+                            padding: 0;
+                            height: 100%;
+                            .mat-form-field-flex {
+                                height: 100%;
+                                padding: 0;
+                                background: transparent;
+                                .mat-form-field-infix {
+                                    width: 100%;
+                                    padding: 0;
+                                    border: none;
+                                    display: flex;
+                                    mat-datepicker-toggle {
+                                        display: none;
+                                    }
+                                    .mat-input-element {
+                                        font-size: 14px;
+                                        line-height: 18px;
+                                        font-weight: 600;
+                                        margin: 0;
+                                        color: #000;
+                                        display: block;
+                                        font-family: "Rubik", sans-serif;
+                                    }
+                                }
+                            }
+                        }
+                        .mat-form-field-underline::before {
+                            height: 0;
+                        }
+                        .mat-form-field-ripple {
+                            height: 0;
+                        }
+                    }
+                    .To {
+                        display: flex;
+                        margin-left: 8px;
+                        @media only screen and (max-width:576px) {
+                            margin-left: 0px;
+                        }
+                    }
+                    .date {
+                        font-size: 14px;
+                        line-height: 18px;
+                        font-weight: 400;
+                        margin: 0 10px 0 0;
+                        color: #4a4a4a;
+                        display: block;
+                    }
+                }
+                .download {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 4px;
+                    background-color: #008cff;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-left: 10px;
+                    svg {
+                        width: 25px;
+                        height: 25px;
+                        fill: none;
+                        color: #fff;
+                    }
+                }
+                ::ng-deep .tabGroup {
+                    cursor: pointer;
+                    .mat-tab-header {
+                        border: none;
+                    }
+                    .mat-tab-labels {
+                        width: 140px;
+                        padding: 2px;
+                        background-color: #fff;
+                        color: #647a97;
+                        border-radius: 30px;
+                        border: 1px solid #cccccc59;
+                    }
+                    .mat-tab-label {
+                        color: #647a97;
+                        position: relative;
+                        background: #fff;
+                        height: 28px;
+                        padding: 6px 16px;
+                        font-size: 10px;
+                        line-height: 16px;
+                        font-weight: 500;
+                        font-family: "Rubik", sans-serif;
+                        min-width: 50%;
+                    }
+                    .mat-tab-label-active {
+                        background: #008cff;
+                        color: #fff;
+                        border-radius: 30px;
+                        opacity: 1;
+                    }   
+                    .mat-ink-bar {
+                        background-color: transparent !important;
+                        position: relative;
+                        &::after {
+                            content: "";
+                            border-width: 5px;
+                            border-style: solid;
+                            border-color: rgb(0, 140, 255) transparent transparent;
+                            border-image: initial;
+                            width: 0px;
+                            height: 0px;
+                            position: absolute;
+                            top: 100%;
+                            left: 50%;
+                            margin-left: -3px;
+                        }
+                    }
+                }
+                .stateCol {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    @media only screen and (max-width:768px) {
+                        width: 100%;
+                    }
+                    &:first-child {
+                        width: 60%;
+                        padding-right: 20px;
+                        @media only screen and (max-width:768px) {
+                            width: 100%;
+                            margin-bottom: 8px;
+                            padding-right: 0;
+                        }
+                    }
+                    h3 {
+                        color: #4a4a4a;
+                    }
+                }
+                .stateBody {
+                    width: 100%;
+                    overflow: auto;
+                    .table {
+                        font-size: 12px;
+                        font-weight: 400;
+                        line-height: 14px;
+                        thead {
+                            background-color: #eef4fd;
+                            color: #4a4a4a;
+                            font-weight: 600;
+                        }
+                        th, td {
+                            padding: 10px;
+                        }
+                        tbody {
+                            color: rgb(74, 74, 74);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

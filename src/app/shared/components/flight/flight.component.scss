@@ -1,0 +1,60 @@
+@import "./../../../../assets/scss/variable.scss";
+@import "./../../../../assets/scss/custom-style.scss";
+
+.flight-section {
+    margin-bottom: 50px;
+    .flight-card {
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: #ffffff;
+        text-align: center;
+        box-shadow: 0px 3px 5px rgb(0 0 0 / 15%);
+        .flight-body {
+            padding: 10px;
+            .title {
+                display: block;
+                font-size: 18px;
+                line-height: 20px;
+                margin-bottom: 3px;
+                color: #303030;
+                font-family: "Segoe-Bold";
+                cursor: pointer;
+            }
+            .date {
+                font-size: 13px;
+                line-height: 15px;
+                color: #303030;
+            }
+            .route-img {
+                width: 16px;
+                height: auto;
+                margin: 8px auto;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+        .flight-footer {
+            background-color: $themeTitle;
+            color: #ffffff;
+            padding: 6px;
+            span {
+                font-size: 13px;
+                line-height: 18px;
+            }
+            .price {
+                display: block;
+                font-size: 18px;
+                font-weight: 600;
+                line-height: 22px;
+                margin: 2px 0;
+                cursor: pointer;
+            }
+        }
+    }
+    .homepageSlider {
+        ::ng-deep.owl-nav {
+            // top: -80px;
+        }
+    }
+}

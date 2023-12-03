@@ -1,0 +1,228 @@
+@import "./../../../../assets/scss/variable.scss";
+@import "./../onewaylist/onewaylist.component.scss";
+
+.flightList {
+    @media only screen and (max-width: 767px) {
+        margin: 0;
+    }
+    .row {
+        // @media only screen and (max-width: 768px) {
+        //     margin-right: 0;
+        //     margin-left: 0;
+        // }
+        // @media only screen and (max-width: 767px) {
+        //     margin-right: -15px;
+        //     margin-left: -15px;
+        // }
+        .ft-list {
+            @media only screen and (max-width: 768px) {
+                // width: calc(100% - 4px);
+            }
+        }
+    }
+    .container {
+        @media only screen and (max-width: 767px) {
+            padding-left: 8px !important;
+            padding-right: 8px;
+        }
+    }
+    .twowaylist {
+        overflow: hidden;
+        @media only screen and (max-width: 767px) {
+        overflow: unset;        
+        }
+        ::ng-deep .customRadioGroup {
+            display: flex;
+            flex-direction: column;
+            // align-content: center;
+            // flex-wrap: wrap;
+            // min-width: 100%;
+            .mat-radio-button {
+                font-size: 12px;
+                font-family: "Rubik", sans-serif;
+                .mat-radio-label {
+                    margin: 0;
+                    line-height: 18px;
+                    .mat-radio-label-content {
+                        padding-left: 0px;
+                    }
+                    .mat-radio-container {
+                        width: 18px;
+                        height: 18px;
+                        .mat-radio-outer-circle{
+                            height: 18px;
+                            width: 18px;
+                            border-width: 1px;
+                        }
+                        .mat-radio-inner-circle {
+                            height: 18px;
+                            width: 18px;
+                            background: $themeDark;
+                        }
+                        .mat-radio-ripple {
+                            border-radius: 50%;
+                            left: calc(50% - 15px);
+                            top: calc(50% - 15px);
+                            height: 30px;
+                            width: 30px;
+                        }
+                    }
+                }
+            }
+            .mat-accordion {
+                .mat-expansion-panel-header {
+                    padding: 4px 8px;
+                    .mat-expansion-panel-header-title {
+                        margin-right: 6px;
+                        @media only screen and (max-width: 1024px) {
+                            display: none;  
+                        }
+                    }
+                    .mat-expansion-panel-header-description {
+                        margin-right: 6px;
+                        font-size: 13px;
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+        .listInner {
+            padding-right: 6px;
+            padding-left: 16px;
+            @media only screen and (max-width: 991px) {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+            @media only screen and (max-width: 767px) {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+        .listInner1 {
+            padding-left: 6px;
+            padding-right: 16px;
+            @media only screen and (max-width: 991px) {
+                padding-left: 16px;
+                // padding-right: 16px;
+            }
+            @media only screen and (max-width: 767px) {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+        .calander-list {
+            ::ng-deep owl-carousel-o {
+                width: calc(100% - 50px);
+            }
+        }
+        .searchH2 {
+            display: none;
+            @media only screen and (max-width: 768px) {
+                display: flex;  
+                padding: 16px 0 7px;
+                align-items: center;
+                color: #ee5f2b;
+                font-size: 18px;
+                line-height: 22px;
+                margin: 0;
+                padding-top: 0;
+            }
+        }
+    }
+    .flight-selection {
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.35);
+        border: 1px solid #f7f7f7;
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: #1b2b4f;
+        background-image: linear-gradient(to bottom, #005494, #04A7EA);
+        padding: 10px 0;
+        position: sticky;
+        bottom: 08px;
+        z-index: 1;
+        @media only screen and (max-width: 767px) {
+            width: calc(100% + 32px);
+            margin: 0 0px 0 -16px;
+            padding: 4px 0;
+        }
+        .selectionLabel {
+            font-family: 'Rubik';
+            font-size: 14px;
+            padding: 0px 16px;
+            color: #fff;
+            font-weight: 500;
+            @media only screen and (max-width: 767px) {
+                font-size: 13px;
+                line-height: 16px;
+                padding: 0 10px;
+            }
+        }
+        .search-list {
+            width: 40%;
+            border-right: 2px dashed #e3e3e3;
+            .ft-list {
+                box-shadow: none;
+                border: none;
+                border-radius: 0;
+                overflow: hidden;
+                background-color: transparent;
+                margin-bottom: 0;
+                color: #fff;
+                .ft-body {
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 10px 16px;
+                    @media only screen and (max-width: 767px) {
+                        display: none !important;
+                    }
+                    .flt-logo {
+                        .flt-img {
+                            img {
+                                box-shadow: 0px 0px 6px 0px #ffffff;
+                            }
+                        }
+                    }
+                ul li {
+                        color: #fff;
+                    }
+                }
+                .ft-listInner {
+                    display: none;
+                    @media only screen and (max-width: 767px) {
+                        display: block !important;
+                        font-size: 11px;
+                        line-height: 15px;
+                        padding: 0 10px;
+                        font-weight: 400;
+                    }
+                    .bkPrice {
+                        font-size: 12px;
+                        line-height: 16px;
+                    }
+                }
+            }
+        }
+        .right-book {
+            text-align: center;
+            padding: 0px 10px;
+            display: flex;
+            flex-direction: column;
+            width: 20%;
+            @media only screen and (max-width: 767px) {
+                width: unset;
+            }
+            .total-price {
+                color: #ffffff;
+                font-size: 18px;
+                font-family: "Segoe-Bold";
+                text-align: center;
+                margin-bottom: 6px;
+                display: block;
+                @media only screen and (max-width: 767px) {
+                    font-size: 15px;
+                    line-height: 18px;
+                }
+            }
+        }
+    }
+}

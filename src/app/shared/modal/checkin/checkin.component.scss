@@ -1,0 +1,105 @@
+::ng-deep .checkin-modal {
+    max-width: 600px !important;
+    overflow-y: auto;
+    width: 100%;
+    @media only screen and (max-width: 767px) {
+        height: 100%;
+        min-width: 100%;
+    }
+    .mat-dialog-container {
+        padding: 30px;
+        border-radius: 8px;
+        overflow: hidden;
+        @media only screen and (max-width: 767px) {
+            border-radius: 0;
+        }
+    }
+}
+.checkin-container {
+    .modalHeader {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        h3 {
+            font-size: 26px;
+            line-height: 36px;
+            font-weight: 500;
+            margin: 0;
+            color: rgb(0 0 0 / 85%);
+            @media only screen and (max-width: 767px) {
+                font-size: 20px;
+                line-height: 24px;
+            }
+        }
+        .closeBtn {
+            border: none;
+            background: transparent;
+            min-width: 20px;
+            height: 20px;
+            padding: 0;
+            outline: none;
+            line-height: 0;
+            cursor: pointer;
+            img {
+                width: 20px;
+                @media only screen and (max-width: 767px) {
+                    width: 18px;
+                }
+            }
+        }
+    }
+    .modalBody {
+        margin-bottom: 50px;
+        .bodyData {
+            border-radius: 8px;
+            box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(150, 150, 150, 0.2);
+            background-color: #fff;
+            .bodyTitle {
+                padding: 16px 20px;
+                display: flex;
+                align-items: center;
+                border-bottom: 1px solid #f2f2f2;
+
+                span {
+                    font-size: 18px;
+                    line-height: 20px;
+                    font-weight: 600;
+                    display: block;
+                    color: #000;
+                }
+                .image {
+                    margin-right: 8px;
+                    background-image: url(/../../../assets/images/mytrip.png);
+                    background-size: 850px 1050px!important;
+                    background-repeat: no-repeat;
+                    background-position: -360px -738px;
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+            .bodyText {
+                border-bottom: 1px solid #f2f2f2;
+                display: flex;
+                padding: 12px;
+                .custom {
+                    font-size: 16px;
+                    line-height: 18px;
+                    margin-bottom: 8px;
+                    font-weight: 500;
+                    color: #000;
+                    display: block;
+                }
+            }
+        }
+      
+    }
+    .modalFooter {
+        display: flex;
+        justify-content: flex-end;
+        .modalBotton {
+            height: 50px;
+            margin: 0 !important;
+        }
+    }
+}

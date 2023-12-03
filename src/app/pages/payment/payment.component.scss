@@ -1,0 +1,241 @@
+@import "./../../../assets/scss/variable.scss";
+
+#paymant {
+    position: relative;
+    background: #f2f2f2 !important;  
+     &::after {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        content: '';
+        background-color: #1b2b4f;
+        background-image: linear-gradient(to bottom, #005494, #04A7EA);
+        height: 200px;
+        z-index: 0;
+    }
+    .rightside {
+        position: absolute;
+        right: 0;
+        top: -10px;
+        width: 440px;
+        height: 200px;
+        overflow: hidden;
+        z-index: -1;
+        @media only screen and (max-width: 767px) {
+            top: 30px;
+            width: 200px;
+            height: 110px;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+    }
+    .container {
+        position: relative;
+        z-index: 1;
+        @media only screen and (max-width: 767px) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+    h1 {
+        color: #ffffff;
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 600;
+        margin: 0 0 70px;
+        padding: 30px 0 0;
+        @media only screen and (max-width: 767px) {
+            padding: 30px 16px 0;
+        }
+    }
+    .pageInner {
+        padding-top: 40px;
+        padding-bottom: 50px;
+        @media only screen and (max-width: 767px) {
+        padding-bottom: 0;
+        }
+        .cardInner {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            @media only screen and (max-width: 767px) {
+                padding: 16px;
+            }
+            .cardHeader {
+                display: flex;
+                margin-bottom: 40px;
+                .headImg {
+                    height: 36px;
+                    width: 36px;
+                    margin-right: 10px;
+                }
+                h2 {
+                    font-size: 24px;
+                    line-height: 32px;
+                    font-weight: 500;
+                    margin: 0;
+                    color: #000;
+                }
+            }
+            .cardRow{
+                display: flex;
+                flex-direction: row;
+                @media only screen and (max-width: 1024px) {
+                    flex-direction: column;
+                }
+                .payDetails {
+                    width: 50%;
+                    @media only screen and (max-width: 1024px) {
+                        width: 100%;
+                    }
+                    .cardBody {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                        .customInput {
+                            input::-webkit-outer-spin-button,
+                            input::-webkit-inner-spin-button {
+                                -webkit-appearance: none;
+                                margin: 0;
+                            }
+                        }
+                        .modalBotton {
+                            margin: 15px 0 0 0 !important;
+                            @media only screen and (max-width: 1024px) {
+                                margin-bottom: 30px !important;
+                            }
+                        }
+                    }
+                }
+                .payby {
+                    flex: 1;
+                    @media only screen and (max-width: 1024px) {
+                        width: 100%;
+                    }
+                    .QR {
+                        display: flex;
+                        flex-direction: column;
+                        padding: 0 0 0 30px;
+                        align-items: center;
+                        @media only screen and (max-width: 1024px) {
+                            padding: 0;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            align-items: unset;
+                        }
+                        @media only screen and (max-width: 767px) {
+                            flex-direction: column;
+                        }
+                        img {
+                            box-shadow: 0px 0px 17px 0px #9b9b9b24;
+                            padding: 16px;
+                            border-radius: 10px;
+                            width: 40%;
+                            margin-bottom: 16px;
+                            :last-child {
+                                margin-bottom: 0;
+                            }
+                            @media only screen and (max-width: 1024px) {
+                                width: calc(50% - 10px);
+                            }
+                            @media only screen and (max-width: 767px) {
+                               padding: 16px;
+                               width: 100%;
+                               &:first-child {
+                                margin-bottom: 20px;
+                               }
+                            }
+                        }
+                    }
+                }
+                .bankInfo {
+                    box-shadow: 0px 0px 17px 0px #9b9b9b24;
+                    padding: 0 30px 20px 30px;
+                    margin: 30px 0 0 0;
+                    border-radius: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    @media only screen and (max-width: 1024px) {
+                        margin: 0 0 20px 0;
+                    }
+                    @media only screen and (max-width: 767px) {
+                        padding: 0 16px 20px 16px;
+                    }
+                    .iciciLogo {
+                        height: 100px;
+                        width: 200px;
+                    }
+                    .bankDetails {
+                        display: flex;
+                        .left-details {
+                            width: 100px;
+                            font-weight: 500;
+                            font-size: 14px;
+                            white-space: nowrap;
+                            flex: 0 0 100px;
+                        }
+                    }
+                }
+            }
+            .flex50 {
+                width: calc(50% - 8px);
+                height: 78px;
+            }
+        }
+    }
+    .customDatepicker {
+        label {
+            display: block;
+            font-size: 14px;
+            line-height: 18px;
+            color: #4a4a4a;
+            font-family: "Rubik", sans-serif;
+            font-weight: 500;
+            padding-bottom: 5px;
+            margin: 0;
+        }
+        ::ng-deep mat-form-field {
+            width: 100%;
+            .mat-form-field-wrapper {
+                margin: 0;
+                padding: 0;
+                .mat-form-field-flex {
+                    padding: 0;
+                    margin-top: 0;
+                    .mat-form-field-infix {
+                        border-top: none;
+                        width: 100%;
+                        display: flex;
+                        padding: 1px 4px 1px 14px;
+                        .mat-input-element {
+                            font-size: 14px;
+                            color: #4a4a4a;
+                            margin-top: 2px;
+                            font-family: "Rubik", sans-serif;
+                            &::-webkit-input-placeholder {
+                                color: rgb(117, 117, 117);
+                            }
+                        }
+                        .mat-datepicker-toggle {
+                            .mat-icon-button {
+                                outline: 0;
+                            }
+                        }
+                    }
+                    .mat-form-field-outline {
+                        top: 0;
+                        color: #9b9b9b;
+                    }
+                }
+            }
+            .mat-form-field-outline-thick .mat-form-field-outline-start, 
+            .mat-form-field-outline-thick .mat-form-field-outline-end, 
+            .mat-form-field-outline-thick .mat-form-field-outline-gap {
+                border-width: 1px;
+            }
+        }
+    }
+}

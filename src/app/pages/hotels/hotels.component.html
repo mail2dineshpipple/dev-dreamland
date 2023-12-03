@@ -1,0 +1,200 @@
+<div id="Hotels">
+    <div class="banner">
+        <div class="container route">
+            <div class="repService">
+                <div class="serviceInner" routerLink="/flights" routerLinkActive="active">
+                    <img src="./../../../assets/images/flight.png">
+                    <span>Flights</span>
+                </div>
+                <div class="serviceInner" routerLink="/hotels" routerLinkActive="active">
+                    <img src="./../../../assets/images/hotel.png">
+                    <span class="active">Hotels</span>
+                </div>
+                <div class="serviceInner" (click)="commonService.openUrl()">
+                    <img src="./../../../assets/images/holiday.png">
+                    <span>Holidays</span>
+                </div>
+            </div>
+            <h1 class="head1">
+                <!-- <img src="assets/images/plane.svg" class="mr-2"> 
+                Find lowest fare -->
+                <!-- <img src="assets/images/plane.svg" class="mr-2"> -->
+                <!-- Find lowest fare -->
+                <i class="material-icons mr-3">hotel</i>
+                Book Hotels Online
+            </h1>
+            <div class="banner-card">
+                <!-- <div class="mattoogle-group">
+                    <mat-button-toggle-group [(ngModel)]="hotelType" aria-label="type">
+                        <mat-button-toggle value="Upto">Upto 4 Rooms</mat-button-toggle>
+                        <mat-button-toggle value="GroupDeals">Group Deals</mat-button-toggle>
+                    </mat-button-toggle-group>
+                </div> -->
+                <div class="search-container">
+                    <div class="input-content width-40">
+                        <div (click)="ontest('From')" class="search-book">
+                            <label class="saerch-head d-flex align-items-center"><span class="material-icons hotelIcon mr-1">apartment</span> Enter City name, Location or Specific hotel</label>
+                            <div class="sarch-far">
+                                <label class="cityName">{{selectFrom.Name}}</label>
+                                <label class="cityText">India</label>
+                            </div>
+                        </div>
+                        <div class="customNgselect" *ngIf="isShow">
+                            <ng-select [items]="cityList" [isOpen]="true" class="flight-select"
+                                bindLabel="Name"
+                                [loading]="peopleLoading"
+                                [searchFn]="customSearchFn"
+                                [clearable]="false"
+                                [openOnEnter]="true"
+                                [dropdownPosition]="'bottom'"
+                                (change)="onSelect($event, 'From')">
+                                <ng-template ng-option-tmp let-item="item">
+                                    <div class="option-row">
+                                        <!-- <div class="left">
+                                            <img src="assets/images/planeicon.svg" alt="planeicon">
+                                        </div> -->
+                                        <div class="right">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="tilte">{{item.Name}}</div>
+                                                <div class="d-flex align-items-center">
+                                                    <span>{{item.Country}}</span>
+                                                    <img src="assets/images/indian-flag.png" alt="flagicon">
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <span>{{item.Desc}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </ng-select>
+                        </div>
+                    </div>
+                   
+                    <div class="input-content width-15">
+                        <mat-form-field appearance="fill" class="example-form-field custom-datePicker" (click)="datepicker1.open()" >
+                            <label class="head">Check-in</label>
+                            <input matInput readonly [matDatepicker]="datepicker1" placeholder="" [(ngModel)]="CheckIn" name="CheckIn">
+                            <mat-datepicker-toggle [for]="datepicker1"></mat-datepicker-toggle>
+                            <mat-datepicker #datepicker1></mat-datepicker>
+                            <div>
+                                <label class="cityName">1 <span>Mar 2022</span></label>
+                                <label class="cityText">Tuesday</label>
+                            </div>
+                        </mat-form-field>
+                    </div>
+                    <div class="input-content width-15 Check-out">
+                        <mat-form-field appearance="fill" class="example-form-field custom-datePicker" (click)="datepicker2.open()" >
+                            <label class="head">Check-out</label>
+                            <input matInput readonly [matDatepicker]="datepicker2" placeholder="" [(ngModel)]="CheckOut" name="CheckOut">
+                            <mat-datepicker-toggle [for]="datepicker2"></mat-datepicker-toggle>
+                            <mat-datepicker #datepicker2></mat-datepicker>
+                            <div>
+                                <label class="cityName">1 <span>Mar 2022</span></label>
+                                <label class="cityText">Tuesday</label>
+                            </div>
+                        </mat-form-field>
+                    </div>
+                    
+                    <div class="input-content">
+                        <div class="class" (click)="onClick()">
+                            <label class="head">Rooms & Guests</label>
+                            <label class="cityName">{{roomCounter}} <span>Room</span> {{adultCounter}} <span>Adult</span> {{childCounter ? childCounter : ''}} <span *ngIf="childCounter">Child</span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner-bottom">
+                    <div class="mb-3 bottomInner">
+                        <label class="fare-label">Popular Filters :</label>
+                        <mat-radio-group class="customRadioGroup customScroll" [(ngModel)]="selectedFilter">
+                            <mat-radio-button value="1">Full <br> Board</mat-radio-button>
+                            <mat-radio-button value="2">Half <br> Board</mat-radio-button>
+                            <mat-radio-button value="3">Partner <br> Exclusive Rate</mat-radio-button>
+                            <mat-radio-button value="4">Free <br> Cancellation</mat-radio-button>
+                            <mat-radio-button value="5">Free <br> Breakfast</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                    
+                    <div>
+                        <label class="fare-label">Trending Searches:</label>
+                        <div class="recent-searches">
+                            <div class="search-item" (click)="gotoNext()">
+                                <div class="searchtrip">
+                                   <p>Mumbai, India</p>
+                                </div>
+                            </div>
+                            <div class="search-item" (click)="gotoNext()">
+                                <div class="searchtrip">
+                                    <p>London, United Kingdom</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button mat-flat-button class="search-btn" (click)="gotoNext()">
+                    <i class="material-icons">search</i>
+                    Search
+                </button>
+                <div class="positionClass" *ngIf="roomsGuests">
+                    <div class="counter-container">
+                        <div class="main-counter">
+                            <label class="heads">Rooms</label>
+                            <label class="cityText"></label>
+                            <div class="counter">
+                                <button (click)="decrement('room')" [disabled]="roomCounter === 1">
+                                    <span class="material-icons">remove</span>
+                                </button> 
+                                <span>{{roomCounter}}</span>
+                                <button class="plus" (click)="increment('room')">
+                                    <span class="material-icons">add</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="main-counter">
+                            <label class="heads">Adults</label>
+                            <label class="cityText"></label>
+                            <div class="counter">
+                                <button (click)="decrement('adult')" [disabled]="adultCounter === 0">
+                                    <span class="material-icons">remove</span>
+                                </button> 
+                                <span>{{adultCounter}}</span>
+                                <button class="plus" (click)="increment('adult')">
+                                    <span class="material-icons">add</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="main-counter m-0">
+                            <div class="d-flex align-items-end flex-wrap">
+                                <label class="heads">Children</label>
+                                <label class="cityText ml-1 mb-0">(Aged 0-12 yrs)</label>
+                            </div>
+                            <div class="counter">
+                                <button (click)="decrement('child')" [disabled]="childCounter === 0">
+                                    <span class="material-icons">remove</span>
+                                </button> 
+                                <span>{{childCounter}}</span>
+                                <button class="plus" (click)="increment('child')">
+                                    <span class="material-icons">add</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="notetext">Please provide right number of children along with their right age for best <br>options and prices.</p>
+                    <div class="classFooter">
+                        <button class="cancel-btn" (click)="onClick()">Cancel</button> 
+                        <button class="done-btn" (click)="onClick()">Done</button> 
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <div class="other-section">
+        <div class="container">
+            <app-offer></app-offer>
+            <app-hotel></app-hotel>
+            <!-- <app-international-trip></app-international-trip> -->
+            <app-why-dreamland [type]="'hotels'"></app-why-dreamland>
+            <app-faq [type]="'hotel'"></app-faq>
+        </div>
+    </div>
+</div>

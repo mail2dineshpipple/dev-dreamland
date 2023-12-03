@@ -1,0 +1,466 @@
+<div id="flightList">
+    <div class="innerpage-banner">
+        <div class="container">
+            <div class="bannerInner" *ngIf="!isSearchModify">
+                <div class="bannerLocation">
+                    <h3>Delhi to Bangalore</h3>
+                    <div>
+                        <span>21 sep - 21 sep</span> | <span>{{Traveller}} Traveller</span>
+                    </div>
+                </div>
+                <div class="bannerIcon">
+                    <i class="material-icons" (click)="showSearchModify(true)">edit_square</i>
+                    <i class="material-icons" (click)="openDialog()">filter_alt</i>
+                    <i class="material-icons">share</i>
+                </div>
+            </div>
+            <div *ngIf="isSearchModify">
+                <div class="">
+                    <mat-radio-group class="customRadioGroup customScroll" [(ngModel)]="search.flightType">
+                        <mat-radio-button value="OneWay">One Way Trip</mat-radio-button>
+                        <mat-radio-button value="RoundWay">Round Trip</mat-radio-button>
+                        <mat-radio-button value="Multicity">Multy City</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="search-container">
+                    <div class="search-inner">
+                        <div class="input-content">
+                            <div (click)="ontest('From')">
+                                <label class="head">From</label>
+                                <div class="search-far">
+                                    <label class="cityName">{{selectFrom.Name}} {{selectFrom.Code}}</label>
+                                    <!-- <label class="cityText">{{selectFrom.Airport}}</label> -->
+                                </div>
+                            </div>
+                            <div class="customNgselect" *ngIf="isShow">
+                                <ng-select [items]="flightList" [isOpen]="true" class="flight-select"
+                                    bindLabel="Name"
+                                    [loading]="peopleLoading"
+                                    [searchFn]="customSearchFn"
+                                    [clearable]="false"
+                                    [openOnEnter]="true"
+                                    [dropdownPosition]="'bottom'"
+                                    (change)="onSelect($event, 'From')">
+                                    <ng-template ng-option-tmp let-item="item">
+                                        <div class="option-row">
+                                            <div class="left">
+                                                <img src="assets/images/planeicon.svg" alt="planeicon">
+                                            </div>
+                                            <div class="right">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div class="tilte">{{item.Name}} {{item.Code}}</div>
+                                                    <div class="d-flex align-items-center">
+                                                        <span>{{item.Country}}</span>
+                                                        <img src="assets/images/indian-flag.png" alt="flagicon">
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex justify-content-between">
+                                                    <span>{{item.Airport}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                </ng-select>
+                            </div>
+                        </div>
+                        <div class="exchange">
+                            <div class="ex-btn" (click)="onReverse()">
+                                <i class="material-icons">sync_alt</i>
+                            </div>
+                        </div>
+                        <div class="input-content ">
+                            <div (click)="ontest('To')">
+                                <label class="head">To</label>
+                                <div class="search-far">
+                                    <label class="cityName">{{selectTo.Name}} {{selectTo.Code}}</label>
+                                    <!-- <label class="cityText">{{selectFrom.Airport}}</label> -->
+                                </div>
+                            </div>
+                            <div class="customNgselect" *ngIf="isShow2">
+                                <ng-select [items]="flightList" [isOpen]="true" class="flight-select"
+                                    bindLabel="Name"
+                                    [loading]="peopleLoading"
+                                    [searchFn]="customSearchFn"
+                                    [clearable]="false"
+                                    [openOnEnter]="true"
+                                    [dropdownPosition]="'bottom'"
+                                    (change)="onSelect($event, 'To')">
+                                    <ng-template ng-option-tmp let-item="item">
+                                        <div class="option-row">
+                                            <div class="left">
+                                                <img src="assets/images/planeicon.svg" alt="planeicon">
+                                            </div>
+                                            <div class="right">
+                                                <div class="tilte">{{item.Name}} {{item.Code}}</div>
+                                                <div class="d-flex justify-content-between">
+                                                    <span>{{item.Airport}}</span>
+                                                    <span>{{item.Country}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                </ng-select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-inner">
+                        <div class="input-content">
+                            <mat-form-field appearance="fill" class="example-form-field custom-datePicker" (click)="datepicker.open()" >
+                                <label class="head">Departure</label>
+                                <input matInput class="cityName" [matDatepicker]="datepicker" placeholder="" [(ngModel)]="Departure" name="Departure">
+                                <mat-datepicker-toggle [for]="datepicker"></mat-datepicker-toggle>
+                                <mat-datepicker #datepicker></mat-datepicker>
+                                <div>
+                                    <label class="cityName">1 Mar 2022</label>
+                                </div>
+                            </mat-form-field>
+                        </div>
+                        <div class="input-content">
+                            <mat-form-field appearance="fill" class="example-form-field custom-datePicker" (click)="datepicker1.open()">
+                                <label class="head">Return</label>
+                                <input matInput class="cityName" [matDatepicker]="datepicker1" placeholder="" [(ngModel)]="Return" name="Return">
+                                <mat-datepicker-toggle [for]="datepicker1"></mat-datepicker-toggle>
+                                <mat-datepicker #datepicker1></mat-datepicker>
+                                <div>
+                                    <label class="cityName">5 Mar 2022</label>
+                                </div>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="input-inner1">
+                        <div class="input-content">
+                            <div class="Passenger">
+                                <div class="class" (click)="onClick()">
+                                   <label class="head">Passenger & Class</label>
+                                   <div class="search-far">
+                                       <label class="cityName">{{Traveller}} Traveller<span *ngIf="Traveller > 1">s</span></label>
+                                    </div>
+                                </div>
+                                <button mat-flat-button class="search-btn" (click)="showSearchModify(false)">
+                                    <i class="material-icons">search</i>Update Search
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-container" *ngIf="flightType === 'Multicity'">
+                    <div class="search-inner">
+                        <div class="input-content">
+                            <div (click)="ontest('From')">
+                                <label class="head">From</label>
+                                <div class="search-far">
+                                    <label class="cityName">{{selectFrom.Name}} {{selectFrom.Code}}</label>
+                                    <!-- <label class="cityText">{{selectFrom.Airport}}</label> -->
+                                </div>
+                            </div>
+                            <div class="customNgselect" *ngIf="isShow">
+                                <ng-select [items]="flightList" [isOpen]="true" class="flight-select"
+                                    bindLabel="Name"
+                                    [loading]="peopleLoading"
+                                    [searchFn]="customSearchFn"
+                                    [clearable]="false"
+                                    [openOnEnter]="true"
+                                    [dropdownPosition]="'bottom'"
+                                    (change)="onSelect($event, 'From')">
+                                    <ng-template ng-option-tmp let-item="item">
+                                        <div class="option-row">
+                                            <div class="left">
+                                                <img src="assets/images/planeicon.svg" alt="planeicon">
+                                            </div>
+                                            <div class="right">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div class="tilte">{{item.Name}} {{item.Code}}</div>
+                                                    <div class="d-flex align-items-center">
+                                                        <span>{{item.Country}}</span>
+                                                        <img src="assets/images/indian-flag.png" alt="flagicon">
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex justify-content-between">
+                                                    <span>{{item.Airport}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                </ng-select>
+                            </div>
+                        </div>
+                        <div class="exchange">
+                            <div class="ex-btn" (click)="onReverse()">
+                                <i class="material-icons">sync_alt</i>
+                            </div>
+                        </div>
+                        <div class="input-content ">
+                            <div (click)="ontest('To')">
+                                <label class="head">To</label>
+                                <div class="search-far">
+                                    <label class="cityName">{{selectTo.Name}} {{selectTo.Code}}</label>
+                                    <!-- <label class="cityText">{{selectFrom.Airport}}</label> -->
+                                </div>
+                            </div>
+                            <div class="customNgselect" *ngIf="isShow2">
+                                <ng-select [items]="flightList" [isOpen]="true" class="flight-select"
+                                    bindLabel="Name"
+                                    [loading]="peopleLoading"
+                                    [searchFn]="customSearchFn"
+                                    [clearable]="false"
+                                    [openOnEnter]="true"
+                                    [dropdownPosition]="'bottom'"
+                                    (change)="onSelect($event, 'To')">
+                                    <ng-template ng-option-tmp let-item="item">
+                                        <div class="option-row">
+                                            <div class="left">
+                                                <img src="assets/images/planeicon.svg" alt="planeicon">
+                                            </div>
+                                            <div class="right">
+                                                <div class="tilte">{{item.Name}} {{item.Code}}</div>
+                                                <div class="d-flex justify-content-between">
+                                                    <span>{{item.Airport}}</span>
+                                                    <span>{{item.Country}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                </ng-select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-inner">
+                        <div class="input-content">
+                            <mat-form-field appearance="fill" class="example-form-field custom-datePicker" (click)="datepicker2.open()">
+                                <label class="head">Departure</label>
+                                <input matInput class="cityName" [matDatepicker]="datepicker2" placeholder="" [(ngModel)]="Departure" name="Departure">
+                                <mat-datepicker-toggle [for]="datepicker2"></mat-datepicker-toggle>
+                                <mat-datepicker #datepicker2></mat-datepicker>
+                                <div>
+                                    <label class="cityName">1 Mar 2022</label>
+                                </div>
+                            </mat-form-field>
+                        </div>
+                        <div class="input-content d-flex align-items-end">
+                            <div class="icon">
+                                <span class="material-icons">add</span>
+                            </div>
+                            <!-- <div class="icon">
+                                <span class="material-icons red">close</span>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between align-items-end">
+                    <div class="fareType">
+                        <label class="head p-0">Fare Type</label>
+                        <mat-radio-group class="customRadioGroup customScroll HideScroll py-1" [(ngModel)]="selectedType">
+                            <mat-radio-button value="1">Regular</mat-radio-button>
+                            <mat-radio-button value="2" matTooltip="Armed forces Fares: Applicable for serving and retired personnel of Armed Forces and Paramilitary Forces, their recognised dependants like spouses and children, and war widows. It is mandatory to show a valid ID or dependant card at the airport, without which boarding might be denied." aria-label="Button that displays a tooltip when focused or hovered over">Armed Forces</mat-radio-button>
+                            <mat-radio-button value="3" matTooltip="Student Fares: Only students above 12 years of age are eligible for special fares and/or additional baggage allowances. Carrying valid student ID cards and student visas (where applicable) is mandatory, else the passenger may be denied boarding or asked to pay for extra baggage." aria-label="Button that displays a tooltip when focused or hovered over">Student</mat-radio-button>
+                            <mat-radio-button value="4" matTooltip="Senior Citizen Fares: Only senior citizens above the age of 60 years can avail this special fare. It is mandatory to produce proof of Date of Birth at the airport, without which prevailing fares will be charged." aria-label="Button that displays a tooltip when focused or hovered over">Senior Citizen</mat-radio-button>
+                            <mat-radio-button value="5" matTooltip="Doctor&nurses Fares: Applicable only for medical personnel. It is mandatory to show a valid ID at the airport, without which boarding may be denied." aria-label="Button that displays a tooltip when focused or hovered over">Doctors & Nurses</mat-radio-button>
+                            <mat-radio-button value="6" matTooltip="Doubles Seats Fares: Step up physical distancing by booking two or three adjacent seats for one traveller. Opt from ‘Double/ Entire Row’ by Indigo or ‘GoMore’ service by GoAir - available only for domestic one-way economy class bookings.." aria-label="Button that displays a tooltip when focused or hovered over">Doubles Seats</mat-radio-button>                    
+                        </mat-radio-group>
+                    </div>
+                    <div class="filterBtn">
+                        <button mat-flat-button class="modalBotton" (click)="openDialog()"><i class="material-icons">filter_alt</i></button>
+                    </div>
+                </div>
+                <div class="positionClass" *ngIf="travellerCabin">
+                    <div class="counter-container">
+                        <div class="main-counter">
+                            <label class="heads">Adults</label>
+                            <label class="cityText">(Aged 12+ yrs)</label>
+                            <div class="counter">
+                                <button (click)="decrement('adult')" [disabled]="adultCounter === 0">
+                                    <span class="material-icons">remove</span>
+                                </button> 
+                                <span>{{adultCounter}}</span>
+                                <button class="plus" (click)="increment('adult')">
+                                    <span class="material-icons">add</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="main-counter">
+                            <label class="heads">Children</label>
+                            <label class="cityText">(Aged 2-12 yrs)</label>
+                            <div class="counter">
+                                <button (click)="decrement('child')" [disabled]="childCounter === 0">
+                                    <span class="material-icons">remove</span>
+                                </button> 
+                                <span>{{childCounter}}</span>
+                                <button class="plus" (click)="increment('child')">
+                                    <span class="material-icons">add</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="main-counter">
+                            <label class="heads">Infants</label>
+                            <label class="cityText">(Below 2 yrs)</label>
+                            <div class="counter">
+                                <button (click)="decrement('infant')" [disabled]="infantCounter === 0">
+                                    <span class="material-icons">remove</span>
+                                </button> 
+                                <span>{{infantCounter}}</span>
+                                <button class="plus" (click)="increment('infant')">
+                                    <span class="material-icons">add</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <label class="heads mb-2">Cabin</label>
+                        <mat-button-toggle-group [(ngModel)]="CabinType" aria-label="Type">
+                            <mat-button-toggle value="Economy">Economy</mat-button-toggle>
+                            <mat-button-toggle value="Prem.Economy">Prem.Economy</mat-button-toggle>
+                            <mat-button-toggle value="Business">Business</mat-button-toggle>
+                            <mat-button-toggle value="First">First</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </div>
+                    <div class="classFooter">
+                        <button class="cancel-btn" (click)="onClick()">Cancel</button> 
+                        <button class="done-btn" (click)="onClick()">Done</button> 
+                    </div>
+                </div>
+            </div>
+            <div class="customTab" *ngIf="flightType === 'RoundWay' || flightType === 'Multicity'">
+                <div class="tabInner" *ngFor="let item of roundtripArr" [ngClass]="{'active': item?.isActive}" (click)="roundtripTab(item)">
+                    <div class="tabLocation">{{item.departure}}, {{item.date}}</div>
+                    <div class="tabDetails">
+                        <img class="tabImg" src="{{item.flghtImg}}">
+                        <span class="tabTime">{{item.time}}</span>
+                        <span class="tabAmount">{{item.amount}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="list-row">
+        <div class="container">
+            <app-onewaylist *ngIf="flightType === 'OneWay'" (onClickCheckbox)="changeCheckbox($event)"></app-onewaylist>
+            <app-twowaylist *ngIf="flightType === 'RoundWay' || flightType === 'Multicity'" [activeFlight]="selectedRoundtripTab"></app-twowaylist>
+        </div>
+    </div>
+    <div class="shareFooter" *ngIf="checkboxArr?.length">
+        <div class="container">
+            <div class="shareDetails">
+                <div class="footerImg">
+                    <img src="assets/images/whatsapp.png">
+                </div>
+                <h2>Share Details via WhatsApp or Email</h2>
+            </div>
+            <div class="shareInner">
+                <div class="d-flex align-items-center right">
+                    <div class="footerImg">
+                        <img src="assets/images/plane1.png">
+                    </div>
+                    <span>{{checkboxArr?.length}}/5</span>
+                </div>
+                <button mat-flat-button class="modalBotton" (click)="onSidepanel(true)">REVIEW & SHARE</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sidePanel" [ngClass]="{'open': sidePanel}">
+    <div class="panelRight">
+        <div class="panelHead">
+            <div>
+                <h1>Review WhatsApp Share Details (1/5)</h1>
+                <span class="customSpan">You need to login on WhatsApp web to be able to share these flight(s) to your customer's WhatsApp number</span>
+            </div>
+            <div class="panelIcon" (click)="onSidepanel(false)">
+                <i class="material-icons">
+                    close
+                </i>
+            </div>
+        </div>
+        <div class="panelBody">
+            <div class="content">
+                <div>
+                    <h1>One way Flights from Ahmedabad to Mumbai</h1>
+                    <div class="customLabel">Departure <b>Thu, 10 Aug 2023</b> | <b>Economy</b> | <b>1</b> Adult</div>
+                </div>
+                <div class="customLabel blue">CLEAR ALL</div>
+            </div>
+            <div class="panelCard">
+                <div>
+                    <div class="panalcardInner">
+                        <div class="panelImg">
+                            <img src="assets/images/AK.gif">
+                        </div>
+                        <div class="mr-3">
+                            <h5>Akasa Air</h5>
+                            <div class="customLabel">QP 1114</div>
+                        </div>
+                        <div class="m-10">
+                            <h4>07:45</h4>
+                            <div class="customLabel">AMD</div>
+                        </div>
+                        <div class="m-10 text-center" style="width: 75px;">
+                            <div class="customLabel">01 h 25 m</div>
+                            <div class="cBorder"></div>
+                            <span>Non stop</span>
+                        </div>
+                        <div>
+                            <h4>09:10</h4>
+                            <div class="customLabel">BOM</div>
+                        </div>
+                    </div>
+                    <div class="baggage">
+                        <div class="d-flex align-items-center mr-md-2 mb-md-0 mb-2">
+                            <div class="bagImg">
+                                <img src="assets/images/cabinbag.png">
+                            </div>
+                            <div class="customLabel">Baggage 7 Kgs | 15 Kgs</div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div class="closeIcon"><i class="material-icons">close</i></div>
+                            <div class="customLabel red">Meals not Included</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex flex-md-row flex-column">
+                    <div>
+                        <h5>₹ 2,470</h5>
+                        <div class="customLabel">(Excluding PG charges)</div>
+                    </div>
+                    <div class="d-flex align-items-center mt-2 mt-md-0">
+                        <mat-form-field class="panelInput ml-md-3 ml-0">
+                            <mat-label>ADD YOUR QUOTE</mat-label>
+                            <input matInput type="number">
+                        </mat-form-field>
+                        <div class="remove">-</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panelFooter">
+            <div class="socialLink pb-0">
+                <div class="leftside">
+                    <label class="customLabel mb-1">ENTER CUSTOMER'S WHATSAPP NUMBER</label>
+                    <div class="d-flex align-items-center">
+                        <span class="customSpan mr-1">+91</span>
+                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        <input type="text"> 
+                    </div>
+                </div>
+                <div class="modalBotton">
+                    <img src="assets/images/whatsapp.png">
+                    SHARE ON WHATSAPP
+                </div>
+            </div>
+            
+            <div class="socialLink pt-2">
+                <div class="leftside">
+                    <label class="customLabel mb-1">ENTER CUSTOMER'S MAIL</label>
+                    <div class="d-flex align-items-center">
+                        <!-- <span class="customSpan mr-1">+91</span>
+                        <i class="fa fa-angle-down" aria-hidden="true"></i> -->
+                        <input type="email"> 
+                    </div>
+                </div>
+                <div class="modalBotton">
+                    <img src="assets/images/gmail.png">
+                    SHARE ON MAIL
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overLay" (click)="onSidepanel(false)"></div>
+</div>

@@ -1,0 +1,297 @@
+@import "./../../../../assets/scss/variable.scss";
+// @import "./.././international-trip/international-trip.component.scss";
+
+.whyDreamland-section {
+    .whyDreamland-body {
+        display: flex;
+        flex-wrap: wrap;
+        @media only screen and (max-width: 767px) {
+            display: none;
+        }
+        .dl-item {
+            width: 20%;
+            text-align: center;
+            position: relative;
+            @media only screen and (max-width: 768px) {
+                width: 100%;
+                margin-bottom: 16px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                height: 100%;
+                right: -10px;
+                top: 0px;
+                width: 10px !important;
+                background-image: url('./../../../../assets/images/rightshadow.png');
+                background-size: 100% 100%;
+                @media only screen and (max-width: 768px) {
+                    display: none;
+                }
+            }
+            &:last-child {
+                &::after {
+                    display: none;
+                }
+            }
+            .item-inner {
+                padding: 0 14px;
+                // display: flex;
+                // flex-direction: column;
+                // border-radius: 10px;
+                // height: 250px;
+                // align-items: center;
+                // background-color: #ffffff;
+                // box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15);
+                .whyImage {
+                    max-width: 100%;
+                    width: 70px;
+                    margin-bottom: 10px;
+                    height: 70px;
+                }
+                h5 {
+                    font-size: 20px;
+                    line-height: 24px;
+                    margin-bottom: 12px;
+                    color: #303030;
+                    font-family: "Segoe-Bold";
+                    min-height: 48px;
+                }
+                p {
+                    color: #303030;
+                }
+            }
+        }
+    }   
+    &.WhatYouGet {
+        .whyDreamland-body {
+            .dl-item {
+                width: 25%;
+                @media only screen and (max-width: 768px) {
+                    width: 100%;
+                    margin-bottom: 16px;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+                &::after {
+                    display: none;
+                }
+                .item-inner {
+                    display: unset;
+                    border-radius: unset;
+                    height: unset;
+                    box-shadow: none;
+                    .whyImage {
+                        height: auto;
+                        margin-bottom: 10px;
+                    }
+                    h5 {
+                        min-height: auto;
+                    }
+                }
+                .sanhoverget {
+                    background-image: linear-gradient(to right,#ff8e01, #cc7305);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 0;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 10px;
+                    transition: .2s ease;
+                    z-index: 0;
+                    p {
+                        display: none;
+                        color: #fff;
+                        padding: 10px 16px;
+                        margin: 0;
+                        transition: opacity;
+                        transition-timing-function: ease;
+                        transition-duration: 100ms;
+                        transition-delay: 0.5s;
+                        z-index: 1;
+                    }
+                }
+                &:hover {
+                    .sanhoverget {
+                        height: 100%;
+                        cursor: default;
+                        p {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.dreamHoneymoon-section {
+    padding-top: 40px;
+    padding: 50px 0px;
+    img {
+        width: 100%;
+        cursor: pointer;
+    }
+}
+.newsletter-section {
+    padding: 40px 0 50px;
+    p {
+        font-family: "Rubik", sans-serif;
+        @media only screen and (max-width: 768px) {
+            font-size: 13px;
+        }
+    }
+    h3 {
+        font-family: "Segoe-Bold";
+        margin: 0;
+        font-size: 26px;
+        line-height: 30px;
+        @media only screen and (max-width: 991px) {
+            font-size: 24px;
+            line-height: 28px;
+        }
+        @media only screen and (max-width: 768px) {
+            font-size: 22px;
+            line-height: 26px;
+        }
+    }
+    .serachbar {
+        display: flex;
+        background-color: #fff;
+        border-radius: 8px;
+        // overflow: hidden;
+        height: 38px;
+        margin-bottom: 16px;
+        .mat-input-element {
+            margin-top: 0;
+            padding: 5px 14px;
+            font-size: 14px;
+            color: #232323;
+            font-family: "Rubik", sans-serif;
+        }
+        .mat-flat-button {
+            background-color: $themeOrange;
+            color: #fff;
+            font-family: "Segoe-Bold";
+            min-width: auto;
+            padding: 0 12px;
+            font-size: 15px;
+            border-radius: 0;
+            outline: 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .custom-dropdown {
+            .dropdown-toggle {
+                height: 100%;
+                box-shadow: none !important;
+                padding-right: 0;
+            }
+            .dropdown-menu {
+                min-width: 60px;
+                img {
+                    margin-right: 8px;
+                }
+            }
+            img {
+                width: 20px;
+            }
+        }
+    }
+    .dowload-appnow {
+        // background-image: linear-gradient(130deg, $themeDark, $themeLight);
+        background-image: linear-gradient(130deg, #0254a0, #20bcff);
+        border-radius: 10px;
+        padding: 16px;
+        box-shadow: 0px 3px 5px rgb(0 0 0 / 15%);
+        color: #ffffff;
+        display: flex;
+        flex-wrap: wrap;
+        @media only screen and (max-width: 768px) {
+            margin-bottom: 16px;
+        }
+        @media only screen and (max-width: 576px) {
+            flex-direction: column;
+        }
+        .dl-left {
+            max-width: 330px;
+            width: 100%;
+        }
+        .dl-right {
+            margin-left: 16px;
+            flex: 1;
+            @media only screen and (max-width: 576px) {
+                margin-left: 0;
+                margin-top: 16px;
+            }
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+    .newsletter {
+        background-image: url('./../../../../assets/images/newsbg.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 10px;
+        padding: 16px;
+        box-shadow: 0px 3px 5px rgb(0 0 0 / 15%);
+        color: #ffffff;
+        height: 100%;
+        h3 {
+            margin-bottom: 12px;
+        }
+        .serachbar {
+            @media only screen and (max-width: 768px) {
+                margin-bottom: 8px;
+            }
+        }
+    }
+}
+.trips-section, .green-slider {
+    margin-bottom: 0;
+    display: none;
+    @media only screen and (max-width: 767px) {
+        display: block;
+    }
+    .section-title {
+        @media only screen and (max-width: 767px) {
+            width: 100%;
+            text-align: center;
+        }
+    }
+    .item-inner {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        align-items: center;
+        .whyImage {
+            max-width: 100%;
+            width: auto;
+            margin-bottom: 16px;
+            height: 50px;
+        }
+        h5 {
+            font-size: 20px;
+            line-height: 24px;
+            margin-bottom: 12px;
+            color: #303030;
+            font-family: "Segoe-Bold";
+            min-height: 48px;
+        }
+        p {
+            color: #303030;
+            margin: 0;
+            text-align: center;
+        }
+    }
+    ::ng-deep.owl-nav {
+        display: none !important;
+    }
+}

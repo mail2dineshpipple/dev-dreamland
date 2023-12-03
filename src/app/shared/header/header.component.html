@@ -1,0 +1,208 @@
+<header>
+  <div class="container nav-container">
+    <div class="header-inner">
+      <div class="left">
+        <div class="logo" routerLink="/">
+          <img src="assets/images/logo.png" alt="DreamLand Logo">
+        </div>
+        <ul class="menus">
+          <li routerLink="flights" routerLinkActive="active">
+            <img src="assets/images/flight.png">
+            <span>Flights</span>
+          </li>
+          <li routerLink="hotels" routerLinkActive="active">
+            <img src="assets/images/hotel.png ">
+            <span>Hotels</span>
+          </li>
+          <li (click)="commonService.openUrl()">
+            <img src="assets/images/holiday.png">
+            <span>Holidays</span>
+          </li>
+        </ul>
+      </div>
+      <div class="login-menu">
+        <div class="country" (click)="openLanguage()">
+          <svg data-v-cd9025f0="" class="flag" viewBox="0 0 60 40" width="16" height="16"><path fill="#F93" d="M0 0h60v40H0z"></path><path fill="#FFF" d="M0 13.3h60v13.3H0z"></path><path fill="#128807" d="M0 26.7h60V40H0z"></path><path fill="#008" d="M30 14.7c-3 0-5.3 2.4-5.3 5.3s2.4 5.3 5.3 5.3 5.3-2.4 5.3-5.3-2.3-5.3-5.3-5.3zm3 8.9c-.1-.1-.2-.1-.3 0-.1.1-.1.2 0 .3-.2.1-.4.3-.7.4 0-.1-.2-.2-.3-.1-.1 0-.2.2-.1.3-.2.1-.5.1-.7.2 0-.1-.1-.2-.3-.2-.1 0-.2.1-.2.3h-.8c0-.1-.1-.2-.2-.3-.1 0-.2.1-.3.2-.3 0-.5-.1-.7-.2 0-.1 0-.3-.1-.3s-.3 0-.3.1c-.2-.1-.4-.2-.7-.4.1-.1.1-.2 0-.3-.1-.1-.2-.1-.3 0-.2-.2-.4-.3-.5-.5.1-.1.1-.2 0-.3-.1-.1-.2-.1-.3 0-.1-.2-.3-.4-.4-.7.1 0 .2-.2.1-.3 0-.1-.2-.2-.3-.1-.1-.2-.1-.5-.2-.7.1 0 .2-.1.2-.3 0-.1-.1-.2-.3-.2v-.8c.1 0 .2-.1.3-.2 0-.1-.1-.2-.2-.3 0-.3.1-.5.2-.7.1 0 .3 0 .3-.1s0-.3-.1-.3c.1-.2.2-.4.4-.7.1.1.2.1.3 0 .1-.1.1-.2 0-.3.2-.2.3-.4.5-.5.1.1.2.1.3 0 .1-.1.1-.2 0-.3.2-.1.4-.3.7-.4 0 .1.2.2.3.1.1 0 .2-.2.1-.3.2-.1.5-.1.7-.2 0 .1.1.2.3.2.1 0 .2-.1.2-.3h.8c0 .1.1.2.2.3.1 0 .2-.1.3-.2.3 0       .5.1.7.2 0 .1 0 .3.1.3s.3 0 .3-.1c.2.1.4.2.7.4-.1.1-.1.2 0 .3.1.1.2.1.3 0 .2.2.4.3.5.5-.1.1-.1.2 0 .3.1.1.2.1.3 0 .1.2.3.4.4.7-.1 0-.2.2-.1.3 0 .1.2.2.3.1.1.2.1.5.2.7-.1 0-.2.1-.2.3 0 .1.1.2.3.2v.8c-.1 0-.2.1-.3.2 0 .1.1.2.2.3 0 .3-.1.5-.2.7-.1 0-.3 0-.3.1s0 .3.1.3c-.1.2-.2.4-.4.7-.1-.1-.2-.1-.3 0-.1.1-.1.2 0 .3l-.5.5zm-2.2-3.1l-.1.1.7.6 1.9 2.1-2.1-1.9-.6-.7-.1.1.6.8 1.3 2.5-1.5-2.3-.4-.9s-.1 0-.1.1l.4.9.6 2.7-.9-2.7-.1-.9h-.1l.1.9-.4 2.8-.2-2.8.1-.9h-.1l-.1.9-.9 2.7.6-2.7.4-.9s-.1 0-.1-.1l-.4.9-1.6 2.2 1.3-2.5.6-.8-.1-.1-.6.7-2.1 1.9 1.9-2.1.7-.6-.1-.1-.8.6-2.5 1.3 2.3-1.5.9-.4s0-.1-.1-.1l-.9.4-2.7.6 2.7-.9.9-.1v-.1l-.9.1-2.9-.3 2.8-.2.9.1v-.1l-.9-.1-2.7-.9 2.7.6.9.4s0-.1.1-.1l-.9-.4-2.2-1.6 2.5 1.3.8.6.1-.1-.7-.6-1.9-2.1 2.1 1.9.6.7.1-.1-.6-.8-1.3-2.5 1.5 2.3.4.9s.1 0 .1-.1l-.4-.9-.6-2.7.9 2.7.1.9h.1l-.1-.9.2-2.8.2 2.8-.1.9h.1l.1-.9.9-2.7-.6 2.7-.4.9s.1 0 .1.1l.4-.9 1.5-2.3-1.3 2.5-.6.8.1.1.6-.7 2.1-1.9-1.9 2.1-.7.6.1.1.8-.6 2.5-1.3-2.3 1.5-.9.4s0 .1.1.1l.9-.4 2.7-.6-2.7.9-.9.1v.1l.9-.1 2.8.2-2.8.2-.       7-.1v.1l.9.1 2.7.9-2.7-.6-.9-.4c0 .2 0 .3-.1.4l.9.3 2.3 1.5-2.5-1.3-.7-.5z"></path></svg>
+          <svg class="down" width="12" height="12" viewBox="0 0 48 48" fill="none"><path d="M22.5409 31.4437L10.5787 18.6839C9.97995 18.0453 10.4328 17 11.3082 17L36.6918 17C37.5672 17 38.0201 18.0453 37.4213 18.6839L25.4591 31.4437C24.6689 32.2865 23.3311 32.2865 22.5409 31.4437Z" fill="#757575" stroke="#757575" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </div>
+        <div class="country" (click)="openCurrency()">
+          <span>INR</span>
+          <svg class="down" width="12" height="12" viewBox="0 0 48 48" fill="none"><path d="M22.5409 31.4437L10.5787 18.6839C9.97995 18.0453 10.4328 17 11.3082 17L36.6918 17C37.5672 17 38.0201 18.0453 37.4213 18.6839L25.4591 31.4437C24.6689 32.2865 23.3311 32.2865 22.5409 31.4437Z" fill="#757575" stroke="#757575" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </div>
+        <!-- <div class="agent-programme">
+          <img src="assets/images/agent-program.png">
+          <p>Agent Programme
+            <span>Save you a lot of money</span>
+          </p>
+        </div> -->
+        <div class="d-flex align-items-center">
+          <div class="notIcon" id="notificationIcon">
+            <i class="material-icons">
+              notifications
+            </i>
+              <span>0</span>
+          </div>
+        </div>
+        <div class="check-in" (click)="gotonext('webCheckin')">
+          <img src="assets/images/web-check.png">
+          <label>Web Check-In</label>
+        </div>
+        <div class="dropdown custom-dropdown support-dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="assets/images/social.png">
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <ul>
+              <li class="dropdown-item">
+                <a class="tel" href="tel:01145501020">
+                  <i class="material-icons">
+                    phone
+                  </i>
+                  011 4550 1020
+                </a>
+              </li>
+              <li class="dropdown-item" (click)="gotonext(weNumber, true)">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>082 8562 4833</span>
+              </li>
+              <li class="dropdown-item" (click)="openEnquiry()">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>Send Enquiry</span>
+              </li>
+              <li class="dropdown-item" (click)="gotonext('payment')">
+                <i class="fa fa-credit-card" aria-hidden="true"></i>
+                <span>Make Payment</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="dropdown profile-dropdown" *ngIf="currentuser">
+          <button class="btn btn-secondary profile-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="circle">P</span>
+            <label>Hi Piyush singh</label>
+          </button>
+          <div class="dropdown-menu profile-menu" aria-labelledby="dropdownMenuButton2">
+            <ul>
+              <li class="profile-item" *ngFor="let item of List" (click)="onClickProfile(item)">
+                <div class="d-flex flex-row">
+                  <span class="my-profile profileImg" [style.background-position]="item?.position ? item?.position : null"></span>
+                   <div>
+                     <p class="dropdownmenu">{{item.name}}</p>
+                     <p class="info">{{item.span}}</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <button mat-flat-button class="mylogin" (click)="openLogin()" *ngIf="!currentuser">
+          <img src="assets/images/login.png" alt="signin"> LOGIN
+        </button>
+        <span *ngIf="isSideMenu" class="material-icons menuIcon" (click)="toggleSidebar(true)">menu</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<ng-container *ngIf="isSideMenu">
+  <div class="sidebar customScroll" [ngClass]="{'open': sidebarOpen}">
+    <div class="sidebar-inner">
+      <div class="sidebar-header" (click)="gotonext('myProfile')" *ngIf="currentuser">
+        <span class="circle">P</span>
+        <label>Hi Piyush singh</label>
+      </div>
+      <div class="sidebar-header" (click)="openLogin()" *ngIf="!currentuser">
+        <i class="material-icons">account_circle</i>
+        <div class="userInfo">
+          <h5>Hello guest!</h5>
+          <span>Login/Sign Up</span>
+        </div>
+      </div>
+      <div class="sidebar-menus">
+        <ul>
+          <li *ngFor="let menu of sidebarMenu" [ngClass]="{'active': menu?.isActive}">
+            <div class="menuItem d-flex justify-content-between" (click)="onToggle(menu)">
+              <div class="d-flex align-items-center">
+                <span class="material-icons itemIcon">{{menu.Icon}}</span>
+                {{menu.Name}}
+              </div>
+              <span class="material-icons downArrow" [ngClass]="{'up': menu?.isOpen}" *ngIf="menu?.Child?.length">expand_more</span>
+            </div>
+            <ul *ngIf="menu?.Child?.length && menu?.isOpen">
+              <li class="mt-0" *ngFor="let submenu of menu?.Child" [ngClass]="{'active': submenu?.isActive}">
+                <div class="menuItem d-flex justify-content-between" (click)="onToggle(menu, submenu)">
+                  <div class="d-flex align-items-center">
+                    <i class="{{submenu?.Icon}} itemIcon" *ngIf="submenu?.type"></i>
+                    <span class="material-icons itemIcon" *ngIf="!submenu?.type">{{submenu?.Icon}}</span>
+                    {{submenu.Name}}
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/dreamlandtravel.co.in" target="_blank">
+              <i class="fa-brands fa-facebook" id="social-accounts"></i>
+          </a>
+          <a href="https://twitter.com/dreamlandtravel" target="_blank">
+              <i class="fa-brands fa-twitter" id="social-accounts"></i>
+          </a>
+          <a href="https://www.instagram.com/dreamlandtravel.co.in/" target="_blank">
+              <i class="fa-brands fa-instagram" id="social-accounts"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/dreamlandtravel/" target="_blank">
+              <i class="fa-brands fa-linkedin-in" id="social-accounts"></i>
+          </a>
+          <a href="https://in.pinterest.com/dreamlandt/" target="_blank">
+              <i class="fa-brands fa-pinterest" id="social-accounts"></i>
+          </a>
+          <a href="https://www.youtube.com/channel/UCp9p-NkYxA1cYVqXRAVMuqg" target="_blank">
+              <i class="fa-brands fa-youtube" id="social-accounts"></i>
+          </a>
+        </div>
+        <div class="sidebar-footer" *ngIf="currentuser" (click)="onClickProfile()">
+          <i class="material-icons">
+            logout
+          </i>Logout
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="overlay" (click)="toggleSidebar(false)"></div>
+</ng-container>
+
+<div class="countryModal" [ngClass]="{'open': isOpen}">
+  <h3>Select your language</h3>
+  <div class="raw">
+    <ng-container *ngFor="let list of languageList">
+      <div class="column">
+        <img [src]="list.img" alt="">
+        <label class="customLabel">{{list.title}} ({{list.name}})</label>
+      </div>
+    </ng-container>
+  </div>
+</div>
+<div class="countryModal countryModal1" [ngClass]="{'opened': isActive}">
+  <h3>Popular currencies</h3>
+  <div class="raw">
+    <ng-container *ngFor="let list of popularList">
+      <div class="column">
+        <label class="customLabel mr-2">{{list.title}}</label>
+        <label class="customLabel">{{list.name}}</label>
+      </div>
+    </ng-container>
+  </div>
+  <h3 class="mt-2">More currencies</h3>
+  <div class="raw">
+    <ng-container *ngFor="let list of moreList">
+      <div class="column">
+        <label class="customLabel mr-2">{{list.title}}</label>
+        <label class="customLabel">{{list.name}}</label>
+      </div>
+    </ng-container>
+  </div>
+</div>

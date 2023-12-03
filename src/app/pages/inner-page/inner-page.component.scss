@@ -1,0 +1,147 @@
+#about-us {
+    position: relative;
+    background: #f2f2f2 !important;  
+    &::after {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        content: '';
+        background-color: #1b2b4f;
+        background-image: linear-gradient(to bottom, #005494, #04A7EA);
+        height: 200px;
+        z-index: 0;
+    }
+    .rightside {
+        position: absolute;
+        right: 0;
+        top: -10px;
+        width: 440px;
+        height: 200px;
+        overflow: hidden;
+        z-index: -1;
+        @media only screen and (max-width: 576px) {
+            top: 30px;
+            width: 200px;
+            height: 110px;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+    }
+    .container {
+        position: relative;
+        z-index: 1;
+        @media only screen and (max-width: 767px) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        h1 {
+            color: #ffffff;
+            font-size: 28px;
+            line-height: 32px;
+            font-weight: 600;
+            padding: 70px 0px 30px;
+            margin: 0;
+            @media only screen and (max-width: 767px) {
+                padding: 60px 16px 20px;
+                font-size: 22px;
+                line-height: 26px;
+            }
+        }
+        .pageInner {
+            padding-top: 40px;
+            padding-bottom: 50px;
+            @media only screen and (max-width: 767px) {
+                padding-bottom: 0;
+            }
+            .cardInner {
+                background-color: #ffffff;
+                padding: 30px;
+                border-radius: 8px;
+                @media only screen and (max-width: 767px) {
+                    padding: 20px 15px;
+                    border-radius: 8px 8px 0 0;
+                }
+                .cardBody {
+                    ::ng-deep .cardDetails{
+                        // margin-bottom: 20px;
+                        .cardSection {
+                            margin-bottom: 20px;
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                            p {
+                                &:last-child {
+                                    margin-bottom: 0;
+                                }
+                            }
+                            .headSpan {
+                                font-weight: 500;
+                                margin-top: 10px;
+                                margin-bottom: 5px;
+                                display: block;
+                                &:first-child {
+                                    margin-top: 0;
+                                }
+                            }
+                        }
+                        P,span {
+                            font-size: 15px;
+                            line-height: 22px;
+                            color: #4a4a4a;
+                            font-weight: 400;
+                            @media only screen and (max-width: 767px) {
+                                font-size: 13px;
+                                line-height: 17px;
+                            }
+                        }
+                        h5{
+                            font-weight: 500;
+                            color: #0254a0;
+                            font-size: 20px;
+                            line-height: 24px;
+                            margin: 0 0 10px;
+                            @media only screen and (max-width: 767px) {
+                                font-size: 18px;
+                                line-height: 22px;
+                            }
+                        }
+                        ul {
+                            padding: 0;
+                            padding-left: 15px;
+                            margin: 0;
+                            li {
+                                font-size: 15px;
+                                line-height: 22px;
+                                color: #4a4a4a;
+                                font-weight: 400;
+                                margin: 0 0 5px 0;
+                                @media only screen and (max-width: 767px) {
+                                    font-size: 13px;
+                                    line-height: 20px;
+                                }
+                            }
+                        }
+                        .footerP {
+                            font-size: 16px;
+                            line-height: 20px;
+                            font-weight: 600;
+                            text-align: center;
+                            margin: 26px 0 0;
+                        }
+                        .noRecord {
+                            margin: 0;
+                            text-align: center;
+                            width: 100%;
+                            font-size: 16px;
+                            line-height: 20px;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

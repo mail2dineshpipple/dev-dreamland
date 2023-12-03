@@ -1,0 +1,27 @@
+<div class="offer-section homepageSlider" *ngIf="offerOptions">
+  <div class="section-title">
+    <h3 class="mt-5">Exclusive Offers</h3>
+  </div>
+  <owl-carousel-o [options]="offerOptions">
+    <ng-template carouselSlide>
+      <div class="slider-img" (click)="gotoNext('offerDetails')">
+        <img src="assets/images/offer1.png" >
+      </div>
+    </ng-template>  
+    <ng-template carouselSlide>
+      <div class="slider-img" (click)="gotoNext('offerDetails')">
+        <img src="assets/images/offer2.png" >
+      </div>
+    </ng-template>  
+    <ng-template carouselSlide>
+      <div class="slider-img" (click)="gotoNext('offerDetails')">
+        <img src="assets/images/offer3.png" >
+      </div>
+    </ng-template>
+    <ng-template carouselSlide>
+      <div class="slider-img" (click)="gotoNext('offerDetails')">
+        <img src="assets/images/offer1.png" >
+      </div>
+    </ng-template>
+  </owl-carousel-o>
+</div>

@@ -1,0 +1,100 @@
+::ng-deep .enquiryModal {
+    overflow-y: auto;
+    max-width: 510px !important;
+    width: 100%;
+    @media only screen and (max-width: 767px) {
+        height: 100%;
+        min-width: 100%;
+    }
+    .mat-dialog-container{
+        background-color: rgb(255, 255, 255);
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 7px 0px;
+        border-radius: 10px;
+        padding: 0;
+        @media only screen and (max-width: 767px) {
+            border-radius: 0;
+        }
+    }
+}
+.enquiry-container {
+    position: relative;
+    .modalHeader {
+        padding: 20px 30px 0;
+        @media only screen and (max-width: 767px) {
+            padding: 16px 16px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        h1 {
+            font-size: 26px;
+            font-weight: 600;
+            color: black;
+            font-family: "Rubik", sans-serif;
+            display: flex;
+            padding-bottom: 15px;
+            @media only screen and (max-width: 767px) {
+                font-size: 20px;
+                line-height: 24px;
+            }
+        }
+        .closeBtn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            border: none;
+            background: transparent;
+            min-width: 20px;
+            height: 20px;
+            padding: 0;
+            outline: none;
+            line-height: 0;
+            cursor: pointer;
+            @media only screen and (max-width: 767px) {
+                position: unset;
+                top: 0px;
+                right: 0px;
+            }
+            img {
+                width: 20px;
+                @media only screen and (max-width: 767px) {
+                    width: 18px;
+                }
+            }
+        }
+    }
+    .modalBody {
+        padding: 15px 30px 30px;
+        @media only screen and (max-width: 767px) {
+            padding: 16px;
+        }
+        .modalInner {
+        }
+    }
+    .modalFooter {
+        display: flex;
+        justify-content: flex-end;
+        font-family: "Rubik", sans-serif;
+        padding: 0 30px;
+        margin-bottom: 30px;
+        @media only screen and (max-width: 767px) {
+            margin-bottom: 0;
+            padding: 16px;
+            position: fixed;
+            max-width: 767px;
+            bottom: 0;
+            width: 100%;
+            bottom: 0;
+        }
+        .cancelBtn {
+            font-weight: 600;
+            font-size: 16PX;
+            color: rgb(74, 74, 74);
+            cursor: pointer;
+            outline: 0;
+        }
+        .saveBtn {
+            border-radius: 4px !important;
+            width: 140px;
+        }
+    }
+}

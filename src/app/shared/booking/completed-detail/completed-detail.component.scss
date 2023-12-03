@@ -1,0 +1,894 @@
+#completed {
+    position: relative;
+    background: #f2f2f2 !important;  
+     &::after {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        content: '';
+        background-color: #1b2b4f;
+        background-image: linear-gradient(to bottom, #005494, #04A7EA);
+        height: 200px;
+        z-index: 0;
+    }
+    .container {
+        position: relative;
+        z-index: 1;
+        @media only screen and (max-width: 767px) {
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+    }
+    h1 {
+        color: #fff;
+        font-size: 22px;
+        line-height: 26px;
+        font-weight: 600;
+        margin: 45px 0 10px;
+        @media only screen and (max-width: 768px) {
+            font-size: 18px;
+            line-height: 22px;
+        }
+        @media only screen and (max-width: 576px) {
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+    .customSpan {
+        @media only screen and (max-width: 768px) {
+            font-size: 10px;
+            line-height: 14px;
+        }
+    }
+    .bookImg {
+        background-image: url(/../../../assets/images/mytrip.png);
+        background-size: 850px 1050px!important;
+        background-repeat: no-repeat;
+    }
+    .cursor {
+        cursor: pointer;
+    }
+    .pageInner {
+        padding-bottom: 50px;
+        .pageHeader {
+            padding-top: 30px;
+            .title {
+                display: flex;
+                align-items: center;
+                color: #fff;
+                i {
+                    margin: 0 8px;
+                }
+                .titleHead {
+                    color: #fff;
+                }
+            }
+            .bookData {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 876px;
+                flex-wrap: wrap;
+                @media only screen and (max-width: 1199px) {
+                  width: 100%;
+                }
+                .customLabel {
+                    color: #ededed;
+                    display: flex;
+                    margin-bottom: 5px;
+                    @media only screen and (max-width: 768px) {
+                        font-size: 12px;
+                        line-height: 16px;
+                    }
+                    @media only screen and (max-width: 768px) {
+                        font-size: 10px;
+                        line-height: 14px;
+                    }
+                }
+                .customSpan {
+                    color: #fff;
+                    margin-left: 5px;
+                }
+            }
+            .rightside {
+                position: absolute;
+                right: 0;
+                top: -10px;
+                width: 440px;
+                height: 200px;
+                overflow: hidden;
+                z-index: -1;
+                @media only screen and (max-width: 576px) {
+                    top: 30px;
+                    width: 200px;
+                    height: 110px;
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                }
+            }
+        }
+        .titleHead {
+            font-size: 16px;
+            line-height: 20px;
+            font-weight: 400;
+            display: block;
+            color: #000;
+            @media only screen and (max-width: 768px) {
+                font-size: 12px;
+                line-height: 16px;
+            }
+            @media only screen and (max-width: 576px) {
+                font-size: 10px;
+                line-height: 14px;
+            }
+            &:first-child {
+                color: #ededed;
+            }
+        }
+        .blue {
+            color: #008cff !important;
+        }
+        .black {
+            color: #000;
+        }
+        .pageBody {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            @media only screen and (max-width: 1199px) {
+                flex-direction: column-reverse;
+            }
+            .pageLeft {
+                width: 876px;
+                @media only screen and (max-width: 1199px) {
+                   width: 100%;
+                }
+                .pageContent {
+                    padding: 25px 25px 20px;
+                    border-radius: 5px;
+                    box-shadow: 0 1px 6px 0 rgba(0,0,0,.2);
+                    background-color: #fff;
+                    margin-bottom: 12px;
+                    position: relative;
+                    @media only screen and (max-width: 768px) {
+                        padding: 15px;
+                    }
+                    &:last-child {
+                        margin: 0;
+                    }
+                    &::before {
+                        content: "";
+                        background-color: #9b9b9b;
+                        height: 24px;
+                        width: 5px;
+                        position: absolute;
+                        top: 25px;
+                        left: 0;
+                        @media only screen and (max-width: 768px) {
+                            top: 15px;
+                        }
+                    }
+                    .contentHead {
+                        display: flex;
+                        align-items: center;
+                        h2 {
+                            font-size: 24px;
+                            line-height: 30px;
+                            font-weight: 600;
+                            color: #000;
+                            margin: 0;
+                            @media only screen and (max-width: 768px) {
+                                font-size: 16px;
+                                line-height: 18px;
+                            }
+                        }
+                        .rightArrow {
+                            margin-right: 25px;
+                            position: relative;
+                            margin-left: 5px;
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                width: 6px;
+                                height: 6px;
+                                border: solid #000;
+                                border-width: 2px 2px 0 0;
+                                top: 50%;
+                                transform: rotate(45deg) translateY(-70%);
+                                right: -9px;
+                            }
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                width: 8px;
+                                height: 2px;
+                                background-color: #000;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                right: -10px;
+                            }
+                        }
+                        .bookImg {
+                            width: 28px;
+                            height: 28px;
+                            background-position: -478px -395px;
+                            margin: 0 0 0 auto;
+                            &.active {
+                                transform: rotate(180deg);
+                            }
+                        }
+                    }
+                    &.content2 {
+                        background-color: #ffedd1;
+                        padding-bottom: 30px;
+                        @media only screen and (max-width: 768px) {
+                            padding: 10px;
+                        }
+                        &::before {
+                            height: 22px;
+                            background-color: #cf8100;
+                        }
+                        h5 {
+                            color: #CF8100;
+                            margin-bottom: 20px;
+                        }
+                    }
+                    &.content3 {
+                        padding-bottom: 30px;
+                        @media only screen and (max-width: 768px) {
+                            padding-bottom: 10px;
+                        }
+                        .request {
+                            background: #ffefee;
+                            padding: 12px 10px;
+                            border-radius: 4px;
+                            width: 535px;
+                            display: flex;
+                            align-items: center;
+                            @media only screen and (max-width: 1199px) {
+                                width: 100%;
+                            }
+                            .bookImg {
+                                background-position: -668px -625px;
+                                width: 22px;
+                                height: 20px;
+                                margin-right: 12px;
+                            }
+                            .customSpan {
+                                flex: 1;
+                                label {
+                                    margin: 0;
+                                    color: #008cff;
+                                    font-weight: 500;
+                                }
+                            }
+                        }
+                    }
+                    &.content4 {
+                        padding-bottom: 30px;
+                        @media only screen and (max-width: 768px) {
+                            padding-bottom: 10px;
+                        }
+                        &::before {
+                            height: 50px;
+                            @media only screen and (max-width: 768px) {
+                                height: 70px;
+                            }
+                        }
+                        .titleHead {
+                            margin-bottom: 30px;
+                            padding: 0;
+                        }
+                        .bookImg {
+                            margin-right: 15px;
+                            width: 24px;
+                            height: 20px;
+                            background-position: -54px -336px;
+                            &.img1 {
+                                background-position: -4px -133px;
+                            }
+                            &.img2 {
+                                background-position: -35px -133px;
+                            }
+                            &.img3 {
+                                width: 18px;
+                                height: 18px;
+                                background-position: -63px -134px;
+                            }
+                        }
+                        .customSpan {
+                            color: #000;
+                            font-weight: 600;
+                            &.blue {
+                                font-weight: 500;
+                            }
+                        }
+                        .tabList {
+                            display: flex;
+                            align-items: center;
+                            @media only screen and (max-width: 576px) {
+                                align-items: flex-start;
+                                flex-direction: column;
+                            }
+                            .tabName {
+                                border-radius: 4px;
+                                box-shadow: 0 1px 4px 0 rgba(0,0,0,.2);
+                                background-color: #fff;
+                                cursor: pointer;
+                                display: inline-block;
+                                padding: 12px 15px;
+                                margin-right: 15px;
+                                font-size: 13px;
+                                line-height: 20px;
+                                font-weight: 500;
+                                color: #232323;
+                                @media only screen and (max-width: 576px) {
+                                    margin-bottom: 10px;
+                                 }
+                                &:last-child {
+                                    margin: 0;
+                                }
+                                &.active {
+                                    background-color: #008cff;
+                                    color: #fff;
+                                }
+                            }
+                        }
+                        .tabBody {
+                            border-top: 1px solid #e7e7e7;
+                            margin-top: 20px;
+                            padding-top: 20px;
+                            .modalBotton {
+                                margin: 0 !important;
+                                min-width: 200px !important;
+                                height: 42px !important;
+                            }
+                            .titleHead {
+                                margin-bottom: 20px;
+                            }
+                        }
+                    }
+                    &.content5 {
+                        padding: 25px 50px 35px 25px;
+                        @media only screen and (max-width: 768px) {
+                            padding-bottom: 10px;
+                        }
+                    }
+                    h5 {
+                        font-size: 18px;
+                        line-height: 20px;
+                        font-weight: 600;
+                        color: #000;
+                        margin: 0 0 6px;
+                        @media only screen and (max-width: 768px) {
+                            font-size: 16px;
+                            line-height: 18px;
+                        }
+                        @media only screen and (max-width: 576px) {
+                            font-size: 14px;
+                            line-height: 16px;
+                        }
+                    }
+                    .dot {
+                        position: relative;
+                        margin-left: 20px;
+                        font-weight: 500;
+                        &::after {
+                            content: '';
+                            width: 8px;
+                            height: 8px;
+                            border-radius: 50%;
+                            background-color: #4a4a4a;
+                            position: absolute;
+                            left: -20px;
+                            top: 6px;
+                        }
+                    }
+                    .titleHead {
+                        padding-bottom: 45px;
+                        color: #747474;
+                        @media only screen and (max-width: 768px) {
+                           padding-bottom: 20px;
+                        }
+                    }
+                    .contentBody {
+                        .customText {
+                            font-size: 16px;
+                            line-height: 18px;
+                            font-weight: 500;
+                            display: block;
+                            color: #000;
+                            @media only screen and (max-width: 768px) {
+                                font-size: 12px;
+                                line-height: 14px;
+                            }
+                        }
+                        .customFont {
+                            font-size: 18px;
+                            line-height: 20px;
+                            font-weight: 600;
+                            display: block;
+                            color: #000;
+                            @media only screen and (max-width: 768px) {
+                                font-size: 14px;
+                                line-height: 18px;
+                            }
+                        }
+                        .bodyTitle {
+                            display: flex;
+                            align-items: flex-start;
+                            margin: 35px 0 25px;
+                            flex-wrap: wrap;
+                            .BodyImg {
+                                width: 40px;
+                                height: 40px;
+                                margin-right: 10px;
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                }
+                            }
+                            .cGrey {
+                                color: #747474;
+                                font-weight: 500;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                                width: 100px;
+                            }
+                            .flightTime {
+                                width: 230px;
+                                @media only screen and (max-width: 576px) {
+                                    width: 50%;
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: flex-start;
+                                }
+                                &.fly {
+                                    align-items: flex-end;
+                                }
+                                .customSpan {
+                                    padding-top: 5px;
+                                    margin-top: 15px;
+                                    border-top: 1px solid #ccc;
+                                    label {
+                                        color: #008cff;
+                                    }
+                                }
+                            }
+                            .planeTag {
+                                margin: 5px 45px 0 40px;
+                                @media only screen and (max-width: 768px) {
+                                    margin: 5px 25px 0 20px;
+                                }
+                                @media only screen and (max-width: 576px) {
+                                    margin: 5px 15px 0 10px;
+                                }
+                                .planeImg {
+                                    width: 32px;
+                                    height: 32px;
+                                    background-position: -396px -358px;
+                                    margin: 0 auto;
+                                    @media only screen and (max-width: 576px) {
+                                        display: none;
+                                    }
+                                }
+                                .borderLine {
+                                    width: 60px;
+                                    height: 1px;
+                                    border-bottom: 2px dotted #9b9b9b;
+                                    position: relative;
+                                    flex-shrink: 0;
+                                    display: inline-block;
+                                    margin-top: 10px;
+                                    @media only screen and (max-width: 576px) {
+                                        width: 36px;
+                                    }
+                                    &::before {
+                                        position: absolute;
+                                        content: "";
+                                        width: 7px;
+                                        height: 7px;
+                                        background-color: #4a4a4a;
+                                        border-radius: 50%;
+                                        top: -3px;
+                                        left: -2px;
+                                    }
+                                    &::after {
+                                        position: absolute;
+                                        content: "";
+                                        width: 7px;
+                                        height: 7px;
+                                        background-color: #4a4a4a;
+                                        border-radius: 50%;
+                                        top: -3px;
+                                        right: -2px;
+                                    }
+                                }
+                            }
+                        }
+                        .bodyType {
+                            .typeInner {
+                                display: flex;
+                                align-items: flex-start;
+                                margin-bottom: 16px;
+                                @media only screen and (max-width: 576px) {
+                                   flex-direction: column;
+                                   margin: 0;
+                                   .ticket {
+                                       margin-right: 20px;
+                                       display: flex;
+                                       align-items: center;
+                                       margin-top: 5px;
+                                       &:first-child {
+                                           width: 130px;
+                                       }
+                                       .tImg {
+                                           width: 24px;
+                                           height: 24px;
+                                           background-position: -467px -332px;
+                                           margin-right: 10px;
+                                           &.baggage {
+                                               background-position: -468px -361px;
+                                               align-self: flex-start;
+                                           }
+                                           &.bag {
+                                               background-position: -467px -304px;
+                                           }
+                                       }
+                                       .grey {
+                                           color: #747474;
+                                           label {
+                                               color: #eb2026;
+                                               margin: 0;
+                                           }
+                                       }
+                                       .check {
+                                           width: 210px;
+                                           display: flex;
+                                           .customSpan {
+                                               line-height: 17px;
+                                               &:last-child {
+                                                   flex: 1;
+                                               }
+                                           }
+                                       }
+                                   }
+                                }
+                            }
+                        }
+                        .passData {
+                            border-radius: 3px;
+                            background-color: #f2f2f2;
+                            padding: 20px;
+                            word-break: break-word;
+                            margin-bottom: 30px;
+                            @media only screen and (max-width: 576px) {
+                                margin-bottom: 10px;
+                            }
+                            .bookImg, .blank {
+                               min-width: 24px;
+                                height: 24px;
+                                margin-right: 10px;
+                                &.passImg {
+                                    background-position: -110px -169px;
+                                    @media only screen and (max-width: 576px) {
+                                        display: none;
+                                    }
+                                }
+                            }
+                            .blank {
+                                @media only screen and (max-width: 576px) {
+                                    display: none;
+                                }
+                            }
+                            .passName {
+                                width: 270px;
+                                margin-right: 20px;
+                                .customSpan {
+                                    color: #000;
+                                }
+                                label {
+                                    margin: 0 0 0 10px;
+                                    color: #747474;
+                                }
+                            }
+                            .passPnr {
+                                width: 70px;
+                                white-space: nowrap;
+                                margin-right: 20px;
+                                font-size: 9px;
+                            }
+                            .tNumber {
+                                width: 120px;
+                                margin-right: 20px;
+                                .customLabel {
+                                    @media only screen and (max-width: 576px) {
+                                        font-size: 9px !important;
+                                        line-height: 11px;
+                                    }
+                                }
+                                .customSpan {
+                                    color: #747474;
+                                    font-weight: 500;
+                                }
+                            }
+                            .seat {
+                                width: 85px;
+                                margin-right: 20px;
+                                .customSpan {
+                                    color: #747474;
+                                    font-weight: 500;
+                                }
+                            }
+                            .meal {
+                                width: 90px;
+                                .customSpan {
+                                    color: #747474;
+                                    font-weight: 500;
+                                }
+                            }
+                            .passDetail {
+                                display: flex;
+                                align-items: center;
+                                padding: 10px 0;
+                                border-bottom: 1px solid #d5d5d5;
+                                &:last-child {
+                                    border: 0;
+                                    padding-bottom: 0;
+                                } 
+                            }
+                        }
+                    }
+                }
+            }
+            .pageRight {
+                width: 300px;
+                margin-left: 20px;
+                @media only screen and (max-width: 1199px) {
+                    width: 100%;
+                    margin-left: 0;
+                    margin-bottom: 20px;
+                }
+                @media only screen and (max-width: 991px) {
+                    width: 100%;
+                    margin-left: 0;
+                }
+                .rightContent {
+                    padding: 20px 20px 25px;
+                    border-radius: 6px;
+                    box-shadow: 0 1px 6px 0 rgba(0,0,0,.2);
+                    background-color: #fff;
+                    margin-bottom: 12px;
+                    @media only screen and (max-width: 768px) {
+                        padding: 10px;
+                    }
+                    &:first-child {
+                        padding: 0;
+                    }
+                    &:last-child {
+                        margin: 0;
+                    }
+                    .rightInner {
+                        @media only screen and (max-width: 1199px) {
+                            display: flex;
+                        }
+                        @media only screen and (max-width: 576px) {
+                            flex-direction: column;
+                        }
+                    }
+                    .content1 {
+                        padding: 20px 20px 25px;
+                        @media only screen and (max-width: 1199px) {
+                            width: 50%;
+                        }
+                        @media only screen and (max-width: 768px) {
+                            padding: 10px;
+                        }
+                        @media only screen and (max-width: 576px) {
+                            width: 100%;
+                        }
+                        &:first-child {
+                            border-bottom: 1px solid #e7e7e7;
+                        }
+                    }
+                    &.Content2 {
+                        padding: 20px 20px 25px;
+                        @media only screen and (max-width: 768px) {
+                            padding: 10px;
+                        }
+                        .customSpan {
+                            color: #000;
+                            font-weight: 500;
+                        }
+                    }
+                    &.content3 {
+                        border-radius: 5px;
+                        padding: 0;
+                        .titleHead {
+                            padding: 15px 20px;
+                            border-bottom: 1px solid #f2f2f2;
+                            margin: 0;
+                        }
+                        .custom {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            padding: 12px 20px;
+                            border-bottom: 1px solid #f2f2f2;
+                            &:last-child {
+                                border: 0;
+                            }
+                            .customSpan {
+                                color: #000;
+                                &:last-child {
+                                    font-weight: 500;
+                                }
+                            }
+                            &.custom1 {
+                                background: #ECF8FD;
+                                padding: 15px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                @media only screen and (max-width: 768px) {
+                                    padding: 10px 15px;
+                                }
+                                span {
+                                    color: #0055A6;
+                                    font-size: 16px;
+                                    font-weight: 700;
+                                    line-height: 24px;
+                                    display: block;
+                                    @media only screen and (max-width: 768px) {
+                                        font-size: 12px;
+                                        line-height: 16px;
+                                    }
+                                    &:last-child {
+                                        color: #000000d9;
+                                        font-weight: 500;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &.Content4 {
+                        padding: 20px;
+                        display: flex;
+                        @media only screen and (max-width: 768px) {
+                            padding: 10px;
+                        }
+                        .customSpan {
+                            flex: 1;
+                        }
+                    }
+                    .titleHead {
+                        margin-bottom: 20px;
+                        color: #000;
+                        font-weight: 500;
+                        @media only screen and (max-width: 768px) {
+                            padding-bottom: 10px;
+                         }
+                    }
+                    .bookImg {
+                        margin-right: 10px;
+                        width: 24px;
+                        height: 24px;
+                        background-position: -240px -43px;
+                        &.img1 {
+                            background-position: -323px -536px;
+                        }
+                        &.img2 {
+                            background-position: -285px -562px;
+                        }
+                        &.img3 {
+                            background-position: -250px -530px;
+                        }
+                        &.img4 {
+                            height: 18px;
+                            background-position: -62px -134px;
+                        }
+                        &.img5 {
+                            background-position: -212px -38px;
+                        }
+                        &.img6 {
+                            background-position: -250px -530px;
+                        }
+                        &.img7 {
+                            width: 32px;
+                            height: 32px;
+                            background-position: -212px -455px;
+                        }
+                        &.img8 {
+                            width: 26px;
+                            height: 26px;
+                            background-position: -355px -534px;
+                            margin: 0;
+                            position: relative;
+                            .details {
+                                display: none;
+                                border-radius: 5px;
+                                width: 260px;
+                                background-color: #000;
+                                position: absolute;
+                                padding: 10px;
+                                left: -155px;
+                                top: 0;
+                                .customSpan {
+                                    color: #fff;
+                                }
+                            }
+                            &:hover .details {
+                                display: block;
+                            }
+                        }
+                        &.img9 {
+                            width: 32px;
+                            height: 42px;
+                            background-image: url(/../../../assets/images/baloon.png);
+                            background-position: center;
+                            background-size: cover !important;
+                        }
+                    }
+                    .black {
+                        font-weight: 600;
+                    }
+                    .rightImg {
+                        width: 32px;
+                        height: 32px;
+                        margin-right: 10px;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                    .ammount {
+                        padding: 15px 20px;
+                        background-color: #f1f9ff;
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                    .idText {
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 12px 20px;
+                        border-bottom: 1px solid #f2f2f2;
+                    }
+                    .reward {
+                        display: flex;
+                        background: #c1f1dd;
+                        color: #16827e;
+                        width: 300px;
+                        height: 66px;
+                        border: 2px solid #fff;
+                        border-radius: 0 0 5px 5px;
+                        padding: 12px 10px;
+                        @media only screen and (max-width: 1199px) {
+                            width: 100%;
+                            align-items: center;
+                        }
+                        .rewardImg {
+                            width: 31px;
+                            height: 32px;
+                            margin-right: 10px;
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+                        label {
+                            flex: 1;
+                            line-height: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

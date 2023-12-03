@@ -1,0 +1,18 @@
+<div id="about-us">
+    <div class="container">
+        <h1>{{page?.title ? page?.title : 'Inner Page'}}</h1>
+        <div class="rightside">
+            <img src="assets/images/world.png">
+        </div>
+        <div class="pageInner">
+            <div class="cardInner">
+                 <div class="cardBody">
+                    <div class="cardDetails" *ngIf="page?.content" [innerHtml]="page?.content"></div>
+                    <div class="cardDetails" *ngIf="!page?.content">
+                        <label class="noRecord">No record available!</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

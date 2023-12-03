@@ -1,0 +1,36 @@
+<div class="modal-container checkin-container">
+    <div class="modalHeader">
+        <h3>Web Check-in</h3>
+        <span class="closeBtn" (click)="close()">
+            <img src="assets/images/close.png" alt="">
+        </span>
+    </div>
+    <div class="modalBody">
+        <div class="bodyData">
+            <div class="bodyTitle">
+                <div class="image"></div>
+                <span>Choose Your Seat Allocation Preference</span>
+            </div>
+            <mat-radio-group class="customRadioGroup" [(ngModel)]="selectedCheckin">
+                <div class="bodyText">
+                    <mat-radio-button value="1"></mat-radio-button>
+                    <div class="ml-2">
+                        <span class="custom">Choose My Seats(s)</span>
+                        <span class="customSpan">I’d select the seat(s) as per my preference</span>
+                    </div>
+                </div>
+                <div class="bodyText">
+                    <mat-radio-button value="2"></mat-radio-button>
+                    <div class="ml-2">
+                        <span class="custom">Assign Any Seat(s)</span>
+                        <span class="customSpan">I’d be okay with any seat(s) with no seat selection charges. Boarding pass will be available 12 hrs before departure.</span>
+                    </div>
+                </div>
+            </mat-radio-group>
+        </div>
+    </div>
+    <div class="modalFooter">
+        <button mat-flat-button class="modalBotton">proceed</button>
+    </div>
+</div>
+

@@ -1,0 +1,379 @@
+<div class="modal-container more-fares-container">
+    <div class="modalHeader">
+        <h4>You have <b>more fares</b> to select from</h4>
+        <span class="closeBtn" (click)="close()">
+            <img src="assets/images/close.png" alt="">
+        </span>
+    </div>
+    <div class="modalBody customScroll">
+        <div class="moreInner">
+            <div class="d-flex flex-md-row flex-column">
+                <div class="moreLeft">
+                    <label>DEPART</label>
+                    <div class="d-flex align-items-center">
+                        <div class="moreImg">
+                            <img src="assets/images/ai.gif" alt="">
+                        </div>
+                        <span class="bold">Go First | G8-2505</span>
+                    </div>
+                    <h4>Ahmedabad to Mumbai</h4>
+                    <span class="highLight">Thu, 20 Jul</span>
+                    <span class="margin">Non Stop</span>
+                </div>
+                <div class="moreRight">
+                    <mat-radio-group class="customRadioGroup" [(ngModel)]="selectedType">
+                        <mat-radio-button value="1">
+                        <div class="moreCard checked">
+                            <div class="moreCardData">
+                                <div class="d-flex align-items-center justify-content-between w-100">
+                                    <h4>GoLite</h4>
+                                    <h4>₹ 2,267</h4>
+                                </div>
+                            </div>
+                            <div class="moreContent">
+                                <div class="moreDetail">
+                                    <div class="d-flex">
+                                        <div class="moreDImg">
+                                            <img src="assets/images/cabinbag.png" alt="">
+                                        </div>
+                                        <span class="bold">Cabin bag</span>
+                                    </div>
+                                    <span>7 Kgs</span>
+                                </div>
+                                <div class="moreDetail">
+                                    <div class="d-flex">
+                                        <div class="moreDImg">
+                                            <img src="assets/images/checkin.png" alt="">
+                                        </div>
+                                        <span class="bold">Check-in</span>
+                                    </div>
+                                    <span>Hand baggage only</span>
+                                </div>
+                                <div class="moreDetail">
+                                    <div class="d-flex">
+                                        <div class="moreDImg">
+                                            <img src="assets/images/redcancel.png" alt="">
+                                        </div>
+                                        <span class="bold">Cancellation</span>
+                                    </div>
+                                    <span>Non-refundable fare</span>
+                                </div>
+                                <div>
+                                    <div class="moreDetail">
+                                        <div class="d-flex">
+                                            <div class="moreDImg">
+                                                <img src="assets/images/nodate.png" alt="">
+                                            </div>
+                                            <span class="bold">Date Change</span>
+                                        </div>
+                                        <span>Not allowed</span>
+                                    </div>
+                                    <div class="moreDetail">
+                                        <div class="d-flex">
+                                            <div class="moreDImg">
+                                                <img src="assets/images/noseat.png" alt="">
+                                            </div>
+                                            <span class="bold">Seat</span>
+                                        </div>
+                                        <span>Chargeable</span>
+                                    </div>
+                                    <div>
+                                        <!-- <span class="arrow">Hide<i class="fa fa-chevron-up" aria-hidden="true"></i></span> -->
+                                        <span class="arrow">Show more<i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </mat-radio-button>
+                        <mat-radio-button value="2">
+                            <div class="moreCard">
+                                <div class="moreCardData">
+                                    <div class="d-flex align-items-center justify-content-between w-100">
+                                        <h4>GoFirst</h4>
+                                        <h4>₹ 2,581</h4>
+                                    </div>
+                                </div>
+                                <div class="moreContent">
+                                    <div class="moreDetail">
+                                        <div class="d-flex">
+                                            <div class="moreDImg">
+                                                <img src="assets/images/cabinbag.png" alt="">
+                                            </div>
+                                            <span class="bold">Cabin bag</span>
+                                        </div>
+                                        <span>7 Kgs</span>
+                                    </div>
+                                    <div class="moreDetail">
+                                        <div class="d-flex">
+                                            <div class="moreDImg">
+                                                <img src="assets/images/checkin.png" alt="">
+                                            </div>
+                                            <span class="bold">Check-in</span>
+                                        </div>
+                                        <span class="bold">15Kgs</span>
+                                    </div>
+                                    <div class="moreDetail">
+                                        <div class="d-flex">
+                                            <div class="moreDImg">
+                                                <img src="assets/images/redcancel.png" alt="">
+                                            </div>
+                                            <span class="bold">Cancellation</span>
+                                        </div>
+                                        <span>Non-refundable fare</span>
+                                    </div>
+                                    <div>
+                                        <div class="moreDetail">
+                                            <div class="d-flex">
+                                                <div class="moreDImg">
+                                                    <img src="assets/images/date.png" alt="">
+                                                </div>
+                                                <span class="bold">Date Change</span>
+                                            </div>
+                                            <span>Date Change Fee starting ₹ 2,500</span>
+                                        </div>
+                                        <div class="moreDetail">
+                                            <div class="d-flex">
+                                                <div class="moreDImg">
+                                                    <img src="assets/images/noseat.png" alt="">
+                                                </div>
+                                                <span class="bold">Seat</span>
+                                            </div>
+                                            <span>Chargeable</span>
+                                        </div>
+                                        <div>
+                                            <!-- <span class="arrow">Hide<i class="fa fa-chevron-up" aria-hidden="true"></i></span> -->
+                                            <span class="arrow">Show more<i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-radio-button>
+                        <mat-radio-button value="3">
+                            <div class="moreCard">
+                                <div class="moreCardData">
+                                    <div class="d-flex align-items-center justify-content-between w-100">
+                                        <h4>GoFlexi</h4>
+                                        <h4>₹ 3,277</h4>
+                                    </div>
+                                </div>
+                                <div class="moreContent">
+                                    <div class="moreDetail">
+                                        <div class="d-flex">
+                                            <div class="moreDImg">
+                                                <img src="assets/images/cabinbag.png" alt="">
+                                            </div>
+                                            <span class="bold">Cabin bag</span>
+                                        </div>
+                                        <span>7 Kgs</span>
+                                    </div>
+                                    <div class="moreDetail">
+                                        <div class="d-flex">
+                                            <div class="moreDImg">
+                                                <img src="assets/images/checkin.png" alt="">
+                                            </div>
+                                            <span class="bold">Check-in</span>
+                                        </div>
+                                        <span class="bold">15Kgs</span>
+                                    </div>
+                                    <div class="moreDetail">
+                                        <div class="d-flex">
+                                            <div class="moreDImg">
+                                                <img src="assets/images/greencancel.png" alt="">
+                                            </div>
+                                            <span class="bold">Cancellation</span>
+                                        </div>
+                                        <span>Cancellation Fee starting₹ 3,000</span>
+                                    </div>
+                                    <div>
+                                        <div class="moreDetail">
+                                            <div class="d-flex">
+                                                <div class="moreDImg">
+                                                    <img src="assets/images/date.png" alt="">
+                                                </div>
+                                                <span class="bold">Date Change</span>
+                                            </div>
+                                            <span>Free date change allowed</span>
+                                        </div>
+                                        <div class="moreDetail">
+                                            <div class="d-flex">
+                                                <div class="moreDImg">
+                                                    <img src="assets/images/noseat.png" alt="">
+                                                </div>
+                                                <span class="bold">Seat</span>
+                                            </div>
+                                            <span>Free seats available</span>
+                                        </div>
+                                        <div class="moreDetail">
+                                            <div class="d-flex">
+                                                <div class="moreDImg">
+                                                    <img src="assets/images/meal.png" alt="">
+                                                </div>
+                                                <span class="bold">Meal</span>
+                                            </div>
+                                            <span>Complimentary meals</span>
+                                        </div>
+                                        <div>
+                                            <!-- <span class="arrow">Hide<i class="fa fa-chevron-up" aria-hidden="true"></i></span> -->
+                                            <span class="arrow">Show more<i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-radio-button>
+                        <mat-radio-button value="4">
+                            <div class="moreCard">
+                                <div class="moreCardData">
+                                    <div class="d-flex align-items-center justify-content-between w-100">
+                                        <h4>GoMore</h4>
+                                        <h4>₹ 9,825</h4>
+                                    </div>
+                                </div>
+                                <p>Fly stress free! Keep the middle seat vacant with GoMore.</p>    
+                                <div class="moreContent">
+                                    <div class="moreDetail">
+                                        <div class="d-flex">
+                                            <div class="moreDImg">
+                                                <img src="assets/images/other.png" alt="">
+                                            </div>
+                                            <span class="bold">Other</span>
+                                        </div>
+                                        <span>1st / 2nd row window or aisle seat included, with vacant middle seat</span>
+                                    </div>
+                                    <div class="moreDetail">
+                                        <div class="d-flex">
+                                            <div class="moreDImg">
+                                                <img src="assets/images/cabinbag.png" alt="">
+                                            </div>
+                                            <span class="bold">Cabin bag</span>
+                                        </div>
+                                        <span>7 Kgs</span>
+                                    </div>
+                                    <div class="moreDetail">
+                                        <div class="d-flex">
+                                            <div class="moreDImg">
+                                                <img src="assets/images/checkin.png" alt="">
+                                            </div>
+                                            <span class="bold">Check-in</span>
+                                        </div>
+                                        <span class="bold">15Kgs</span>
+                                    </div>
+                                    <div>
+                                        <div class="moreDetail">
+                                            <div class="d-flex">
+                                                <div class="moreDImg">
+                                                    <img src="assets/images/greencancel.png" alt="">
+                                                </div>
+                                                <span class="bold">Cancellation</span>
+                                            </div>
+                                            <span>Cancellation Fee starting₹ 6,000</span>
+                                        </div>
+                                        <div class="moreDetail">
+                                            <div class="d-flex">
+                                                <div class="moreDImg">
+                                                    <img src="assets/images/date.png" alt="">
+                                                </div>
+                                                <span class="bold">Date Change</span>
+                                            </div>
+                                            <span>Date Change Fee starting ₹ 5,000</span>
+                                        </div>
+                                        <div class="moreDetail">
+                                            <div class="d-flex">
+                                                <div class="moreDImg">
+                                                    <img src="assets/images/noseat.png" alt="">
+                                                </div>
+                                                <span class="bold">Seat</span>
+                                            </div>
+                                            <span>Free seats available</span>
+                                        </div>
+                                        <div>
+                                            <!-- <span class="arrow">Hide<i class="fa fa-chevron-up" aria-hidden="true"></i></span> -->
+                                            <span class="arrow">Show more<i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-radio-button>
+                        <mat-radio-button value="5">
+                            <div class="moreCard">
+                                <div class="moreCardData">
+                                    <div class="d-flex align-items-center justify-content-between w-100">
+                                        <h4>SME Fare</h4>
+                                        <h4>₹ 3,146</h4>
+                                    </div>
+                                </div>
+                                <div class="moreContent">
+                                    <div class="moreDetail">
+                                        <div class="d-flex">
+                                            <div class="moreDImg">
+                                                <img src="assets/images/cabinbag.png" alt="">
+                                            </div>
+                                            <span class="bold">Cabin bag</span>
+                                        </div>
+                                        <span>7 Kgs</span>
+                                    </div>
+                                    <div class="moreDetail">
+                                        <div class="d-flex">
+                                            <div class="moreDImg">
+                                                <img src="assets/images/checkin.png" alt="">
+                                            </div>
+                                            <span class="bold">Check-in</span>
+                                        </div>
+                                        <span class="bold">15Kgs</span>
+                                    </div>
+                                    <div class="moreDetail">
+                                        <div class="d-flex">
+                                            <div class="moreDImg">
+                                                <img src="assets/images/greencancel.png" alt="">
+                                            </div>
+                                            <span class="bold">Cancellation</span>
+                                        </div>
+                                        <span>Cancellation Fee starting₹ 1,500</span>
+                                    </div>
+                                    <div>
+                                        <div class="moreDetail">
+                                            <div class="d-flex">
+                                                <div class="moreDImg">
+                                                    <img src="assets/images/date.png" alt="">
+                                                </div>
+                                                <span class="bold">Date Change</span>
+                                            </div>
+                                            <span>Free date change allowed</span>
+                                        </div>
+                                        <div class="moreDetail">
+                                            <div class="d-flex">
+                                                <div class="moreDImg">
+                                                    <img src="assets/images/noseat.png" alt="">
+                                                </div>
+                                                <span class="bold">Seat</span>
+                                            </div>
+                                            <span>Free seats available</span>
+                                        </div>
+                                        <div class="moreDetail">
+                                            <div class="d-flex">
+                                                <div class="moreDImg">
+                                                    <img src="assets/images/meal.png" alt="">
+                                                </div>
+                                                <span class="bold">Meal</span>
+                                            </div>
+                                            <span>Complimentary meals</span>
+                                        </div>
+                                        <div>
+                                            <!-- <span class="arrow">Hide<i class="fa fa-chevron-up" aria-hidden="true"></i></span> -->
+                                            <span class="arrow">Show more<i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-radio-button>
+                    </mat-radio-group>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modalFooter">
+        <div class="d-flex justify-content-between justify-content-md-end align-items-center w-100">
+            <span>₹ 5,124</span>
+            <button mat-flat-button class="modalBotton">Done</button>
+        </div>
+    </div>
+</div>

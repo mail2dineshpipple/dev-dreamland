@@ -1,0 +1,282 @@
+<div id="unsuccessful">
+    <div class="container">
+        <div class="pageInner">
+            <div class="pageHeader">
+                <div class="title">
+                    <span class="titleHead cursor" (click)="gotoNext('myBooking')">My Bookings</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    <span class="titleHead"><b>Cancelled</b></span>
+                </div>
+                <h1>Your Flight booking has been cancelled!</h1>
+                <div class="bookData">
+                    <label class="customLabel mr-4">Booking ID <span class="customSpan">MN24UB2WSW2RXWOE4876</span></label>
+                    <label class="customLabel pr-2">Booking On <span class="customSpan">07 Apr, 2023</span></label>
+                </div>
+                <div class="rightside">
+                    <img src="assets/images/world.png">
+                </div>
+            </div>
+            <div class="pageBody">
+                <div class="pageLeft">
+                    <ng-container *ngFor="let item of content">
+                        <div class="pageContent contentInner">
+                            <div class="contentHead" (click)="onSelect(item)">
+                                <div class="head" >
+                                    <h2>{{item.title}}</h2>
+                                    <span class="rightArrow"></span>
+                                    <h2>{{item.title1}}</h2>
+                                    <span class="rightArrow"></span>
+                                    <h2>{{item.title2}}, 11h 30min</h2> 
+                                    <span class="chip">Cancelled</span>
+                                </div>
+                                <div class="bookImg" [ngClass]="{'active': item?.isActive}"></div>
+                            </div>
+                            <div class="contentBody" *ngIf="item?.isActive">
+                                <div>
+                                    <div class="bodyTitle">
+                                        <div class="d-flex dShow mb-3">
+                                            <div class="BodyImg">
+                                                <img src="assets/images/pacific.png" alt="">
+                                            </div>
+                                            <div>
+                                                <span class="customSpan cGrey mb-1">CATHAY PACIFIC</span>
+                                                <span class="customSpan cGrey">CX-2635</span>
+                                            </div>
+                                        </div>
+                                        <div class="flightInner">
+                                            <div class="d-flex mr-4 dNone">
+                                                <div class="BodyImg">
+                                                    <img src="assets/images/pacific.png" alt="">
+                                                </div>
+                                                <div>
+                                                    <span class="customSpan cGrey mb-1">CATHAY PACIFIC</span>
+                                                    <span class="customSpan cGrey">CX-2635</span>
+                                                </div>
+                                            </div>
+                                            <div class="flightTime">
+                                                <span class="customText"><b>Delhi</b> - DEL </span>
+                                                <div class="d-flex mt-1">
+                                                    <div class="bookImg eyeImg"></div>
+                                                    <span class="customFont">01:05, 26 May`23</span>
+                                                </div>
+                                                <span class="customSpan">Indira Gandhi International Airport, Terminal 3 <label>View Location</label></span>
+                                            </div>
+                                            <div class="planeTag">
+                                                <div class="bookImg planeImg"></div>
+                                                <div class="borderLine"></div>
+                                                <span class="customSpan">3h 55m</span>
+                                            </div>
+                                            <div class="flightTime fly">
+                                                <span class="customText"><b>Hong Kong</b> - HKG</span>
+                                                <div class="d-flex mt-1">
+                                                    <span class="customFont">09:10, 26 May`23</span>
+                                                </div>
+                                                <span class="customSpan">Hong Kong Intl, Terminal 1</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bodyType">
+                                        <div class="d-flex mt-1 flex-wrap">
+                                            <div class="ticket">
+                                                <div class="bookImg tImg"></div>
+                                                <span class="customSpan grey">Regular Fare</span>
+                                            </div>
+                                            <div class="ticket">
+                                                <div class="bookImg tImg"></div>
+                                                <span class="customSpan grey">ECONOMY LIGHT</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex mt-1 mb-3 flex-wrap">
+                                            <div class="ticket">
+                                                <div class="bookImg tImg"></div>
+                                                <span class="customSpan grey">Economy</span>
+                                            </div>
+                                            <div class="ticket">
+                                                <div class="bookImg tImg baggage"></div>
+                                                <span class="customSpan grey">Check In - <label>Details Not Available</label> </span>
+                                            </div>
+                                            <div class="ticket">
+                                                <div class="bookImg tImg bag"></div>
+                                                <span class="customSpan grey">Carry On - <label>Details Not Available</label> </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="passData">
+                                        <div class="d-flex mb-1">
+                                            <div class="blank"></div>
+                                            <div class="passName">
+                                                <label class="customLabel">TRAVELLER</label>
+                                            </div>
+                                            <div class="passPnr">
+                                                <label class="customLabel">PNR</label>
+                                            </div>
+                                            <div class="tNumber dNone576">
+                                                <label class="customLabel">E-TICKET NUMBER</label>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <div class="bookImg passImg"></div>
+                                            <div class="passName">
+                                                <span class="customSpan"><b>NIKESH KUMAR SINGH</b><label>(Cancelled)</label></span>
+                                            </div>
+                                            <div class="passPnr">-</div>
+                                            <div class="tNumber dNone576">
+                                                <span class="customSpan">TO BE ISSUED</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bodyEnd">
+                                        <div class="d-flex align-items-center mr-4">
+                                            <div class="bookImg"></div>
+                                            <span class="customText">2h 0m layover</span>
+                                        </div>
+                                        <span class="customText">Stopover in Hong Kong (HKG), you will have to change the plane.</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="bodyTitle">
+                                        <div class="d-flex dShow mb-3">
+                                            <div class="BodyImg">
+                                                <img src="assets/images/pacific.png" alt="">
+                                            </div>
+                                            <div>
+                                                <span class="customSpan cGrey mb-1">CATHAY PACIFIC</span>
+                                                <span class="customSpan cGrey">CX-2635</span>
+                                            </div>
+                                        </div>
+                                        <div class="flightInner">
+                                            <div class="d-flex mr-4 dNone">
+                                                <div class="BodyImg">
+                                                    <img src="assets/images/pacific.png" alt="">
+                                                </div>
+                                                <div>
+                                                    <span class="customSpan cGrey mb-1">CATHAY PACIFIC</span>
+                                                    <span class="customSpan cGrey">CX-2635</span>
+                                                </div>
+                                            </div>
+                                            <div class="flightTime">
+                                                <span class="customText"><b>Hong Kong</b> - HKG</span>
+                                                <div class="d-flex mt-1">
+                                                    <div class="bookImg eyeImg"></div>
+                                                    <span class="customFont">11:10, 26 May`23</span>
+                                                </div>
+                                                <span class="customSpan">Hong Kong Intl, Terminal 1</span>
+                                            </div>
+                                            <div class="planeTag">
+                                                <div class="bookImg planeImg"></div>
+                                                <div class="borderLine"></div>
+                                                <span class="customSpan">3h 55m</span>
+                                            </div>
+                                            <div class="flightTime fly">
+                                                <span class="customText"><b>Singapore</b> - SIN</span>
+                                                <div class="d-flex mt-1">
+                                                    <span class="customFont">09:10, 26 May`23</span>
+                                                </div>
+                                                <span class="customSpan">Changi, Terminal 4</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bodyType">
+                                        <div class="d-flex align-items-start mt-1 mb-2 flex-wrap">
+                                            <div class="ticket">
+                                                <div class="bookImg tImg"></div>
+                                                <span class="customSpan grey">Regular Fare</span>
+                                            </div>
+                                            <div class="ticket">
+                                                <div class="bookImg tImg"></div>
+                                                <span class="customSpan grey">ECONOMY LIGHT</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-start mb-3 flex-wrap">
+                                            <div class="ticket">
+                                                <div class="bookImg tImg"></div>
+                                                <span class="customSpan grey">Economy</span>
+                                            </div>
+                                            <div class="ticket">
+                                                <div class="bookImg tImg baggage"></div>
+                                                <div class="check">
+                                                    <span class="customSpan grey">Check In - </span>
+                                                    <span class="customSpan grey"><label>Details Not Available</label></span>
+                                                </div>
+                                            </div>
+                                            <div class="ticket">
+                                                <div class="bookImg tImg bag"></div>
+                                                <span class="customSpan grey">Carry On - <label>Details Not Available</label> </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="passData">
+
+                                        <div class="d-flex mb-1">
+                                            <div class="blank"></div>
+                                            <div class="passName">
+                                                <label class="customLabel">TRAVELLER</label>
+                                            </div>
+                                            <div class="passPnr">
+                                                <label class="customLabel">PNR</label>
+                                            </div>
+                                            <div class="tNumber dNone576">
+                                                <label class="customLabel">E-TICKET NUMBER</label>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <div class="bookImg passImg"></div>
+                                            <div class="passName">
+                                                <span class="customSpan"><b>NIKESH KUMAR SINGH</b><label>(Cancelled)</label></span>
+                                            </div>
+                                            <div class="passPnr">-</div>
+                                            <div class="tNumber dNone576">
+                                                <span class="customSpan">TO BE ISSUED</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-container>
+                    <div class="pageContent content2">
+                        <h5>CANCELLATION</h5>
+                        <span class="titleHead">You have already cancelled your booking.</span>
+                    </div>
+                    <div class="pageContent content3">
+                        <h5>CONTACT INFORMATION</h5>
+                        <span class="titleHead">Information about primary traveller. Any communication by airlines will be sent to these details.</span>
+                        <div class="d-flex mb-3">
+                            <div class="bookImg"></div>
+                            <span class="customSpan">Nikesh kumar Singh</span>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <div class="bookImg img1"></div>
+                            <span class="customSpan">info@dreamlandtravel.co.in</span>
+                        </div>
+                        <div class="d-flex">
+                            <div class="bookImg img2"></div>
+                            <span class="customSpan">918285624833</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pageRight">
+                    <div class="rightContent">
+                        <div class="airlineContact">
+                            <span class="customSpan black">Airline Contact</span>
+                            <div class="bookImg"></div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="rightImg">
+                                <img src="assets/images/pacific.png">
+                            </div>
+                            <div>
+                                <label class="customLabel">CATHAY PACIFIC</label>
+                                <span class="customSpan mt-2">8004405009</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rightContent rContent">
+                        <div class="bookImg"></div>
+                        <div class="customSpan">This booking was made by Dreamland certified travel agent with email address info@dreamlandtravel.co.in and phone number 918285624833.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

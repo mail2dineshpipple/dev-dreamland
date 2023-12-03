@@ -1,0 +1,30 @@
+<div class="modal-container reiviewDetails-container">
+    <div class="modalHeader">
+        <div class="d-flex justify-content-between">
+            <h3>Review Details</h3>
+            <i class="material-icons" (click)="close()">cancel</i>
+        </div>
+        <p class="note">Please Ensure that the spelling of your nameand other details match with your passport, as these cannot be changed later. Errors might lead to cancellection panalities.</p>
+    </div>
+    <div  class="modalBody customScroll">
+        <div class="travellerDetails" *ngFor="let item of category">
+            <label>{{item.age}}</label>
+            <div class="detailsInner">
+                <span class="leftDetails">First & Middle Name</span>
+                <span class="rightDetails">{{item.firstName}}</span>
+            </div>
+            <div class="detailsInner">
+                <span class="leftDetails">Last Name</span>
+                <span class="rightDetails">{{item.lastName}}</span>
+            </div>
+            <div class="detailsInner">
+                <span class="leftDetails">Gender</span>
+                <span class="rightDetails">{{item.gender}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="modalFooter">
+        <button mat-flat-button class="cancelBtn" (click)="close()">EDIT</button>
+        <button mat-flat-button class="modalBotton saveBtn" (click)="gotoNext('flightComplete')">CONFIRM</button>
+    </div>
+</div>

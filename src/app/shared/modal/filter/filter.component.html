@@ -1,0 +1,224 @@
+<div class="modal-container filter-container">
+    <div class="modalHeader">
+        <div class="filter-head">
+            <div class="tf-left">
+                <i class="fa-solid fa-filter"></i>
+                Filters
+            </div>
+            <button mat-button class="clear-btn">Clear All</button>
+        </div>
+    </div>
+    <div class="modalBody">
+        <div class="modalInner">
+            <div class="search-filter">
+              
+                <div class="filter-row">
+                    <div class="filter-box">
+                        <div class="ft-head">
+                            <span class="tf-left">Applied Filters</span>
+                            <button mat-button class="clear-btn">Clear</button>
+                        </div>
+                        <div>
+                            <div class="applied">
+                                <span>NON STOP</span>
+                                <div class="tabClose">
+                                    <i class="material-icons">close</i>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="applied">
+                                <i class="material-icons plane">flight_takeoff</i>
+                                <span>MORNING DEPARTURES</span>
+                                <div class="tabClose">
+                                    <i class="material-icons">close</i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-box">
+                        <div class="ft-head">
+                            <span class="tf-left">Popular Filters</span>
+                            <button mat-button class="clear-btn">Clear</button>
+                        </div>
+                        <div class="checkbox-container airline">
+                            <mat-checkbox class="customCheckbox">
+                                <div class="d-flex justify-content-between ml-2">
+                                    <span>Cheapest</span>
+                                </div>
+                                <span>₹4444</span>
+                            </mat-checkbox>
+                            <mat-checkbox class="customCheckbox airline">
+                                <div class="d-flex justify-content-between ml-2">
+                                    <span>Fastest</span>
+                                </div>
+                                <span>₹4444</span>
+                            </mat-checkbox>
+                            <mat-checkbox class="customCheckbox airline">
+                                <div class="d-flex justify-content-between ml-2">
+                                    <span>Best value</span>
+                                </div>
+                                <span>₹4444</span>
+                            </mat-checkbox>
+                            <mat-checkbox class="customCheckbox airline">
+                                <div class="d-flex justify-content-between ml-2">
+                                    <span>Refundable</span>
+                                </div>
+                                <span>₹4444</span>
+                            </mat-checkbox>
+                            <mat-checkbox class="customCheckbox airline">
+                                <div class="d-flex justify-content-between ml-2">
+                                    <span>Non-Refundable</span>
+                                </div>
+                                <span>₹4444</span>
+                            </mat-checkbox>
+                            <mat-checkbox class="customCheckbox airline">
+                                <div class="d-flex justify-content-between ml-2">
+                                    <span>Layover Via Point</span>
+                                </div>
+                                <span>₹4444</span>
+                            </mat-checkbox>
+                            <mat-checkbox class="customCheckbox airline"> 
+                                <div class="d-flex justify-content-between ml-2">
+                                    <span>Aircraft Airbus, Boing</span>
+                                </div>
+                                <span>₹4444</span>
+                            </mat-checkbox>
+                            <button mat-button class="clear-btn" id="themeDark"><i class="material-icons plusIcon">
+                                add
+                            </i>Show More</button>
+                        </div>
+                    </div>
+                    <div class="filter-box">
+                        <div class="ft-head">
+                            <span class="tf-left">Stops</span>
+                            <button mat-button class="clear-btn">Clear</button>
+                            <!-- <div class="checkbox-container">
+                                <mat-checkbox class="customCheckbox">Non Stop</mat-checkbox>
+                                <mat-checkbox class="customCheckbox">1 Stop</mat-checkbox>
+                                <mat-checkbox class="customCheckbox">2+ Stops</mat-checkbox> -->
+                        </div>
+                        <div class="flight-timeing">
+                            <div class="time-item stop" [ngClass]="{'active': item?.active}" 
+                            *ngFor="let item of stop" (click)="onSelect(item, 'stop')">
+                                <div class="d-flex flex-column">
+                                    <label>{{item.title}}</label>
+                                    <span>({{item.type}})</span>
+                                    <span>{{item.price}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-box">
+                        <div class="ft-head">
+                            <span class="tf-left">Departure Time</span>
+                            <button mat-button class="clear-btn">Clear</button>
+                        </div>
+                        <div class="flight-timeing">
+                            <div class="time-item" [ngClass]="{'active': item?.active}" 
+                            *ngFor="let item of timingList" (click)="onSelect(item, 'Departure')">
+                                <img [src]="item?.active ? item?.img1 : item.img">
+                                <div class="d-flex flex-column">
+                                    <label>{{item.title}}</label>
+                                    <span>({{item.type}})</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-box">
+                        <div class="ft-head">
+                            <span class="tf-left">Arrival Time</span>
+                            <button mat-button class="clear-btn">Clear</button>
+                        </div>
+                        <div class="flight-timeing">
+                            <div class="time-item" [ngClass]="{'active': item?.active}" 
+                            *ngFor="let item of timingList2" (click)="onSelect(item, 'Arrival')">
+                                <img [src]="item?.active ? item?.img1 :item.img">
+                                <div class="d-flex flex-column">
+                                    <label>{{item.title}}</label>
+                                    <span>({{item.type}})</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-box">
+                        <div class="ft-head">
+                            <span class="tf-left">Preferred Airline</span>
+                            <button mat-button class="clear-btn">Clear</button>
+                        </div>
+                        <div class="checkbox-container airline">
+                            <mat-checkbox class="customCheckbox">
+                                <div>
+                                    <img src="assets/images/AK.gif">
+                                    <span>Air Aisa</span>
+                                </div>
+                                <span>₹4444</span>
+                            </mat-checkbox>
+                            <mat-checkbox class="customCheckbox">
+                                <div>
+                                    <img src="assets/images/ai.gif">
+                                    <span>Air India</span>
+                                </div>
+                                <span>₹4444</span>
+                            </mat-checkbox>
+                            <mat-checkbox class="customCheckbox">
+                                <div>
+                                    <img src="assets/images/6E.gif">
+                                    <span>Indigo</span>
+                                </div>
+                                <span>₹4444</span>
+                            </mat-checkbox>
+                            <mat-checkbox class="customCheckbox">
+                                <div>
+                                    <img src="assets/images/6E.gif">
+                                    <span>Indigo</span>
+                                </div>
+                                <span>₹4444</span>
+                            </mat-checkbox>
+                            <mat-checkbox class="customCheckbox">
+                                <div>
+                                    <img src="assets/images/6E.gif">
+                                    <span>Indigo</span>
+                                </div>
+                                <span>₹4444</span>
+                            </mat-checkbox>
+                            <button mat-button class="clear-btn" id="themeDark"><i class="material-icons plusIcon">
+                                add
+                            </i>Show More</button>
+                        </div>
+                    </div>
+                    <div class="filter-box">
+                        <div class="ft-head">
+                            <span class="tf-left">Price Range</span>
+                            <button mat-button class="clear-btn">Clear</button>
+                        </div>
+                        <div class="range-slider">
+                            <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="option1"></ngx-slider>
+                            <div class="d-flex justify-content-between">
+                                <span class="ngx">₹{{minValue}}</span>
+                                <span class="ngx">₹{{maxValue}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-box">
+                        <div class="ft-head">
+                            <span class="tf-left">Duration</span>
+                            <button mat-button class="clear-btn">Clear</button>
+                        </div>
+                        <div class="range-slider">
+                            <ngx-slider [(value)]="lowValue" [(highValue)]="highValue" [options]="option2"></ngx-slider>
+                            <div class="d-flex justify-content-between">
+                                <span class="time ngx">{{lowValue.toString().replace(".", "h ")+'0m'}}</span>
+                                <span class="ngx">{{highValue.toString().replace(".", "h ")+'0m'}}</span>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modalFooter">
+        <button class="cancelBtn footerBtn" mat-flat-button (click)="close()">Cancel</button>
+        <button mat-raised-button class="modalBotton saveBtn footerBtn">Apply</button>
+    </div>
+</div>

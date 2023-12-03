@@ -1,0 +1,132 @@
+<div class="modal-container extra-baggage-container">
+    <div class="modalHeader">
+        <h4>Add extra baggage</h4>
+        <span class="closeBtn" (click)="close()">
+            <img src="assets/images/close.png" alt="">
+        </span>
+    </div>
+    <div class="modalBody">
+        <div class="modalData">
+            <div class="d-flex">
+                <div class="customTab active">
+                    <div class="logoImg">
+                        <img src="assets/images/ai.gif" alt="">
+                    </div>
+                    <div>
+                        <h6>AMD-BOM</h6>
+                        <span>{{Traveller}} of 1 selected</span>
+                    </div>
+                </div>
+                <div class="customTab">
+                    <div class="logoImg">
+                        <img src="assets/images/ai.gif" alt="">
+                    </div>
+                    <div>
+                        <h6>BOM-AMD</h6>
+                        <span>{{Traveller}} of 1 selected</span>
+                    </div>
+                </div>
+            </div>
+            <p>Included Check-in baggage per person - <label>0 KGS(Handbag only)</label></p>
+        </div>
+        <div class="baggageData">
+            <div class="baggageContent customScroll">
+                <div class="baggageBody">
+                    <div class="baggageRow">
+                        <div class="baggageCol">
+                            <div class="baggageImg">
+                                <img src="assets/images/bag.png" alt="">
+                            </div>
+                            <span>Additional 5 KG</span>
+                        </div>
+                        <div class="baggageCol">
+                            <span class="ammount">₹ 2,250</span>
+                            <div class="counter">
+                                <button (click)="decrement('weight5')" [disabled]="weight5Counter === 0">
+                                    <span class="material-icons">remove</span>
+                                </button> 
+                                <span>{{weight5Counter}}</span>
+                                <button class="plus" (click)="increment('weight5')">
+                                    <span class="material-icons">add</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="baggageRow">
+                        <div class="baggageCol">
+                            <div class="baggageImg">
+                                <img src="assets/images/luggage.png" alt="">
+                            </div>
+                            <span>Additional 10 KG</span>
+                        </div>
+                        <div class="baggageCol">
+                            <span class="ammount">₹ 4500</span>
+                            <div class="counter">
+                                <button (click)="decrement('weight10')" [disabled]="weight10Counter === 0">
+                                    <span class="material-icons">remove</span>
+                                </button> 
+                                <span>{{weight10Counter}}</span>
+                                <button class="plus" (click)="increment('weight10')">
+                                    <span class="material-icons">add</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="baggageRow">
+                        <div class="baggageCol">
+                            <div class="baggageImg">
+                                <img src="assets/images/luggage.png" alt="">
+                            </div>
+                            <span>Additional 15 KG</span>
+                        </div>
+                        <div class="baggageCol">
+                            <span class="ammount">₹ 6750</span>
+                            <div class="counter">
+                                <button (click)="decrement('weight15')" [disabled]="weight15Counter === 0">
+                                    <span class="material-icons">remove</span>
+                                </button> 
+                                <span>{{weight15Counter}}</span>
+                                <button class="plus" (click)="increment('weight15')">
+                                    <span class="material-icons">add</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="baggageRow">
+                        <div class="baggageCol">
+                            <div class="baggageImg">
+                                <img src="assets/images/luggage.png" alt="">
+                            </div>
+                            <span>Additional 30 KG</span>
+                        </div>
+                        <div class="baggageCol">
+                            <span class="ammount">₹ 13,500</span>
+                            <div class="counter">
+                                <button (click)="decrement('weight45')" [disabled]="weight45Counter === 0">
+                                    <span class="material-icons">remove</span>
+                                </button> 
+                                <span>{{weight45Counter}}</span>
+                                <button class="plus" (click)="increment('weight45')">
+                                    <span class="material-icons">add</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modalFooter">
+        <div>
+            <p>{{Traveller}} Baggage(s) Selected</p>
+            <p>{{Traveller}} of 1 Baggage(s) Selected</p>
+        </div>
+        <div class="footerInner">
+            <div>
+                <span>(Added to total fare)</span>
+                <span class="bold">₹ 0</span>
+            </div>
+            <button mat-flat-button class="modalBotton">Done</button>
+        </div>
+    </div>
+</div>

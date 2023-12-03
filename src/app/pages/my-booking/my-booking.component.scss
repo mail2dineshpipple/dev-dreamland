@@ -1,0 +1,813 @@
+@import "../../../assets/scss/custom-style.scss";
+
+#myBooking {
+    position: relative;
+    background: #f2f2f2 !important;  
+     &::after {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        content: '';
+        background-color: #1b2b4f;
+        background-image: linear-gradient(to bottom, #005494, #04A7EA);
+        height: 200px;
+        z-index: 0;
+    }
+    .rightside {
+        position: absolute;
+        right: 0;
+        top: -10px;
+        width: 440px;
+        height: 200px;
+        overflow: hidden;
+        z-index: -1;
+        @media only screen and (max-width: 576px) {
+            top: 30px;
+            width: 200px;
+            height: 110px;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+    }
+    .container {
+        position: relative;
+        z-index: 1;
+        @media only screen and (max-width: 768px) {
+            padding: 0;
+        }
+    }
+    h1 {
+        color: #ffffff;
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 600;
+        margin: 0 0 70px;
+        padding: 30px 0 0;
+        @media only screen and (max-width: 768px) {
+            padding-left: 15px;
+        }
+    }
+    .bookImg {
+        background-image: url(/../../../assets/images/mytrip.png);
+        background-size: 850px 1050px!important;
+        background-repeat: no-repeat;
+    }
+    .pageInner {
+        padding-top: 40px;
+        padding-bottom: 50px;
+        @media only screen and (max-width: 768px) {
+            padding-bottom: 0;
+        }
+        .bookingHeader {
+            // width: 1200px;
+            // margin: 0 auto;
+            display: flex;
+            height: 120px;
+            padding: 20px 30px 0;
+            background: #fff;
+            border-radius: 8px 8px 0 0;
+            box-shadow: 0 2px 20px 0 rgba(0,0,0,.1);
+            flex-direction: column;
+            @media only screen and (max-width: 768px) {
+                padding: 4px 0px 0;
+                height: 66px;
+            }
+            .bookingType {
+                border: 1px solid #e7e7e7;
+                height: 70px;
+                margin-top: -50px;
+                margin-bottom: 20px;
+                background-color: #fff;
+                border-radius: 8px;
+                box-shadow: 0 1px 4px 0 rgba(0,0,0,.21);
+                align-self: flex-start;
+                @media only screen and (max-width: 768px) {
+                    display: none;
+                }
+                .headType {
+                    display: flex;
+                    padding: 0 37px;
+                    align-items: center;
+                    justify-content: space-between;
+                    height: 70px;
+                  
+                    .headTitle {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-end;
+                        flex-direction: column;
+                        margin: 0 5px;
+                        padding: 0 10px 5px;
+                        height: 70px;
+                        cursor: pointer;
+                        .headImg {
+                            width: 35px;
+                            height: 21px;
+                            background-position: -397px -365px;
+                            margin-bottom: 5px;
+                        }
+                        &.active {
+                            border-bottom: 3px solid #008cff;
+                            .customSpan {
+                                color: #008cff;
+                            }
+                        }
+                       
+                    }
+                }
+            }
+            .bookingTabing {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                overflow: hidden;
+                // @media only screen and (max-width: 991px) {
+                //     align-items: flex-start;
+                // }
+                .tabingInner {
+                    overflow-x: auto;
+                    overflow-y: hidden;
+                    width: 100%;
+                }
+                .bookingTab {
+                    display: flex;
+                    margin-right: 20px;
+                    padding: 0 10px 10px 0;
+                    cursor: pointer;
+                    position: relative;
+                    color: #9b9b9b;
+                    @media only screen and (max-width: 768px) {
+                        padding: 10px 10px 14px;
+                        margin: 0;
+                    }
+                    &.active {
+                        color: #000;
+                        &::after {
+                            content: "";
+                            background: #008cff;
+                            width: 100%;
+                            height: 5px;
+                            position: absolute;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            bottom: 5px;
+                            transition: all .3s ease-in-out;
+                            transform-origin: center center;
+                            @media only screen and (max-width: 768px) {
+                                bottom: 0px;
+                            }
+                        }
+                        .tabImg {
+                            &.tabImg0 {
+                                background-position: -1px -28px;
+                            }
+                            &.tabImg1 {
+                                background-position: -36px -32px;
+                            }
+                            &.tabImg2 {
+                                background-position: -68px -32px;
+                            }
+                            &.tabImg3 {
+                                background-position: -99px -30px;
+                            }
+                        }
+                    }
+                    &:last-child {
+                        margin: 0;
+                    }
+                }
+                .bookingSearch {
+                    display: flex;
+                    @media only screen and (max-width: 991px) {
+                        display: none;
+                    }
+                }
+                .tabImg {
+                    width: 27px;
+                    height: 27px;
+                    margin-right: 10px;
+                    @media only screen and (max-width: 768px) {
+                        display: none;
+                    }
+                    &.tabImg0 {
+                        background-position: -1px -3px;
+                    }
+                    &.tabImg1 {
+                        background-position: -36px -5px;
+                    }
+                    &.tabImg2 {
+                        background-position: -68px -5px;
+                    }
+                    &.tabImg3 {
+                        background-position: -99px -2px;
+                    }
+                }
+                span {
+                    font-size: 16px;
+                    line-height: 16px;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    display: block;
+                    margin-top: 8px;
+                    @media only screen and (max-width: 768px) {
+                        font-size: 14px;
+                        line-height: 14px;
+                        font-weight: 400;
+                        // color: #4a4a4a;
+                    }
+                }
+                label {
+                    color: #4a4a4a;
+                    font-size: 10px;
+                    line-height: 16px;
+                    font-weight: 400;
+                    margin: 0;
+                    display: block;
+                }
+                input {
+                    border-radius: 4px;
+                    border: 1px solid #ccc;
+                    background-color: #fff;
+                    width: 189px;
+                    padding: 14px 12px;
+                    outline: 0;
+                    color: #4a4a4a;
+                    font-size: 14px;
+                    line-height: 18px;
+                    &:focus {
+                        border-color: #008cff;
+                    }
+                }
+                .modalBotton {
+                    height: 48px;
+                    margin-left: 5px !important;
+                    border-radius: 4px !important;
+                    padding: 13px 8px 15px !important;
+                    min-width: 40px !important;
+                }
+            }
+        }
+        .bookingBody {
+            padding: 40px 30px 30px 45px;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 3px 30px 0 rgba(0,0,0,.1);
+            background-color: #fff;
+            @media only screen and (max-width: 991px) {
+                padding: 20px;
+            }
+            @media only screen and (max-width: 768px) {
+                padding: 10px 0;
+                box-shadow: none;
+            }
+            .bookContainer {
+                padding: 0 0 20px;
+                border-radius: 5px;
+                margin-bottom: 20px;
+                box-shadow: 0 3px 2px -2px rgba(0,0,0,.07), 0 1px 5px 0 rgba(74,74,74,.2), 0 2px 2px 0 rgba(74,74,74,.2);
+                @media only screen and (max-width: 768px) {
+                    padding: 0px;
+                    box-shadow: none;
+                }
+                .bookingDetail {
+                    box-shadow: 0 1px 6px 0 rgba(0,0,0,.2);
+                    background-color: #fff;
+                    padding: 20px 50px 20px 54px;
+                    position: relative;
+                    @media only screen and (max-width: 768px) {
+                        display: flex;
+                        padding: 10px 15px;
+                        box-shadow: none;
+                        background-color: #f9f9f9;
+                    }
+                    .planeImg {
+                        width: 54px;
+                        height: 54px;
+                        background-color: #fff;
+                        border: 3px solid #f1f1f1;
+                        border-radius: 50%;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: absolute;
+                        left: -31px;
+                        top: 18px;
+                        @media only screen and (max-width: 768px) {
+                            display: none;
+                        }
+                    }
+                    .plane {
+                        display: none;
+                        cursor: pointer;
+                        min-width: 40px;
+                        // margin-right: 20px;
+                        @media only screen and (max-width: 768px) {
+                            display: inline-flex;
+                        }
+                    }
+                    .bookImg {
+                        width: 35px;
+                        height: 21px;
+                        background-position: -123px -498px;
+                        &.upcoming {
+                            width: 29px;
+                            height: 18px;
+                            background-position: -397px -365px;
+                        }
+                        &.complete {
+                            background-position: -169px -498px;
+                        }
+                        &.uncomplete {
+                            background-position: -77px -498px;
+                        }
+                    }
+                    .detailRow {
+                        display: flex;
+                        justify-content: space-between;
+                        @media only screen and (max-width: 768px) {
+                            flex-direction: row;
+                            justify-content: space-between;
+                            align-items: center;
+                            width: 100%;
+                        }
+                        .Route {
+                            display: flex;
+                            align-items: center;
+                            margin-bottom: 15px;
+                            @media only screen and (max-width: 768px) {
+                            margin-bottom: 0;
+                            }
+                        }
+                        .detailsInner {
+                            display: flex;
+                            align-items: center;
+                            flex-wrap: wrap;
+                        }
+                        .chip {
+                            background-color: #d6f6f3!important;
+                            color: #1a7971!important;
+                            margin: 0 8px;
+                            padding: 5px 8px;
+                            font-size: 11px;
+                            line-height: 12px;
+                            font-weight: 500;
+                            border-radius: 4px;
+                            &.color {
+                                color: #cf8100!important;
+                                background-color: #FFEDD1 !important;
+                            }
+                        }
+                        h3 {
+                            font-size: 22px;
+                            line-height: 30px;
+                            color: #202e4a;
+                            font-weight: 500;
+                            text-wrap: nowrap;
+                            margin: 0;
+                            @media only screen and (max-width: 768px) {
+                               font-size: 16px;
+                               line-height: 20px;
+                            }
+                        }
+                        .flightInfo {
+                            display: flex;
+                            margin-bottom: 8px;
+                            @media only screen and (max-width: 576px) {
+                                flex-direction: column;
+                            }
+                            &.flightinfoInner {
+                                @media only screen and (max-width: 991px) {
+                                    flex-direction: column;
+                                }  
+                            }
+                            .Date {
+                                display: none;
+                                color: #1a7971;
+                                font-weight: 500;
+                                @media only screen and (max-width: 768px) {
+                                  display: block;
+                                }
+                            }
+                        }
+                        .borderArrow {
+                            position: relative;
+                            margin: 0 5px;
+                            border: 2px solid #000;
+                            width: 11px;
+                            height: 6px;
+                            border-width: 2px 0;
+                            &::before {
+                                content: "";
+                                width: 1px;
+                                height: 5px;
+                                border: 1px solid #000;
+                                position: absolute;
+                                transform: rotate(135deg);
+                                bottom: -6px;
+                                left: 2px;
+                            }
+                            &::after {
+                                content: "";
+                                width: 1px;
+                                height: 5px;
+                                border: 1px solid #000;
+                                position: absolute;
+                                transform: rotate(135deg);
+                                top: -6px;
+                                right: 2px;
+                            }
+                        }
+                        .rightArrow {
+                            margin-right: 25px;
+                            position: relative;
+                            margin-left: 5px;
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                width: 6px;
+                                height: 6px;
+                                border: solid #000;
+                                border-width: 2px 2px 0 0;
+                                top: 50%;
+                                transform: rotate(45deg) translateY(-70%);
+                                right: -9px;
+                            }
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                width: 8px;
+                                height: 2px;
+                                background-color: #000;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                right: -10px;
+                            }
+                        }
+                        .customSpan {
+                            font-weight: 500;
+                            margin-right: 20px;
+                            position: relative;
+                            &:last-child {
+                                font-weight: 400;
+                                margin: 0;
+                                &::after {
+                                    display: none;
+                                }
+                            }
+                            @media only screen and (max-width: 768px) {
+                                font-size: 13px;
+                                font-weight: 400;
+                                line-height: 16px;
+                                color: #4a4a4a;
+                             }
+                            &::after {
+                                content: "";
+                                width: 5px;
+                                height: 5px;
+                                background-color: #4a4a4a;
+                                border-radius: 50%;
+                                position: absolute;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                @media only screen and (max-width: 991px) {
+                                    position: static;
+                                }
+                                right: -12px;
+                            }
+                            &.color {
+                                color: #cf8100;
+                            }
+                            &.colorRed {
+                                color: #eb2026;
+                            }
+                        }
+                        .downArrow {
+                            display: none;
+                            @media only screen and (max-width: 768px) {
+                                display: block;
+                                min-width: 12px;
+                                min-height: 12px;
+                                background-image: url(../../../assets/images/mytrip.png);
+                                background-position: 1260px 922px;
+                                // rotate: 90deg;
+                            }
+                        }
+                        .modalBotton {
+                            margin: 0 !important;
+                            padding: 10px 17px !important;
+                            font-size: 15px;
+                            @media only screen and (max-width: 991px) {
+                                max-width: 237px;
+                                width: 180px;
+                                font-size: 12px;
+                            }
+                            @media only screen and (max-width: 768px) {
+                                display: none !important;                          
+                            }
+                            &.m-0 {
+                                // width: 237px;
+                            }
+                        }
+                    }
+                    .custom {
+                        padding: 10px;
+                        background-color: #ffedd1;
+                        border-radius: 4px;
+                        font-size: 14px;
+                        line-height: 18px;
+                        color: #cf8100;
+                        margin-top: 10px;
+                        display: inline-block;
+                        @media only screen and (max-width: 768px) {
+                            margin: 0;;                        
+                        }
+                        &.color {
+                            background-color: #ffd3d4;
+                            // width: 687px;
+                            color: #eb2026;
+                        }
+                    }
+                }
+                .bookingpart {
+                    padding: 25px 55px 5px;
+                    display: flex;
+                    @media only screen and (max-width: 991px) {
+                        flex-direction: column;
+                        padding: 20px;
+                    }
+                    @media only screen and (max-width: 768px) {
+                     display: none;
+                    }
+                    .bookingLeft {
+                        flex: 1;
+                        margin-right: 70px;
+                        @media only screen and (max-width: 991px) {
+                            margin-right: 0;
+                        }
+                        &.curser {
+                            cursor: pointer;
+                        }
+                        .customSpan {
+                            line-height: 21px;
+                            &.cSpan {
+                                font-size: 16px;
+                            }
+                            &.blue {
+                                color: #008cff;
+                                margin-right: 10px;
+                            }
+                        }
+                        .chip {
+                            background-color: #d6f6f3!important;
+                            color: #1a7971!important;
+                            margin: 0 8px 0 18px;
+                            padding: 5px 8px;
+                            font-size: 11px;
+                            line-height: 12px;
+                            font-weight: 500;
+                            border-radius: 4px;
+                        }
+                        .bookImg {
+                            background-position: -220px -499px;
+                            min-width: 16px;
+                            height: 10px;
+                            margin-right: 10px;
+                            margin-bottom: 4px;
+                            &.img1 {
+                                background-position: -137px -40px;
+                                width: 15px;
+                                height: 15px;
+                            }
+                        }
+                        .images {
+                            width: 35px;
+                            height: 35px;
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+                        .bottom {
+                            display: flex;
+                            align-items: flex-end;
+                            justify-content: space-between;
+                            margin: 10px 0 30px;
+                            .bookInfo {
+                                margin-right: 12px;
+                            }
+                        }
+                        .planeName {
+                            display: flex;
+                            align-items: center;
+                            margin-bottom: 5px;
+                            position: relative;
+                            .hoverCard {
+                                background-color: #fff;
+                                box-shadow: 0 3px 10px 0 rgba(0,0,0,.3);
+                                padding: 25px 15px 5px;
+                                width: 320px;
+                                display: none;
+                                position: absolute;
+                                top: 30px;
+                                left: 25px;
+                                z-index: 1;
+                                &::before {
+                                    width: 0;
+                                    height: 0;
+                                    top: -5px;
+                                    left: 45px;
+                                    content: "";
+                                    position: absolute;
+                                    margin-left: -0.5em;
+                                    box-sizing: border-box;
+                                    border: 8px solid #000;
+                                    transform: rotate(-225deg);
+                                    box-shadow: -1px 1px 1px 0 rgba(0,0,0,.3);
+                                    border-color: transparent transparent #fff #fff;
+                                }
+                                .cardInner {
+                                    margin-bottom: 25px;
+                                    .title {
+                                        font-size: 16px;
+                                        line-height: 18px;
+                                        font-weight: 500;
+                                        color: #4a4a4a;
+                                        display: block;
+                                    }
+                                    label {
+                                        margin: 0 25px 0 0;
+                                    }
+                                    .MArrow {
+                                        margin-right: 25px;
+                                        position: relative;
+                                        margin-left: 5px;
+                                        width: 8px;
+                                        height: 6px;
+                                        top: 6px;
+                                        &::before {
+                                            content: "";
+                                            position: absolute;
+                                            width: 6px;
+                                            height: 6px;
+                                            top: 50%;
+                                            transform: rotate(45deg) translateY(-70%);
+                                            right: 2px;
+                                            border: solid #4a4a4a;
+                                            border-width: 1px 1px 0 0;
+                                        }
+                                        &::after {
+                                            content: "";
+                                            position: absolute;
+                                            width: 8px;
+                                            height: 2px;
+                                            background-color: #000;
+                                            top: 50%;
+                                            transform: translateY(-50%);
+                                            right: -10px;
+                                            background: #4a4a4a;
+                                        }
+                                    }
+                                }
+                            }
+                            &:hover {
+                                .hoverCard {
+                                    display: block;
+                                }
+                            }
+                        }
+                        .customLabel {
+                            b {
+                                color: #747474;
+                            }
+                            .yellow {
+                                color: #cf8100;
+                            }
+                        }
+                        .hoverText {
+                            display: inline-flex;
+                            color: #4a4a4a;
+                            &:hover {
+                                color: #eb2026 !important;
+                            }
+                            i {
+                                margin-right: 10px;
+                            }
+                            label {
+                                font-size: 12px;
+                                line-height: 15px;
+                                font-weight: 400;
+                                display: block;
+                                margin: 0;
+                            }
+                        }
+                        .para {
+                            font-size: 16px;
+                            font-weight: 500;
+                            line-height: 20px;
+                            margin: 30px 0 20px;
+                            color: #000;
+                        }
+                        .vBorder {
+                            display: flex;
+                            justify-content: space-between;
+                            width: 550px;
+                            position: relative;
+                            @media only screen and (max-width: 768px) {
+                                flex-direction: column;
+                            }
+                            &::before {
+                                content: "";
+                                height: 5px;
+                                background-color: #e7e7e7;
+                                position: absolute;
+                                top: 14px;
+                                width: 380px;
+                                left: 31px;
+                                @media only screen and (max-width: 768px) {
+                                    width: 5px;
+                                    top: 14px;
+                                    height: 69px;
+                                    left: 14px;
+                                }
+                            }
+                            .bookingleftInner {
+                                display: flex;
+                                flex-direction: column;
+                                @media only screen and (max-width: 768px) {
+                                    flex-direction: row;
+                                }
+                                &.cancelled {
+                                    @media only screen and (max-width: 768px) {
+                                        margin-bottom: 20px;
+                                    }
+                                }
+                                &.refund {
+                                    width: 140px;
+                                    @media only screen and (max-width: 768px) {
+                                        width: unset;
+                                    }
+                                }
+                            }
+                        }
+                        .bookIcon {
+                            min-width: 32px;
+                            width: 32px;
+                            margin-right: 20px;
+                            height: 32px;
+                            border-radius: 50%;
+                            background-color: #F2B234;
+                            color: #fff;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin-bottom: 10px;
+                            position: relative;
+                            z-index: 2;
+                            i {
+                                font-size: 15px;
+                            }
+                            &.closeIcon {
+                                background-color: #E7E7E7;
+                                color: #9b9b9b;
+                                i {
+                                    font-size: 20px;
+                                }
+                            }
+                        }
+                    }
+                    .bookingRight {
+                        width: 235px;
+                        overflow: hidden;
+                        padding-left: 20px;
+                        padding-top: 30px;
+                        .bookImg {
+                            width: 24px;
+                            height: 24px;
+                            background-position: -240px -43px;
+                            margin-right: 10px;
+                            &.img1 {
+                                background-position: -176px -64px;
+                            }
+                        }
+                        .customSpan {
+                            color: #008cff;
+                        }
+                        .modalBotton {
+                            background-color: transparent !important;
+                            padding: 10px 15px !important;
+                            font-size: 14px !important;
+                            font-weight: 400 !important;
+                            color: #008cff !important;
+                            background-image: none;
+                            margin: 0 !important;
+                        }
+                    }
+                }
+            }
+           
+        }
+    }
+}

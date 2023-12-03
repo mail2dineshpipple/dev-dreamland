@@ -1,0 +1,65 @@
+<div id="webCheck">
+  <div class="container">
+    <h1>Web Check-in</h1>
+    <div class="rightside">
+        <img src="assets/images/world.png">
+    </div>
+    <div class="pageInner">
+      <mat-tab-group class="webCheckinTabGroup cardshadow" [(selectedIndex)]="selectedTab">
+        <mat-tab label="Letest notification from Airlines" id="tabLabel">
+          <div class="tabInner">
+            <mat-accordion >
+              <mat-expansion-panel *ngFor="let item of data">
+                <mat-expansion-panel-header>
+                  <mat-panel-title >
+                  {{item.name}}
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    updated on {{item.date}}
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div class="panelInner">
+                  <div class="flyImg"><img src="{{item.img}}" alt=""></div>
+                  <div class="flyDetails">
+                    <div class="updateDate">updated on {{item.date}}</div>
+                    <p class="mt-3">Fly to VIENNA on  {{item.name}} From Delhi</p>
+                  </div>
+                </div>
+              </mat-expansion-panel>
+            </mat-accordion>
+          </div>
+        </mat-tab>
+      
+        <!-- second tab -->
+
+        <mat-tab label="Web Check-in" id="tabLabel">
+          <div class="tabMain">
+            <div class="note">
+                <p><span class="bold">Important Information</span>: Airlines may change their rules without notice, at their discretion, please refer to airline policies for the most recent update. For any amendments and cancellations, you will be charged as per the latest airline policy applicable.</p>
+            </div>
+            <div class="main">
+              <div class="cubes" *ngFor="let item of list">
+                <div class="airimg">
+                  <img src="{{item.pic}}">
+                </div>
+                <div class="cubeInner">
+                  <mat-tab-group class="webCheckinTabGroup tabGroup" [(selectedIndex)]="item.active">
+                    <mat-tab [label]="sitem.label" *ngFor="let sitem of item.child">
+                      <p class="bold mt-4">Please visit: <span class="blue" (click)="gotoURL(sitem)">{{sitem.link}}</span></p>
+                      <ol>
+                        <li *ngFor="let point of sitem.items">{{point}}</li>
+                      </ol>
+                      <p *ngIf="sitem?.extraP">{{sitem.extraP}}</p>
+                      <p><span class="bold">Please Note</span>: {{sitem.note}}</p>
+                    </mat-tab>
+                  </mat-tab-group>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</div>
+

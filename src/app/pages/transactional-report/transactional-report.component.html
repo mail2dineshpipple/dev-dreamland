@@ -1,0 +1,59 @@
+<div id="tarnsactionList">
+    <div class="container">
+        <h1>Transactional Reports</h1>
+        <div class="pageInner">
+            <div class="transCard">
+                <div class="cardHeader">
+                    <div class="headImg">
+                        <svg width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg" class="report__ReportIcon-sc-1mdquwb-0 khgzmB"><circle cx="18" cy="18" r="18" fill="#F2ECF3"></circle><path opacity="0.01" fill="#D8D8D8" d="M3 3h30v30H3z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M10.001 9.567a1.57 1.57 0 011.57-1.569h12.86c.867 0 1.57.703 1.57 1.57v16.474a.843.843 0 01-1.421.613.843.843 0 00-1.158 0l-.421.398c-.561.53-1.439.53-2 0a1.456 1.456 0 00-2 0c-.561.53-1.439.53-2 0a1.456 1.456 0 00-2 0c-.561.53-1.439.53-2 0l-.421-.398a.843.843 0 00-1.158 0 .843.843 0 01-1.421-.613V9.567z" fill="url(#report_svg__a)" stroke="#000" stroke-width="0.898"></path><g opacity="0.99"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.999 12h4.406z" fill="#fff"></path><path d="M12.999 12h4.406" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g><g opacity="0.99"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.999 15h9.863z" fill="#fff"></path><path d="M12.999 15h9.863" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g><g opacity="0.99"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.999 18.002h9.863z" fill="#fff"></path><path d="M12.999 18.002h9.863" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g><g opacity="0.99"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.999 20.998h8.528z" fill="#fff"></path><path d="M12.999 20.998h8.528" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></g><defs><linearGradient id="report_svg__a" x1="16.614" y1="-0.643" x2="-0.621" y2="14.586" gradientUnits="userSpaceOnUse"><stop stop-color="#FFC800"></stop><stop offset="1" stop-color="#FF9500"></stop></linearGradient></defs></svg>
+                    </div>
+                    <h2>Transactional Reports</h2>
+                </div>
+                <div class="cardBody">
+                    <div class="cardSelect">
+                        <div class="customSelect">
+                            <label>Select Report Type</label>
+                            <select name="" id="">
+                            <option value="">Select Report Type</option>
+                            <option value="">Flights</option>
+                            <option value="">Hotels</option>
+                            
+                            </select>
+                        </div>
+                    </div>
+                    <div class="cardSelect">
+                        <label class="m-0">Select Date Range</label>
+                        <mat-radio-group class="customRadioGroup">
+                            <mat-radio-button value="1">Last Quarter</mat-radio-button>
+                            <mat-radio-button value="2">Current Quarter</mat-radio-button>
+                            <mat-radio-button value="3">Last Financial Year</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                    <div class="cardLine">
+                        <label>OR</label>
+                        <span class="line"></span>
+                    </div>
+                    <div class="cardDate">
+                        <div class="d-flex">
+                            <label class="date">From</label>
+                            <mat-form-field appearance="fill" class="example-form-field custom-datePicker" (click)="datepicker1.open()" >
+                                <input matInput class="date" [matDatepicker]="datepicker1" placeholder="5/16/2023" name="from">
+                                <mat-datepicker-toggle [for]="datepicker1"></mat-datepicker-toggle>
+                                <mat-datepicker #datepicker1></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                        <div class="d-flex">
+                            <label class="date">To</label>
+                            <mat-form-field appearance="fill" class="example-form-field custom-datePicker" (click)="datepicker.open()" >
+                                <input matInput class="date" [matDatepicker]="datepicker" placeholder="5/16/2023" name="from">
+                                <mat-datepicker-toggle [for]="datepicker"></mat-datepicker-toggle>
+                                <mat-datepicker #datepicker></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <button class="modalBotton">Download Report</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,572 @@
+<div id="flightBooking">
+    <div class="container">
+        <h1>Complete your booking</h1>
+        <div class="pageInner">
+            <div class="colLeft">
+                <div class="booking-container">
+                    <div class="booking-detail">
+                        <div class="d-flex w-100 justify-content-between align-items-start">
+                            <div class="booking-flight">
+                                <div>
+                                    <h2>Ahmedabad → Mumbai</h2>
+                                    <p class="parafont">
+                                        <span class="backcolour">Friday, Mar 31</span>
+                                        <span>Non Stop · 1h 25m</span>
+                                    </p>
+                                </div>
+                                <div class="booking-apply">
+                                    <p class="font">Cancellation Fee Applied</p>
+                                    <p (click)="openFareRules()"><span>View Baggage & Fare Rules</span></p>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row align-items-center" (click)="openFareRules()">
+                                <span class="dShow767 fareRule">Fare Rules</span>
+                                <div class="downArrow"></div>
+                            </div>
+                        </div>
+                        <div class="booking-airways">
+                            <div class="booking-time">
+                                <div class="d-flex">
+                                    <img src="assets/images/ai.gif">
+                                    <p> 
+                                        <span class="text-colour">Air India</span>
+                                        <span>QP-1102</span>
+                                    </p>
+                                </div>
+                                <div class="d-flex">
+                                    <p class="text">Economy > 
+                                        <label>GoLite</label>
+                                    </p>     
+                                    <div class="background infoIcon">
+                                        <img src="//jsak.mmtcdn.com/flights/assets/media/traveller-info.1aa44be7.png">
+                                    </div>
+                                    <div class="hoverCard">
+                                        <h4>Economy GoLite</h4>
+                                        <h6>Fare by Airline</h6>
+                                        <ul>
+                                            <li *ngFor="let list of flightType">
+                                                <div class="pointImg"></div>
+                                                <span>{{list}}</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="booking-ticket">
+                                <div class="leftSide">
+                                    <div class="left">
+                                        <div class="d-flex from mb-2">
+                                            <div class="text">
+                                                <span>11:45</span>
+                                                <div class="circle"></div>
+                                            </div>
+                                            <p><span>Ahmedabad </span>. Sardar Vallabhbhai Patel International Airport</p>
+                                        </div>
+                                        <div class="dashLine">
+                                            <p>1h 20m</p>
+                                        </div>
+                                        <div class="d-flex mt-2">
+                                            <div class="text">
+                                                <span>13:10</span>
+                                                <div class="circle"></div>
+                                            </div>
+                                            <p><span>Mumbai </span>. Chhatrapati Shivaji International Airport</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rightSide">
+                                    <div class="rightSide-inner">
+                                        <span class="bold">BAGGAGE</span>
+                                        <span>ADULT</span>
+                                    </div>
+                                    <div class="rightSide-inner">
+                                        <span class="bold">CHECK IN</span>
+                                        <span>15 Kgs (1 piece only)</span>
+                                    </div>
+                                    <div class="rightSide-inner">
+                                        <span class="bold">CABIN</span>
+                                        <span>7 Kgs (1 piece only)</span>
+                                    </div>
+                                    <!-- <div class="d-flex justify-content-between mb-1">
+                                        <span class="bold">BAGGAGE</span>
+                                        <span class="bold">CHECK IN</span>
+                                        <span class="bold">CABIN</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <span>ADULT</span>
+                                        <span>15 Kgs (1 piece only)</span>
+                                        <span>7 Kgs (1 piece only)</span>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="!isFlightSeatMeal">
+                        <div class="extraLuggage">
+                            <div class="d-flex align-items-center">
+                                <div class="extraImg">
+                                    <img src="assets/images/refund.png" alt="">
+                                </div>
+                                <span>Got excess luggage? Don't stress, buy extra check-in baggage allowance at fab rates!</span>
+                            </div>
+                            <button (click)="openExtraBaggage()">+ADD</button>
+                        </div>
+                        <div class="refund">
+                            <div class="d-flex justify-content-between mb-2">
+                                <div class="RefundBox">
+                                    <div class="d-flex flex-wrap">
+                                        <h4 class="mr-2">Refund policy</h4> 
+                                        <div class="font">Cancellation Fee Applied</div>
+                                    </div>
+                                    <p class="mt-1">Penalty may be charged by the airline & by Agency Service fee based on how close to departure date you cancel. <span (click)="openFareRules()">View Policy</span></p>    
+                                </div>
+                                <div class="text-right">
+                                    <label>₹ 208</label>
+                                    <span>Approx Refund Amount</span>
+                                </div>
+                            </div>
+                            <div class="refundCard">
+                                <div class="d-flex align-items-center">
+                                    <div class="background">
+                                        <img src="assets/images/refund.png" alt="">
+                                    </div>
+                                    <span>More fares with flexible refund & date change policy available!</span>
+                                </div>
+                                <button (click)="openMoreFares()">UPGRADE</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngIf="!isFlightSeatMeal">
+                    <div class="travel-Insurance">
+                        <div class="traveleTitle">
+                            <div class="d-flex align-items-center">
+                                <div class="leftImg">
+                                    <img src="assets/images/insurance.png" alt="">
+                                </div>
+                                <h2>Travel Insurance</h2>
+                            </div>
+                            <div class="rightImg">
+                                <img src="https://imgak.mmtcdn.com/flights/assets/media/dt/rta_assets/insurance-reliance.png">
+                            </div>
+                        </div>
+                        <div class="insurance-list" *ngIf="insuranceOptions">
+                            <p>₹ 79<span>Onwards /Traveller (18% GST included)</span></p>
+                            <owl-carousel-o [options]="insuranceOptions">
+                                <ng-container *ngFor="let slide of insurance">
+                                    <ng-template class="slide" carouselSlide [id]="slide.id">
+                                        <div class="insurance-item">
+                                            <div class="leftImg">
+                                                <img src="assets/images/insurance.png" alt="">
+                                            </div>
+                                            <div>
+                                                <span class="color">Upto <label>₹ {{slide.title}}</label></span>
+                                                <span class="bold">{{slide.type}}</span>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                </ng-container>    
+                            </owl-carousel-o>
+                        </div>
+                        <!-- <div class="riview-list" *ngIf="reviewOptions">
+                            <owl-carousel-o [options]="reviewOptions">
+                                <ng-container *ngFor="let slide of review">
+                                    <ng-template class="slide" carouselSlide [id]="slide.id">
+                                        <div class="riview-item">
+                                            <div class="riviewImg">
+                                                <img src="assets/images/insurance.png" alt="">
+                                            </div>
+                                            <div>
+                                                <span>{{slide.title}}</span>
+                                                <span class="bold">{{slide.type}}</span>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                </ng-container>    
+                            </owl-carousel-o>
+                        </div> -->
+                        <div class="term">
+                            <mat-radio-group class="customRadioGroup" [(ngModel)]="selectedFareType">
+                                <mat-radio-button value="1"><b>Yes,</b> Secure the trip.</mat-radio-button>
+                                <mat-radio-button value="2"><b>No,</b> I’ll take the risk.</mat-radio-button>
+                            </mat-radio-group>
+                            <div class="highLine">
+                                <p>Don't let a flight delay add to your worries. Get your trip Insured. 100% claim settlement.</p>
+                            </div>
+                            <p>By adding insurance I agree to the <span (click)="commonService.openInnerPage('term-condition')">Terms & Conditions</span> and confirm all passengers are between 2 to 70 years of age. I hereby declare and understand that Dreamland Kart Pvt Ltd facilitates the access of third party travel insurance to its customer. I shall not mark-up or charge any additional amount for facilitating the access of third party travel insurance to the end customer.</p>
+                        </div>
+                    </div>
+                    <div class="travel-details">
+                        <div class="travel-content">
+                            <h2>Traveller Details</h2>
+                            <div class="traveller-inner">
+                                <div class="adults">
+                                    <div class="detailImg"><img src="assets/images/traveller.png"></div>
+                                    <p>ADULT (12yrs+)</p>
+                                </div>
+                                <p>0/1 <span>added</span></p>
+                            </div>
+                            <div class="detailList">
+                                <!-- <div>
+                                    <div class="adult">
+                                        <label class="checkboxContainer">
+                                            <mat-checkbox class="customCheckbox"></mat-checkbox>
+                                            <p>Ariba Mustaqim</p>
+                                        </label>
+                                    </div>
+                                    <div class="detailData">
+                                        <div class="alertPage">
+                                            <div class="alert-inner">
+                                                <p>Enter name as mentioned on your passport or Government approved IDs.</p>
+                                            </div>
+                                        </div>
+                                        <div class="detailsForm">
+                                            <div class="formInnner">
+                                                <div class="formRow">
+                                                    <div class="formItem customInput">
+                                                        <input autocomplete="none" placeholder="First &amp; Middle Name" class="Input " type="text" value="">
+                                                    </div>
+                                                    <div class="formItem customInput">
+                                                        <input autocomplete="none" placeholder="Last Name" class="Input " type="text" value="">
+                                                    </div>
+                                                    <div class="formItem">
+                                                        <div class="selectTab">
+                                                            <div>
+                                                                <label tabindex="0">
+                                                                    <input type="radio" name="gender_MANUAL_e521c497-4657-4126-a82b-e4c3804425a7" value="MALE"><span class="selectTabText">MALE</span>
+                                                                </label>
+                                                                <label tabindex="1">
+                                                                    <input type="radio" name="gender_MANUAL_e521c497-4657-4126-a82b-e4c3804425a7" value="FEMALE">
+                                                                    <span class="selectTabText">FEMALE</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <div>
+                                    <div class="adult">
+                                        <label class="checkboxContainer">
+                                            <mat-checkbox class="customCheckbox"></mat-checkbox>
+                                            <p>ADULT  1</p>
+                                        </label>
+                                    </div>
+                                    <div class="detailData">
+                                        <div class="alertPage">
+                                            <div class="alert-inner">
+                                                <p>Enter name as mentioned on your passport or Government approved IDs.</p>
+                                            </div>
+                                        </div>
+                                        <div class="adultStatus">
+                                            <div class="inputStatus customInput">
+                                                <input type="text" placeholder="Search travellers to My Traveller List">
+                                            </div>
+                                            <div class="status"></div>
+                                        </div>
+                                        <div class="detailsForm">
+                                            <div class="formInnner">
+                                                <div class="formRow">
+                                                    <div class="formItem customInput">
+                                                        <input autocomplete="none" placeholder="First &amp; Middle Name" class="Input " type="text" value="">
+                                                    </div>
+                                                    <div class="formItem customInput">
+                                                        <input autocomplete="none" placeholder="Last Name" class="Input " type="text" value="">
+                                                    </div>
+                                                    <div class="formItem">
+                                                        <div class="selectTab">
+                                                            <div>
+                                                                <label tabindex="0">
+                                                                    <input type="radio" name="gender_MANUAL_e521c497-4657-4126-a82b-e4c3804425a7" value="MALE"><span class="selectTabText">MALE</span>
+                                                                </label>
+                                                                <label tabindex="1">
+                                                                    <input type="radio" name="gender_MANUAL_e521c497-4657-4126-a82b-e4c3804425a7" value="FEMALE">
+                                                                    <span class="selectTabText">FEMALE</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="otherList">
+                                    <!-- <mat-flat-button></mat-flat-button> -->
+                                    <!-- <button type="button"><mat-flat-button>+ ADD NEW ADULT</mat-flat-button></button> -->
+                                    <button mat-flat-button class="addTravellerBtn">+ ADD NEW ADULT</button>
+                                </div>
+                            </div>
+                            <div class="addTraveller">
+                                <label class="checkboxContainer">
+                                    <mat-checkbox class="customCheckbox"></mat-checkbox>
+                                    <p class="addLine"><b>Add these travellers to My Traveller List.</b> You won’t have to fill traveller info on your next visit.</p>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="contactInfo">
+                            <h2>Contact information</h2>
+                            <div class="contactInfoInner">
+                                <div class="info customInput">
+                                    <label>Country Code</label>
+                                    <select name="Country">
+                                        <option value="india">India (91)</option>
+                                        <option value="">China (86)</option>
+                                        <option value="">Brazil (55)</option>
+                                        <option value="">Egypt (20)</option>
+                                        <option value="">Germany (49)</option>
+                                    </select>
+                                </div>
+                                <div class="info customInput">
+                                    <label>Mobile No</label>
+                                    <input type="tel" placeholder="Mobile No">
+                                </div>
+                                <div class="info customInput">
+                                    <label>Email</label>
+                                    <input type="email" placeholder="Email">
+                                </div>
+                            </div>
+                            <p class="colorNote">You can now enter your customer contact details here, which will be passed on to the airline. Dreamland will not send any communication to the customer directly.</p>
+                        </div>
+                        <div class="gstInfo">
+                            <div class="gstData">
+                                <mat-checkbox class="customCheckbox" [formControl]="gstField"></mat-checkbox>
+                                <p>I have a GST number <span>(Optional)</span></p>
+                            </div>
+                            <div class="gstDetail" *ngIf="gstField.value">
+                                <div class="gstM">
+                                    <label>Company Name</label>
+                                    <input type="text" placeholder="Company Name">
+                                    <span class="errorMsg">Please enter valid company name</span>
+                                </div>
+                                <div>
+                                    <label>Registration No</label>
+                                    <input type="text" placeholder="Registration No">
+                                    <span class="errorMsg">Registration No is required.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contactInfo" *ngIf="!gstField.value">
+                            <h2>Traveller State & Pin code</h2>
+                            <div class="contactInfoInner">
+                                <div class="info customInput">
+                                    <label>State</label>
+                                    <select name="State" id="country">
+                                        <option value="">Gujarat</option>
+                                        <option value="">Maharashtra</option>
+                                        <option value="">Delhi</option>
+                                        <option value="">Haryana</option>
+                                        <option value="">Uttarpradesh</option>
+                                    </select>
+                                </div>
+                                <div class="info customInput">
+                                    <label>Pin code</label>
+                                    <input type="tel" placeholder="Enter Pin code">
+                                </div>
+                                <div class="info customInput">
+                                    <label>Address</label>
+                                    <input type="text" placeholder="Enter Address">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3 ml-md-0 dNone767">
+                        <button mat-flat-button class="modalBotton" (click)="isFlightSeatMeal = true">Continue</button>
+                    </div>
+                </div>
+                
+                <div *ngIf="isFlightSeatMeal">
+                    <div class="smDeatails">
+                        <div class="smHeader">
+                            <ng-container *ngFor="let tab of smDeatails">
+                                <div class="customTab" [ngClass]="{'active': tab?.isActive}" (click)="onChangeTab(tab)">
+                                    <div class="seatImg">
+                                        <img [src]="tab.img" >
+                                    </div>
+                                    <span>{{tab.title}}</span>
+                                </div>
+                            </ng-container>
+                        </div>
+                        <ng-container *ngFor="let tab of smDeatails">
+                            <div class="customType" *ngIf="tab?.isActive">
+                                <ng-container *ngIf="!tab?.list">
+                                    <div class="seatTab">
+                                        <div class="customHead">
+                                            <div>
+                                                <span>AMD-BOM</span>
+                                                <label class="customLabel">0 of 1 Seat(s) Selected</label>
+                                            </div>
+                                            <label class="customLabel colorRed">0 of 1 Selected</label>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                                <ng-container *ngIf="tab?.list">
+                                    <div class="mealTab customScroll">
+                                        <div class="customHead">
+                                            <div>
+                                                <span>AMD-BOM</span>
+                                                <label class="customLabel">{{Traveller}} of 1 Seat(s) Selected</label>
+                                            </div>
+                                            <div>
+                                                <mat-checkbox class="customCheckbox">Veg</mat-checkbox>
+                                                <mat-checkbox class="customCheckbox">Non Veg</mat-checkbox>
+                                            </div>
+                                        </div>
+                                        <div class="mealContent" *ngFor="let item of tab?.list">
+                                            <div class="mealRow">
+                                                <div class="mealCol" >
+                                                    <div class="mealImg">
+                                                        <img [src]="item.img">
+                                                    </div>
+                                                    <div>
+                                                        <span class="customSpan">{{item.title}}</span>
+                                                        <span class="customSpan ammont">₹ {{item.amt}}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="counter">
+                                                    <button (click)="decrements('id')" [disabled]="idCounter === 0">
+                                                        <span class="material-icons">remove</span>
+                                                    </button> 
+                                                    <span>{{idCounter}}</span>
+                                                    <button class="plus" (click)="increments('id')">
+                                                        <span class="material-icons">add</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                            </div>
+                        </ng-container>
+                    </div>
+                    <div class="proceedPay dNone767">
+                        <span class="customSpan">By clicking on the Continue button below to proceed with the booking, I confirm that I have read and I accept the <label (click)="openFareRules()">Fare Rules </label>, the <label>Privacy Policy</label> , the <label>User Agreement</label> and <label>Terms of Service</label> of Agency Service fee</span>
+                        <button mat-flat-button class="modalBotton" (click)="openreviewDetails()">Proceed to pay</button>
+                    </div>
+                </div>
+            </div>
+            <div class="colRight customScroll">
+                <div class="sumaryContent">
+                    <h2>Fare Summary</h2>
+                    <div class="sumaryInner">
+                        <ng-container *ngFor="let summary of totalSummary">
+                            <div class="sumaryItem">
+                                <div class="sumaryHead" (click)="onSelect(summary)">
+                                    <div class="d-flex">
+                                        <div class="sumImg">
+                                            <img [src]="summary?.isActive ? 'assets/images/minus.png' : 'assets/images/plus.png'">
+                                        </div>
+                                        <span class="bold">{{summary.title}}</span>
+                                    </div>
+                                    <span *ngIf="(summary?.list?.length !== 1) || (!summary?.isActive && summary?.list?.length === 1)"
+                                    [ngClass]="{'colorGreen': summary?.isMinus}">{{summary.total}}</span>
+                                </div>
+                                <div class="sumaryBody" *ngIf="summary?.isActive">
+                                    <div class="contentItem" *ngFor="let item of summary?.list">
+                                        <span [ngClass]="{'bold': item?.isBold}">{{item.label}}</span>
+                                        <span [ngClass]="{'colorGreen': item?.isMinus}">{{item.amount}}</span>
+                                    </div>  
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                    <div class="sumaryTotal">
+                        <span>Total Amount</span>
+                        <span>₹ 4,188</span>
+                    </div>
+                    <div class="sumaryFooter">
+                        <div class="footImg">
+                            <img src="assets/images/wtf5.png">
+                        </div>
+                        <span>Log In & Sign Up get the best</span>
+                    </div>
+                </div>
+                <div class="promoContent">
+                    <div class="promoInner">
+                        <span><b>PROMO</b> CODES</span>
+                        <div class="promoImg">
+                            <img src="assets/images/gifts.png">
+                        </div>
+                    </div>
+                    <div class="promoInput">
+                        <input type="text" placeholder="Enter promo code">
+                        <button>Apply</button>
+                        <!-- <span class="errorMsg">Sorry! Promocode used is not applicable at the moment.</span> -->
+                    </div>
+                    <div class="promoCard">
+                        <mat-radio-group class="customRadioGroup">
+                            <mat-radio-button value="1">
+                                <div class="flexOne">
+                                    <p class="me-2">Get ₹ 750 OFF</p>
+                                    <span class="save">Use this coupon and get Rs. 750 instant discount on your flight .</span>
+                                    <span class="term">Terms & Conditions</span>
+                                </div>
+                            </mat-radio-button>
+                            <mat-radio-button value="2">
+                                <div class="flexOne">
+                                    <p class="me-2">Get ₹ 700 OFF</p>
+                                    <span class="save">Get Rs. 700 off via mobokwik</span>
+                                    <span class="term">Terms & Conditions</span>
+                                </div>
+                            </mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                    <!-- <div class="promoCard">
+                        <mat-radio-group class="customRadioGroup">
+                            <mat-radio-button value="1">
+                                <div class="flexOne">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p class="me-2">MYSUPERDF</p>
+                                        <div class="offerImg">
+                                            <img src="assets/images/offer.png">
+                                        </div>
+                                    </div>
+                                    <span class="save">Use & Save ₹ 71</span>
+                                    <span class="congrate">Congratulations! Instant coupon applied successfully. You have saved Rs 71</span>
+                                </div>
+                            </mat-radio-button>
+                            <div>
+                                <span class="term">Terms & Conditions</span>
+                                <span class="remove">Remove</span>
+                            </div>
+                        </mat-radio-group>
+                    </div> -->
+                    <!-- <div class="promoDeal">
+                        <div class="dealImg">
+                            <img src="assets/images/gifts.png">
+                        </div>
+                        <p>Great! Now you have unlocked all the exclusive deals.</p>
+                    </div> -->
+                </div>
+                <div class="cancelContent">
+                    <h2>Cancellation & Date change charges</h2>
+                    <div class="cancelInner">
+                        <div class="d-flex">
+                            <div class="cancelImg">
+                                <img src="assets/images/greencancel.png">
+                            </div>
+                            <div class="cancelFlex">
+                                <p>Cancellation Fee</p>
+                                <span>A penalty of upto ₹ 4,050 will be charged by the airline & by Dreamland based on how close to the departure date you cancel.</span>
+                                <span class="view" (click)="openFareRules()">VIEW POLICY</span>
+                            </div>
+                        </div>
+                        <div class="cancelBody">
+                            <p>₹ 124</p>
+                            <span>Approx refund</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="responsiveFooter dShow767">
+            <span>₹ 4188</span>
+            <button mat-flat-button class="modalBotton" (click)="onClickBtn('Continue')" *ngIf="responsiveFooter === 'Continue'">Continue</button>
+            <button mat-flat-button class="modalBotton" (click)="onClickBtn('Proceed')" *ngIf="responsiveFooter === 'Proceed'">Proceed to pay</button>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,41 @@
+<div class="flight-section">
+    <div class="section-title">
+        <h3>Popular Flight Routes</h3>
+    </div>
+    <div class="custom-tabbing">
+        <div class="tabbing-header">
+            <!-- <label class="tabLabel">From:</label> -->
+            <div class="tabbing-scroll customScroll">
+                <ng-container *ngFor="let tab of flightList">
+                    <span [ngClass]="{'active': tab?.isActive}" (click)="onChangeTab(tab)">{{tab.Name}}</span>
+                </ng-container>
+            </div>
+        </div>
+        <div class="tabbing-body">
+            <ng-container *ngFor="let tab of flightList">
+                <div class="tab-inner" *ngIf="tab?.isActive">
+                    <owl-carousel-o [options]="flightOptions" class="homepageSlider">
+                        <ng-container *ngFor="let slide of tab?.List">
+                            <ng-template class="slide" carouselSlide [id]="slide.Id">
+                                <div class="flight-card cursor" (click)="gotoNext('flightList')">
+                                    <div class="flight-body">
+                                        <label class="title">{{slide.Start}} </label>
+                                        <span class="date">{{slide.Date}} </span>
+                                        <div class="route-img">
+                                            <img src="assets/images/fly.png">
+                                        </div>
+                                        <label class="title">{{slide.From}}</label>
+                                    </div>
+                                    <div class="flight-footer">
+                                        <span>Starting from</span>
+                                        <label class="price">{{slide.Price}}</label>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </ng-container>
+                    </owl-carousel-o>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

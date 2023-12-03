@@ -1,0 +1,497 @@
+<div id="Home">
+  <div class="banner">
+    <div class="container route">
+      <div class="repService">
+        <div
+          class="serviceInner"
+          routerLink="/flights"
+          routerLinkActive="active"
+        >
+          <img src="./../../../assets/images/flight.png" />
+          <span>Flights</span>
+        </div>
+        <div
+          class="serviceInner"
+          routerLink="/hotels"
+          routerLinkActive="active"
+        >
+          <img src="./../../../assets/images/hotel.png" />
+          <span>Hotels</span>
+        </div>
+        <div class="serviceInner" (click)="commonService.openUrl()">
+          <img src="./../../../assets/images/holiday.png" />
+          <span>Holidays</span>
+        </div>
+      </div>
+      <h1>
+        <img src="assets/images/plane.svg" alt="" class="mr-2" />
+        <!-- Find lowest fare -->
+        Book Flights Online
+      </h1>
+      <div class="banner-card">
+        <div class="mattoogle-group customScroll">
+          <mat-button-toggle-group
+            [(ngModel)]="search.flightType"
+            aria-label="type"
+          >
+            <mat-button-toggle value="OneWay">One way</mat-button-toggle>
+            <mat-button-toggle value="RoundWay">Round way</mat-button-toggle>
+            <mat-button-toggle value="Multicity">Multicity</mat-button-toggle>
+          </mat-button-toggle-group>
+          <!-- <mat-button-toggle-group [(ngModel)]="isFlexi" aria-label="type"> -->
+          <mat-button-toggle
+            class="flexi dNone767"
+            (change)="selectFlexi($event)"
+            value="true"
+            >Flexi (+/-3 days)</mat-button-toggle
+          >
+          <mat-button-toggle
+            class="flexi dShow767"
+            (change)="selectFlexi($event)"
+            value="true"
+            >Flexi (+/-3)</mat-button-toggle
+          >
+          <!-- </mat-button-toggle-group> -->
+        </div>
+        <div *ngFor="let segment of search.segment; index as i">
+          <div class="positionClass" *ngIf="segment.showTravel">
+            <div class="counter-container">
+              <div class="main-counter">
+                <label class="heads">Adults</label>
+                <label class="cityText">(Aged 12+ yrs)</label>
+                <div class="counter">
+                  <button
+                    (click)="decrement('adult', i)"
+                    [disabled]="segment.travelAndCabin?.adult === 0"
+                  >
+                    <span class="material-icons">remove</span>
+                  </button>
+                  <span>{{ segment.travelAndCabin?.adult }}</span>
+                  <button class="plus" (click)="increment('adult', i)">
+                    <span class="material-icons">add</span>
+                  </button>
+                </div>
+              </div>
+              <div class="main-counter">
+                <label class="heads">Children</label>
+                <label class="cityText">(Aged 2-12 yrs)</label>
+                <div class="counter">
+                  <button
+                    (click)="decrement('child', i)"
+                    [disabled]="segment.travelAndCabin?.children === 0"
+                  >
+                    <span class="material-icons">remove</span>
+                  </button>
+                  <span>{{ segment.travelAndCabin?.children }}</span>
+                  <button class="plus" (click)="increment('child', i)">
+                    <span class="material-icons">add</span>
+                  </button>
+                </div>
+              </div>
+              <div class="main-counter m-0">
+                <label class="heads">Infants</label>
+                <label class="cityText">(Below 2 yrs)</label>
+                <div class="counter">
+                  <button
+                    (click)="decrement('infant', i)"
+                    [disabled]="segment.travelAndCabin?.infants === 0"
+                  >
+                    <span class="material-icons">remove</span>
+                  </button>
+                  <span>{{ segment.travelAndCabin?.infants }}</span>
+                  <button class="plus" (click)="increment('infant', i)">
+                    <span class="material-icons">add</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="text-center">
+              <label class="heads mb-2">Cabin</label>
+              <mat-button-toggle-group
+                [(ngModel)]="segment.travelAndCabin!.cabin"
+                aria-label="Type"
+              >
+                <mat-button-toggle value="Economy">Economy</mat-button-toggle>
+                <mat-button-toggle value="PremEconomy"
+                  >Prem.Economy</mat-button-toggle
+                >
+                <mat-button-toggle value="Business">Business</mat-button-toggle>
+                <mat-button-toggle value="First">First</mat-button-toggle>
+              </mat-button-toggle-group>
+            </div>
+            <div class="classFooter">
+              <button class="cancel-btn" (click)="showTravellerCabin(i)">
+                Cancel
+              </button>
+              <button class="done-btn" (click)="showTravellerCabin(i)">
+                Done
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="search-container"
+            [hidden]="i > 0 && search.flightType != 'Multicity'"
+          >
+            <div class="input-content width-25">
+              <div (click)="ontest('From')" class="search-book">
+                <label class="saerch-head">From </label>
+                <div class="sarch-far">
+                  <label class="cityName">{{ segment.fromCity }}</label>
+                  <label class="cityText">{{ segment.fromAirport }}</label>
+                </div>
+              </div>
+              <div class="customNgselect" *ngIf="isShow">
+                <ng-select
+                  [items]="airports"
+                  [isOpen]="true"
+                  class="flight-select"
+                  bindLabel="Name"
+                  [loading]="peopleLoading"
+                  [searchFn]="customSearchFn"
+                  [clearable]="false"
+                  [openOnEnter]="true"
+                  [dropdownPosition]="'bottom'"
+                  (change)="onSelect($event, 'From', i)"
+                >
+                  <ng-template ng-option-tmp let-item="item">
+                    <div class="option-row">
+                      <div class="left">
+                        <img
+                          src="assets/images/planeicon.svg"
+                          alt="planeicon"
+                        />
+                      </div>
+                      <div class="right">
+                        <div
+                          class="d-flex justify-content-between align-items-center"
+                        >
+                          <div class="tilte">
+                            {{ item.City }} ({{ item.Code }})
+                          </div>
+                          <div class="d-flex align-items-center">
+                            <span>{{ item.Country }}</span>
+                            <img
+                              src="assets/images/indian-flag.png"
+                              alt="flagicon"
+                            />
+                          </div>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                          <span>{{ item.Name }}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </ng-template>
+                </ng-select>
+              </div>
+            </div>
+            <div class="input-content width-25 city-to">
+              <div class="ex-btn" (click)="onReverse(i)">
+                <i class="material-icons">sync_alt</i>
+              </div>
+              <div (click)="ontest('To')" class="search-book to">
+                <label class="saerch-head">To</label>
+                <div class="sarch-far">
+                  <label class="cityName">{{ segment.toCity }}</label>
+                  <label class="cityText">{{ segment.toAirport }}</label>
+                </div>
+              </div>
+              <div class="customNgselect" *ngIf="isShow2">
+                <ng-select
+                  [items]="airports"
+                  [isOpen]="true"
+                  class="flight-select"
+                  bindLabel="Name"
+                  [loading]="peopleLoading"
+                  [searchFn]="customSearchFn"
+                  [clearable]="false"
+                  [openOnEnter]="true"
+                  [dropdownPosition]="'bottom'"
+                  (change)="onSelect($event, 'To',i)"
+                >
+                  <ng-template ng-option-tmp let-item="item">
+                    <div class="option-row">
+                      <div class="left">
+                        <img
+                          src="assets/images/planeicon.svg"
+                          alt="planeicon"
+                        />
+                      </div>
+                      <div class="right">
+                        <div
+                          class="d-flex justify-content-between align-items-center"
+                        >
+                          <div class="tilte">
+                            {{ item.City }} ({{ item.Code }})
+                          </div>
+                          <div class="d-flex align-items-center">
+                            <span>{{ item.Country }}</span>
+                            <img
+                              src="assets/images/indian-flag.png"
+                              alt="flagicon"
+                            />
+                          </div>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                          <span>{{ item.Name }}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </ng-template>
+                </ng-select>
+              </div>
+            </div>
+
+            <hr />
+
+            <div class="input-content width-15 {{ search.flightType }}">
+              <input
+                [displayMonths]="2"
+                navigation="arrow"
+                ngbDatepicker
+                #d="ngbDatepicker"
+                [hidden]="true"
+                [(ngModel)]="segment.fromDate"
+                outsideDays="hidden"
+                [dayTemplate]="customDayDeparture"
+              />
+              <ng-template
+                #customDayDeparture
+                let-date
+                let-currentMonth="currentMonth"
+                let-selected="selected"
+                let-disabled="disabled"
+                let-focused="focused"
+              >
+                <span class="calendar-date">
+                  <span class="calendar-day">
+                    {{ date.day }}
+                  </span>
+                  <span class="calendar-faire">
+                    Rs.{{ fairePriceByDate(date) }}
+                  </span>
+                </span>
+              </ng-template>
+              <div
+                appearance="fill"
+                class="example-form-field custom-datePicker"
+                (click)="d.toggle()"
+              >
+                <label class="head">Departure</label>
+
+                <div class="mt-2">
+                  <label class="cityName">
+                    {{ segment.fromDate.day }}
+                    <span
+                      >{{ segment.fromDate | CustomDatePipe : "month" }}
+                      {{ segment.fromDate.year }}</span
+                    ></label
+                  >
+                  <label class="cityText">
+                    {{ segment.fromDate | CustomDatePipe : "weekday" }}</label>
+                </div>
+              </div>
+            </div>
+            <div
+              class="input-content width-15 return"
+              *ngIf="search.flightType != 'Multicity'"
+            >
+              <input
+                [displayMonths]="2"
+                navigation="arrow"
+                ngbDatepicker
+                #d2="ngbDatepicker"
+                [hidden]="true"
+                [(ngModel)]="segment.toDate"
+                outsideDays="hidden"
+                [dayTemplate]="customDayReturn"
+              />
+              <ng-template
+                #customDayReturn
+                let-date
+                let-currentMonth="currentMonth"
+                let-selected="selected"
+                let-disabled="disabled"
+                let-focused="focused"
+              >
+                <span class="calendar-date">
+                  <span class="calendar-day">
+                    {{ date.day }}
+                  </span>
+                  <span class="calendar-faire">
+                    Rs.{{ fairePriceByDate(date) }}
+                  </span>
+                </span>
+              </ng-template>
+              <div
+                appearance="fill"
+                class="example-form-field custom-datePicker"
+                (click)="d2.open()"
+                *ngIf="search.flightType != 'OneWay'"
+              >
+                <label class="head">Return</label>
+
+                <div class="mt-2">
+                  <label class="cityName">
+                    {{ segment.toDate.day }}
+                    <span
+                      >{{ segment.toDate | CustomDatePipe : "month" }}
+                      {{ segment.toDate.year }}</span
+                    ></label
+                  >
+                  <label class="cityText">{{
+                    segment.toDate | CustomDatePipe : "weekday"
+                  }}</label>
+                </div>
+              </div>
+
+              <div class="search-book" *ngIf="search.flightType === 'OneWay'">
+                <label class="saerch-head">Return</label>
+                <div class="sarch-far">
+                  <label class="cityName return-city"
+                    >Tap to add a return date for bigger discounts</label
+                  >
+                </div>
+              </div>
+            </div>
+            <div
+              class="input-content"
+              *ngIf="i == 0 || search.segment.length > i + 1"
+            >
+              <div class="class" (click)="showTravellerCabin(i)">
+                <label class="head">Traveller & Cabin </label>
+                <label class="cityName"
+                  >{{
+                    segment.travelAndCabin!.adult +
+                      segment.travelAndCabin!.children +
+                      segment.travelAndCabin!.infants
+                  }}
+                  <span>Traveller</span
+                  ><span
+                    *ngIf="
+                      segment.travelAndCabin!.adult +
+                        segment.travelAndCabin!.children +
+                        segment.travelAndCabin!.infants >
+                      1
+                    "
+                    >s</span
+                  ></label
+                >
+                <label class="cityText">{{
+                  segment.travelAndCabin?.cabin
+                }}</label>
+              </div>
+            </div>
+            <div
+              class="input-content"
+              *ngIf="i > 0 && search.segment.length == i + 1"
+            >
+              <div class="search-book">
+                <label class="saerch-head">Traveller & Cabin</label>
+                <div class="multy-btn">
+                  <button
+                    type="button"
+                    class="multicityBtn"
+                    (click)="addSegment()"
+                  >
+                    + Add Another City
+                  </button>
+                  <span class="material-icons" (click)="removeSegment(i)">
+                    close
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="banner-bottom">
+          <div class="mb-3 bottomInner">
+            <label class="fare-label">Select A Fare Type:</label>
+            <mat-radio-group
+              class="customRadioGroup customScroll"
+              [(ngModel)]="search.faireType"
+            >
+              <mat-radio-button value="1"
+                >Regular <br />
+                Fares</mat-radio-button
+              >
+              <mat-radio-button
+                value="2"
+                matTooltip="Armed forces Fares: Applicable for serving and retired personnel of Armed Forces and Paramilitary Forces, their recognised dependants like spouses and children, and war widows. It is mandatory to show a valid ID or dependant card at the airport, without which boarding might be denied."
+                aria-label="Button that displays a tooltip when focused or hovered over"
+                >Armed forces <br />
+                Fares</mat-radio-button
+              >
+              <mat-radio-button
+                value="3"
+                matTooltip="Student Fares: Only students above 12 years of age are eligible for special fares and/or additional baggage allowances. Carrying valid student ID cards and student visas (where applicable) is mandatory, else the passenger may be denied boarding or asked to pay for extra baggage."
+                aria-label="Button that displays a tooltip when focused or hovered over"
+                >Student <br />
+                Fares</mat-radio-button
+              >
+              <mat-radio-button
+                value="4"
+                matTooltip="Senior Citizen Fares: Only senior citizens above the age of 60 years can avail this special fare. It is mandatory to produce proof of Date of Birth at the airport, without which prevailing fares will be charged."
+                aria-label="Button that displays a tooltip when focused or hovered over"
+                >Senior Citizen <br />
+                Fares</mat-radio-button
+              >
+              <mat-radio-button
+                value="5"
+                matTooltip="Doctor&nurses Fares: Applicable only for medical personnel. It is mandatory to show a valid ID at the airport, without which boarding may be denied."
+                aria-label="Button that displays a tooltip when focused or hovered over"
+                >Doctor&nurses <br />
+                Fares</mat-radio-button
+              >
+              <mat-radio-button
+                value="6"
+                matTooltip="Doubles Seats Fares: Step up physical distancing by booking two or three adjacent seats for one traveller. Opt from ‘Double/ Entire Row’ by Indigo or ‘GoMore’ service by GoAir - available only for domestic one-way economy class bookings.."
+                aria-label="Button that displays a tooltip when focused or hovered over"
+                >Doubles Seats <br />
+                Fares</mat-radio-button
+              >
+            </mat-radio-group>
+          </div>
+
+          <div>
+            <label class="fare-label">Recent Searches:</label>
+            <div class="recent-searches">
+              <div class="search-item" (click)="searchSegments()">
+                <div class="searchtrip">
+                  <p>Ahmdabad</p>
+                  <i class="material-icons"> sync_alt </i>
+                  <p>Bali</p>
+                </div>
+                <span>1 May 23 - 10 May 23</span>
+              </div>
+              <div class="search-item" (click)="searchSegments()">
+                <div class="searchtrip">
+                  <p>Ahmdabad</p>
+                  <i class="material-icons"> sync_alt </i>
+                  <p>Bali</p>
+                </div>
+                <span>1 May 23 - 10 May 23</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button mat-flat-button class="search-btn" (click)="searchSegments()">
+          <i class="material-icons">search</i>
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="other-section">
+    <div class="container">
+      <app-offer></app-offer>
+      <app-flight></app-flight>
+      <app-hotel></app-hotel>
+      <app-international-trip></app-international-trip>
+      <app-why-dreamland [isWhyyouget]="true"></app-why-dreamland>
+    </div>
+  </div>
+</div>

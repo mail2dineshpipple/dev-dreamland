@@ -1,0 +1,19 @@
+<div class="faq-section mb-4">
+    <div class="section-title">
+        <h3>FAQ</h3>
+        <P>Can't find the answers you're looking for? We've shared some of our most frequently asked questions to help you out!</P>
+    </div>
+    <div class="faq-inner">
+        <div class="qAnda mb-4" *ngIf="type">
+            <mat-accordion>
+                <mat-expansion-panel  *ngFor="let item of faQList[type]">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Q.{{item.qtn}}
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <div class="panelBody" [innerHtml]="item.ans"></div>
+                </mat-expansion-panel>
+              </mat-accordion>          
+        </div>
+    </div>

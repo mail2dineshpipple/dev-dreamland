@@ -1,0 +1,195 @@
+@import "./../../../assets/scss/variable.scss";
+
+#tarnsactionList {
+    background: #f2f2f2;
+    position: relative;
+     &::after {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        content: '';
+        background-color: #1b2b4f;
+        background-image: linear-gradient(to bottom, #005494, #04A7EA);
+        height: 200px;
+        z-index: 0;
+    }
+    .container {
+        position: relative;
+        z-index: 1;
+        @media only screen and (max-width: 767px) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        h1 {
+            color: #ffffff;
+            font-size: 20px;
+            line-height: 24px;
+            font-weight: 600;
+            margin: 0;
+            padding: 30px 0 30px;
+            text-align: center;
+        }
+        .pageInner {
+            padding-bottom: 30px;
+            @media only screen and (max-width: 767px) {
+                padding-bottom: 0;
+            }
+            .transCard {
+                width: 100%;
+                max-width: 630px;
+                background-color: #fff;
+                padding: 25px;
+                border-radius: 8px;
+                box-shadow: rgba(138, 107, 118, 0.08) 0px 4px 8px 0px;
+                margin: 0 auto;
+                @media only screen and (max-width: 767px) {
+                    padding: 20px 16px;
+                }
+            }
+            .cardHeader {
+                display: flex;
+                margin-bottom: 40px;
+                .headImg {
+                    height: 36px;
+                    width: 36px;
+                    margin-right: 10px;
+                }
+                h2 {
+                    font-size: 24px;
+                    line-height: 32px;
+                    font-weight: 500;
+                    margin: 0;
+                    color: #000;
+                }
+            }
+            .cardSelect {
+                margin-bottom: 20px;
+                position: relative;
+                ::ng-deep .customRadioGroup {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-top: 15px;
+                    flex-wrap: wrap;
+                    .mat-radio-button {
+                        margin: 0 10px 10px 0;
+                    }
+                    .mat-radio-label {
+                        margin: 0;
+                        font-weight: 400;
+                        font-family: "Rubik", sans-serif;
+                    }
+                }
+                .customSelect {
+                    display: flex;
+                    flex-direction: column;
+                    select {
+                        width: 100%;
+                        height: 42px;
+                        display: flex;
+                        appearance: none;
+                        padding: 5px 30px 5px 10px;
+                        border: 1px solid rgb(155, 155, 155);
+                        background-color: rgb(255, 255, 255);
+                        border-radius: 4px;
+                        font-size: 14px;
+                        color: rgb(74, 74, 74);
+                        background-image: url(https://gos3.ibcdn.com/downarrow-1587111682.png);
+                        background-repeat: no-repeat;
+                        background-position: 95% 50%;
+                        background-size: 11px;
+                        cursor: pointer;
+                        outline: 0;
+                    }
+                }
+            }
+            label {
+                font-size: 16px;
+                line-height: 22px;
+                font-weight: 500;
+                margin-bottom: 5px;
+                color: #000;
+                display: block;
+            }
+            .cardLine {
+                position: relative;
+                margin-bottom: 20px;
+                display: flex;
+                justify-content: center;
+                label {
+                    margin: 0;
+                    color: #999999;
+                    background-color: #fff;
+                    padding: 0 20px;
+                    z-index: 2;
+                }
+                .line {
+                    width: 80%;
+                    margin: 0px auto;
+                    position: absolute;
+                    height: 1px;
+                    background: #999999;
+                    top: 50%;
+                }
+            }
+            .cardDate {
+                width: 300px;
+                border: 1px solid #e7e7e7;
+                border-radius: 4px;
+                padding: 12px 20px;
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+                ::ng-deep .custom-datePicker{
+                    .mat-form-field-wrapper {
+                        padding: 0;
+                        height: 100%;
+                        .mat-form-field-flex {
+                            height: 100%;
+                            padding: 0;
+                            background: transparent;
+                            .mat-form-field-infix {
+                                width: 100%;
+                                padding: 0;
+                                border: none;
+                                display: flex;
+                                mat-datepicker-toggle {
+                                    display: none;
+                                }
+                                .mat-input-element {
+                                    font-size: 14px;
+                                    line-height: 18px;
+                                    font-weight: 600;
+                                    margin: 0;
+                                    color: #000;
+                                    display: block;
+                                    font-family: "Rubik", sans-serif;
+                                }
+                            }
+                        }
+                    }
+                    .mat-form-field-underline::before {
+                        height: 0;
+                    }
+                    .mat-form-field-ripple {
+                        height: 0;
+                    }
+                }
+                .date {
+                    font-size: 14px;
+                    line-height: 18px;
+                    font-weight: 400;
+                    margin: 0 10px 0 0;
+                    color: #4a4a4a;
+                    display: block;
+                }
+            }
+            .modalBotton {
+                margin: 30px auto 20px !important;
+                height: 50px;
+                border-radius: 8px !important; 
+                text-transform: capitalize;
+            }
+        }
+    }
+}

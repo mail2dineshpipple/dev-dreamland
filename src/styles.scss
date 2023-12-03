@@ -1,0 +1,49 @@
+/* You can add global styles to this file, and also import other style files */
+@import '../node_modules/ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '../node_modules/ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+@import "~@ng-select/ng-select/themes/default.theme.css";
+// @import "../node_modules/flag-icons/css/flag-icons.min.css";
+
+body {
+  color: #232323;
+  font-size: 14px;
+  // font-family: 'Segoe-Regular';
+  font-family: "Rubik", sans-serif;
+  &.bgImage {
+    background-image: url('./assets/images/hombg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+  @media (min-width: 576px) {
+    max-width: 100%;
+  }
+  @media (min-width: 768px) {
+    max-width: 100%;
+  }
+  @media (min-width: 992px) {
+    max-width: 1140px;
+  }
+  @media (min-width: 1200px) {
+    max-width: 1230px;
+  }
+  @media (min-width: 1400px) {
+    max-width: 1320px;
+  }
+}
+
+.fi {
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+// /* Importing Bootstrap SCSS file. */
+// @import '~bootstrap/scss/bootstrap';
+
+// /* Importing Bootstrap SCSS file. */
+// @import '~bootstrap/scss/bootstrap';
+
+// /* Importing Bootstrap SCSS file. */
+// @import '~bootstrap/scss/bootstrap';

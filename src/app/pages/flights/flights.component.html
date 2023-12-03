@@ -1,0 +1,388 @@
+<div id="Flights">
+    <div class="banner">
+        <div class="container route">
+            <div class="repService">
+                <div class="serviceInner" routerLink="/flights" routerLinkActive="active">
+                    <img src="./../../../assets/images/flight.png">
+                    <span class="active">Flights</span>
+                </div>
+                <div class="serviceInner" routerLink="/hotels" routerLinkActive="active">
+                    <img src="./../../../assets/images/hotel.png">
+                    <span>Hotels</span>
+                </div>
+                <div class="serviceInner" (click)="commonService.openUrl()">
+                    <img src="./../../../assets/images/holiday.png">
+                    <span>Holidays</span>
+                </div>
+            </div>
+            <h1> 
+                <img src="assets/images/plane.svg" alt="" class="mr-2"> 
+                <!-- Find lowest fare -->
+                Book Flights Online
+            </h1>
+            <div class="banner-card">
+                <div class="mattoogle-group customScroll">
+                    <mat-button-toggle-group [(ngModel)]="flightType" aria-label="type">
+                        <mat-button-toggle value="OneWay">One way</mat-button-toggle>
+                        <mat-button-toggle value="RoundWay">Round way</mat-button-toggle>
+                        <mat-button-toggle value="Multicity">Multicity</mat-button-toggle>
+                    </mat-button-toggle-group>
+                    <mat-button-toggle class="flexi" (change)="onValChange($event)" value="true">Flexi (+/-3 days)</mat-button-toggle>
+                </div>
+                <div class="search-container">
+                    <div class="input-content width-25">
+                        <div (click)="ontest('From')" class="search-book">
+                            <label class="saerch-head">From</label>
+                            <div class="sarch-far">
+                                <label class="cityName">{{selectFrom.Name}}</label>
+                                <label class="cityText">{{selectFrom.Airport}}</label>
+                            </div>
+                        </div>
+                        <div class="customNgselect" *ngIf="isShow">
+                            <ng-select [items]="flightList" [isOpen]="true" class="flight-select"
+                                bindLabel="Name"
+                                [loading]="peopleLoading"
+                                [searchFn]="customSearchFn"
+                                [clearable]="false"
+                                [openOnEnter]="true"
+                                [dropdownPosition]="'bottom'"
+                                (change)="onSelect($event, 'From')">
+                                <ng-template ng-option-tmp let-item="item">
+                                    <div class="option-row">
+                                        <div class="left">
+                                            <img src="assets/images/planeicon.svg" alt="planeicon">
+                                        </div>
+                                        <div class="right">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="tilte">{{item.Name}} {{item.Code}}</div>
+                                                <div class="d-flex align-items-center">
+                                                    <span>{{item.Country}}</span>
+                                                    <img src="assets/images/indian-flag.png" alt="flagicon">
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <span>{{item.Airport}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </ng-select>
+                        </div>
+                    </div>
+                    <div class="input-content width-25 city-to">
+                        <div class="ex-btn" (click)="onReverse()">
+                            <i class="material-icons">sync_alt</i>
+                        </div>
+                        <div (click)="ontest('To')" class="search-book to">
+                            <label class="saerch-head">To</label>
+                            <div class="sarch-far">
+                                <label class="cityName">{{selectTo.Name}}</label>
+                                <label class="cityText">{{selectTo.Airport}}</label>
+                            </div>
+                        </div>
+                        <div class="customNgselect" *ngIf="isShow2">
+                            <ng-select [items]="flightList" [isOpen]="true" class="flight-select"
+                                bindLabel="Name"
+                                [loading]="peopleLoading"
+                                [searchFn]="customSearchFn"
+                                [clearable]="false"
+                                [openOnEnter]="true"
+                                [dropdownPosition]="'bottom'"
+                                (change)="onSelect($event, 'To')">
+                                <ng-template ng-option-tmp let-item="item">
+                                    <div class="option-row">
+                                        <div class="left">
+                                            <img src="assets/images/planeicon.svg" alt="planeicon">
+                                        </div>
+                                        <div class="right">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="tilte">{{item.Name}} {{item.Code}}</div>
+                                                <div class="d-flex align-items-center">
+                                                    <span>{{item.Country}}</span>
+                                                    <img src="assets/images/indian-flag.png" alt="flagicon">
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <span>{{item.Airport}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </ng-select>
+                        </div>
+                    </div>
+                    <div class="input-content width-15 {{flightType}}">
+                        <mat-form-field appearance="fill" class="example-form-field custom-datePicker" (click)="datepicker.open()" >
+                            <label class="head">Departure</label>
+                            <input matInput readonly [matDatepicker]="datepicker" placeholder="" [(ngModel)]="Departure" name="Departure">
+                            <mat-datepicker-toggle [for]="datepicker"></mat-datepicker-toggle>
+                            <mat-datepicker #datepicker></mat-datepicker>
+                            <div>
+                                <label class="cityName">1 <span>Mar 2022</span></label>
+                                <label class="cityText">Tuesday</label>
+                            </div>
+                        </mat-form-field>
+                    </div>
+                    <div class="input-content width-15 return" *ngIf="flightType != 'Multicity'">
+                        <mat-form-field appearance="fill" class="example-form-field custom-datePicker" (click)="datepicker1.open()" *ngIf="flightType != 'OneWay'">
+                            <label class="head">Return</label>
+                            <input matInput readonly [matDatepicker]="datepicker1" placeholder="" [(ngModel)]="Return" name="Return">
+                            <mat-datepicker-toggle [for]="datepicker1"></mat-datepicker-toggle>
+                            <mat-datepicker #datepicker1></mat-datepicker>
+                            <div>
+                                <label class="cityName">5 <span>Mar 2022</span></label>
+                                <label class="cityText">Saturday</label>
+                            </div>
+                        </mat-form-field>
+
+                        <div class="search-book" *ngIf="flightType === 'OneWay'">
+                            <label class="saerch-head">Return</label>
+                            <div class="sarch-far">
+                                <label class="cityName return-city">Tap to add a return date for bigger discounts</label>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="input-content">
+                        <div class="class" (click)="onClick()">
+                            <label class="head">Traveller & Cabin</label>
+                            <label class="cityName">{{Traveller}} <span>Traveller</span><span *ngIf="Traveller > 1">s</span></label>
+                            <label class="cityText">{{CabinType}}</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="search-container" *ngIf="flightType === 'Multicity'">
+                    <div class="input-content width-25">
+                        <div (click)="ontest('From')" class="search-book">
+                            <label class="saerch-head">FROM</label>
+                            <div class="sarch-far">
+                                <label class="cityName">{{selectFrom.Name}}</label>
+                                <label class="cityText">{{selectFrom.Airport}}</label>
+                            </div>
+                        </div>
+                        <div *ngIf="isShow">
+                            <ng-select [items]="flightList" [isOpen]="true" class="flight-select"
+                                bindLabel="Name"
+                                [loading]="peopleLoading"
+                                [searchFn]="customSearchFn"
+                                [clearable]="false"
+                                [openOnEnter]="true"
+                                [dropdownPosition]="'bottom'"
+                                (change)="onSelect($event, 'From')">
+                                <ng-template ng-option-tmp let-item="item">
+                                    <div class="option-row">
+                                        <div class="left">
+                                            <img src="assets/images/planeicon.svg" alt="planeicon">
+                                        </div>
+                                        <div class="right">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="tilte">{{item.Name}} {{item.Code}}</div>
+                                                <div class="d-flex align-items-center">
+                                                    <span>{{item.Country}}</span>
+                                                    <img src="assets/images/indian-flag.png" alt="flagicon">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </ng-select>
+                        </div>
+                    </div>
+                    <div class="input-content width-25 city-to">
+                        <div class="ex-btn" (click)="onReverse()">
+                            <i class="material-icons">sync_alt</i>
+                        </div>
+                        <div (click)="ontest('To')" class="search-book to">
+                            <label class="saerch-head">TO</label>
+                            <div class="sarch-far">
+                                <label class="cityName">{{selectTo.Name}}</label>
+                                <label class="cityText">{{selectTo.Airport}}</label>
+                            </div>
+                        </div>
+                        <div *ngIf="isShow2">
+                            <ng-select [items]="flightList" [isOpen]="true" class="flight-select"
+                                bindLabel="Name"
+                                [loading]="peopleLoading"
+                                [searchFn]="customSearchFn"
+                                [clearable]="false"
+                                [openOnEnter]="true"
+                                [dropdownPosition]="'bottom'"
+                                (change)="onSelect($event, 'To')">
+                                <ng-template ng-option-tmp let-item="item">
+                                    <div class="option-row">
+                                        <div class="left">
+                                            <img src="assets/images/planeicon.svg" alt="planeicon">
+                                        </div>
+                                        <div class="right">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="tilte">{{item.Name}} {{item.Code}}</div>
+                                                <div class="d-flex align-items-center">
+                                                    <span>{{item.Country}}</span>
+                                                    <img src="assets/images/indian-flag.png" alt="flagicon">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </ng-select>
+                        </div>
+                    </div>
+                    <div class="input-content width-15 {{flightType}}">
+                        <mat-form-field appearance="fill" class="example-form-field custom-datePicker" (click)="datepicker.open()" >
+                            <label class="head">Departure</label>
+                            <input matInput readonly [matDatepicker]="datepicker" placeholder="" [(ngModel)]="Departure" name="Departure">
+                            <mat-datepicker-toggle [for]="datepicker"></mat-datepicker-toggle>
+                            <mat-datepicker #datepicker></mat-datepicker>
+                            <div>
+                                <label class="cityName">1 <span>Mar 2022</span></label>
+                                <label class="cityText">Tuesday</label>
+                            </div>
+                        </mat-form-field>
+                    </div>
+                    <div class="input-content width-15 return" *ngIf="flightType != 'Multicity'">
+                        <mat-form-field appearance="fill" class="example-form-field custom-datePicker" (click)="datepicker1.open()" *ngIf="flightType != 'OneWay'">
+                            <label class="saerch-head">Return</label>
+                            <input matInput readonly [matDatepicker]="datepicker1" placeholder="" [(ngModel)]="Return" name="Return">
+                            <mat-datepicker-toggle [for]="datepicker1"></mat-datepicker-toggle>
+                            <mat-datepicker #datepicker1></mat-datepicker>
+                            <div>
+                                <label class="cityName">5 <span>Mar 2022</span></label>
+                                <label class="cityText">Saturday</label>
+                            </div>
+                        </mat-form-field>
+                        <div class="search-book" *ngIf="flightType === 'OneWay'">
+                            <label class="saerch-head">Return</label>
+                            <div class="sarch-far">
+                                <label class="cityName return-city">Tap to add a return date for bigger discounts</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-content">
+                        <div class="search-book">
+                            <label class="saerch-head">Traveller & Cabin</label>
+                            <div class="multy-btn">
+                                <button type="button" class="multicityBtn">+ Add Another City</button>
+                                <span class="material-icons">
+                                    close
+                                    </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="banner-bottom">
+                    <div class="mb-3 bottomInner">
+                        <label class="fare-label">Select A Fare Type:</label>
+                        <mat-radio-group class="customRadioGroup customScroll" [(ngModel)]="selectedFareType">
+                            <mat-radio-button value="1">Regular <br> Fares</mat-radio-button>
+                            <mat-radio-button value="2" matTooltip="Armed forces Fares: Applicable for serving and retired personnel of Armed Forces and Paramilitary Forces, their recognised dependants like spouses and children, and war widows. It is mandatory to show a valid ID or dependant card at the airport, without which boarding might be denied." aria-label="Button that displays a tooltip when focused or hovered over">Armed forces <br> Fares</mat-radio-button>
+                            <mat-radio-button value="3" matTooltip="Student Fares: Only students above 12 years of age are eligible for special fares and/or additional baggage allowances. Carrying valid student ID cards and student visas (where applicable) is mandatory, else the passenger may be denied boarding or asked to pay for extra baggage." aria-label="Button that displays a tooltip when focused or hovered over">Student <br> Fares</mat-radio-button>
+                            <mat-radio-button value="4" matTooltip="Senior Citizen Fares: Only senior citizens above the age of 60 years can avail this special fare. It is mandatory to produce proof of Date of Birth at the airport, without which prevailing fares will be charged." aria-label="Button that displays a tooltip when focused or hovered over">Senior Citizen <br> Fares</mat-radio-button>
+                            <mat-radio-button value="5" matTooltip="Doctor&nurses Fares: Applicable only for medical personnel. It is mandatory to show a valid ID at the airport, without which boarding may be denied." aria-label="Button that displays a tooltip when focused or hovered over">Doctor&nurses <br> Fares</mat-radio-button>
+                            <mat-radio-button value="6" matTooltip="Doubles Seats Fares: Step up physical distancing by booking two or three adjacent seats for one traveller. Opt from ‘Double/ Entire Row’ by Indigo or ‘GoMore’ service by GoAir - available only for domestic one-way economy class bookings.." aria-label="Button that displays a tooltip when focused or hovered over">Doubles Seats <br> Fares</mat-radio-button>  
+                        </mat-radio-group>
+                    </div>
+                    
+                    <div>
+                        <label class="fare-label">Recent Searches:</label>
+                        <div class="recent-searches">
+                            <div class="search-item" (click)="gotoNext()">
+                                <div class="searchtrip">
+                                <p>Ahmdabad</p>
+                                    <i class="material-icons">
+                                        sync_alt
+                                    </i>
+                                    <p>Bali</p>
+                                </div>
+                                <span>1 May 23 - 10 May 23</span>
+                            </div>
+                            <div class="search-item" (click)="gotoNext()">
+                                <div class="searchtrip">
+                                    <p>Ahmdabad</p>
+                                        <i class="material-icons">
+                                            sync_alt
+                                        </i>
+                                    <p>Bali</p>
+                                </div>
+                                <span>1 May 23 - 10 May 23</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button mat-flat-button class="search-btn" (click)="gotoNext()">
+                    <i class="material-icons">search</i>
+                    Search
+                </button>
+
+                <div class="positionClass" *ngIf="travellerCabin">
+                    <div class="counter-container">
+                        <div class="main-counter">
+                            <label class="heads">Adults</label>
+                            <label class="cityText">(Aged 12+ yrs)</label>
+                            <div class="counter">
+                                <button (click)="decrement('adult')" [disabled]="adultCounter === 0">
+                                    <span class="material-icons">remove</span>
+                                </button> 
+                                <span>{{adultCounter}}</span>
+                                <button class="plus" (click)="increment('adult')">
+                                    <span class="material-icons">add</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="main-counter">
+                            <label class="heads">Children</label>
+                            <label class="cityText">(Aged 2-12 yrs)</label>
+                            <div class="counter">
+                                <button (click)="decrement('child')" [disabled]="childCounter === 0">
+                                    <span class="material-icons">remove</span>
+                                </button> 
+                                <span>{{childCounter}}</span>
+                                <button class="plus" (click)="increment('child')">
+                                    <span class="material-icons">add</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="main-counter m-0">
+                            <label class="heads">Infants</label>
+                            <label class="cityText">(Below 2 yrs)</label>
+                            <div class="counter">
+                                <button (click)="decrement('infant')" [disabled]="infantCounter === 0">
+                                    <span class="material-icons">remove</span>
+                                </button> 
+                                <span>{{infantCounter}}</span>
+                                <button class="plus" (click)="increment('infant')">
+                                    <span class="material-icons">add</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <label class="heads mb-2">Cabin</label>
+                        <mat-button-toggle-group [(ngModel)]="CabinType" aria-label="Type">
+                            <mat-button-toggle value="Economy">Economy</mat-button-toggle>
+                            <mat-button-toggle value="Prem.Economy">Prem.Economy</mat-button-toggle>
+                            <mat-button-toggle value="Business">Business</mat-button-toggle>
+                            <mat-button-toggle value="First">First</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </div>
+                    <div class="classFooter">
+                        <button class="cancel-btn" (click)="onClick()">Cancel</button> 
+                        <button class="done-btn" (click)="onClick()">Done</button> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="other-section">
+        <div class="container">
+            <app-offer></app-offer>
+            <app-flight></app-flight>
+            <!-- <app-hotel></app-hotel> -->
+            <!-- <app-international-trip></app-international-trip> -->
+            <app-why-dreamland [type]="'flight'"></app-why-dreamland>
+            <app-faq [type]="'flight'"></app-faq>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,628 @@
+<div class="row flightList">
+
+    <div class="col-lg-3">
+        <div class="search-filter">
+            <div class="filter-head">
+                <div class="tf-left">
+                    <i class="fa-solid fa-filter"></i>
+                    Filters
+                </div>
+                <button mat-button class="clear-btn">Clear All</button>
+            </div>
+            <div class="filter-row">
+                <div class="filter-box">
+                    <div class="ft-head">
+                        <span class="tf-left">Applied Filters</span>
+                        <button mat-button class="clear-btn">Clear</button>
+                    </div>
+                    <div>
+                        <div class="applied">
+                            <span>NON STOP</span>
+                            <div class="tabClose">
+                                <i class="material-icons">close</i>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="applied">
+                            <i class="material-icons plane">flight_takeoff</i>
+                            <span>MORNING DEPARTURES</span>
+                            <div class="tabClose">
+                                <i class="material-icons">close</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-box">
+                    <div class="ft-head">
+                        <span class="tf-left">Popular Filters</span>
+                        <button mat-button class="clear-btn">Clear</button>
+                    </div>
+                    <div class="checkbox-container airline">
+                        <mat-checkbox class="customCheckbox">
+                            <div class="d-flex justify-content-between ml-2">
+                                <span>Cheapest</span>
+                            </div>
+                            <span>₹4444</span>
+                        </mat-checkbox>
+                        <mat-checkbox class="customCheckbox airline">
+                            <div class="d-flex justify-content-between ml-2">
+                                <span>Fastest</span>
+                            </div>
+                            <span>₹4444</span>
+                        </mat-checkbox>
+                        <mat-checkbox class="customCheckbox airline">
+                            <div class="d-flex justify-content-between ml-2">
+                                <span>Best value</span>
+                            </div>
+                            <span>₹4444</span>
+                        </mat-checkbox>
+                        <mat-checkbox class="customCheckbox airline">
+                            <div class="d-flex justify-content-between ml-2">
+                                <span>Refundable</span>
+                            </div>
+                            <span>₹4444</span>
+                        </mat-checkbox>
+                        <mat-checkbox class="customCheckbox airline">
+                            <div class="d-flex justify-content-between ml-2">
+                                <span>Non-Refundable</span>
+                            </div>
+                            <span>₹4444</span>
+                        </mat-checkbox>
+                        <mat-checkbox class="customCheckbox airline">
+                            <div class="d-flex justify-content-between ml-2">
+                                <span>Layover Via Point</span>
+                            </div>
+                            <span>₹4444</span>
+                        </mat-checkbox>
+                        <mat-checkbox class="customCheckbox airline"> 
+                            <div class="d-flex justify-content-between ml-2">
+                                <span>Aircraft Airbus, Boing</span>
+                            </div>
+                            <span>₹4444</span>
+                        </mat-checkbox>
+                        <button mat-button class="clear-btn" id="themeDark"><i class="material-icons plusIcon">
+                            add
+                        </i>Show More</button>
+                    </div>
+                </div>
+                <div class="filter-box">
+                    <div class="ft-head">
+                        <span class="tf-left">Stops</span>
+                        <button mat-button class="clear-btn">Clear</button>
+                        <!-- <div class="checkbox-container">
+                            <mat-checkbox class="customCheckbox">Non Stop</mat-checkbox>
+                            <mat-checkbox class="customCheckbox">1 Stop</mat-checkbox>
+                            <mat-checkbox class="customCheckbox">2+ Stops</mat-checkbox> -->
+                    </div>
+                    <div class="flight-timeing">
+                        <div class="time-item stop" [ngClass]="{'active': item?.active}" 
+                        *ngFor="let item of stop" (click)="onSelect(item, 'stop')">
+                            <div class="d-flex flex-column">
+                                <label>{{item.title}}</label>
+                                <span>({{item.type}})</span>
+                                <span>{{item.price}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-box">
+                    <div class="ft-head">
+                        <span class="tf-left">Departure Time</span>
+                        <button mat-button class="clear-btn">Clear</button>
+                    </div>
+                    <div class="flight-timeing">
+                        <div class="time-item" [ngClass]="{'active': item?.active}" 
+                        *ngFor="let item of timingList" (click)="onSelect(item, 'Departure')">
+                            <img [src]="item?.active ? item?.img1 : item.img">
+                            <div class="d-flex flex-column">
+                                <label>{{item.title}}</label>
+                                <span>({{item.type}})</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-box">
+                    <div class="ft-head">
+                        <span class="tf-left">Arrival Time</span>
+                        <button mat-button class="clear-btn">Clear</button>
+                    </div>
+                    <div class="flight-timeing">
+                        <div class="time-item" [ngClass]="{'active': item?.active}" 
+                        *ngFor="let item of timingList2" (click)="onSelect(item, 'Arrival')">
+                            <img [src]="item?.active ? item?.img1 :item.img">
+                            <div class="d-flex flex-column">
+                                <label>{{item.title}}</label>
+                                <span>({{item.type}})</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-box">
+                    <div class="ft-head">
+                        <span class="tf-left">Preferred Airline</span>
+                        <button mat-button class="clear-btn">Clear</button>
+                    </div>
+                    <div class="checkbox-container airline">
+                        <mat-checkbox class="customCheckbox">
+                            <div>
+                                <img src="assets/images/AK.gif">
+                                <span>Air Aisa</span>
+                            </div>
+                            <span>₹4444</span>
+                        </mat-checkbox>
+                        <mat-checkbox class="customCheckbox">
+                            <div>
+                                <img src="assets/images/ai.gif">
+                                <span>Air India</span>
+                            </div>
+                            <span>₹4444</span>
+                        </mat-checkbox>
+                        <mat-checkbox class="customCheckbox">
+                            <div>
+                                <img src="assets/images/6E.gif">
+                                <span>Indigo</span>
+                            </div>
+                            <span>₹4444</span>
+                        </mat-checkbox>
+                        <mat-checkbox class="customCheckbox">
+                            <div>
+                                <img src="assets/images/6E.gif">
+                                <span>Indigo</span>
+                            </div>
+                            <span>₹4444</span>
+                        </mat-checkbox>
+                        <mat-checkbox class="customCheckbox">
+                            <div>
+                                <img src="assets/images/6E.gif">
+                                <span>Indigo</span>
+                            </div>
+                            <span>₹4444</span>
+                        </mat-checkbox>
+                        <button mat-button class="clear-btn" id="themeDark"><i class="material-icons plusIcon">
+                            add
+                        </i>Show More</button>
+                    </div>
+                </div>
+                <div class="filter-box">
+                    <div class="ft-head">
+                        <span class="tf-left">Price Range</span>
+                        <button mat-button class="clear-btn">Clear</button>
+                    </div>
+                    <div class="range-slider">
+                        <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="option1"></ngx-slider>
+                        <div class="d-flex justify-content-between">
+                            <span>₹{{minValue}}</span>
+                            <span>₹{{maxValue}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-box">
+                    <div class="ft-head">
+                        <span class="tf-left">Duration</span>
+                        <button mat-button class="clear-btn">Clear</button>
+                    </div>
+                    <div class="range-slider">
+                        <ngx-slider [(value)]="lowValue" [(highValue)]="highValue" [options]="option2"></ngx-slider>
+                        <div class="d-flex justify-content-between">
+                            <span class="time">{{lowValue.toString().replace(".", "h ")+'0m'}}</span>
+                            <span>{{highValue.toString().replace(".", "h ")+'0m'}}</span>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-9">
+        <div class="calander-list">
+            <owl-carousel-o [options]="flightClOptions">
+                <ng-container *ngFor="let slide of ['1','2','3','4','5','6','7','8','9','10','11','12']">
+                    <ng-template class="slide" carouselSlide [id]="slide">
+                        <div class="calender-item">
+                            <div class="tf-dates ">{{slide}} NOV</div>
+                            <div class="tf-price">₹3,954</div>
+                        </div>
+                    </ng-template>
+                </ng-container>   
+            </owl-carousel-o>
+            <div class="calender-icon">
+                <mat-form-field appearance="fill" class="example-form-field custom-datePicker" (click)="datepicker1.open()" >
+                    <input matInput class="date" [matDatepicker]="datepicker1" placeholder="5/16/2023" name="from">
+                    <mat-datepicker-toggle [for]="datepicker1"></mat-datepicker-toggle>
+                    <mat-datepicker #datepicker1></mat-datepicker>
+                </mat-form-field>
+            </div> 
+        </div>
+        <div class="multicityTable customScroll mb-4" *ngIf="isFlexi">
+            <table class="table table-bordered m-0">                                        
+                <tbody>
+                    <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">27 Nov</th>
+                        <th scope="col">28 Nov</th>
+                        <th scope="col">29 Nov</th>
+                        <th scope="col">30 Nov</th>
+                        <th scope="col">31 Nov</th>
+                        <th scope="col">1 Nov</th>
+                        <th scope="col">2 Nov</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">28 Jul</th>
+                        <td>₹1234</td>
+                        <td>₹2210</td>
+                        <td>₹1234</td>
+                        <td class="cheap"><span class="cheapest text-danger">(cheapest)</span>₹1025</td>
+                        <td>₹2400</td>
+                        <td>₹1234</td>
+                        <td>₹1234</td>
+                    </tr>
+                    <tr>
+                        <th  scope="row">29 Jul</th>
+                        <td>₹2530</td>
+                        <td>₹1234</td>
+                        <td>₹1234</td>
+                        <td>₹1234</td>
+                        <td>₹4231</td>
+                        <td>₹1234</td>
+                        <td class="cheap"><span class="cheapest text-danger">(cheapest)</span>₹1025</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">30 Jul</th>
+                        <td>₹1234</td>
+                        <td>₹1234</td>
+                        <td>₹1234</td>
+                        <td>₹4235</td>
+                        <td>₹1234</td>
+                        <td>₹1234</td>
+                        <td>₹1234</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">31 Jul</th>
+                        <td>₹1234</td>
+                        <td>₹4231</td>
+                        <td>₹1234</td>
+                        <td>₹1234</td>
+                        <td>₹1234</td>
+                        <td>₹4563</td>
+                        <td>₹1234</td>
+                    </tr> 
+                    <tr>
+                        <th scope="row">1 Jul</th>
+                        <td>₹1234</td>
+                        <td>₹2652</td>
+                        <td>₹1234</td>
+                        <td>₹1234</td>
+                        <td>₹3254</td>
+                        <td>₹1234</td>
+                        <td>₹3262</td>
+                    </tr> 
+                    <tr>
+                        <th scope="row">2 Jul</th>
+                        <td>₹1234</td>
+                        <td>₹1234</td>
+                        <td>₹4112</td>
+                        <td>₹1234</td>
+                        <td>₹1234</td> 
+                        <td class="cheap"><span class="cheapest text-danger">(cheapest)</span>₹1025</td>
+                        <td>2300</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3 Jul</th>
+                        <td>₹1234</td>
+                        <td>₹1234</td>
+                        <td>₹1548</td>
+                        <td>₹1234</td>
+                        <td>₹1234</td>
+                        <td>₹1574</td>
+                        <td>₹1234</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="search-list">
+            <div class="ft-list" *ngFor="let item of flightList; let i = index">
+                <div class="ft-body">
+                    <div class="flt-logo">
+                        <div class="flt-img">
+                            <img src="assets/images/6E.gif">
+                        </div>
+                        <ul>
+                            <li>Indigo</li>
+                            <!-- <li>6E-787</li> -->
+                        </ul>
+                    </div>
+                    <div class="text-center">
+                        <span class="tf-highlight">DEL</span>
+                        <ul>
+                            <li>08:00 AM</li>
+                            <!-- <li>Thu, 29 Sep 2022</li> -->
+                        </ul>
+                    </div>
+                    <div class="flt-bar">
+                        <ul>
+                            <li>02h : 05m</li>
+                            <li *ngIf="i !== 1 && i !== 2"><span class="hrbar"></span></li>
+                            <li class="redLine" *ngIf="i === 1"><span class="hrbar"></span></li>
+                            <li class="redLine" *ngIf="i === 2" [ngClass]="{'twoline': i === 2}"><span class="hrbar"></span><span class="hrbar"></span></li>
+                            <li>{{i === 1 ? '1 Stop':i === 2 ? '2 Stop': 'Non Stop'}}</li>
+                        </ul>
+                    </div>
+                    <div class="text-center">
+                        <span class="tf-highlight">BLR</span>
+                        <ul>
+                            <li>08:00 AM</li>
+                            <!-- <li>Thu, 29 Sep 2022</li> -->
+                        </ul>
+                    </div>
+                    <div class="priceBox">
+
+                        <div class="flt-price">
+                            <span class="tf-price tf-price-discount">₹8872</span>
+                            <span class="tf-price">₹7,712</span>
+                        </div>
+                        <div class="btn-box">
+                            <button mat-flat-button class="green-btn" (click)="gotoNext('flightBooking')" *ngIf="!item?.isFares">BOOK NOW</button>
+                            <button mat-flat-button class="green-btn View-btn" (click)="onChange(item)" *ngIf="item?.isFares">VIEW FAIR
+                                <i class="fa fa-chevron-down" [ngClass]="{'active': item?.isActive}" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="ft-footer">
+                    <mat-accordion>
+                        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    <span class="tf-list-icon-label"> <img src="assets/images/baggage.png" alt="baggage">15Kgs Check-in / 7Kgs Cabin</span>
+                                    <span class="tf-list-icon-label"> <img src="assets/images/seat.png" alt="seat" id="seat"> 4 Seat (S)</span>
+                                </mat-panel-title>
+                                <mat-panel-description>
+                                    Flight Details
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+                            <div class="accordianBody">
+                                <mat-tab-group class="flightDetailTab">
+                                    <mat-tab label="Flight Details">
+                                        <div class="ft-body">
+                                            <div class="flt-logo">
+                                                <div class="flt-img">
+                                                    <img src="assets/images/6E.gif">
+                                                </div>
+                                                <ul>
+                                                    <li>Indigo</li>
+                                                    <li>6E-787</li>
+                                                </ul>
+                                            </div>
+                                            <div class="text-center">
+                                                <span class="tf-highlight">DEL</span>
+                                                <ul>
+                                                    <li>08:00 AM</li>
+                                                    <li>Thu, 27 Sep 2022</li>
+                                                </ul>
+                                            </div>
+                                            <div class="flt-bar">
+                                                <ul>
+                                                    <li>02h : 05m</li>
+                                                    <li><span class="hrbar"></span></li>
+                                                    <li>Non Stop</li>
+                                                </ul>
+                                            </div>
+                                            <div class="text-center">
+                                                <span class="tf-highlight">BLR</span>
+                                                <ul>
+                                                    <li>08:00 AM</li>
+                                                    <li>Thu, 29 Sep 2022</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </mat-tab>
+                                    <mat-tab label="Fare Detalis & Rules">
+                                        <table class="table table-bordered m-0">                                        
+                                            <tbody>
+                                                <tr>
+                                                    <td class="bg-light">Base Fare (1 Adult)</td>
+                                                    <td>₹4,199</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bg-light">Taxes and Fees (1 Adult)</td>
+                                                    <td>₹846</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bg-light">Total Fare (1 Adult)</td>
+                                                    <td>₹5,045</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </mat-tab>
+                                    <mat-tab label="Baggage Info">
+                                        <div class="flt-baggage">
+                                            <img src="assets/images/6E.gif">
+                                            <p class="baggage-para-1">DEL-BLR</p>
+                                            <p class="baggage-para-2">(6E-787)</p>
+                                        </div>
+                                        <table class="table table-bordered m-0">                                        
+                                            <tbody>
+                                                <tr>
+                                                    <td class="bg-light">Baggage Type</td>
+                                                    <td>Check-In</td>
+                                                    <td>Cabin</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bg-light">ADULT</td>
+                                                    <td>15 Kgs (1 piece only)</td>
+                                                    <td>7 Kgs (1 piece only)</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </mat-tab>
+                                    <mat-tab label="Cancellation & Change Rule">
+                                        <div class="flt-baggage">
+                                            <img src="assets/images/6E.gif">
+                                            <p class="baggage-para-1">DEL-BLR</p>
+                                            <p class="baggage-para-2">(6E-787)</p>
+                                        </div>
+                                        <div class="row m-0">
+                                            <div class="col-lg-6 pl-0 pr-lg-3 mb-3 mb-lg-0">
+                                                <label class="charges d-block">Cancellation Charges</label>
+                                                <table class="table table-bordered m-0">                                        
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="bg-light">Dreamland fee</td>
+                                                            <td>₹300</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="bg-light">0-2 hours</td>
+                                                            <td>Non Refundable</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="bg-light">2-72 hours</td>
+                                                            <td>₹3,500</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="bg-light">>72 hours</td>
+                                                            <td>₹3,000</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="col-lg-6 pr-0">
+                                                <label class="charges d-block">Reschedule Charges</label>
+                                                <table class="table table-bordered m-0">                                        
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="bg-light">Dreamland fee</td>
+                                                            <td>₹300</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="bg-light">0-2 hours</td>
+                                                            <td>Non Refundable</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="bg-light">2-72 hours</td>
+                                                            <td>₹3,250</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="bg-light">>72 hours</td>
+                                                            <td>₹2,750</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </mat-tab>
+                                </mat-tab-group>
+                            </div>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+                <ng-container *ngIf="item?.isActive">
+                    <div>
+                        <!-- Desktop View -->
+                        <div class="ft-body viewFare" *ngFor="let subItem of [1,2,3,4]; let subIndex = index">
+                            <div>
+                                <span class="tf-highlight" *ngIf="subIndex === 0">FARES</span>
+                                <ul>
+                                    <li class="titletext">{{subItem === 1 ? 'Saver':subItem === 4 ? 'Flexi': 'SME Fare'}}</li>
+                                    <li>
+                                        <mat-checkbox class="customCheckbox" (change)="onCheckbox(subItem)">
+                                            <div class="d-flex align-items-baseline">
+                                                <div class="whatsapp">
+                                                    <img src="assets/images/whatsapp.png">
+                                                </div>
+                                                <span class="text">Share</span>
+                                            </div>
+                                        </mat-checkbox>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <span class="tf-highlight" *ngIf="subIndex === 0">CABIN BAG</span>
+                                <ul>
+                                    <li>7 Kgs</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <span class="tf-highlight" *ngIf="subIndex === 0">CHECK-IN</span>
+                                <ul>
+                                    <li>15 Kgs</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <span class="tf-highlight" *ngIf="subIndex === 0">CANCELLATION</span>
+                                <ul>
+                                    <li>Non-refundable fare</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <span class="tf-highlight" *ngIf="subIndex === 0">DATE CHANGE</span>
+                                <ul>
+                                    <li>Not allowed</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <span class="tf-highlight" *ngIf="subIndex === 0">SEAT</span>
+                                <ul>
+                                    <li>Chargeable</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <span class="tf-highlight" *ngIf="subIndex === 0">MEAL</span>
+                                <ul>
+                                    <li>Chargeable</li>
+                                </ul>
+                            </div>
+                            <div class="flt-price">
+                                <span class="tf-price tf-price-discount">₹8872</span>
+                                <span class="tf-price">₹7,712</span>
+                            </div>
+                            <div class="btn-box">
+                                <button mat-flat-button class="green-btn" (click)="gotoNext('flightBooking')">BOOK NOW</button>
+                            </div>
+                        </div>
+
+                        <!-- Mobile View -->
+                        <div class="moreRight">
+                            <mat-radio-group class="customRadioGroup"  [(ngModel)]="selectedType" *ngFor="let item of fareList; let subIndex = index">
+                                <mat-radio-button value="{{item.btnVal}}">
+                                    <div class="moreCard">
+                                        <div class="moreCardData">
+                                            <div class="d-flex align-items-center justify-content-between w-100">
+                                                <h4>{{item.fares}}</h4>
+                                                <h4>{{item.prices}}</h4>
+                                            </div>
+                                        </div>
+                                        <p *ngIf="item?.p">{{item.p}}</p>
+                                        <div class="moreContent" *ngFor="let submenu of item?.child">
+                                            <div class="moreDetail">
+                                                <div class="d-flex">
+                                                    <div class="moreDImg">
+                                                        <img src="{{submenu.img}}">
+                                                    </div>
+                                                    <span class="bold">{{submenu.boldSpan}}</span>
+                                                </div>
+                                                <span>{{submenu.span}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center btn-box">
+                                            <mat-checkbox class="customCheckbox" (change)="onCheckbox(item)">
+                                                <div class="d-flex align-items-baseline">
+                                                    <div class="whatsapp">
+                                                        <img src="assets/images/whatsapp.png">
+                                                    </div>
+                                                    <span class="text">Share</span>
+                                                </div>
+                                            </mat-checkbox>
+                                            <button mat-flat-button class="green-btn" (click)="gotoNext('flightBooking')">BOOK NOW</button>
+                                        </div>
+                                    </div>
+                                </mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>
+

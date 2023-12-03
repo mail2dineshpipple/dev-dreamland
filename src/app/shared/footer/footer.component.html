@@ -1,0 +1,128 @@
+<footer>
+    <div class="about-part" *ngIf="isShowAbout">
+        <div class="container">
+            <h3>About Dreamland Travel</h3>
+            <div>
+                <ng-container *ngIf="!showMore">
+                    <p>
+                        Dreamland Travel is a smart OTA company seamlessly providing travelers with comprehensive information, pricing, 
+                        availability, and booking options for flights, hotels, holiday packages, buses, and car rentals across a vast 
+                        network of 5000 cities from bustling metropolises to remote rural areas worldwide. As your trusted online 
+                        travel.. <span class="readmore" (click)="showMore = true">Read More...</span>
+                    </p>
+                </ng-container>
+                <ng-container *ngIf="showMore">
+                    <p>
+                        Dreamland Travel is a smart OTA company seamlessly providing travelers with comprehensive information, pricing, 
+                        availability, and booking options for flights, hotels, holiday packages, buses, and car rentals across a vast 
+                        network of 5000 cities from bustling metropolises to remote rural areas worldwide. As your trusted online 
+                        travel partner we serve as a complete tour planner offering a one-stop solution for all your travel needs.
+                    </p>
+                    <p>
+                        Our mission is to establish the world's largest and most intelligent travel marketplace uniting a global 
+                        community of travelers with the finest travel booking services and destination insights while delivering 
+                        unmatched value to travel suppliers and businesses aiming to connect with our vast audience.
+                    </p>
+                    <p>
+                        At Dreamland Travel, we cover every facet of your travel journey from assisting you in selecting the perfect 
+                        airplane seat to reading firsthand reviews of hotels and curating memorable experiences at your destination. 
+                        Our extensive portfolio caters to both leisure and business travelers accommodating various tastes and budgets 
+                        from modest to luxurious. We connect the dots channeling travel demand from every corner of the globe to over 
+                        110,000 hotels and a plethora of airlines tour operators, car rental agencies, and destination service partners.
+                    </p>
+                    <p>
+                        Our multi-language customer service center operates around the clock, 24/7, 365 days a year, ensuring that both 
+                        business and leisure travelers make informed and cost-effective bookings via our user-friendly website and 
+                        mobile support. Dreamland Travel offers real-time air ticket bookings at the most competitive rates. 
+                        As one of the largest hotel consolidators, we offer room reservations in over 2,500 domestic hotels across 
+                        250 destinations worldwide, complemented by international partnerships with major consolidators for 
+                        access to 90,000+ hotels globally, always guaranteeing the best real-time booking rates.
+                    </p>
+                    <p>
+                        But what truly sets us apart is our commitment to personalized service. We understand that, amid the 
+                        technological convenience, there's nothing quite like speaking to a human being. So, when you find yourself 
+                        overwhelmed or unable to find what you need our team of dedicated travel experts is just a phone call away, 
+                        ready to assist you in making your travel dreams a reality.
+                    </p>
+                    <p>
+                        Dreamland Travel is built on a foundation of personal knowledge, experience and a warm friendly approach 
+                        offering top-tier standards at realistic prices. Whether you book your air tickets online or seek our guidance 
+                        over the phone, we are here to ensure you have an exceptional travel experience."
+                    </p>
+                    <p>
+                        This refined message emphasizes the core strengths and values of Dreamland Travel OTA while highlighting the 
+                        personal touch and dedication to customer service that sets your company apart from others in the industry.
+                        <span class="readmore" (click)="showMore = false">Read Less</span>
+                    </p>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+    <div class="top-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="connect-way">
+                        <div class="call">
+                            <img class="socialImg" src="assets/images/call.png">
+                            <div>
+                                <a href="tell:011 4550 1020">011 4550 1020</a>
+                                <a href="tell:082 8534 4563">082 8534 4563</a>
+                            </div>
+                        </div>
+                        <div class="email">
+                            <img class="socialImg" src="assets/images/email.png">
+                            <a href="mail:info@tripsyfare.com">info@dreamlandtravel.co.in</a>
+                        </div>
+                    </div>
+                    
+                        <div class="connect-with">
+                            <h6>Connect With Us</h6>
+                            <div class="social-icons">
+                                <a href="https://www.facebook.com/dreamlandtravel.co.in" target="_blank">
+                                    <i class="fa-brands fa-facebook" id="social-accounts"></i>
+                                </a>
+                                <a href="https://twitter.com/dreamlandtravel" target="_blank">
+                                    <i class="fa-brands fa-twitter" id="social-accounts"></i>
+                                </a>
+                                <a href="https://www.instagram.com/dreamlandtravel.co.in/" target="_blank">
+                                    <i class="fa-brands fa-instagram" id="social-accounts"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/dreamlandtravel/" target="_blank">
+                                    <i class="fa-brands fa-linkedin-in" id="social-accounts"></i>
+                                </a>
+                                <a href="https://in.pinterest.com/dreamlandt/" target="_blank">
+                                    <i class="fa-brands fa-pinterest" id="social-accounts"></i>
+                                </a>
+                                <a href="https://www.youtube.com/channel/UCp9p-NkYxA1cYVqXRAVMuqg" target="_blank">
+                                    <i class="fa-brands fa-youtube" id="social-accounts"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="payment-options">
+                            <h6>Payment Options</h6>
+                            <img src="assets/images/payment.png">
+                        </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="row contact-links">
+                        <div class="col-lg-3 col-md-3 col-6" *ngFor="let item of footerLi">
+                            <h5>{{item.footerHead}}</h5>
+                            <ul>
+                                <li *ngFor="let subItem of item?.child" (click)="onLinkPage(subItem)">{{subItem.li}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-footer">
+        <div class="container">
+            <div class="footerInner">
+                <p>Copyright © {{year}} <span>Dreamland Travel</span>. All Rights Reserved.</p>
+                <!-- <button mat-flat-button class="msg-btn">Send Message</button> -->
+            </div>
+        </div>
+    </div>
+</footer>

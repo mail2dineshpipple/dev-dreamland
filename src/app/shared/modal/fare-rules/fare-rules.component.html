@@ -1,0 +1,305 @@
+<div class="modal-container fare-rules-container">
+    <div class="modalHeader">
+        <h4>Fare rules</h4>
+        <span class="closeBtn" (click)="close()">
+            <img src="assets/images/close.png" alt="">
+        </span>
+    </div>
+    <div class="modalBody">
+        <mat-tab-group class="fareMatTabGroup">
+            <mat-tab label="Cancellation Charges">
+                <mat-accordion>
+                    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" (opened)="panelOpenState = true"
+                    (closed)="panelOpenState = false" hideToggle>
+                        <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <div class="fareHeader">
+                                <div class="fareImg">
+                                    <img src="assets/images/ai.gif" alt="">
+                                </div>
+                                <p>AMD-BOM</p>
+                            </div>
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            {{panelOpenState ? '' : 'SHOW'}}
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <div class="fareInner">
+                            <div class="fareBox">
+                                <div class="fareDetail">
+                                    <div class="w-50">
+                                        <p>Time frame</p>
+                                        <span>(From Scheduled flight departure)</span>
+                                    </div>
+                                    <div class="w-50 border-0">
+                                        <p>Airline Fee + DREAMLAND Fee</p>
+                                        <span>(Per passenger)</span>
+                                    </div>
+                                </div>
+                                <div class="fareDetail">
+                                    <div class="w-50">
+                                        <span>0 hours to 2 hours*</span>
+                                    </div>
+                                    <div class="w-50 border-0">
+                                        <span>ADULT : <b>Non Refundable</b></span>
+                                    </div>
+                                </div>
+                                <div class="fareDetail">
+                                    <div class="w-50">
+                                        <span>2 hours to 365 days*</span>
+                                    </div>
+                                    <div class="w-50 border-0">
+                                        <span>ADULT : <b>₹ 1,972 + ₹ 50</b></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <span>*From the Date of Departure</span>
+                        </div>
+                    </mat-expansion-panel>
+                    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" (opened)="panelOpenState1 = true"
+                    (closed)="panelOpenState1 = false" hideToggle>
+                        <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <div class="fareHeader">
+                                <div class="fareImg">
+                                    <img src="assets/images/ai.gif" alt="">
+                                </div>
+                                <p>BOM-AMD</p>
+                            </div>
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            {{panelOpenState1 ? '' : 'SHOW'}}
+                        </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <div class="fareInner">
+                            <div class="fareBox">
+                                <div class="fareDetail">
+                                    <div class="w-50">
+                                        <p>Time frame</p>
+                                        <span>(From Scheduled flight departure)</span>
+                                    </div>
+                                    <div class="w-50 border-0">
+                                        <p>Airline Fee + DREAMLAND Fee</p>
+                                        <span>(Per passenger)</span>
+                                    </div>
+                                </div>
+                                <div class="fareDetail">
+                                    <div class="w-50">
+                                        <span>0 hours to 2 hours*</span>
+                                    </div>
+                                    <div class="w-50 border-0">
+                                        <span>ADULT : <b>Non Refundable</b></span>
+                                    </div>
+                                </div>
+                                <div class="fareDetail">
+                                    <div class="w-50">
+                                        <span>2 hours to 365 days*</span>
+                                    </div>
+                                    <div class="w-50 border-0">
+                                        <span>ADULT : <b>₹ 1,541 + ₹ 50</b></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <span>*From the Date of Departure</span>
+                        </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+                <div class="note">
+                    <span><b>*Important:</b> The airline fee is indicative. Dreamland does not guarantee the accuracy of this information. All fees mentioned are per passenger.</span>
+                </div>
+            </mat-tab>
+            <mat-tab label="Date change charges">
+                <mat-accordion>
+                    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" (opened)="panelOpenState = true"
+                    (closed)="panelOpenState = false" hideToggle>
+                        <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <div class="fareHeader">
+                                <div class="fareImg">
+                                    <img src="assets/images/ai.gif" alt="">
+                                </div>
+                                <p>AMD-BOM</p>
+                            </div>
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            {{panelOpenState ? '' : 'SHOW'}}
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <div class="fareInner">
+                            <div class="fareBox">
+                                <div class="fareDetail">
+                                    <div class="w-50">
+                                        <p>Time frame</p>
+                                        <span>(From Scheduled flight departure)</span>
+                                    </div>
+                                    <div class="w-50 border-end-0">
+                                        <p>Airline Fee + DREAMLAND Fee + Fare difference</p>
+                                        <span>(Per passenger)</span>
+                                    </div>
+                                </div>
+                                <div class="fareDetail">
+                                    <div class="w-50">
+                                        <span>0 hours to 2 hours*</span>
+                                    </div>
+                                    <div class="w-50 border-end-0">
+                                        <span>ADULT : <b>Non Refundable</b></span>
+                                    </div>
+                                </div>
+                                <div class="fareDetail">
+                                    <div class="w-50">
+                                        <span>2 hours to 365 days*</span>
+                                    </div>
+                                    <div class="w-50 border-end-0">
+                                        <span>ADULT : <b>₹ 1,972 + ₹ 50 + Fare difference</b></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <span>*From the Date of Departure</span>
+                        </div>
+                    </mat-expansion-panel>
+                    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" (opened)="panelOpenState1 = true"
+                    (closed)="panelOpenState1 = false" hideToggle>
+                        <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <div class="fareHeader">
+                                <div class="fareImg">
+                                    <img src="assets/images/ai.gif" alt="">
+                                </div>
+                                <p>BOM-AMD</p>
+                            </div>
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            {{panelOpenState1 ? '' : 'SHOW'}}
+                        </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <div class="fareInner">
+                            <div class="fareBox">
+                                <div class="fareDetail">
+                                    <div class="w-50">
+                                        <p>Time frame</p>
+                                        <span>(From Scheduled flight departure)</span>
+                                    </div>
+                                    <div class="w-50 border-end-0">
+                                        <p>Airline Fee + DREAMLAND Fee + Fare difference</p>
+                                        <span>(Per passenger)</span>
+                                    </div>
+                                </div>
+                                <div class="fareDetail">
+                                    <div class="w-50">
+                                        <span>0 hours to 2 hours*</span>
+                                    </div>
+                                    <div class="w-50 border-end-0">
+                                        <span>ADULT : <b>Non Refundable</b></span>
+                                    </div>
+                                </div>
+                                <div class="fareDetail">
+                                    <div class="w-50">
+                                        <span>2 hours to 365 days*</span>
+                                    </div>
+                                    <div class="w-50 border-end-0">
+                                        <span>ADULT : <b>₹ 1,541 + ₹ 50 + Fare difference</b></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <span>*From the Date of Departure</span>
+                        </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </mat-tab>
+            <mat-tab label="Baggage Rules">
+                <mat-accordion>
+                    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" (opened)="panelOpenState = true"
+                    (closed)="panelOpenState = false" hideToggle>
+                        <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <div class="fareHeader">
+                                <div class="fareImg">
+                                    <img src="assets/images/ai.gif" alt="">
+                                </div>
+                                <p>AMD-BOM</p>
+                            </div>
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            {{panelOpenState ? '' : 'SHOW'}}
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <div class="fareInner">
+                            <div class="fareBox">
+                                <div class="fareDetail">
+                                    <div class="w-50">
+                                        <p>Baggage Type</p>
+                                    </div>
+                                    <div class="w-50 border-end-0">
+                                        <p>Maximum Capacity</p>
+                                        <span>(Per passenger)</span>
+                                    </div>
+                                </div>
+                                <div class="fareDetail">
+                                    <div class="w-50">
+                                        <span>Check In Baggage</span>
+                                    </div>
+                                    <div class="w-50 border-end-0">
+                                        <span>0 Kgs</span>
+                                    </div>
+                                </div>
+                                <div class="fareDetail">
+                                    <div class="w-50">
+                                        <span>Cabin Baggage</span>
+                                    </div>
+                                    <div class="w-50 border-end-0">
+                                        <span>7 Kgs (1 piece only)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-expansion-panel>
+                    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" (opened)="panelOpenState1 = true"
+                    (closed)="panelOpenState1 = false" hideToggle>
+                        <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <div class="fareHeader">
+                                <div class="fareImg">
+                                    <img src="assets/images/ai.gif" alt="">
+                                </div>
+                                <p>BOM-AMD</p>
+                            </div>
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            {{panelOpenState1 ? '' : 'SHOW'}}
+                        </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <div class="fareInner">
+                            <div class="fareBox">
+                                <div class="fareDetail">
+                                    <div class="w-50">
+                                        <p>Baggage Type</p>
+                                    </div>
+                                    <div class="w-50 border-end-0">
+                                        <p>Maximum Capacity</p>
+                                        <span>(Per passenger)</span>
+                                    </div>
+                                </div>
+                                <div class="fareDetail">
+                                    <div class="w-50">
+                                        <span>Check In Baggage</span>
+                                    </div>
+                                    <div class="w-50 border-end-0">
+                                        <span>0 Kgs</span>
+                                    </div>
+                                </div>
+                                <div class="fareDetail">
+                                    <div class="w-50">
+                                        <span>Cabin Baggage</span>
+                                    </div>
+                                    <div class="w-50 border-end-0">
+                                        <span>7 Kgs (1 piece only)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>

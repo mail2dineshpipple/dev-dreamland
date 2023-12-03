@@ -1,0 +1,213 @@
+<div id="Holidays">
+    <div class="banner">
+        <div class="container route">
+            <div class="repService">
+                <div class="serviceInner" routerLink="/flights" routerLinkActive="active">
+                    <img src="./../../../assets/images/flight.png">
+                    <span>Flights</span>
+                </div>
+                <div class="serviceInner" routerLink="/hotels" routerLinkActive="active">
+                    <img src="./../../../assets/images/hotel.png">
+                    <span>Hotels</span>
+                </div>
+                <div class="serviceInner" (click)="commonService.openUrl()">
+                    <img src="./../../../assets/images/holiday.png">
+                    <span class="active">Holidays</span>
+                </div>
+            </div>
+            <h1> 
+                <img src="assets/images/plane.svg" alt="" class="mr-2"> 
+                Find lowest fare
+            </h1>
+            <div class="banner-card">
+                <div class="search-container">
+                    <div class="input-content width-25">
+                        <div (click)="ontest('From')" class="search-book">
+                            <label class="saerch-head">From</label>
+                            <div class="sarch-far">
+                                <label class="cityName">{{selectFrom.Name}}</label>
+                                <label class="cityText">{{selectFrom.Airport}}</label>
+                            </div>
+                        </div>
+                        <div class="customNgselect" *ngIf="isShow">
+                            <ng-select [items]="flightList" [isOpen]="true" class="flight-select"
+                                bindLabel="Name"
+                                [loading]="peopleLoading"
+                                [searchFn]="customSearchFn"
+                                [clearable]="false"
+                                [openOnEnter]="true"
+                                [dropdownPosition]="'bottom'"
+                                (change)="onSelect($event, 'From')">
+                                <ng-template ng-option-tmp let-item="item">
+                                    <div class="option-row">
+                                        <div class="left">
+                                            <img src="assets/images/planeicon.svg" alt="planeicon">
+                                        </div>
+                                        <div class="right">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="tilte">{{item.Name}} {{item.Code}}</div>
+                                                <div class="d-flex align-items-center">
+                                                    <span>{{item.Country}}</span>
+                                                    <img src="assets/images/indian-flag.png" alt="flagicon">
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <span>{{item.Airport}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </ng-select>
+                        </div>
+                    </div>
+                    <div class="input-content width-25 city-to">
+                        <div class="ex-btn" (click)="onReverse()">
+                            <i class="material-icons">sync_alt</i>
+                        </div>
+                        <div (click)="ontest('To')" class="search-book">
+                            <label class="saerch-head">To</label>
+                            <div class="sarch-far">
+                                <label class="cityName">{{selectTo.Name}}</label>
+                                <label class="cityText">{{selectTo.Airport}}</label>
+                            </div>
+                        </div>
+                        <div class="customNgselect" *ngIf="isShow2">
+                            <ng-select [items]="flightList" [isOpen]="true" class="flight-select"
+                                bindLabel="Name"
+                                [loading]="peopleLoading"
+                                [searchFn]="customSearchFn"
+                                [clearable]="false"
+                                [openOnEnter]="true"
+                                [dropdownPosition]="'bottom'"
+                                (change)="onSelect($event, 'To')">
+                                <ng-template ng-option-tmp let-item="item">
+                                    <div class="option-row">
+                                        <div class="left">
+                                            <img src="assets/images/planeicon.svg" alt="planeicon">
+                                        </div>
+                                        <div class="right">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="tilte">{{item.Name}} {{item.Code}}</div>
+                                                <div class="d-flex align-items-center">
+                                                    <span>{{item.Country}}</span>
+                                                    <img src="assets/images/indian-flag.png" alt="flagicon">
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <span>{{item.Airport}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </ng-select>
+                        </div>
+                    </div>
+                    <div class="input-content width-15">
+                        <mat-form-field appearance="fill" class="example-form-field custom-datePicker" (click)="datepicker.open()" >
+                            <label class="head">Departure</label>
+                            <input matInput readonly [matDatepicker]="datepicker" placeholder="" [(ngModel)]="Departure" name="Departure">
+                            <mat-datepicker-toggle [for]="datepicker"></mat-datepicker-toggle>
+                            <mat-datepicker #datepicker></mat-datepicker>
+                            <div>
+                                <label class="cityName">1 <span>Mar 2022</span></label>
+                                <label class="cityText">Tuesday</label>
+                            </div>
+                        </mat-form-field>
+                    </div>
+                    
+                    <div class="input-content width-15 return">
+                        <mat-form-field appearance="fill" class="example-form-field custom-datePicker" (click)="datepicker1.open()">
+                            <label class="head">Return</label>
+                            <input matInput readonly [matDatepicker]="datepicker1" placeholder="" [(ngModel)]="Return" name="Return">
+                            <mat-datepicker-toggle [for]="datepicker1"></mat-datepicker-toggle>
+                            <mat-datepicker #datepicker1></mat-datepicker>
+                            <div>
+                                <label class="cityName">5 <span>Mar 2022</span></label>
+                                <label class="cityText">Saturday</label>
+                            </div>
+                        </mat-form-field>                            
+                    </div>
+                    <div class="input-content">
+                        <div class="class" (click)="onClick()">
+                            <label class="head">Traveller & Cabin</label>
+                            <label class="cityName">{{Traveller}} <span>Traveller</span><span *ngIf="Traveller > 1">s</span></label>
+                            <label class="cityText">{{CabinType}}</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button mat-flat-button class="search-btn" (click)="gotoNext()">
+                    <i class="material-icons">search</i>
+                    Search
+                </button>
+
+                <div class="positionClass" *ngIf="travellerCabin">
+                    <div class="counter-container">
+                        <div class="main-counter">
+                            <label class="head">Room</label>
+                            <label class="cityText">(Below 2 yrs)</label>
+                            <div class="counter">
+                                <button (click)="decrement('infant')" [disabled]="roomCounter === 0">
+                                    <span class="material-icons">remove</span>
+                                </button> 
+                                <span>{{roomCounter}}</span>
+                                <button class="plus" (click)="increment('Room')">
+                                    <span class="material-icons">add</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="main-counter">
+                            <label class="head">Adults</label>
+                            <label class="cityText">(Aged 12+ yrs)</label>
+                            <div class="counter">
+                                <button (click)="decrement('adult')" [disabled]="adultCounter === 0">
+                                    <span class="material-icons">remove</span>
+                                </button> 
+                                <span>{{adultCounter}}</span>
+                                <button class="plus" (click)="increment('adult')">
+                                    <span class="material-icons">add</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="main-counter m-0">
+                            <label class="head">Children</label>
+                            <label class="cityText">(Aged 2-12 yrs)</label>
+                            <div class="counter">
+                                <button (click)="decrement('child')" [disabled]="childCounter === 0">
+                                    <span class="material-icons">remove</span>
+                                </button> 
+                                <span>{{childCounter}}</span>
+                                <button class="plus" (click)="increment('child')">
+                                    <span class="material-icons">add</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <label class="head mb-2">Cabin</label>
+                        <mat-button-toggle-group [(ngModel)]="CabinType" aria-label="Type">
+                            <mat-button-toggle value="Economy">Economy</mat-button-toggle>
+                            <mat-button-toggle value="Prem.Economy">Prem.Economy</mat-button-toggle>
+                            <mat-button-toggle value="Business">Business</mat-button-toggle>
+                            <mat-button-toggle value="First">First</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </div>
+                    <div class="classFooter">
+                        <button class="cancel-btn" (click)="onClick()">Cancel</button> 
+                        <button class="done-btn" (click)="onClick()">Done</button> 
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <div class="other-section">
+        <div class="container">
+            <app-offer></app-offer>
+            <!-- <app-flight></app-flight> -->
+            <!-- <app-hotel></app-hotel> -->
+            <app-international-trip></app-international-trip>
+            <app-why-dreamland [type]="'holidays'"></app-why-dreamland>
+            <app-faq></app-faq>
+        </div>
+    </div>
+</div>

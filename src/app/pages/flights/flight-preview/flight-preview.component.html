@@ -1,0 +1,262 @@
+<div id="flightcomplete">
+    <div class="pageInner">
+        <div class="container">
+            <div class="flightComplete">
+                <div class="flightHeader">
+                    <div>
+                        <h2>E-Ticket</h2>
+                        <span class="customSpan bold">Booking ID: <label>107828</label></span>
+                        <span class="customSpan bold">PNR: <label>TXVOQN</label></span>
+                        <span class="customSpan bold">Booking Date: <label>Thu, 16 Jun 2022 15:35</label></span>
+                    </div>
+                    <div>
+                        <div class="headImg">
+                            <img src="assets/images/logo.png">
+                        </div>
+                        <!-- <div class="iconDetail">
+                            <div class="icon">
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                            </div>
+                            <span class="customSpan">8285624833</span>
+                        </div>
+                        <div class="iconDetail">
+                            <div class="icon">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            </div>
+                            <span class="customSpan">info@dreamlandtravel.co.in</span>
+                        </div>
+                        <div class="iconDetail">
+                            <div class="icon">
+                                <i class="fa fa-globe" aria-hidden="true"></i>
+                            </div>
+                            <span class="customSpan">www.dreamlandtravel.co.in</span>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="flightBody">
+                    <div class="passDetail">
+                        <h3>Traveler Details</h3>
+                        <table class="table table-borderless">
+                            <thead>
+                              <tr>
+                                <th>Name</th>
+                                <th></th>
+                                <th>Ticket No.</th>
+                                <th>seat</th>
+                                <th>Meal</th>
+                              </tr>
+                            </thead>
+                            <tbody *ngFor="let list of passengerList">
+                                <tr>
+                                    <td><img [src]="list.img"> {{list.name}}</td>
+                                    <td>{{list.type}}</td>
+                                    <td>{{list.ticket}}</td>
+                                    <td>{{list.seat}}</td>
+                                    <td>{{list.meal}}</td>
+                                </tr>
+                            </tbody>
+                          </table>
+                    </div>
+                    <div class="flightDetail">
+                        <h3>Flight Details</h3>
+                        <div class="title">
+                            <div class="customSpan">Delhi - Patna, Indigo Airline 897</div>
+                            <div class="customSpan">PNR: TXVOQN</div>
+                        </div>
+                        <div class="timeChart">
+                            <div>
+                                <span class="customSpan">Delhi</span>
+                                <h2>DEL 08:00</h2>
+                                <span class="customSpan">Thu, 29 Sep 2022</span>
+                                <div class="d-flex align-items-center">
+                                    <span class="customSpan">Indira Gandhi Airport Terminal 3</span>
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <div class="flightImg">
+                                    <img src="assets/images/6E.gif" alt="">
+                                </div>
+                                <span class="customSpan">Indigo</span>
+                                <span class="customSpan bold">6E-787</span>
+                            </div>
+                            <div class="text-center">
+                                <span class="deatil">02h : 05m</span>
+                                <label class="deatil label">Non Stop</label>
+                                <span class="deatil">Economy</span>
+                            </div>
+                            <div>
+                                <span class="customSpan">Patna</span>
+                                <h2>PAT 10:05</h2>
+                                <span class="customSpan">Thu, 29 Sep 2022</span>
+                                <div class="d-flex align-items-center">
+                                    <span class="customSpan">Patna Airport Terminal 1</span>
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="baggageInfo passDetail">
+                        <h3>Baggage Allowance (per person)</h3>
+                        <table class="table table-borderless">
+                            <thead>
+                              <tr>
+                                <th>Type</th>
+                                <th>Sector</th>
+                                <th>Hand Baggage</th>
+                                <th>Check-in Baggage</th>
+                              </tr>
+                            </thead>
+                            <tbody *ngFor="let list of baggageList">
+                                <tr>
+                                    <td>{{list.title}}</td>
+                                    <td>{{list.basic}}</td>
+                                    <td>{{list.cabin}}</td>
+                                    <td>{{list.check}}</td>
+                                </tr>
+                            </tbody>
+                          </table>
+                    </div>
+                    <div class="cancellation">
+                        <h3>Cancellation and Date Change Charges</h3>
+                        <label class="customLabel">All charges below are per passenger and per segment in INR</label>
+                        <div class="d-flex justify-content-between mt-3 pr-3">
+                              <table class="table table-bordered m-0">
+                                <thead>
+                                  <tr>
+                                    <th colspan="2">DEL-PAT</th>
+                                    <th colspan="2">Cancellation Charges</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Type</td>
+                                        <td class="start">Condition</td>
+                                        <td>Airline</td>
+                                        <td>Dreamland</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="3">Adult</td>
+                                        <td class="start">3 days - 365 days</td>
+                                        <td>₹3000</td>
+                                        <td>₹50</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="start">2 hrs - 3 days</td>
+                                        <td>₹3500</td>
+                                        <td>₹50</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="start">0 hrs - 2 hrs</td>
+                                        <td colspan="2">Non-Refundable</td>
+                                    </tr> 
+                                   
+                                </tbody>
+                              </table>
+                              <table class="table table-bordered m-0">
+                                <thead>
+                                  <tr>
+                                    <th colspan="2">DEL-PAT</th>
+                                    <th colspan="2">Date Change Charges</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Type</td>
+                                        <td class="start">Condition</td>
+                                        <td>Airline</td>
+                                        <td>Dreamland</td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="3">Adult</td>
+                                        <td class="start">3 days - 365 days</td>
+                                        <td>₹2750</td>
+                                        <td>₹50</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="start">2 hrs - 3 days</td>
+                                        <td>₹3250</td>
+                                        <td>₹50</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="start">0 hrs - 2 hrs</td>
+                                        <td colspan="2">Non-Changeable</td>
+                                    </tr> 
+                                </tbody>
+                              </table>
+                        </div>
+                    </div>
+                    <div class="fareDetail passDetail">
+                        <h3>Fare & Payment Details</h3>
+                        <table class="table table-borderless">
+                            <thead>
+                              <tr>
+                                <th>Passengers</th>
+                                <th>Basic</th>
+                                <th>YQ</th>
+                                <th>Tax</th>
+                                <th>Services</th>
+                                <th>Conv. Fee</th>
+                                <th>Sub Total</th>
+                              </tr>
+                            </thead>
+                            <tbody *ngFor="let list of fareList">
+                                <tr>
+                                    <td>{{list.title}}</td>
+                                    <td>{{list.basic}}</td>
+                                    <td>{{list.yq}}</td>
+                                    <td>{{list.tax}}</td>
+                                    <td>{{list.service}}</td>
+                                    <td [ngClass]="{'bold': list?.isBold}">{{list.fee}}</td>
+                                    <td [ngClass]="{'bold': list?.isBold}">₹{{list.total}}</td>
+                                </tr>
+                            </tbody>
+                          </table>
+                    </div>
+                    <div class="term">
+                        <h3>Terms & Conditions</h3>
+                        <ul>
+                            <li>All Guests, including children and infants, must present valid identification at check-in.</li>
+                            <li>Carriage and other services provided by the carrier are subject to conditions of carriage, which are hereby incorporated by reference. These
+                                conditions may be obtained from the issuing carrier.</li>
+                            <li>Changes to your reservation will result in a fee of Airline terms & condition,change plus any difference in the fare between the original fare
+                                paid and the fare for the revised booking.</li>
+                            <li>Cancellation charges as per Airlines terms & condition.</li>
+                            <li>Airline Free Baggages are per seat only.</li>
+                            <li>Check your itinerary with airline also,revert with in 2 hour. we are here to help you.</li>
+                            <li>As per Government guidelines, check-in counters at all airports will now close 45 minutes before departure with immediate effect. Please
+                                plan your Airport arrival accordingly.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="flightFooter">
+                    <label class="customLabel mb-1">Re-confirm all onwards/return flights at least 72 hours prior to departure.</label>
+                    <span class="customSpan mb-1">NON REFUNDABLE - NON CHANGEABLE ONCE TICKET ISS, as per ticket conditions.</span>
+                    <div class="d-flex mb-2">
+                        <div class="iconDetail">
+                            <div class="icon">
+                                <i class="fa fa-globe" aria-hidden="true"></i>
+                            </div>
+                            <span class="customSpan">www.dreamlandtravel.co.in</span>
+                        </div>
+                        <div class="iconDetail">
+                            <div class="icon">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            </div>
+                            <span class="customSpan">info@dreamlandtravel.co.in</span>
+                        </div>
+                        <div class="iconDetail">
+                            <div class="icon">
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                            </div>
+                            <span class="customSpan">8285624833</span>
+                        </div>
+                    </div>
+                    <div class="ftEnd">
+                        <div class="customSpan">Thank you for booking with Dreamland Travel</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

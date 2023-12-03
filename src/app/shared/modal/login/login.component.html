@@ -1,0 +1,122 @@
+<div class="modal-container login-container">
+    <div class="modalHeader">
+        <h1>Login</h1>
+        <span class="closeBtn" (click)="close()">
+            <img src="/assets/images/close.png" alt="">
+        </span>
+    </div>
+    <div class="modalBody customScroll">
+        <div class="modalInner">
+            <mat-tab-group>
+                <mat-tab label="Customer">
+                    <div class="py-3">
+                        <div class="customInput">
+                            <label>Email</label>
+                            <input type="email" name="" id="email" placeholder="Enter Your Email / Phone Number">
+                        </div>
+                        <div class="customInput">
+                            <label>Password</label>
+                            <input type="password" id="password" placeholder="Enter Your Password">
+                            <p class="passPara"><span class="forgotPassword" (click)="PasswordRecovery()">Forgot your password?</span></p>
+                        </div>
+                        <div class="loginBtn">
+                            <button mat-flat-button class="modalBotton" (click)="onSubmit()">Login</button>
+                        </div>
+                        <div class="orSection">
+                            <span class="or">or</span>
+                        </div>
+                        <div class="social">
+                            <div class="flex50">
+                                <button mat-flat-button class="innerBtn">
+                                        <img class="logoImg" src="/assets/images/facebook.png" >
+                                    <p>Facebook</p>
+                                </button>
+                            </div>
+                            <div class="flex50">
+                                <button mat-flat-button class="innerBtn">
+                                    <img class="logoImg" src="/assets/images/google.png">
+                                    <p>Google</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="signup">
+                            <p>Not have an Account Yet? <span (click)="Signup()">Sign up now!</span></p>
+                        </div>
+                    </div>
+                </mat-tab>
+                <mat-tab label="Corporate">
+                    <div class="py-3">
+                        <div class="customInput">
+                            <label>Email</label> 
+                            <input type="email" name="" id="email" placeholder="Enter Your Email / Phone Number">
+                        </div>
+                        <div class="customInput">
+                            <label>Password</label>
+                            <input type="password" id="password" placeholder="Enter Your Password">
+                            <p class="passPara"><span class="forgotPassword" (click)="PasswordRecovery()">Forgot your password?</span></p>
+                        </div>
+                        <div class="loginBtn">
+                            <button mat-flat-button class="modalBotton">Login</button>
+                        </div>
+                        <div class="orSection">
+                            <span class="or">or</span>
+                        </div>
+                        <div class="social">
+                            <div class="flex50">
+                                <button mat-flat-button class="innerBtn">
+                                        <img class="logoImg" src="/assets/images/facebook.png" >
+                                    <p>Facebook</p>
+                                </button>
+                            </div>
+                            <div class="flex50">
+                                <button mat-flat-button class="innerBtn">
+                                    <img class="logoImg" src="/assets/images/google.png">
+                                    <p>Google</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="signup">
+                            <p>Not have an Account Yet? <span (click)="Signup()">Sign up now!</span></p>
+                        </div>
+                    </div>
+                </mat-tab>
+                <mat-tab label="Agent">
+                    <div class="py-3">
+                        <div class="customInput">
+                            <label>Email</label>
+                            <input type="email" name="" id="email" placeholder="Enter Your Email / Phone Number">
+                        </div>
+                        <div class="customInput">
+                            <label>Password</label>
+                            <input type="password" id="password" placeholder="Enter Your Password">
+                            <p class="passPara"><span class="forgotPassword" (click)="PasswordRecovery()">Forgot your password?</span></p>
+                        </div>
+                        <div class="loginBtn">
+                            <button mat-flat-button class="modalBotton">Login</button>
+                        </div>
+                        <div class="orSection">
+                            <span class="or">or</span>
+                        </div>
+                        <div class="social">
+                            <div class="flex50">
+                                <button mat-flat-button class="innerBtn">
+                                        <img class="logoImg" src="/assets/images/facebook.png" >
+                                    <p>Facebook</p>
+                                </button>
+                            </div>
+                            <div class="flex50">
+                                <button mat-flat-button class="innerBtn">
+                                    <img class="logoImg" src="/assets/images/google.png">
+                                    <p>Google</p>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="signup">
+                            <p>Not have an Account Yet? <span (click)="Signup()">Sign up now!</span></p>
+                        </div>
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+</div>

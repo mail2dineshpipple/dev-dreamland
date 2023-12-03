@@ -1,0 +1,158 @@
+<div id="flightcomplete">
+    <div class="pageInner">
+        <div class="container">
+            <div class="flightComplete">
+                <div class="flightHeader">
+                    <div>
+                        <h2>Invoice</h2>
+                        <span class="customSpan bold">Booking ID: <label>107828</label></span>
+                        <span class="customSpan bold">PNR: <label>TXVOQN</label></span>
+                        <span class="customSpan bold">Booking Date: <label>Thu, 16 Jun 2022 15:35</label></span>
+                    </div>
+                    <div>
+                        <div class="headImg">
+                            <img src="assets/images/logo.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="flightBody">
+                    <div class="passDetail">
+                        <h3>Traveler Details</h3>
+                        <table class="table table-borderless">
+                            <thead>
+                              <tr>
+                                <th>Name</th>
+                                <th></th>
+                                <th>Ticket No.</th>
+                                <th>seat</th>
+                                <th>Meal</th>
+                              </tr>
+                            </thead>
+                            <tbody *ngFor="let list of passengerList">
+                                <tr>
+                                    <td><img [src]="list.img"> {{list.name}}</td>
+                                    <td>{{list.type}}</td>
+                                    <td>{{list.ticket}}</td>
+                                    <td>{{list.seat}}</td>
+                                    <td>{{list.meal}}</td>
+                                </tr>
+                            </tbody>
+                          </table>
+                    </div>
+                    <div class="flightDetail">
+                        <h3>Flight Details</h3>
+                        <div class="title">
+                            <div class="customSpan">Delhi - Patna, Indigo Airline 897</div>
+                            <div class="customSpan">PNR: TXVOQN</div>
+                        </div>
+                        <div class="timeChart">
+                            <div>
+                                <span class="customSpan">Delhi</span>
+                                <h2>DEL 08:00</h2>
+                                <span class="customSpan">Thu, 29 Sep 2022</span>
+                                <div class="d-flex align-items-center">
+                                    <span class="customSpan">Indira Gandhi Airport Terminal 3</span>
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <div class="flightImg">
+                                    <img src="assets/images/6E.gif" alt="">
+                                </div>
+                                <span class="customSpan">Indigo</span>
+                                <span class="customSpan bold">6E-787</span>
+                            </div>
+                            <div class="text-center">
+                                <span class="deatil">02h : 05m</span>
+                                <label class="deatil label">Non Stop</label>
+                                <span class="deatil">Economy</span>
+                            </div>
+                            <div>
+                                <span class="customSpan">Patna</span>
+                                <h2>PAT 10:05</h2>
+                                <span class="customSpan">Thu, 29 Sep 2022</span>
+                                <div class="d-flex align-items-center">
+                                    <span class="customSpan">Patna Airport Terminal 1</span>
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fareDetail passDetail">
+                        <h3>Fare & Payment Details</h3>
+                        <table class="table table-borderless">
+                            <thead>
+                              <tr>
+                                <th>Passengers</th>
+                                <th>Basic</th>
+                                <th>YQ</th>
+                                <th>Tax</th>
+                                <th>Services</th>
+                                <th>Conv. Fee</th>
+                                <th>Sub Total</th>
+                              </tr>
+                            </thead>
+                            <tbody *ngFor="let list of fareList">
+                                <tr>
+                                    <td>{{list.title}}</td>
+                                    <td>{{list.basic}}</td>
+                                    <td>{{list.yq}}</td>
+                                    <td>{{list.tax}}</td>
+                                    <td>{{list.service}}</td>
+                                    <td [ngClass]="{'bold': list?.isBold}">{{list.fee}}</td>
+                                    <td [ngClass]="{'bold': list?.isBold}">₹{{list.total}}</td>
+                                </tr>
+                            </tbody>
+                          </table>
+                    </div>
+                    <div class="bankDetails">
+                        <h3>Bank Details</h3>
+                        <div class="bankDetailsInner">
+                            <div class="detail">
+                                <span>Bank Name : </span>
+                                <label>ICICI Bank</label>
+                            </div>
+                            <div class="detail">
+                                <span>Account Name : </span>
+                                <label>Mr. Baldev Singh</label>
+                            </div>
+                            <div class="detail">
+                                <span>Account Number : </span>
+                                <label>123456789012</label>
+                            </div>
+                            <div class="detail">
+                                <span>IFSC Code : </span>
+                                <label>ADC0122D</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flightFooter">
+                    <div class="d-flex my-3">
+                        <div class="iconDetail">
+                            <div class="icon">
+                                <i class="fa fa-globe" aria-hidden="true"></i>
+                            </div>
+                            <span class="customSpan">www.dreamlandtravel.co.in</span>
+                        </div>
+                        <div class="iconDetail">
+                            <div class="icon">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            </div>
+                            <span class="customSpan">info@dreamlandtravel.co.in</span>
+                        </div>
+                        <div class="iconDetail">
+                            <div class="icon">
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                            </div>
+                            <span class="customSpan">8285624833</span>
+                        </div>
+                    </div>
+                    <div class="ftEnd">
+                        <div class="customSpan">Thank you for booking with Dreamland Travel</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
