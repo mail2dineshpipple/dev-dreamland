@@ -45,8 +45,8 @@ export class CommonService {
     }
 
     getAirportList():Observable<Airport[]> {
-        return this.httpClient.get<Airport[]>(this.airportListUrl).pipe( map(m=> {
-            return m.filter(f=> f.Country == "India" ).sort((a,b) => {
+        return this.httpClient.get<Airport[]>(this.airportListUrl).pipe(map(m=> {
+            return m.sort((a,b) => {
                 if (b.City < a.City) return 1;
                 if (b.City > a.City) return -1;
                 return 0;

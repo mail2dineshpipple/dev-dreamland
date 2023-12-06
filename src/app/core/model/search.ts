@@ -1,4 +1,4 @@
-export interface Search {
+export interface SearchRequest {
     flightType: string;
     cabinType: string;
     selectFrom: SelectDetail | undefined;

@@ -12,6 +12,7 @@ import { FlightPreviewComponent } from './flight-preview/flight-preview.componen
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { FlightCompleteComponent } from './flight-complete/flight-complete.component';
 import { FlightInvoiceComponent } from './flight-invoice/flight-invoice.component';
+import { NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
 
 const routes: Routes = [
   {
@@ -51,6 +52,8 @@ const routes: Routes = [
     NgSelectModule,
     MaterialModule,
     CarouselModule,
+    NgbDatepickerModule
+
   ],
   declarations: [
     FlightsComponent,

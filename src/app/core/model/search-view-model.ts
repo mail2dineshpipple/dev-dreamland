@@ -11,8 +11,10 @@ export interface Search {
 export interface Segment {
     fromCity: string,
     fromAirport: string,
+    fromCityCode:string;
     toCity: string,
     toAirport: string,
+    toCityCode:string;
     fromDate: NgbDate,
     toDate: NgbDate,
     travelAndCabin:TravelAndCabin | undefined,

@@ -53,7 +53,7 @@
           >
           <!-- </mat-button-toggle-group> -->
         </div>
-        <div *ngFor="let segment of search.segment; index as i">
+        <ng-container *ngFor="let segment of search.segment; index as i">
           <div class="positionClass" *ngIf="segment.showTravel">
             <div class="counter-container">
               <div class="main-counter">
@@ -153,6 +153,7 @@
                   [openOnEnter]="true"
                   [dropdownPosition]="'bottom'"
                   (change)="onSelect($event, 'From', i)"
+                  [virtualScroll]="true"
                 >
                   <ng-template ng-option-tmp let-item="item">
                     <div class="option-row">
@@ -209,6 +210,7 @@
                   [openOnEnter]="true"
                   [dropdownPosition]="'bottom'"
                   (change)="onSelect($event, 'To',i)"
+                  [virtualScroll]="true"
                 >
                   <ng-template ng-option-tmp let-item="item">
                     <div class="option-row">
@@ -357,7 +359,7 @@
             </div>
             <div
               class="input-content"
-              *ngIf="i == 0 || search.segment.length > i + 1"
+              *ngIf="i == 0"
             >
               <div class="class" (click)="showTravellerCabin(i)">
                 <label class="head">Traveller & Cabin </label>
@@ -404,7 +406,8 @@
               </div>
             </div>
           </div>
-        </div>
+        
+        </ng-container>
 
         <div class="banner-bottom">
           <div class="mb-3 bottomInner">

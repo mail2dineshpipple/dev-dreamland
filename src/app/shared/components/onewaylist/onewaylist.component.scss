@@ -877,3 +877,15 @@
         }
     }
 }
+
+.tf-price{
+    font-weight: unset !important;
+}
+
+.active .tf-price {
+	font-weight: 600 !important;
+}
+
+.active .tf-dates  {
+	font-weight: 600 !important;
+}

@@ -19,6 +19,9 @@ export class CustomDatePipe implements PipeTransform {
       case "month":
         returnValue = new DatePipe('en-US').transform(date,"LLL");
         break;
+      case 'commonDateFormat':
+        returnValue = new DatePipe('en-US').transform(date,'d MMM y');
+        break;
     }
     
     return returnValue;

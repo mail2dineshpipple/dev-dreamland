@@ -1,0 +1,5206 @@
+{
+    "onwardJourneys": [
+      {
+        "fares": {
+          "paxFares": {
+            "adt": {
+              "total": {
+                "amount": 3753.0
+              },
+              "base": {
+                "amount": 2885.0
+              },
+              "tax": {
+                "amount": 868.0
+              }
+            }
+          },
+          "totalFare": {
+            "total": {
+              "amount": 3753.0
+            },
+            "tds": {
+              "amount": 0.0
+            },
+            "base": {
+              "amount": 2885.0
+            },
+            "tax": {
+              "amount": 868.0
+            }
+          }
+        },
+        "allowBlocking": false,
+        "isMultiCar": false,
+        "isNearByAirport": false,
+        "flightKey": "SG-8721-false#",
+        "showCrossedFare": false,
+        "fareKey": "SG-8721#",
+        "isOffline": false,
+        "isOnlyHandBaggage": false,
+        "seatsLeft": 1,
+        "flights": [
+          {
+            "key": 0,
+            "carrier": {
+              "code": "SG",
+              "name": "SpiceJet"
+            },
+            "depDetail": {
+              "time": "2023-12-12 07:05:00.000",
+              "terminal": "3",
+              "code": "DEL",
+              "name": "Delhi",
+              "country": "India",
+              "city": "Delhi"
+            },
+            "arrDetail": {
+              "time": "2023-12-12 08:50:00.000",
+              "terminal": "1",
+              "code": "PAT",
+              "name": "Patna",
+              "country": "India",
+              "city": "Patna"
+            },
+            "flightNo": "8721",
+            "classDetail": {
+              "adt": {
+                "class": "U",
+                "basis": "USAV"
+              }
+            },
+            "flyTime": 105,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "15 kg baggage",
+                    "unit": "kg",
+                    "qty": 15,
+                    "isAvl": true
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "7 Kg",
+                    "unit": "kg",
+                    "qty": 7
+                  }
+                }
+              },
+              "meal": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "OTHERS",
+            "fareType": "Regular Fare"
+          }
+        ],
+        "key": "dc3166bb-b52c-4cab-b965-d8f913dd35b8@@$48|DEL|PAT|8721|5|1702344900|1702351200||false|USAV|false|_A1|0|0_O",
+        "messages": {
+          "OFFLINE": [
+            "Regular Fare"
+          ]
+        },
+        "journeyInfo": [
+          {
+            "journeyTime": 105
+          }
+        ]
+      },
+      {
+        "fares": {
+          "paxFares": {
+            "adt": {
+              "total": {
+                "amount": 5167.0
+              },
+              "base": {
+                "amount": 4420.0
+              },
+              "tax": {
+                "amount": 747.0
+              }
+            }
+          },
+          "totalFare": {
+            "total": {
+              "amount": 5167.0
+            },
+            "tds": {
+              "amount": 0.0
+            },
+            "base": {
+              "amount": 4420.0
+            },
+            "tax": {
+              "amount": 747.0
+            }
+          }
+        },
+        "allowBlocking": false,
+        "isMultiCar": false,
+        "isNearByAirport": false,
+        "flightKey": "UK-715-false#",
+        "showCrossedFare": false,
+        "fareKey": "UK-715#",
+        "isOffline": false,
+        "isOnlyHandBaggage": false,
+        "seatsLeft": 4,
+        "flights": [
+          {
+            "key": 0,
+            "carrier": {
+              "code": "UK",
+              "name": "Vistara"
+            },
+            "depDetail": {
+              "time": "2023-12-12 16:10:00.000",
+              "terminal": "3",
+              "code": "DEL",
+              "name": "Delhi",
+              "country": "India",
+              "city": "Delhi"
+            },
+            "arrDetail": {
+              "time": "2023-12-12 18:05:00.000",
+              "code": "PAT",
+              "name": "Patna",
+              "country": "India",
+              "city": "Patna"
+            },
+            "flightNo": "715",
+            "classDetail": {
+              "adt": {
+                "class": "E",
+                "basis": "E0RPRYL"
+              }
+            },
+            "aircraftType": "Airbus A320",
+            "flyTime": 115,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "1 PCS",
+                    "unit": "pc",
+                    "qty": 1,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "7 Kg",
+                    "unit": "kg",
+                    "qty": 7
+                  }
+                }
+              },
+              "meal": false,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": ""
+          }
+        ],
+        "key": "dc3166bb-b52c-4cab-b965-d8f913dd35b8@@$21|DEL|PAT|715|837|1702377600|1702384500||false|E0RPRYL|false|_A1|0|0_O",
+        "messages": {
+          "OFFLINE": [
+            "Retail Fares"
+          ]
+        },
+        "journeyInfo": [
+          {
+            "journeyTime": 115
+          }
+        ]
+      },
+      {
+        "fares": {
+          "paxFares": {
+            "adt": {
+              "total": {
+                "amount": 5482.0
+              },
+              "base": {
+                "amount": 4720.0
+              },
+              "tax": {
+                "amount": 762.0
+              }
+            }
+          },
+          "totalFare": {
+            "total": {
+              "amount": 5482.0
+            },
+            "tds": {
+              "amount": 0.0
+            },
+            "base": {
+              "amount": 4720.0
+            },
+            "tax": {
+              "amount": 762.0
+            }
+          }
+        },
+        "allowBlocking": false,
+        "isMultiCar": false,
+        "isNearByAirport": false,
+        "flightKey": "UK-717-false#",
+        "showCrossedFare": false,
+        "fareKey": "UK-717#",
+        "isOffline": false,
+        "isOnlyHandBaggage": false,
+        "seatsLeft": 9,
+        "flights": [
+          {
+            "key": 0,
+            "carrier": {
+              "code": "UK",
+              "name": "Vistara"
+            },
+            "depDetail": {
+              "time": "2023-12-12 08:20:00.000",
+              "terminal": "3",
+              "code": "DEL",
+              "name": "Delhi",
+              "country": "India",
+              "city": "Delhi"
+            },
+            "arrDetail": {
+              "time": "2023-12-12 09:50:00.000",
+              "code": "PAT",
+              "name": "Patna",
+              "country": "India",
+              "city": "Patna"
+            },
+            "flightNo": "717",
+            "classDetail": {
+              "adt": {
+                "class": "V",
+                "basis": "V0RPRYS"
+              }
+            },
+            "aircraftType": "Airbus A320",
+            "flyTime": 90,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "15 kg",
+                    "unit": "kg",
+                    "qty": 15,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "7 Kg",
+                    "unit": "kg",
+                    "qty": 7
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": ""
+          }
+        ],
+        "key": "dc3166bb-b52c-4cab-b965-d8f913dd35b8@@$21|DEL|PAT|717|837|1702349400|1702354800||false|V0RPRYS|false|_A1|0|0_O",
+        "messages": {
+          "OFFLINE": [
+            "Retail Fares"
+          ]
+        },
+        "journeyInfo": [
+          {
+            "journeyTime": 90
+          }
+        ]
+      },
+      {
+        "fares": {
+          "paxFares": {
+            "adt": {
+              "total": {
+                "amount": 5534.0
+              },
+              "base": {
+                "amount": 4730.0
+              },
+              "tax": {
+                "amount": 804.0
+              }
+            }
+          },
+          "totalFare": {
+            "total": {
+              "amount": 5534.0
+            },
+            "tds": {
+              "amount": 0.0
+            },
+            "base": {
+              "amount": 4730.0
+            },
+            "tax": {
+              "amount": 804.0
+            }
+          }
+        },
+        "allowBlocking": false,
+        "isMultiCar": false,
+        "isNearByAirport": false,
+        "flightKey": "AI-415-false#",
+        "showCrossedFare": false,
+        "fareKey": "AI-415#",
+        "isOffline": false,
+        "isOnlyHandBaggage": false,
+        "seatsLeft": 8,
+        "flights": [
+          {
+            "key": 0,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-12 16:45:00.000",
+              "terminal": "3",
+              "code": "DEL",
+              "name": "Delhi",
+              "country": "India",
+              "city": "Delhi"
+            },
+            "arrDetail": {
+              "time": "2023-12-12 18:30:00.000",
+              "code": "PAT",
+              "name": "Patna",
+              "country": "India",
+              "city": "Patna"
+            },
+            "flightNo": "415",
+            "classDetail": {
+              "adt": {
+                "class": "U",
+                "basis": "UIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 105,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "20Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 20,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": "Retail Fare"
+          }
+        ],
+        "key": "dc3166bb-b52c-4cab-b965-d8f913dd35b8@@$33|DEL|PAT|415|9|1702379700|1702386000||false|UIP|false|_A1|0|0_O",
+        "messages": {
+          "OFFLINE": [
+            "Retail Fare"
+          ]
+        },
+        "journeyInfo": [
+          {
+            "journeyTime": 105
+          }
+        ]
+      },
+      {
+        "fares": {
+          "paxFares": {
+            "adt": {
+              "total": {
+                "amount": 5801.0
+              },
+              "base": {
+                "amount": 4835.0
+              },
+              "tax": {
+                "amount": 966.0
+              }
+            }
+          },
+          "totalFare": {
+            "total": {
+              "amount": 5801.0
+            },
+            "tds": {
+              "amount": 0.0
+            },
+            "base": {
+              "amount": 4835.0
+            },
+            "tax": {
+              "amount": 966.0
+            }
+          }
+        },
+        "allowBlocking": false,
+        "isMultiCar": false,
+        "isNearByAirport": false,
+        "flightKey": "SG-480-false#",
+        "showCrossedFare": false,
+        "fareKey": "SG-480#",
+        "isOffline": false,
+        "isOnlyHandBaggage": false,
+        "seatsLeft": 1,
+        "flights": [
+          {
+            "key": 0,
+            "carrier": {
+              "code": "SG",
+              "name": "SpiceJet"
+            },
+            "depDetail": {
+              "time": "2023-12-12 14:25:00.000",
+              "terminal": "1D",
+              "code": "DEL",
+              "name": "Delhi",
+              "country": "India",
+              "city": "Delhi"
+            },
+            "arrDetail": {
+              "time": "2023-12-12 16:20:00.000",
+              "terminal": "1",
+              "code": "PAT",
+              "name": "Patna",
+              "country": "India",
+              "city": "Patna"
+            },
+            "flightNo": "480",
+            "classDetail": {
+              "adt": {
+                "class": "J",
+                "basis": "JSAV"
+              }
+            },
+            "flyTime": 115,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "15 kg baggage",
+                    "unit": "kg",
+                    "qty": 15,
+                    "isAvl": true
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "7 Kg",
+                    "unit": "kg",
+                    "qty": 7
+                  }
+                }
+              },
+              "meal": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "OTHERS",
+            "fareType": "Regular Fare"
+          }
+        ],
+        "key": "dc3166bb-b52c-4cab-b965-d8f913dd35b8@@$48|DEL|PAT|480|5|1702371300|1702378200||false|JSAV|false|_A1|0|0_O",
+        "messages": {
+          "OFFLINE": [
+            "Regular Fare"
+          ]
+        },
+        "journeyInfo": [
+          {
+            "journeyTime": 115
+          }
+        ]
+      },
+      {
+        "fares": {
+          "paxFares": {
+            "adt": {
+              "total": {
+                "amount": 6059.0
+              },
+              "base": {
+                "amount": 5230.0
+              },
+              "tax": {
+                "amount": 829.0
+              }
+            }
+          },
+          "totalFare": {
+            "total": {
+              "amount": 6059.0
+            },
+            "tds": {
+              "amount": 0.0
+            },
+            "base": {
+              "amount": 5230.0
+            },
+            "tax": {
+              "amount": 829.0
+            }
+          }
+        },
+        "allowBlocking": false,
+        "isMultiCar": false,
+        "isNearByAirport": false,
+        "flightKey": "AI-407-false#",
+        "showCrossedFare": false,
+        "fareKey": "AI-407#",
+        "isOffline": false,
+        "isOnlyHandBaggage": false,
+        "seatsLeft": 5,
+        "flights": [
+          {
+            "key": 0,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-12 13:35:00.000",
+              "terminal": "3",
+              "code": "DEL",
+              "name": "Delhi",
+              "country": "India",
+              "city": "Delhi"
+            },
+            "arrDetail": {
+              "time": "2023-12-12 15:25:00.000",
+              "code": "PAT",
+              "name": "Patna",
+              "country": "India",
+              "city": "Patna"
+            },
+            "flightNo": "407",
+            "classDetail": {
+              "adt": {
+                "class": "L",
+                "basis": "LIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 110,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "20Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 20,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": "Retail Fare"
+          }
+        ],
+        "key": "dc3166bb-b52c-4cab-b965-d8f913dd35b8@@$33|DEL|PAT|407|9|1702368300|1702374900||false|LIP|false|_A1|0|0_O",
+        "messages": {
+          "OFFLINE": [
+            "Retail Fare"
+          ]
+        },
+        "journeyInfo": [
+          {
+            "journeyTime": 110
+          }
+        ]
+      },
+      {
+        "fares": {
+          "paxFares": {
+            "adt": {
+              "total": {
+                "amount": 11645.0
+              },
+              "base": {
+                "amount": 10380.0
+              },
+              "tax": {
+                "amount": 1265.0
+              }
+            }
+          },
+          "totalFare": {
+            "total": {
+              "amount": 11645.0
+            },
+            "tds": {
+              "amount": 0.0
+            },
+            "base": {
+              "amount": 10380.0
+            },
+            "tax": {
+              "amount": 1265.0
+            }
+          }
+        },
+        "allowBlocking": false,
+        "isMultiCar": false,
+        "isNearByAirport": false,
+        "flightKey": "AI-860-false#AI-673-false#",
+        "showCrossedFare": false,
+        "fareKey": "AI-860#AI-673#",
+        "isOffline": false,
+        "isOnlyHandBaggage": false,
+        "seatsLeft": 9,
+        "flights": [
+          {
+            "key": 0,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-12 02:15:00.000",
+              "terminal": "3",
+              "code": "DEL",
+              "name": "Delhi",
+              "country": "India",
+              "city": "Delhi"
+            },
+            "arrDetail": {
+              "time": "2023-12-12 04:25:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "flightNo": "860",
+            "classDetail": {
+              "adt": {
+                "class": "S",
+                "basis": "SIP"
+              }
+            },
+            "aircraftType": "32A",
+            "flyTime": 130,
+            "layover": 390,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "20Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 20,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": "Retail Fare"
+          },
+          {
+            "key": 1,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-12 10:55:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "arrDetail": {
+              "time": "2023-12-12 13:20:00.000",
+              "code": "PAT",
+              "name": "Patna",
+              "country": "India",
+              "city": "Patna"
+            },
+            "flightNo": "673",
+            "classDetail": {
+              "adt": {
+                "class": "S",
+                "basis": "SIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 145,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "20Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 20,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": ""
+          }
+        ],
+        "key": "dc3166bb-b52c-4cab-b965-d8f913dd35b8@@$33|DEL|BOM|860|9|1702327500|1702335300||false|SIP|false|$33|BOM|PAT|673|9|1702358700|1702367400||false|SIP|false|_A1|0|0_O",
+        "messages": {
+          "OFFLINE": [
+            "Retail Fare"
+          ]
+        },
+        "journeyInfo": [
+          {
+            "journeyTime": 665
+          }
+        ]
+      },
+      {
+        "fares": {
+          "paxFares": {
+            "adt": {
+              "total": {
+                "amount": 11645.0
+              },
+              "base": {
+                "amount": 10380.0
+              },
+              "tax": {
+                "amount": 1265.0
+              }
+            }
+          },
+          "totalFare": {
+            "total": {
+              "amount": 11645.0
+            },
+            "tds": {
+              "amount": 0.0
+            },
+            "base": {
+              "amount": 10380.0
+            },
+            "tax": {
+              "amount": 1265.0
+            }
+          }
+        },
+        "allowBlocking": false,
+        "isMultiCar": false,
+        "isNearByAirport": false,
+        "flightKey": "AI-887-false#AI-673-false#",
+        "showCrossedFare": false,
+        "fareKey": "AI-887#AI-673#",
+        "isOffline": false,
+        "isOnlyHandBaggage": false,
+        "seatsLeft": 9,
+        "flights": [
+          {
+            "key": 0,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-12 07:00:00.000",
+              "terminal": "3",
+              "code": "DEL",
+              "name": "Delhi",
+              "country": "India",
+              "city": "Delhi"
+            },
+            "arrDetail": {
+              "time": "2023-12-12 09:15:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "flightNo": "887",
+            "classDetail": {
+              "adt": {
+                "class": "S",
+                "basis": "SIP"
+              }
+            },
+            "aircraftType": "Airbus A321",
+            "flyTime": 135,
+            "layover": 100,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "20Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 20,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": "Retail Fare"
+          },
+          {
+            "key": 1,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-12 10:55:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "arrDetail": {
+              "time": "2023-12-12 13:20:00.000",
+              "code": "PAT",
+              "name": "Patna",
+              "country": "India",
+              "city": "Patna"
+            },
+            "flightNo": "673",
+            "classDetail": {
+              "adt": {
+                "class": "S",
+                "basis": "SIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 145,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "20Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 20,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": ""
+          }
+        ],
+        "key": "dc3166bb-b52c-4cab-b965-d8f913dd35b8@@$33|DEL|BOM|887|9|1702344600|1702352700||false|SIP|false|$33|BOM|PAT|673|9|1702358700|1702367400||false|SIP|false|_A1|0|0_O",
+        "messages": {
+          "OFFLINE": [
+            "Retail Fare"
+          ]
+        },
+        "journeyInfo": [
+          {
+            "journeyTime": 380
+          }
+        ]
+      },
+      {
+        "fares": {
+          "paxFares": {
+            "adt": {
+              "total": {
+                "amount": 12590.0
+              },
+              "base": {
+                "amount": 11280.0
+              },
+              "tax": {
+                "amount": 1310.0
+              }
+            }
+          },
+          "totalFare": {
+            "total": {
+              "amount": 12590.0
+            },
+            "tds": {
+              "amount": 0.0
+            },
+            "base": {
+              "amount": 11280.0
+            },
+            "tax": {
+              "amount": 1310.0
+            }
+          }
+        },
+        "allowBlocking": false,
+        "isMultiCar": false,
+        "isNearByAirport": false,
+        "flightKey": "AI-441-false#AI-673-false#",
+        "showCrossedFare": false,
+        "fareKey": "AI-441#AI-673#",
+        "isOffline": false,
+        "isOnlyHandBaggage": false,
+        "seatsLeft": 9,
+        "flights": [
+          {
+            "key": 0,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-12 17:15:00.000",
+              "terminal": "3",
+              "code": "DEL",
+              "name": "Delhi",
+              "country": "India",
+              "city": "Delhi"
+            },
+            "arrDetail": {
+              "time": "2023-12-12 19:35:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "flightNo": "441",
+            "classDetail": {
+              "adt": {
+                "class": "S",
+                "basis": "SIP"
+              }
+            },
+            "aircraftType": "Boeing 777-300",
+            "flyTime": 140,
+            "layover": 920,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "20Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 20,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": "Retail Fare"
+          },
+          {
+            "key": 1,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-13 10:55:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "arrDetail": {
+              "time": "2023-12-13 13:20:00.000",
+              "code": "PAT",
+              "name": "Patna",
+              "country": "India",
+              "city": "Patna"
+            },
+            "flightNo": "673",
+            "classDetail": {
+              "adt": {
+                "class": "U",
+                "basis": "UIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 145,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "20Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 20,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": ""
+          }
+        ],
+        "key": "dc3166bb-b52c-4cab-b965-d8f913dd35b8@@$33|DEL|BOM|441|9|1702381500|1702389900||false|SIP|false|$33|BOM|PAT|673|9|1702445100|1702453800||false|UIP|false|_A1|0|0_O",
+        "messages": {
+          "OFFLINE": [
+            "Retail Fare"
+          ]
+        },
+        "journeyInfo": [
+          {
+            "journeyTime": 1205
+          }
+        ]
+      },
+      {
+        "fares": {
+          "paxFares": {
+            "adt": {
+              "total": {
+                "amount": 12590.0
+              },
+              "base": {
+                "amount": 11280.0
+              },
+              "tax": {
+                "amount": 1310.0
+              }
+            }
+          },
+          "totalFare": {
+            "total": {
+              "amount": 12590.0
+            },
+            "tds": {
+              "amount": 0.0
+            },
+            "base": {
+              "amount": 11280.0
+            },
+            "tax": {
+              "amount": 1310.0
+            }
+          }
+        },
+        "allowBlocking": false,
+        "isMultiCar": false,
+        "isNearByAirport": false,
+        "flightKey": "AI-605-false#AI-673-false#",
+        "showCrossedFare": false,
+        "fareKey": "AI-605#AI-673#",
+        "isOffline": false,
+        "isOnlyHandBaggage": false,
+        "seatsLeft": 9,
+        "flights": [
+          {
+            "key": 0,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-12 21:20:00.000",
+              "terminal": "3",
+              "code": "DEL",
+              "name": "Delhi",
+              "country": "India",
+              "city": "Delhi"
+            },
+            "arrDetail": {
+              "time": "2023-12-12 23:30:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "flightNo": "605",
+            "classDetail": {
+              "adt": {
+                "class": "S",
+                "basis": "SIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 130,
+            "layover": 685,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "20Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 20,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": "Retail Fare"
+          },
+          {
+            "key": 1,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-13 10:55:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "arrDetail": {
+              "time": "2023-12-13 13:20:00.000",
+              "code": "PAT",
+              "name": "Patna",
+              "country": "India",
+              "city": "Patna"
+            },
+            "flightNo": "673",
+            "classDetail": {
+              "adt": {
+                "class": "U",
+                "basis": "UIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 145,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "20Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 20,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": ""
+          }
+        ],
+        "key": "dc3166bb-b52c-4cab-b965-d8f913dd35b8@@$33|DEL|BOM|605|9|1702396200|1702404000||false|SIP|false|$33|BOM|PAT|673|9|1702445100|1702453800||false|UIP|false|_A1|0|0_O",
+        "messages": {
+          "OFFLINE": [
+            "Retail Fare"
+          ]
+        },
+        "journeyInfo": [
+          {
+            "journeyTime": 960
+          }
+        ]
+      },
+      {
+        "fares": {
+          "paxFares": {
+            "adt": {
+              "total": {
+                "amount": 12590.0
+              },
+              "base": {
+                "amount": 11280.0
+              },
+              "tax": {
+                "amount": 1310.0
+              }
+            }
+          },
+          "totalFare": {
+            "total": {
+              "amount": 12590.0
+            },
+            "tds": {
+              "amount": 0.0
+            },
+            "base": {
+              "amount": 11280.0
+            },
+            "tax": {
+              "amount": 1310.0
+            }
+          }
+        },
+        "allowBlocking": false,
+        "isMultiCar": false,
+        "isNearByAirport": false,
+        "flightKey": "AI-624-false#AI-673-false#",
+        "showCrossedFare": false,
+        "fareKey": "AI-624#AI-673#",
+        "isOffline": false,
+        "isOnlyHandBaggage": false,
+        "seatsLeft": 3,
+        "flights": [
+          {
+            "key": 0,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-12 19:10:00.000",
+              "terminal": "3",
+              "code": "DEL",
+              "name": "Delhi",
+              "country": "India",
+              "city": "Delhi"
+            },
+            "arrDetail": {
+              "time": "2023-12-12 21:25:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "flightNo": "624",
+            "classDetail": {
+              "adt": {
+                "class": "S",
+                "basis": "SIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 135,
+            "layover": 810,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "20Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 20,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": "Retail Fare"
+          },
+          {
+            "key": 1,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-13 10:55:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "arrDetail": {
+              "time": "2023-12-13 13:20:00.000",
+              "code": "PAT",
+              "name": "Patna",
+              "country": "India",
+              "city": "Patna"
+            },
+            "flightNo": "673",
+            "classDetail": {
+              "adt": {
+                "class": "U",
+                "basis": "UIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 145,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "20Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 20,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": ""
+          }
+        ],
+        "key": "dc3166bb-b52c-4cab-b965-d8f913dd35b8@@$33|DEL|BOM|624|9|1702388400|1702396500||false|SIP|false|$33|BOM|PAT|673|9|1702445100|1702453800||false|UIP|false|_A1|0|0_O",
+        "messages": {
+          "OFFLINE": [
+            "Retail Fare"
+          ]
+        },
+        "journeyInfo": [
+          {
+            "journeyTime": 1090
+          }
+        ]
+      },
+      {
+        "fares": {
+          "paxFares": {
+            "adt": {
+              "total": {
+                "amount": 12590.0
+              },
+              "base": {
+                "amount": 11280.0
+              },
+              "tax": {
+                "amount": 1310.0
+              }
+            }
+          },
+          "totalFare": {
+            "total": {
+              "amount": 12590.0
+            },
+            "tds": {
+              "amount": 0.0
+            },
+            "base": {
+              "amount": 11280.0
+            },
+            "tax": {
+              "amount": 1310.0
+            }
+          }
+        },
+        "allowBlocking": false,
+        "isMultiCar": false,
+        "isNearByAirport": false,
+        "flightKey": "AI-636-false#AI-673-false#",
+        "showCrossedFare": false,
+        "fareKey": "AI-636#AI-673#",
+        "isOffline": false,
+        "isOnlyHandBaggage": false,
+        "seatsLeft": 2,
+        "flights": [
+          {
+            "key": 0,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-12 14:30:00.000",
+              "terminal": "3",
+              "code": "DEL",
+              "name": "Delhi",
+              "country": "India",
+              "city": "Delhi"
+            },
+            "arrDetail": {
+              "time": "2023-12-12 18:05:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "flightNo": "636",
+            "classDetail": {
+              "adt": {
+                "class": "S",
+                "basis": "SIP"
+              }
+            },
+            "aircraftType": "32N",
+            "stops": 1,
+            "stopDetail": [
+              {
+                "code": "IDR",
+                "name": "Indore"
+              }
+            ],
+            "flyTime": 215,
+            "layover": 1010,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "20Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 20,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": "Retail Fare"
+          },
+          {
+            "key": 1,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-13 10:55:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "arrDetail": {
+              "time": "2023-12-13 13:20:00.000",
+              "code": "PAT",
+              "name": "Patna",
+              "country": "India",
+              "city": "Patna"
+            },
+            "flightNo": "673",
+            "classDetail": {
+              "adt": {
+                "class": "U",
+                "basis": "UIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 145,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "20Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 20,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": ""
+          }
+        ],
+        "key": "dc3166bb-b52c-4cab-b965-d8f913dd35b8@@$33|DEL|BOM|636|9|1702371600|1702384500||false|SIP|false|$33|BOM|PAT|673|9|1702445100|1702453800||false|UIP|false|_A1|0|0_O",
+        "messages": {
+          "OFFLINE": [
+            "Retail Fare"
+          ]
+        },
+        "journeyInfo": [
+          {
+            "journeyTime": 1370
+          }
+        ]
+      },
+      {
+        "fares": {
+          "paxFares": {
+            "adt": {
+              "total": {
+                "amount": 12590.0
+              },
+              "base": {
+                "amount": 11280.0
+              },
+              "tax": {
+                "amount": 1310.0
+              }
+            }
+          },
+          "totalFare": {
+            "total": {
+              "amount": 12590.0
+            },
+            "tds": {
+              "amount": 0.0
+            },
+            "base": {
+              "amount": 11280.0
+            },
+            "tax": {
+              "amount": 1310.0
+            }
+          }
+        },
+        "allowBlocking": false,
+        "isMultiCar": false,
+        "isNearByAirport": false,
+        "flightKey": "AI-805-false#AI-673-false#",
+        "showCrossedFare": false,
+        "fareKey": "AI-805#AI-673#",
+        "isOffline": false,
+        "isOnlyHandBaggage": false,
+        "seatsLeft": 4,
+        "flights": [
+          {
+            "key": 0,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-12 20:10:00.000",
+              "terminal": "3",
+              "code": "DEL",
+              "name": "Delhi",
+              "country": "India",
+              "city": "Delhi"
+            },
+            "arrDetail": {
+              "time": "2023-12-12 22:25:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "flightNo": "805",
+            "classDetail": {
+              "adt": {
+                "class": "S",
+                "basis": "SIP"
+              }
+            },
+            "aircraftType": "77L",
+            "flyTime": 135,
+            "layover": 750,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "20Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 20,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": "Retail Fare"
+          },
+          {
+            "key": 1,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-13 10:55:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "arrDetail": {
+              "time": "2023-12-13 13:20:00.000",
+              "code": "PAT",
+              "name": "Patna",
+              "country": "India",
+              "city": "Patna"
+            },
+            "flightNo": "673",
+            "classDetail": {
+              "adt": {
+                "class": "U",
+                "basis": "UIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 145,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "20Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 20,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": ""
+          }
+        ],
+        "key": "dc3166bb-b52c-4cab-b965-d8f913dd35b8@@$33|DEL|BOM|805|9|1702392000|1702400100||false|SIP|false|$33|BOM|PAT|673|9|1702445100|1702453800||false|UIP|false|_A1|0|0_O",
+        "messages": {
+          "OFFLINE": [
+            "Retail Fare"
+          ]
+        },
+        "journeyInfo": [
+          {
+            "journeyTime": 1030
+          }
+        ]
+      },
+      {
+        "fares": {
+          "paxFares": {
+            "adt": {
+              "total": {
+                "amount": 12590.0
+              },
+              "base": {
+                "amount": 11280.0
+              },
+              "tax": {
+                "amount": 1310.0
+              }
+            }
+          },
+          "totalFare": {
+            "total": {
+              "amount": 12590.0
+            },
+            "tds": {
+              "amount": 0.0
+            },
+            "base": {
+              "amount": 11280.0
+            },
+            "tax": {
+              "amount": 1310.0
+            }
+          }
+        },
+        "allowBlocking": false,
+        "isMultiCar": false,
+        "isNearByAirport": false,
+        "flightKey": "AI-814-false#AI-673-false#",
+        "showCrossedFare": false,
+        "fareKey": "AI-814#AI-673#",
+        "isOffline": false,
+        "isOnlyHandBaggage": false,
+        "seatsLeft": 9,
+        "flights": [
+          {
+            "key": 0,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-12 22:30:00.000",
+              "terminal": "3",
+              "code": "DEL",
+              "name": "Delhi",
+              "country": "India",
+              "city": "Delhi"
+            },
+            "arrDetail": {
+              "time": "2023-12-13 00:50:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "flightNo": "814",
+            "classDetail": {
+              "adt": {
+                "class": "S",
+                "basis": "SIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 140,
+            "layover": 605,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "20Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 20,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": true,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": "Retail Fare"
+          },
+          {
+            "key": 1,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-13 10:55:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "arrDetail": {
+              "time": "2023-12-13 13:20:00.000",
+              "code": "PAT",
+              "name": "Patna",
+              "country": "India",
+              "city": "Patna"
+            },
+            "flightNo": "673",
+            "classDetail": {
+              "adt": {
+                "class": "U",
+                "basis": "UIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 145,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "20Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 20,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": ""
+          }
+        ],
+        "key": "dc3166bb-b52c-4cab-b965-d8f913dd35b8@@$33|DEL|BOM|814|9|1702400400|1702408800||false|SIP|false|$33|BOM|PAT|673|9|1702445100|1702453800||false|UIP|false|_A1|0|0_O",
+        "messages": {
+          "OFFLINE": [
+            "Retail Fare"
+          ]
+        },
+        "journeyInfo": [
+          {
+            "journeyTime": 890
+          }
+        ]
+      },
+      {
+        "fares": {
+          "paxFares": {
+            "adt": {
+              "total": {
+                "amount": 12590.0
+              },
+              "base": {
+                "amount": 11280.0
+              },
+              "tax": {
+                "amount": 1310.0
+              }
+            }
+          },
+          "totalFare": {
+            "total": {
+              "amount": 12590.0
+            },
+            "tds": {
+              "amount": 0.0
+            },
+            "base": {
+              "amount": 11280.0
+            },
+            "tax": {
+              "amount": 1310.0
+            }
+          }
+        },
+        "allowBlocking": false,
+        "isMultiCar": false,
+        "isNearByAirport": false,
+        "flightKey": "AI-856-false#AI-673-false#",
+        "showCrossedFare": false,
+        "fareKey": "AI-856#AI-673#",
+        "isOffline": false,
+        "isOnlyHandBaggage": false,
+        "seatsLeft": 9,
+        "flights": [
+          {
+            "key": 0,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-12 14:45:00.000",
+              "terminal": "3",
+              "code": "DEL",
+              "name": "Delhi",
+              "country": "India",
+              "city": "Delhi"
+            },
+            "arrDetail": {
+              "time": "2023-12-12 16:50:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "flightNo": "856",
+            "classDetail": {
+              "adt": {
+                "class": "S",
+                "basis": "SIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 125,
+            "layover": 1085,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "20Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 20,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": "Retail Fare"
+          },
+          {
+            "key": 1,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-13 10:55:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "arrDetail": {
+              "time": "2023-12-13 13:20:00.000",
+              "code": "PAT",
+              "name": "Patna",
+              "country": "India",
+              "city": "Patna"
+            },
+            "flightNo": "673",
+            "classDetail": {
+              "adt": {
+                "class": "U",
+                "basis": "UIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 145,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "20Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 20,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": ""
+          }
+        ],
+        "key": "dc3166bb-b52c-4cab-b965-d8f913dd35b8@@$33|DEL|BOM|856|9|1702372500|1702380000||false|SIP|false|$33|BOM|PAT|673|9|1702445100|1702453800||false|UIP|false|_A1|0|0_O",
+        "messages": {
+          "OFFLINE": [
+            "Retail Fare"
+          ]
+        },
+        "journeyInfo": [
+          {
+            "journeyTime": 1355
+          }
+        ]
+      },
+      {
+        "fares": {
+          "paxFares": {
+            "adt": {
+              "total": {
+                "amount": 15194.0
+              },
+              "base": {
+                "amount": 13760.0
+              },
+              "tax": {
+                "amount": 1434.0
+              }
+            }
+          },
+          "totalFare": {
+            "total": {
+              "amount": 15194.0
+            },
+            "tds": {
+              "amount": 0.0
+            },
+            "base": {
+              "amount": 13760.0
+            },
+            "tax": {
+              "amount": 1434.0
+            }
+          }
+        },
+        "allowBlocking": false,
+        "isMultiCar": false,
+        "isNearByAirport": false,
+        "flightKey": "AI-863-false#AI-673-false#",
+        "showCrossedFare": false,
+        "fareKey": "AI-863#AI-673#",
+        "isOffline": false,
+        "isOnlyHandBaggage": false,
+        "seatsLeft": 8,
+        "flights": [
+          {
+            "key": 0,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-12 14:00:00.000",
+              "terminal": "3",
+              "code": "DEL",
+              "name": "Delhi",
+              "country": "India",
+              "city": "Delhi"
+            },
+            "arrDetail": {
+              "time": "2023-12-12 16:20:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "flightNo": "863",
+            "classDetail": {
+              "adt": {
+                "class": "G",
+                "basis": "GIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 140,
+            "layover": 1115,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "25Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 25,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": "Retail Fare"
+          },
+          {
+            "key": 1,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-13 10:55:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "arrDetail": {
+              "time": "2023-12-13 13:20:00.000",
+              "code": "PAT",
+              "name": "Patna",
+              "country": "India",
+              "city": "Patna"
+            },
+            "flightNo": "673",
+            "classDetail": {
+              "adt": {
+                "class": "U",
+                "basis": "UIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 145,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "25Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 25,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": ""
+          }
+        ],
+        "key": "dc3166bb-b52c-4cab-b965-d8f913dd35b8@@$33|DEL|BOM|863|9|1702369800|1702378200||false|GIP|false|$33|BOM|PAT|673|9|1702445100|1702453800||false|UIP|false|_A1|0|0_O",
+        "messages": {
+          "OFFLINE": [
+            "Retail Fare"
+          ]
+        },
+        "journeyInfo": [
+          {
+            "journeyTime": 1400
+          }
+        ]
+      },
+      {
+        "fares": {
+          "paxFares": {
+            "adt": {
+              "total": {
+                "amount": 16769.0
+              },
+              "base": {
+                "amount": 15090.0
+              },
+              "tax": {
+                "amount": 1679.0
+              }
+            }
+          },
+          "totalFare": {
+            "total": {
+              "amount": 16769.0
+            },
+            "tds": {
+              "amount": 0.0
+            },
+            "base": {
+              "amount": 15090.0
+            },
+            "tax": {
+              "amount": 1679.0
+            }
+          }
+        },
+        "allowBlocking": false,
+        "isMultiCar": false,
+        "isNearByAirport": false,
+        "flightKey": "AI-839-false#AI-616-false#AI-673-false#",
+        "showCrossedFare": false,
+        "fareKey": "AI-839#AI-616#AI-673#",
+        "isOffline": false,
+        "isOnlyHandBaggage": false,
+        "seatsLeft": 9,
+        "flights": [
+          {
+            "key": 0,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-12 21:30:00.000",
+              "terminal": "3",
+              "code": "DEL",
+              "name": "Delhi",
+              "country": "India",
+              "city": "Delhi"
+            },
+            "arrDetail": {
+              "time": "2023-12-12 23:45:00.000",
+              "code": "HYD",
+              "name": "Hyderabad",
+              "country": "India",
+              "city": "Hyderabad"
+            },
+            "flightNo": "839",
+            "classDetail": {
+              "adt": {
+                "class": "U",
+                "basis": "UIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 135,
+            "layover": 515,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "20Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 20,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": "Retail Fare"
+          },
+          {
+            "key": 1,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-13 08:20:00.000",
+              "code": "HYD",
+              "name": "Hyderabad",
+              "country": "India",
+              "city": "Hyderabad"
+            },
+            "arrDetail": {
+              "time": "2023-12-13 10:10:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "flightNo": "616",
+            "classDetail": {
+              "adt": {
+                "class": "S",
+                "basis": "SIP"
+              }
+            },
+            "aircraftType": "Airbus A321",
+            "flyTime": 110,
+            "layover": 45,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "20Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 20,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": ""
+          },
+          {
+            "key": 2,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-13 10:55:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "arrDetail": {
+              "time": "2023-12-13 13:20:00.000",
+              "code": "PAT",
+              "name": "Patna",
+              "country": "India",
+              "city": "Patna"
+            },
+            "flightNo": "673",
+            "classDetail": {
+              "adt": {
+                "class": "U",
+                "basis": "UIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 145,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "20Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 20,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": ""
+          }
+        ],
+        "key": "dc3166bb-b52c-4cab-b965-d8f913dd35b8@@$33|DEL|HYD|839|9|1702396800|1702404900||false|UIP|false|$33|HYD|BOM|616|9|1702435800|1702442400||false|SIP|false|$33|BOM|PAT|673|9|1702445100|1702453800||false|UIP|false|_A1|0|0_O",
+        "messages": {
+          "OFFLINE": [
+            "Retail Fare"
+          ]
+        },
+        "journeyInfo": [
+          {
+            "journeyTime": 950
+          }
+        ]
+      }
+    ],
+    "returnJourneys": [
+      {
+        "fares": {
+          "paxFares": {
+            "adt": {
+              "total": {
+                "amount": 3740.0
+              },
+              "base": {
+                "amount": 2899.0
+              },
+              "tax": {
+                "amount": 841.0
+              }
+            }
+          },
+          "totalFare": {
+            "total": {
+              "amount": 3740.0
+            },
+            "tds": {
+              "amount": 0.0
+            },
+            "base": {
+              "amount": 2899.0
+            },
+            "tax": {
+              "amount": 841.0
+            }
+          }
+        },
+        "allowBlocking": false,
+        "isMultiCar": false,
+        "isNearByAirport": true,
+        "flightKey": "SG-8729-false#",
+        "showCrossedFare": false,
+        "fareKey": "SG-8729#",
+        "isOffline": false,
+        "isOnlyHandBaggage": false,
+        "seatsLeft": 1,
+        "flights": [
+          {
+            "key": 0,
+            "carrier": {
+              "code": "SG",
+              "name": "SpiceJet"
+            },
+            "depDetail": {
+              "time": "2023-12-20 09:20:00.000",
+              "terminal": "1",
+              "code": "PAT",
+              "name": "Patna",
+              "country": "India",
+              "city": "Patna"
+            },
+            "arrDetail": {
+              "time": "2023-12-20 11:10:00.000",
+              "terminal": "3",
+              "code": "DEL",
+              "name": "Delhi",
+              "country": "India",
+              "city": "Delhi"
+            },
+            "flightNo": "8729",
+            "classDetail": {
+              "adt": {
+                "class": "U",
+                "basis": "USAV"
+              }
+            },
+            "flyTime": 110,
+            "isReturn": true,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "15 kg baggage",
+                    "unit": "kg",
+                    "qty": 15,
+                    "isAvl": true
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "7 Kg",
+                    "unit": "kg",
+                    "qty": 7
+                  }
+                }
+              },
+              "meal": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "OTHERS",
+            "fareType": "Regular Fare"
+          }
+        ],
+        "key": "dc3166bb-b52c-4cab-b965-d8f913dd35b8@@$48|PAT|DEL|8729|5|1703044200|1703050800||false|USAV|false|_A1|0|0_R",
+        "messages": {
+          "OFFLINE": [
+            "Regular Fare"
+          ]
+        },
+        "journeyInfo": [
+          {
+            "journeyTime": 110
+          }
+        ]
+      },
+      {
+        "fares": {
+          "paxFares": {
+            "adt": {
+              "total": {
+                "amount": 4887.0
+              },
+              "base": {
+                "amount": 4030.0
+              },
+              "tax": {
+                "amount": 857.0
+              }
+            }
+          },
+          "totalFare": {
+            "total": {
+              "amount": 4887.0
+            },
+            "tds": {
+              "amount": 0.0
+            },
+            "base": {
+              "amount": 4030.0
+            },
+            "tax": {
+              "amount": 857.0
+            }
+          }
+        },
+        "allowBlocking": false,
+        "isMultiCar": false,
+        "isNearByAirport": true,
+        "flightKey": "AI-408-false#",
+        "showCrossedFare": false,
+        "fareKey": "AI-408#",
+        "isOffline": false,
+        "isOnlyHandBaggage": false,
+        "seatsLeft": 9,
+        "flights": [
+          {
+            "key": 0,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-20 16:00:00.000",
+              "code": "PAT",
+              "name": "Patna",
+              "country": "India",
+              "city": "Patna"
+            },
+            "arrDetail": {
+              "time": "2023-12-20 17:55:00.000",
+              "terminal": "3",
+              "code": "DEL",
+              "name": "Delhi",
+              "country": "India",
+              "city": "Delhi"
+            },
+            "flightNo": "408",
+            "classDetail": {
+              "adt": {
+                "class": "S",
+                "basis": "SIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 115,
+            "isReturn": true,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "20Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 20,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": "Retail Fare"
+          }
+        ],
+        "key": "dc3166bb-b52c-4cab-b965-d8f913dd35b8@@$33|PAT|DEL|408|9|1703068200|1703075100||false|SIP|false|_A1|0|0_R",
+        "messages": {
+          "OFFLINE": [
+            "Retail Fare"
+          ]
+        },
+        "journeyInfo": [
+          {
+            "journeyTime": 115
+          }
+        ]
+      },
+      {
+        "fares": {
+          "paxFares": {
+            "adt": {
+              "total": {
+                "amount": 5622.0
+              },
+              "base": {
+                "amount": 4730.0
+              },
+              "tax": {
+                "amount": 892.0
+              }
+            }
+          },
+          "totalFare": {
+            "total": {
+              "amount": 5622.0
+            },
+            "tds": {
+              "amount": 0.0
+            },
+            "base": {
+              "amount": 4730.0
+            },
+            "tax": {
+              "amount": 892.0
+            }
+          }
+        },
+        "allowBlocking": false,
+        "isMultiCar": false,
+        "isNearByAirport": true,
+        "flightKey": "AI-416-false#",
+        "showCrossedFare": false,
+        "fareKey": "AI-416#",
+        "isOffline": false,
+        "isOnlyHandBaggage": false,
+        "seatsLeft": 9,
+        "flights": [
+          {
+            "key": 0,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-20 19:05:00.000",
+              "code": "PAT",
+              "name": "Patna",
+              "country": "India",
+              "city": "Patna"
+            },
+            "arrDetail": {
+              "time": "2023-12-20 20:55:00.000",
+              "terminal": "3",
+              "code": "DEL",
+              "name": "Delhi",
+              "country": "India",
+              "city": "Delhi"
+            },
+            "flightNo": "416",
+            "classDetail": {
+              "adt": {
+                "class": "U",
+                "basis": "UIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 110,
+            "isReturn": true,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "20Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 20,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": "Retail Fare"
+          }
+        ],
+        "key": "dc3166bb-b52c-4cab-b965-d8f913dd35b8@@$33|PAT|DEL|416|9|1703079300|1703085900||false|UIP|false|_A1|0|0_R",
+        "messages": {
+          "OFFLINE": [
+            "Retail Fare"
+          ]
+        },
+        "journeyInfo": [
+          {
+            "journeyTime": 110
+          }
+        ]
+      },
+      {
+        "fares": {
+          "paxFares": {
+            "adt": {
+              "total": {
+                "amount": 6515.0
+              },
+              "base": {
+                "amount": 5620.0
+              },
+              "tax": {
+                "amount": 895.0
+              }
+            }
+          },
+          "totalFare": {
+            "total": {
+              "amount": 6515.0
+            },
+            "tds": {
+              "amount": 0.0
+            },
+            "base": {
+              "amount": 5620.0
+            },
+            "tax": {
+              "amount": 895.0
+            }
+          }
+        },
+        "allowBlocking": false,
+        "isMultiCar": false,
+        "isNearByAirport": true,
+        "flightKey": "UK-716-false#",
+        "showCrossedFare": false,
+        "fareKey": "UK-716#",
+        "isOffline": false,
+        "isOnlyHandBaggage": false,
+        "seatsLeft": 9,
+        "flights": [
+          {
+            "key": 0,
+            "carrier": {
+              "code": "UK",
+              "name": "Vistara"
+            },
+            "depDetail": {
+              "time": "2023-12-20 18:40:00.000",
+              "code": "PAT",
+              "name": "Patna",
+              "country": "India",
+              "city": "Patna"
+            },
+            "arrDetail": {
+              "time": "2023-12-20 20:15:00.000",
+              "terminal": "3",
+              "code": "DEL",
+              "name": "Delhi",
+              "country": "India",
+              "city": "Delhi"
+            },
+            "flightNo": "716",
+            "classDetail": {
+              "adt": {
+                "class": "V",
+                "basis": "VL1PYS"
+              }
+            },
+            "aircraftType": "Airbus A320",
+            "flyTime": 95,
+            "isReturn": true,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "15 kg",
+                    "unit": "kg",
+                    "qty": 15,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "7 Kg",
+                    "unit": "kg",
+                    "qty": 7
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": ""
+          }
+        ],
+        "key": "dc3166bb-b52c-4cab-b965-d8f913dd35b8@@$21|PAT|DEL|716|837|1703077800|1703083500||false|VL1PYS|false|_A1|0|0_R",
+        "messages": {
+          "OFFLINE": [
+            "Retail Fares"
+          ]
+        },
+        "journeyInfo": [
+          {
+            "journeyTime": 95
+          }
+        ]
+      },
+      {
+        "fares": {
+          "paxFares": {
+            "adt": {
+              "total": {
+                "amount": 17508.0
+              },
+              "base": {
+                "amount": 15880.0
+              },
+              "tax": {
+                "amount": 1628.0
+              }
+            }
+          },
+          "totalFare": {
+            "total": {
+              "amount": 17508.0
+            },
+            "tds": {
+              "amount": 0.0
+            },
+            "base": {
+              "amount": 15880.0
+            },
+            "tax": {
+              "amount": 1628.0
+            }
+          }
+        },
+        "allowBlocking": false,
+        "isMultiCar": false,
+        "isNearByAirport": true,
+        "flightKey": "AI-732-false#AI-660-false#",
+        "showCrossedFare": false,
+        "fareKey": "AI-732#AI-660#",
+        "isOffline": false,
+        "isOnlyHandBaggage": false,
+        "seatsLeft": 8,
+        "flights": [
+          {
+            "key": 0,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-20 13:55:00.000",
+              "code": "PAT",
+              "name": "Patna",
+              "country": "India",
+              "city": "Patna"
+            },
+            "arrDetail": {
+              "time": "2023-12-20 16:35:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "flightNo": "732",
+            "classDetail": {
+              "adt": {
+                "class": "K",
+                "basis": "KIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 160,
+            "layover": 85,
+            "isReturn": true,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "25Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 25,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": "Retail Fare"
+          },
+          {
+            "key": 1,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-20 18:00:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "arrDetail": {
+              "time": "2023-12-20 20:20:00.000",
+              "terminal": "3",
+              "code": "DEL",
+              "name": "Delhi",
+              "country": "India",
+              "city": "Delhi"
+            },
+            "flightNo": "660",
+            "classDetail": {
+              "adt": {
+                "class": "T",
+                "basis": "TIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 140,
+            "isReturn": true,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "25Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 25,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": ""
+          }
+        ],
+        "key": "dc3166bb-b52c-4cab-b965-d8f913dd35b8@@$33|PAT|BOM|732|9|1703060700|1703070300||false|KIP|false|$33|BOM|DEL|660|9|1703075400|1703083800||false|TIP|false|_A1|0|0_R",
+        "messages": {
+          "OFFLINE": [
+            "Retail Fare"
+          ]
+        },
+        "journeyInfo": [
+          {
+            "journeyTime": 385
+          }
+        ]
+      },
+      {
+        "fares": {
+          "paxFares": {
+            "adt": {
+              "total": {
+                "amount": 17508.0
+              },
+              "base": {
+                "amount": 15880.0
+              },
+              "tax": {
+                "amount": 1628.0
+              }
+            }
+          },
+          "totalFare": {
+            "total": {
+              "amount": 17508.0
+            },
+            "tds": {
+              "amount": 0.0
+            },
+            "base": {
+              "amount": 15880.0
+            },
+            "tax": {
+              "amount": 1628.0
+            }
+          }
+        },
+        "allowBlocking": false,
+        "isMultiCar": false,
+        "isNearByAirport": true,
+        "flightKey": "AI-732-false#AI-816-false#",
+        "showCrossedFare": false,
+        "fareKey": "AI-732#AI-816#",
+        "isOffline": false,
+        "isOnlyHandBaggage": false,
+        "seatsLeft": 8,
+        "flights": [
+          {
+            "key": 0,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-20 13:55:00.000",
+              "code": "PAT",
+              "name": "Patna",
+              "country": "India",
+              "city": "Patna"
+            },
+            "arrDetail": {
+              "time": "2023-12-20 16:35:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "flightNo": "732",
+            "classDetail": {
+              "adt": {
+                "class": "K",
+                "basis": "KIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 160,
+            "layover": 265,
+            "isReturn": true,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "25Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 25,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": "Retail Fare"
+          },
+          {
+            "key": 1,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-20 21:00:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "arrDetail": {
+              "time": "2023-12-20 23:10:00.000",
+              "terminal": "3",
+              "code": "DEL",
+              "name": "Delhi",
+              "country": "India",
+              "city": "Delhi"
+            },
+            "flightNo": "816",
+            "classDetail": {
+              "adt": {
+                "class": "T",
+                "basis": "TIP"
+              }
+            },
+            "aircraftType": "Boeing 777-300",
+            "flyTime": 130,
+            "isReturn": true,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "25Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 25,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": ""
+          }
+        ],
+        "key": "dc3166bb-b52c-4cab-b965-d8f913dd35b8@@$33|PAT|BOM|732|9|1703060700|1703070300||false|KIP|false|$33|BOM|DEL|816|9|1703086200|1703094000||false|TIP|false|_A1|0|0_R",
+        "messages": {
+          "OFFLINE": [
+            "Retail Fare"
+          ]
+        },
+        "journeyInfo": [
+          {
+            "journeyTime": 555
+          }
+        ]
+      },
+      {
+        "fares": {
+          "paxFares": {
+            "adt": {
+              "total": {
+                "amount": 17508.0
+              },
+              "base": {
+                "amount": 15880.0
+              },
+              "tax": {
+                "amount": 1628.0
+              }
+            }
+          },
+          "totalFare": {
+            "total": {
+              "amount": 17508.0
+            },
+            "tds": {
+              "amount": 0.0
+            },
+            "base": {
+              "amount": 15880.0
+            },
+            "tax": {
+              "amount": 1628.0
+            }
+          }
+        },
+        "allowBlocking": false,
+        "isMultiCar": false,
+        "isNearByAirport": true,
+        "flightKey": "AI-732-false#AI-888-false#",
+        "showCrossedFare": false,
+        "fareKey": "AI-732#AI-888#",
+        "isOffline": false,
+        "isOnlyHandBaggage": false,
+        "seatsLeft": 8,
+        "flights": [
+          {
+            "key": 0,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-20 13:55:00.000",
+              "code": "PAT",
+              "name": "Patna",
+              "country": "India",
+              "city": "Patna"
+            },
+            "arrDetail": {
+              "time": "2023-12-20 16:35:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "flightNo": "732",
+            "classDetail": {
+              "adt": {
+                "class": "K",
+                "basis": "KIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 160,
+            "layover": 145,
+            "isReturn": true,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "25Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 25,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": "Retail Fare"
+          },
+          {
+            "key": 1,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-20 19:00:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "arrDetail": {
+              "time": "2023-12-20 21:15:00.000",
+              "terminal": "3",
+              "code": "DEL",
+              "name": "Delhi",
+              "country": "India",
+              "city": "Delhi"
+            },
+            "flightNo": "888",
+            "classDetail": {
+              "adt": {
+                "class": "T",
+                "basis": "TIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 135,
+            "isReturn": true,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "25Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 25,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": ""
+          }
+        ],
+        "key": "dc3166bb-b52c-4cab-b965-d8f913dd35b8@@$33|PAT|BOM|732|9|1703060700|1703070300||false|KIP|false|$33|BOM|DEL|888|9|1703079000|1703087100||false|TIP|false|_A1|0|0_R",
+        "messages": {
+          "OFFLINE": [
+            "Retail Fare"
+          ]
+        },
+        "journeyInfo": [
+          {
+            "journeyTime": 440
+          }
+        ]
+      },
+      {
+        "fares": {
+          "paxFares": {
+            "adt": {
+              "total": {
+                "amount": 18117.0
+              },
+              "base": {
+                "amount": 16460.0
+              },
+              "tax": {
+                "amount": 1657.0
+              }
+            }
+          },
+          "totalFare": {
+            "total": {
+              "amount": 18117.0
+            },
+            "tds": {
+              "amount": 0.0
+            },
+            "base": {
+              "amount": 16460.0
+            },
+            "tax": {
+              "amount": 1657.0
+            }
+          }
+        },
+        "allowBlocking": false,
+        "isMultiCar": false,
+        "isNearByAirport": true,
+        "flightKey": "AI-732-false#AI-855-false#",
+        "showCrossedFare": false,
+        "fareKey": "AI-732#AI-855#",
+        "isOffline": false,
+        "isOnlyHandBaggage": false,
+        "seatsLeft": 8,
+        "flights": [
+          {
+            "key": 0,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-20 13:55:00.000",
+              "code": "PAT",
+              "name": "Patna",
+              "country": "India",
+              "city": "Patna"
+            },
+            "arrDetail": {
+              "time": "2023-12-20 16:35:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "flightNo": "732",
+            "classDetail": {
+              "adt": {
+                "class": "K",
+                "basis": "KIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 160,
+            "layover": 1145,
+            "isReturn": true,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "25Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 25,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": "Retail Fare"
+          },
+          {
+            "key": 1,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-21 11:40:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "arrDetail": {
+              "time": "2023-12-21 13:55:00.000",
+              "terminal": "3",
+              "code": "DEL",
+              "name": "Delhi",
+              "country": "India",
+              "city": "Delhi"
+            },
+            "flightNo": "855",
+            "classDetail": {
+              "adt": {
+                "class": "U",
+                "basis": "UIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 135,
+            "isReturn": true,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "25Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 25,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": ""
+          }
+        ],
+        "key": "dc3166bb-b52c-4cab-b965-d8f913dd35b8@@$33|PAT|BOM|732|9|1703060700|1703070300||false|KIP|false|$33|BOM|DEL|855|9|1703139000|1703147100||false|UIP|false|_A1|0|0_R",
+        "messages": {
+          "OFFLINE": [
+            "Retail Fare"
+          ]
+        },
+        "journeyInfo": [
+          {
+            "journeyTime": 1440
+          }
+        ]
+      },
+      {
+        "fares": {
+          "paxFares": {
+            "adt": {
+              "total": {
+                "amount": 18117.0
+              },
+              "base": {
+                "amount": 16460.0
+              },
+              "tax": {
+                "amount": 1657.0
+              }
+            }
+          },
+          "totalFare": {
+            "total": {
+              "amount": 18117.0
+            },
+            "tds": {
+              "amount": 0.0
+            },
+            "base": {
+              "amount": 16460.0
+            },
+            "tax": {
+              "amount": 1657.0
+            }
+          }
+        },
+        "allowBlocking": false,
+        "isMultiCar": false,
+        "isNearByAirport": true,
+        "flightKey": "AI-732-false#AI-859-false#",
+        "showCrossedFare": false,
+        "fareKey": "AI-732#AI-859#",
+        "isOffline": false,
+        "isOnlyHandBaggage": false,
+        "seatsLeft": 8,
+        "flights": [
+          {
+            "key": 0,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-20 13:55:00.000",
+              "code": "PAT",
+              "name": "Patna",
+              "country": "India",
+              "city": "Patna"
+            },
+            "arrDetail": {
+              "time": "2023-12-20 16:35:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "flightNo": "732",
+            "classDetail": {
+              "adt": {
+                "class": "K",
+                "basis": "KIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 160,
+            "layover": 535,
+            "isReturn": true,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "25Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 25,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": "Retail Fare"
+          },
+          {
+            "key": 1,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-21 01:30:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "arrDetail": {
+              "time": "2023-12-21 04:00:00.000",
+              "terminal": "3",
+              "code": "DEL",
+              "name": "Delhi",
+              "country": "India",
+              "city": "Delhi"
+            },
+            "flightNo": "859",
+            "classDetail": {
+              "adt": {
+                "class": "U",
+                "basis": "UIP"
+              }
+            },
+            "aircraftType": "32A",
+            "flyTime": 150,
+            "isReturn": true,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "25Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 25,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": ""
+          }
+        ],
+        "key": "dc3166bb-b52c-4cab-b965-d8f913dd35b8@@$33|PAT|BOM|732|9|1703060700|1703070300||false|KIP|false|$33|BOM|DEL|859|9|1703102400|1703111400||false|UIP|false|_A1|0|0_R",
+        "messages": {
+          "OFFLINE": [
+            "Retail Fare"
+          ]
+        },
+        "journeyInfo": [
+          {
+            "journeyTime": 845
+          }
+        ]
+      },
+      {
+        "fares": {
+          "paxFares": {
+            "adt": {
+              "total": {
+                "amount": 19482.0
+              },
+              "base": {
+                "amount": 17760.0
+              },
+              "tax": {
+                "amount": 1722.0
+              }
+            }
+          },
+          "totalFare": {
+            "total": {
+              "amount": 19482.0
+            },
+            "tds": {
+              "amount": 0.0
+            },
+            "base": {
+              "amount": 17760.0
+            },
+            "tax": {
+              "amount": 1722.0
+            }
+          }
+        },
+        "allowBlocking": false,
+        "isMultiCar": false,
+        "isNearByAirport": true,
+        "flightKey": "AI-732-false#AI-635-false#",
+        "showCrossedFare": false,
+        "fareKey": "AI-732#AI-635#",
+        "isOffline": false,
+        "isOnlyHandBaggage": false,
+        "seatsLeft": 8,
+        "flights": [
+          {
+            "key": 0,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-20 13:55:00.000",
+              "code": "PAT",
+              "name": "Patna",
+              "country": "India",
+              "city": "Patna"
+            },
+            "arrDetail": {
+              "time": "2023-12-20 16:35:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "flightNo": "732",
+            "classDetail": {
+              "adt": {
+                "class": "K",
+                "basis": "KIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 160,
+            "layover": 905,
+            "isReturn": true,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "25Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 25,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": "Retail Fare"
+          },
+          {
+            "key": 1,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-21 07:40:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "arrDetail": {
+              "time": "2023-12-21 11:10:00.000",
+              "terminal": "3",
+              "code": "DEL",
+              "name": "Delhi",
+              "country": "India",
+              "city": "Delhi"
+            },
+            "flightNo": "635",
+            "classDetail": {
+              "adt": {
+                "class": "G",
+                "basis": "GIP"
+              }
+            },
+            "aircraftType": "32N",
+            "stops": 1,
+            "stopDetail": [
+              {
+                "code": "IDR",
+                "name": "Indore"
+              }
+            ],
+            "flyTime": 210,
+            "isReturn": true,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "25Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 25,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": ""
+          }
+        ],
+        "key": "dc3166bb-b52c-4cab-b965-d8f913dd35b8@@$33|PAT|BOM|732|9|1703060700|1703070300||false|KIP|false|$33|BOM|DEL|635|9|1703124600|1703137200||false|GIP|false|_A1|0|0_R",
+        "messages": {
+          "OFFLINE": [
+            "Retail Fare"
+          ]
+        },
+        "journeyInfo": [
+          {
+            "journeyTime": 1275
+          }
+        ]
+      },
+      {
+        "fares": {
+          "paxFares": {
+            "adt": {
+              "total": {
+                "amount": 19482.0
+              },
+              "base": {
+                "amount": 17760.0
+              },
+              "tax": {
+                "amount": 1722.0
+              }
+            }
+          },
+          "totalFare": {
+            "total": {
+              "amount": 19482.0
+            },
+            "tds": {
+              "amount": 0.0
+            },
+            "base": {
+              "amount": 17760.0
+            },
+            "tax": {
+              "amount": 1722.0
+            }
+          }
+        },
+        "allowBlocking": false,
+        "isMultiCar": false,
+        "isNearByAirport": true,
+        "flightKey": "AI-732-false#AI-806-false#",
+        "showCrossedFare": false,
+        "fareKey": "AI-732#AI-806#",
+        "isOffline": false,
+        "isOnlyHandBaggage": false,
+        "seatsLeft": 8,
+        "flights": [
+          {
+            "key": 0,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-20 13:55:00.000",
+              "code": "PAT",
+              "name": "Patna",
+              "country": "India",
+              "city": "Patna"
+            },
+            "arrDetail": {
+              "time": "2023-12-20 16:35:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "flightNo": "732",
+            "classDetail": {
+              "adt": {
+                "class": "K",
+                "basis": "KIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 160,
+            "layover": 925,
+            "isReturn": true,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "25Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 25,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": "Retail Fare"
+          },
+          {
+            "key": 1,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-21 08:00:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "arrDetail": {
+              "time": "2023-12-21 10:20:00.000",
+              "terminal": "3",
+              "code": "DEL",
+              "name": "Delhi",
+              "country": "India",
+              "city": "Delhi"
+            },
+            "flightNo": "806",
+            "classDetail": {
+              "adt": {
+                "class": "G",
+                "basis": "GIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 140,
+            "isReturn": true,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "25Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 25,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": ""
+          }
+        ],
+        "key": "dc3166bb-b52c-4cab-b965-d8f913dd35b8@@$33|PAT|BOM|732|9|1703060700|1703070300||false|KIP|false|$33|BOM|DEL|806|9|1703125800|1703134200||false|GIP|false|_A1|0|0_R",
+        "messages": {
+          "OFFLINE": [
+            "Retail Fare"
+          ]
+        },
+        "journeyInfo": [
+          {
+            "journeyTime": 1225
+          }
+        ]
+      },
+      {
+        "fares": {
+          "paxFares": {
+            "adt": {
+              "total": {
+                "amount": 19482.0
+              },
+              "base": {
+                "amount": 17760.0
+              },
+              "tax": {
+                "amount": 1722.0
+              }
+            }
+          },
+          "totalFare": {
+            "total": {
+              "amount": 19482.0
+            },
+            "tds": {
+              "amount": 0.0
+            },
+            "base": {
+              "amount": 17760.0
+            },
+            "tax": {
+              "amount": 1722.0
+            }
+          }
+        },
+        "allowBlocking": false,
+        "isMultiCar": false,
+        "isNearByAirport": true,
+        "flightKey": "AI-732-false#AI-809-false#",
+        "showCrossedFare": false,
+        "fareKey": "AI-732#AI-809#",
+        "isOffline": false,
+        "isOnlyHandBaggage": false,
+        "seatsLeft": 8,
+        "flights": [
+          {
+            "key": 0,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-20 13:55:00.000",
+              "code": "PAT",
+              "name": "Patna",
+              "country": "India",
+              "city": "Patna"
+            },
+            "arrDetail": {
+              "time": "2023-12-20 16:35:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "flightNo": "732",
+            "classDetail": {
+              "adt": {
+                "class": "K",
+                "basis": "KIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 160,
+            "layover": 1045,
+            "isReturn": true,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "25Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 25,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": "Retail Fare"
+          },
+          {
+            "key": 1,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-21 10:00:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "arrDetail": {
+              "time": "2023-12-21 12:15:00.000",
+              "terminal": "3",
+              "code": "DEL",
+              "name": "Delhi",
+              "country": "India",
+              "city": "Delhi"
+            },
+            "flightNo": "809",
+            "classDetail": {
+              "adt": {
+                "class": "G",
+                "basis": "GIP"
+              }
+            },
+            "aircraftType": "Airbus A321",
+            "flyTime": 135,
+            "isReturn": true,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "25Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 25,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": ""
+          }
+        ],
+        "key": "dc3166bb-b52c-4cab-b965-d8f913dd35b8@@$33|PAT|BOM|732|9|1703060700|1703070300||false|KIP|false|$33|BOM|DEL|809|9|1703133000|1703141100||false|GIP|false|_A1|0|0_R",
+        "messages": {
+          "OFFLINE": [
+            "Retail Fare"
+          ]
+        },
+        "journeyInfo": [
+          {
+            "journeyTime": 1340
+          }
+        ]
+      },
+      {
+        "fares": {
+          "paxFares": {
+            "adt": {
+              "total": {
+                "amount": 19482.0
+              },
+              "base": {
+                "amount": 17760.0
+              },
+              "tax": {
+                "amount": 1722.0
+              }
+            }
+          },
+          "totalFare": {
+            "total": {
+              "amount": 19482.0
+            },
+            "tds": {
+              "amount": 0.0
+            },
+            "base": {
+              "amount": 17760.0
+            },
+            "tax": {
+              "amount": 1722.0
+            }
+          }
+        },
+        "allowBlocking": false,
+        "isMultiCar": false,
+        "isNearByAirport": true,
+        "flightKey": "AI-732-false#AI-864-false#",
+        "showCrossedFare": false,
+        "fareKey": "AI-732#AI-864#",
+        "isOffline": false,
+        "isOnlyHandBaggage": false,
+        "seatsLeft": 8,
+        "flights": [
+          {
+            "key": 0,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-20 13:55:00.000",
+              "code": "PAT",
+              "name": "Patna",
+              "country": "India",
+              "city": "Patna"
+            },
+            "arrDetail": {
+              "time": "2023-12-20 16:35:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "flightNo": "732",
+            "classDetail": {
+              "adt": {
+                "class": "K",
+                "basis": "KIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 160,
+            "layover": 865,
+            "isReturn": true,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "25Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 25,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": "Retail Fare"
+          },
+          {
+            "key": 1,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-21 07:00:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "arrDetail": {
+              "time": "2023-12-21 09:15:00.000",
+              "terminal": "3",
+              "code": "DEL",
+              "name": "Delhi",
+              "country": "India",
+              "city": "Delhi"
+            },
+            "flightNo": "864",
+            "classDetail": {
+              "adt": {
+                "class": "G",
+                "basis": "GIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 135,
+            "isReturn": true,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "25Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 25,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": ""
+          }
+        ],
+        "key": "dc3166bb-b52c-4cab-b965-d8f913dd35b8@@$33|PAT|BOM|732|9|1703060700|1703070300||false|KIP|false|$33|BOM|DEL|864|9|1703122200|1703130300||false|GIP|false|_A1|0|0_R",
+        "messages": {
+          "OFFLINE": [
+            "Retail Fare"
+          ]
+        },
+        "journeyInfo": [
+          {
+            "journeyTime": 1160
+          }
+        ]
+      },
+      {
+        "fares": {
+          "paxFares": {
+            "adt": {
+              "total": {
+                "amount": 19482.0
+              },
+              "base": {
+                "amount": 17760.0
+              },
+              "tax": {
+                "amount": 1722.0
+              }
+            }
+          },
+          "totalFare": {
+            "total": {
+              "amount": 19482.0
+            },
+            "tds": {
+              "amount": 0.0
+            },
+            "base": {
+              "amount": 17760.0
+            },
+            "tax": {
+              "amount": 1722.0
+            }
+          }
+        },
+        "allowBlocking": false,
+        "isMultiCar": false,
+        "isNearByAirport": true,
+        "flightKey": "AI-732-false#AI-866-false#",
+        "showCrossedFare": false,
+        "fareKey": "AI-732#AI-866#",
+        "isOffline": false,
+        "isOnlyHandBaggage": false,
+        "seatsLeft": 8,
+        "flights": [
+          {
+            "key": 0,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-20 13:55:00.000",
+              "code": "PAT",
+              "name": "Patna",
+              "country": "India",
+              "city": "Patna"
+            },
+            "arrDetail": {
+              "time": "2023-12-20 16:35:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "flightNo": "732",
+            "classDetail": {
+              "adt": {
+                "class": "K",
+                "basis": "KIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 160,
+            "layover": 985,
+            "isReturn": true,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "25Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 25,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": "Retail Fare"
+          },
+          {
+            "key": 1,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-21 09:00:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "arrDetail": {
+              "time": "2023-12-21 11:20:00.000",
+              "terminal": "3",
+              "code": "DEL",
+              "name": "Delhi",
+              "country": "India",
+              "city": "Delhi"
+            },
+            "flightNo": "866",
+            "classDetail": {
+              "adt": {
+                "class": "G",
+                "basis": "GIP"
+              }
+            },
+            "aircraftType": "Airbus A321",
+            "flyTime": 140,
+            "isReturn": true,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "25Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 25,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": ""
+          }
+        ],
+        "key": "dc3166bb-b52c-4cab-b965-d8f913dd35b8@@$33|PAT|BOM|732|9|1703060700|1703070300||false|KIP|false|$33|BOM|DEL|866|9|1703129400|1703137800||false|GIP|false|_A1|0|0_R",
+        "messages": {
+          "OFFLINE": [
+            "Retail Fare"
+          ]
+        },
+        "journeyInfo": [
+          {
+            "journeyTime": 1285
+          }
+        ]
+      },
+      {
+        "fares": {
+          "paxFares": {
+            "adt": {
+              "total": {
+                "amount": 20742.0
+              },
+              "base": {
+                "amount": 18960.0
+              },
+              "tax": {
+                "amount": 1782.0
+              }
+            }
+          },
+          "totalFare": {
+            "total": {
+              "amount": 20742.0
+            },
+            "tds": {
+              "amount": 0.0
+            },
+            "base": {
+              "amount": 18960.0
+            },
+            "tax": {
+              "amount": 1782.0
+            }
+          }
+        },
+        "allowBlocking": false,
+        "isMultiCar": false,
+        "isNearByAirport": true,
+        "flightKey": "AI-732-false#AI-677-false#",
+        "showCrossedFare": false,
+        "fareKey": "AI-732#AI-677#",
+        "isOffline": false,
+        "isOnlyHandBaggage": false,
+        "seatsLeft": 8,
+        "flights": [
+          {
+            "key": 0,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-20 13:55:00.000",
+              "code": "PAT",
+              "name": "Patna",
+              "country": "India",
+              "city": "Patna"
+            },
+            "arrDetail": {
+              "time": "2023-12-20 16:35:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "flightNo": "732",
+            "classDetail": {
+              "adt": {
+                "class": "K",
+                "basis": "KIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 160,
+            "layover": 1225,
+            "isReturn": true,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "25Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 25,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": "Retail Fare"
+          },
+          {
+            "key": 1,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-21 13:00:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "arrDetail": {
+              "time": "2023-12-21 15:15:00.000",
+              "terminal": "3",
+              "code": "DEL",
+              "name": "Delhi",
+              "country": "India",
+              "city": "Delhi"
+            },
+            "flightNo": "677",
+            "classDetail": {
+              "adt": {
+                "class": "W",
+                "basis": "WIP"
+              }
+            },
+            "aircraftType": "Airbus A321",
+            "flyTime": 135,
+            "isReturn": true,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "25Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 25,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": ""
+          }
+        ],
+        "key": "dc3166bb-b52c-4cab-b965-d8f913dd35b8@@$33|PAT|BOM|732|9|1703060700|1703070300||false|KIP|false|$33|BOM|DEL|677|9|1703143800|1703151900||false|WIP|false|_A1|0|0_R",
+        "messages": {
+          "OFFLINE": [
+            "Retail Fare"
+          ]
+        },
+        "journeyInfo": [
+          {
+            "journeyTime": 1520
+          }
+        ]
+      },
+      {
+        "fares": {
+          "paxFares": {
+            "adt": {
+              "total": {
+                "amount": 45104.0
+              },
+              "base": {
+                "amount": 42092.0
+              },
+              "tax": {
+                "amount": 3012.0
+              }
+            }
+          },
+          "totalFare": {
+            "total": {
+              "amount": 45104.0
+            },
+            "tds": {
+              "amount": 0.0
+            },
+            "base": {
+              "amount": 42092.0
+            },
+            "tax": {
+              "amount": 3012.0
+            }
+          }
+        },
+        "allowBlocking": false,
+        "isMultiCar": false,
+        "isNearByAirport": true,
+        "flightKey": "AI-732-false#AI-9534-false#AI-882-false#",
+        "showCrossedFare": false,
+        "fareKey": "AI-732#AI-9534#AI-882#",
+        "isOffline": false,
+        "isOnlyHandBaggage": false,
+        "seatsLeft": 8,
+        "flights": [
+          {
+            "key": 0,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-20 13:55:00.000",
+              "code": "PAT",
+              "name": "Patna",
+              "country": "India",
+              "city": "Patna"
+            },
+            "arrDetail": {
+              "time": "2023-12-20 16:35:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "flightNo": "732",
+            "classDetail": {
+              "adt": {
+                "class": "K",
+                "basis": "KIP"
+              }
+            },
+            "aircraftType": "32N",
+            "flyTime": 160,
+            "layover": 110,
+            "isReturn": true,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "25Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 25,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": "Retail Fare"
+          },
+          {
+            "key": 1,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "operatingCarrier": {
+              "code": "I5",
+              "name": "AirAsia India"
+            },
+            "depDetail": {
+              "time": "2023-12-20 18:25:00.000",
+              "terminal": "2",
+              "code": "BOM",
+              "name": "Mumbai",
+              "country": "India",
+              "city": "Mumbai"
+            },
+            "arrDetail": {
+              "time": "2023-12-20 19:25:00.000",
+              "code": "GOI",
+              "name": "Goa",
+              "country": "India",
+              "city": "Goa"
+            },
+            "flightNo": "9534",
+            "classDetail": {
+              "adt": {
+                "class": "Y",
+                "basis": "YIFOW"
+              }
+            },
+            "aircraftType": "Airbus A320",
+            "flyTime": 60,
+            "layover": 75,
+            "isReturn": true,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "25Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 25,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": ""
+          },
+          {
+            "key": 2,
+            "carrier": {
+              "code": "AI",
+              "name": "AirIndia"
+            },
+            "depDetail": {
+              "time": "2023-12-20 20:40:00.000",
+              "code": "GOI",
+              "name": "Goa",
+              "country": "India",
+              "city": "Goa"
+            },
+            "arrDetail": {
+              "time": "2023-12-20 23:25:00.000",
+              "terminal": "3",
+              "code": "DEL",
+              "name": "Delhi",
+              "country": "India",
+              "city": "Delhi"
+            },
+            "flightNo": "882",
+            "classDetail": {
+              "adt": {
+                "class": "K",
+                "basis": "KIP"
+              }
+            },
+            "aircraftType": "Airbus A321",
+            "flyTime": 165,
+            "isReturn": true,
+            "amenities": {
+              "baggage": {
+                "checkin": {
+                  "adt": {
+                    "desc": "25Kg Baggage included",
+                    "unit": "kg",
+                    "qty": 25,
+                    "isAvl": true,
+                    "code": "null"
+                  }
+                },
+                "cabin": {
+                  "adt": {
+                    "desc": "8 Kg",
+                    "unit": "kg",
+                    "qty": 8
+                  }
+                }
+              },
+              "meal": true,
+              "smoke": false
+            },
+            "nextDayArr": false,
+            "refundable": true,
+            "onlyHandbag": false,
+            "cabinClass": "ECONOMY",
+            "fareType": ""
+          }
+        ],
+        "key": "dc3166bb-b52c-4cab-b965-d8f913dd35b8@@$33|PAT|BOM|732|9|1703060700|1703070300||false|KIP|false|$33|BOM|GOI|9534|9|1703076900|1703080500||false|YIFOW|false|$33|GOI|DEL|882|9|1703085000|1703094900||false|KIP|false|_A1|0|0_R",
+        "messages": {
+          "OFFLINE": [
+            "Retail Fare"
+          ]
+        },
+        "journeyInfo": [
+          {
+            "journeyTime": 570
+          }
+        ]
+      }
+    ],
+    "isDomestic": true
+  }

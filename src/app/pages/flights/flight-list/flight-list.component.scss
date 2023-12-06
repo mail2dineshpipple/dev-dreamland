@@ -986,3 +986,22 @@
         }
     }
 }
+
+
+.calendar-date{
+    display: block;
+    text-align: center;
+}
+
+.calendar-day{
+    display: inline-block;
+}
+.calendar-faire{
+    font-size: 9px !important;
+    display: block;
+}
+
+.positionClass{
+    bottom: 20% !important;
+    top: 2%;
+}

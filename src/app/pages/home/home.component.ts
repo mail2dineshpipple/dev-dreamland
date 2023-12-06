@@ -62,7 +62,9 @@ export class HomeComponent implements OnInit {
       toAirport: defaultTo.Name,
       toCity: defaultTo.City,
       fromDate: new NgbDate(date.getFullYear(), date.getMonth() + 1, date.getDate()),
+      fromCityCode:"DEL",
       toDate: new NgbDate(date2.getFullYear(), date2.getMonth() + 1, date2.getDate()),
+      toCityCode:"BOM",
       showTravel:false,
       travelAndCabin: {
         adult: 1,
@@ -112,10 +114,12 @@ export class HomeComponent implements OnInit {
       if (type === 'From') {
         this.search.segment[index].fromAirport = event.Name;
         this.search.segment[index].fromCity = event.City;
+        this.search.segment[index].fromCityCode = event.Code;
         this.isShow = false;
       } else {
         this.search.segment[index].toAirport = event.Name;
         this.search.segment[index].toCity = event.City;
+        this.search.segment[index].toCityCode = event.Code;
         this.isShow2 = false;
       }
     }

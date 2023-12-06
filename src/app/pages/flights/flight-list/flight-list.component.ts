@@ -1,5 +1,5 @@
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
@@ -7,6 +7,7 @@ import { FLIGHTMODE, SEARCH } from 'src/app/core/constants';
 import { Airport } from 'src/app/core/model/airport';
 import { Search } from 'src/app/core/model/search-view-model';
 import { CommonService } from 'src/app/core/services/common.service';
+import { OnewaylistComponent } from 'src/app/shared/components/onewaylist/onewaylist.component';
 import { FilterComponent } from 'src/app/shared/modal/filter/filter.component';
 
 @Component({
@@ -54,6 +55,7 @@ export class FlightListComponent implements OnInit {
   selectedRoundtripTab = 0;
   isSearchModify = true;
   isResponsiveMode = false;
+  @ViewChild('oneWay') oneWay:OnewaylistComponent
 
   constructor(
     private router: Router,
@@ -62,9 +64,13 @@ export class FlightListComponent implements OnInit {
     public commonService: CommonService
   ) {}
 
-  customSearchFn(term: string, item: any) {
+  customSearchFn(term: string, item: Airport) {
     term = term.toLowerCase();
-    return item.Name.toLowerCase().indexOf(term) > -1 || item.Airport.toLowerCase().indexOf(term) > -1;
+    return item.City.toLowerCase().indexOf(term) > -1 || item.City.toLowerCase().indexOf(term) > -1;
+  }
+  
+  departureDate(){
+    this.oneWay.initializeCalendar();
   }
 
   ngOnInit(): void {
@@ -72,7 +78,6 @@ export class FlightListComponent implements OnInit {
     this.search = {} as Search;
 
     this.search =  JSON.parse(localStorage.getItem(SEARCH)!) ;
-    console.log(this.search.flightType)
 
     this.commonService.getAirportList().subscribe({
       next: (response: Airport[]) => {
@@ -110,7 +115,30 @@ export class FlightListComponent implements OnInit {
     });
   }
 
-  
+
+  showTravellerCabin(index) {
+    this.search.segment[index].showTravel = this.search.segment[index].showTravel == true ? false : true;
+  }
+
+  increment(data: any, index: number) {
+    if (data === 'adult') {
+      this.search.segment[index].travelAndCabin!.adult +=1;
+    } else if (data === 'child') {
+      this.search.segment[index].travelAndCabin!.children +=1;
+    } else if (data = 'infant') {
+      this.search.segment[index].travelAndCabin!.infants +=1;
+    }
+  }
+
+  decrement(data: any, index:number) {
+    if (data === 'adult') {
+      this.search.segment[index].travelAndCabin!.adult -=1;
+    } else if (data === 'child') {
+      this.search.segment[index].travelAndCabin!.children -=1;
+    } else if (data === 'infant') {
+      this.search.segment[index].travelAndCabin!.infants -=1;
+    }
+  }
 
   fromChange(event:any) {
     this.selectFrom = event;
@@ -120,45 +148,50 @@ export class FlightListComponent implements OnInit {
     this.selectTo = event;
   }
 
-  increment(data:any) {
-    if (data === 'adult') {
-      this.adultCounter += 1;
-    } else if (data === 'child') {
-      this.childCounter += 1;
-    } else if (data = 'infant') {
-      this.infantCounter += 1;
-    }
-    this.Traveller = this.adultCounter + this.childCounter + this.infantCounter;
-    console.log('this.Traveller: ', this.Traveller);
-  }
+  // increment(data:any) {
+  //   if (data === 'adult') {
+  //     this.adultCounter += 1;
+  //   } else if (data === 'child') {
+  //     this.childCounter += 1;
+  //   } else if (data = 'infant') {
+  //     this.infantCounter += 1;
+  //   }
+  //   this.Traveller = this.adultCounter + this.childCounter + this.infantCounter;
+  //   console.log('this.Traveller: ', this.Traveller);
+  // }
 
-  decrement(data:any) {
-    if (data === 'adult') {
-      this.adultCounter -= 1;
-    } else if (data === 'child') {
-      this.childCounter -= 1;
-    } else if (data === 'infant') {
-      this.infantCounter -= 1;
-    }
-    this.Traveller = this.adultCounter + this.childCounter + this.infantCounter;
-  }
+  // decrement(data:any) {
+  //   if (data === 'adult') {
+  //     this.adultCounter -= 1;
+  //   } else if (data === 'child') {
+  //     this.childCounter -= 1;
+  //   } else if (data === 'infant') {
+  //     this.infantCounter -= 1;
+  //   }
+  //   this.Traveller = this.adultCounter + this.childCounter + this.infantCounter;
+  // }
 
   onClick() {
     this.travellerCabin = !this.travellerCabin;
   }
 
-  onSelect(event, type) {
-    console.log('event: ', event);
+  onSelect(event: Airport, type, index) {
+    debugger;
     if (event) {
       if (type === 'From') {
-        this.selectFrom = event;
+        this.search.segment[index].fromAirport = event.Name;
+        this.search.segment[index].fromCity = event.City;
+        this.search.segment[index].fromCityCode = event.Code;
         this.isShow = false;
       } else {
-        this.selectTo = event;
+        this.search.segment[index].toAirport = event.Name;
+        this.search.segment[index].toCity = event.City;
+        this.search.segment[index].toCityCode = event.Code;
         this.isShow2 = false;
       }
     }
   }
+
 
   ontest(type) {
     if (type === 'From') {
@@ -170,10 +203,24 @@ export class FlightListComponent implements OnInit {
     }
   }
 
-  onReverse() {
-    let temp = this.selectFrom;
-    this.selectFrom = this.selectTo;
-    this.selectTo = temp;
+  fairePriceByDate(date) {
+    return 100;
+  }
+
+
+  onReverse(index:number) {
+    let airport=  this.search.segment[index].fromAirport;
+    let city=  this.search.segment[index].fromCity;
+    let fromDate=  this.search.segment[index].fromDate;
+
+    this.search.segment[index].fromAirport = this.search.segment[index].toAirport;
+    this.search.segment[index].fromCity = this.search.segment[index].toCity;
+    this.search.segment[index].fromDate = this.search.segment[index].toDate;
+
+    this.search.segment[index].toAirport =  airport;
+    this.search.segment[index].toCity =  city;
+    this.search.segment[index].fromDate =  fromDate;
+
   }
 
   gotoNext() {
@@ -223,5 +270,7 @@ export class FlightListComponent implements OnInit {
     if (this.isResponsiveMode) {
       this.isSearchModify = type;
     }
+    localStorage.setItem(SEARCH, JSON.stringify(this.search));
+    this.oneWay.fetchSearchFlights();
   }
 }

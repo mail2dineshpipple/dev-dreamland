@@ -40,6 +40,8 @@ import { EnquiryComponent } from './modal/enquiry/enquiry.component';
 import { FilterComponent } from './modal/filter/filter.component';
 import {  HttpClientModule } from '@angular/common/http';
 import { CustomDatePipe } from '../core/pipe/custome-date.pipe';
+import { NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
+import { DiscountPipe } from '../core/pipe/discount.pipe';
 
 @NgModule({
   imports: [
@@ -51,6 +53,8 @@ import { CustomDatePipe } from '../core/pipe/custome-date.pipe';
     CarouselModule,
     NgxSliderModule,
     HttpClientModule,
+    NgbDatepickerModule
+
   ],
   declarations: [
     BlankComponent,
@@ -81,6 +85,7 @@ import { CustomDatePipe } from '../core/pipe/custome-date.pipe';
     EnquiryComponent,
     FilterComponent,
     CustomDatePipe,
+    DiscountPipe
 
   ],
   exports: [
@@ -109,6 +114,7 @@ import { CustomDatePipe } from '../core/pipe/custome-date.pipe';
     NgxSliderModule,
     EnquiryComponent,
     CustomDatePipe,
+    DiscountPipe
   ]
 })
 
