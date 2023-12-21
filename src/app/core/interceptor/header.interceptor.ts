@@ -13,6 +13,7 @@ export class HeaderInterceptor implements HttpInterceptor {
   constructor() {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+    
     request =  request.clone({
       setHeaders:{
         "withCredentials":"true",
@@ -20,6 +21,7 @@ export class HeaderInterceptor implements HttpInterceptor {
       }
     })
 
+    console.log("Adding Access-Control-Allow-Origin")
     return next.handle(request);
   }
 }
