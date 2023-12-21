@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl:'/'
+  baseUrl:'http://dreamlandtravel.rsvkassociates.com/api/'
 };
