@@ -15,7 +15,8 @@ export class HeaderInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     request =  request.clone({
       setHeaders:{
-        "withCredentials":"true"
+        "withCredentials":"true",
+        "Access-Control-Allow-Origin":"*"
       }
     })
 
