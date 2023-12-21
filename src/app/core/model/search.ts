@@ -1,3 +1,5 @@
+import { Filter } from "./filters";
+
 export interface SearchRequest {
     flightType: string;
     cabinType: string;
@@ -13,7 +15,20 @@ export interface SearchRequest {
     advanceSearch: AdvanceSearch | undefined;
     generalInfo: GeneralInfo | undefined;
     paxDetails: PaxDetails | undefined;
-    segments: Segment[] | undefined;
+    segments: Segments[] | undefined;
+    orderBy:OrderBy
+    filter:Filter[],
+    minPrice:number,
+    maxPrice:number
+    minDuration:number,
+    maxDuration:number,
+    layOverViaPoint:string[]
+}
+
+export enum OrderBy{
+    Cheapest = 1,
+    Fastest = 2,
+    BestValue = 3
 }
 
 export interface SelectDetail {
@@ -42,7 +57,7 @@ export interface PaxDetails {
     infant: number;
     youth: number;
 }
-export interface Segment {
+export interface Segments {
     arrivalApt: string;
     departApt: string;
     departDate: string;

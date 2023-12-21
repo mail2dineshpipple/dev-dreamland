@@ -1,11 +1,16 @@
 import { NgbDate } from "@ng-bootstrap/ng-bootstrap";
 import { Cabin, FairType, FlightType } from "../enum/enums";
+import { Filter } from "./filters";
+import { OrderBy } from "./search";
+// import { FilterRequest } from "./search";
 
 export interface Search {
     flightType:FlightType,
     isFlexi:boolean,
     segment:Segment[],
     faireType:FairType,
+    filter: Filter[],
+    orderBy:OrderBy ;
 }
 
 export interface Segment {

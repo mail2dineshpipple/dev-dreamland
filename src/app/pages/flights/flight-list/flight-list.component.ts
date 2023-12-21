@@ -1,12 +1,16 @@
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
+import { error } from '@angular/compiler/src/util';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { Observable, of } from 'rxjs';
 import { FLIGHTMODE, SEARCH } from 'src/app/core/constants';
 import { Airport } from 'src/app/core/model/airport';
+import { OrderBy } from 'src/app/core/model/search';
 import { Search } from 'src/app/core/model/search-view-model';
 import { CommonService } from 'src/app/core/services/common.service';
+import { DataShareService } from 'src/app/core/services/data-share.service';
 import { OnewaylistComponent } from 'src/app/shared/components/onewaylist/onewaylist.component';
 import { FilterComponent } from 'src/app/shared/modal/filter/filter.component';
 
@@ -19,6 +23,7 @@ export class FlightListComponent implements OnInit {
 
   search: Search = {} as Search;
   airports: Airport[] = [];
+  isLive:boolean;
 
   flightType : any = 'OneWay';
   CabinType : any = 'Economy';
@@ -31,6 +36,8 @@ export class FlightListComponent implements OnInit {
   public childCounter: number = 0;
   public infantCounter: number = 0;
   public Traveller: number = 0;
+
+  
   flightList = [
     {Name: 'Delhi', Code: '(DEL)', Airport: 'Indira Gandhi International Airport', Country: 'IN'},
     {Name: 'Mumbai', Code: '(BOM)', Airport: 'Netaji Subhash Chandra Bose  Airport', Country: 'IN'},
@@ -61,7 +68,8 @@ export class FlightListComponent implements OnInit {
     private router: Router,
     public dialog: MatDialog,
     private breakpointObserver: BreakpointObserver,
-    public commonService: CommonService
+    public commonService: CommonService,
+    public dataShareService:DataShareService
   ) {}
 
   customSearchFn(term: string, item: Airport) {
@@ -78,11 +86,18 @@ export class FlightListComponent implements OnInit {
     this.search = {} as Search;
 
     this.search =  JSON.parse(localStorage.getItem(SEARCH)!) ;
+    this.search.orderBy =  OrderBy.Cheapest;
 
     this.commonService.getAirportList().subscribe({
       next: (response: Airport[]) => {
         this.airports = response;
         this.peopleLoading = false;
+      }
+    })
+
+    this.dataShareService.verifyLiveDataStatus.subscribe({
+      next:(value: boolean) =>{
+        this.isLive = value;
       }
     })
 
@@ -272,5 +287,18 @@ export class FlightListComponent implements OnInit {
     }
     localStorage.setItem(SEARCH, JSON.stringify(this.search));
     this.oneWay.fetchSearchFlights();
+    this.isLive = this.oneWay.searchResult.isLive;
+    
+    this.oneWay.verifiveLiveData().subscribe({
+      next:(value:boolean) => {
+        this.isLive = value;
+        console.log("isLive ",value)
+      },
+      error:(error:any) =>{
+        console.log("error ",error)
+      }
+    })  
   }
+
+
 }

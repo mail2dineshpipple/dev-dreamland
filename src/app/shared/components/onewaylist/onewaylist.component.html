@@ -6,15 +6,38 @@
           <i class="fa-solid fa-filter"></i>
           Filters
         </div>
-        <button mat-button class="clear-btn">Clear All</button>
+        <button mat-button class="clear-btn" (click)="clearFilter('')">
+          Clear All
+        </button>
       </div>
       <div class="filter-row">
         <div class="filter-box">
           <div class="ft-head">
             <span class="tf-left">Applied Filters</span>
-            <button mat-button class="clear-btn">Clear</button>
+            <button mat-button class="clear-btn" (click)="clearFilter('')">
+              Clear
+            </button>
           </div>
-          <div>
+
+          <ng-container *ngFor="let appliedFilter of filters">
+            <div *ngIf="appliedFilter.isApplied">
+              <div class="applied">
+                <span>{{ appliedFilter.name }}</span> &nbsp;
+                <span *ngIf="appliedFilter.category === 'Price'">{{appliedFilter.minValue}} - {{appliedFilter.maxValue}} </span>
+                <span *ngIf="appliedFilter.category === 'Duration'">{{totalFlyTime(appliedFilter.minValue).replace(":","") }} - {{totalFlyTime(appliedFilter.maxValue).replace(":","")}} </span>
+                <span [innerHTML]="appliedFilter.html"></span>
+                <div class="tabClose">
+                  <i
+                    class="material-icons"
+                    (click)="removeSingleFilter(appliedFilter)"
+                    >close</i
+                  >
+                </div>
+              </div>
+            </div>
+          </ng-container>
+
+          <!-- <div>
             <div class="applied">
               <span>NON STOP</span>
               <div class="tabClose">
@@ -30,207 +53,297 @@
                 <i class="material-icons">close</i>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
+
         <div class="filter-box">
           <div class="ft-head">
-            <span class="tf-left">Popular Filters</span>
-            <button mat-button class="clear-btn">Clear</button>
+            <span class="tf-left">Sort By</span>
+            <!-- <button mat-button class="clear-btn">Clear</button> -->
           </div>
           <div class="checkbox-container airline">
-            <mat-checkbox class="customCheckbox">
-              <div class="d-flex justify-content-between ml-2">
-                <span>Cheapest</span>
-              </div>
-              <span>₹4444</span>
-            </mat-checkbox>
-            <mat-checkbox class="customCheckbox airline">
-              <div class="d-flex justify-content-between ml-2">
-                <span>Fastest</span>
-              </div>
-              <span>₹4444</span>
-            </mat-checkbox>
-            <mat-checkbox class="customCheckbox airline">
-              <div class="d-flex justify-content-between ml-2">
-                <span>Best value</span>
-              </div>
-              <span>₹4444</span>
-            </mat-checkbox>
-            <mat-checkbox class="customCheckbox airline">
-              <div class="d-flex justify-content-between ml-2">
-                <span>Refundable</span>
-              </div>
-              <span>₹4444</span>
-            </mat-checkbox>
-            <mat-checkbox class="customCheckbox airline">
-              <div class="d-flex justify-content-between ml-2">
-                <span>Non-Refundable</span>
-              </div>
-              <span>₹4444</span>
-            </mat-checkbox>
-            <mat-checkbox class="customCheckbox airline">
-              <div class="d-flex justify-content-between ml-2">
-                <span>Layover Via Point</span>
-              </div>
-              <span>₹4444</span>
-            </mat-checkbox>
-            <mat-checkbox class="customCheckbox airline">
-              <div class="d-flex justify-content-between ml-2">
-                <span>Aircraft Airbus, Boing</span>
-              </div>
-              <span>₹4444</span>
-            </mat-checkbox>
-            <button mat-button class="clear-btn" id="themeDark">
-              <i class="material-icons plusIcon"> add </i>Show More
-            </button>
-          </div>
-        </div>
-        <div class="filter-box">
-          <div class="ft-head">
-            <span class="tf-left">Stops</span>
-            <button mat-button class="clear-btn">Clear</button>
-            <!-- <div class="checkbox-container">
-                            <mat-checkbox class="customCheckbox">Non Stop</mat-checkbox>
-                            <mat-checkbox class="customCheckbox">1 Stop</mat-checkbox>
-                            <mat-checkbox class="customCheckbox">2+ Stops</mat-checkbox> -->
-          </div>
-          <div class="flight-timeing">
-            <div
-              class="time-item stop"
-              [ngClass]="{ active: item?.active }"
-              *ngFor="let item of stop"
-              (click)="onSelect(item, 'stop')"
+            <mat-radio-group
+              aria-label="Select an option"
+              (change)="sortBy($event.value)"
             >
-              <div class="d-flex flex-column">
-                <label>{{ item.title }}</label>
-                <span>({{ item.type }})</span>
-                <span>{{ item.price }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="filter-box">
-          <div class="ft-head">
-            <span class="tf-left">Departure Time</span>
-            <button mat-button class="clear-btn">Clear</button>
-          </div>
-          <div class="flight-timeing">
-            <div
-              class="time-item"
-              [ngClass]="{ active: item?.active }"
-              *ngFor="let item of timingList"
-              (click)="onSelect(item, 'Departure')"
+              <mat-radio-button class="mat-radio-button-inline"  value="1" [checked]="search.orderBy == 1"
+                >Cheapest &nbsp;</mat-radio-button
+              >
+              <mat-radio-button class="mat-radio-button-inline" value="2" [checked]="search.orderBy == 2"
+                >Fastest</mat-radio-button
+              >
+              <mat-radio-button class="mat-radio-button-inline" value="3" [checked]="search.orderBy == 3"
+              >Best Value </mat-radio-button
             >
-              <img [src]="item?.active ? item?.img1 : item.img" />
-              <div class="d-flex flex-column">
-                <label>{{ item.title }}</label>
-                <span>({{ item.type }})</span>
+            </mat-radio-group>
+          </div>
+        </div>
+        
+        
+
+        <ng-container *ngFor="let filter of filterByCategory(filterCategories)">
+          <ng-container [ngSwitch]="filter">
+            <ng-container *ngSwitchCase="'Popular'">
+              <div class="filter-box">
+                <div class="ft-head">
+                  <span class="tf-left">{{ filter }} Filters</span>
+                  <button
+                    mat-button
+                    class="clear-btn"
+                    (click)="clearFilter(filter)"
+                  >
+                    Clear
+                  </button>
+                </div>
+                <div class="checkbox-container airline">
+                  <ng-container
+                    *ngFor="let filterValue of filterBy(filters, filter); index as i"
+                  >
+                    <mat-checkbox
+                      class="customCheckbox"
+                      [checked]="filterValue.isApplied"
+                      [disabled]="filterValue.disabled"
+                      (change)="applyFilter($event.checked, filterValue.id)"
+                      [hidden]="i > filterValue.displayFilterLimit"
+                    >
+                      <div class="d-flex justify-content-between ml-2">
+                        <span>{{ filterValue.name }} {{ filterValue.showMore }} </span>
+                      </div>
+                      <span>{{ filterValue.value }} </span>
+                    </mat-checkbox>
+                    
+                  <button *ngIf=" filterValue.displayFilterLimit < i &&  i == (filterBy(filters, filter).length-1)" mat-button class="clear-btn" id="themeDark" (click)="showMore(filterValue)" >
+                    <i class="material-icons plusIcon"> add </i>Show More
+                  </button>
+
+                  </ng-container>
+                  <!-- <button [hidden]="filterBy(filters, filter)[0].displayFilterLimit == 2 " mat-button class="clear-btn" id="themeDark" (click)="showMore(filterBy(filters, filter)[0])" >
+                    <i class="material-icons plusIcon"> add </i>Show More
+                  </button> -->
+                </div>
+              </div>
+            </ng-container>
+          <ng-container *ngSwitchCase="'Layover Via Point'">
+            <div class="filter-box">
+              <div class="ft-head">
+                <span class="tf-left">{{ filter }} Filters</span>
+                <button
+                  mat-button
+                  class="clear-btn"
+                  (click)="clearFilter(filter)"
+                >
+                  Clear
+                </button>
+              </div>
+              <div class="checkbox-container airline">
+                <ng-container
+                *ngFor="let filterValue of filterBy(filters, filter); index as i"
+              >
+                  <mat-checkbox
+                    class="customCheckbox"
+                    (change)="applyLayOverPointFilter($event.checked,filterValue)"
+                    [hidden]="i > filterValue.displayFilterLimit"
+                  >
+                    <div class="d-flex justify-content-between ml-2">
+                      <span>{{ filterValue.name }} </span>
+                    </div>
+                  </mat-checkbox>
+                  <button *ngIf="filterValue.displayFilterLimit < i && i == (filterBy(filters, filter).length-1)   
+                  "mat-button class="clear-btn" id="themeDark" (click)="showMore(filterValue)" >
+                    <i class="material-icons plusIcon"> add </i>Show More
+                  </button>
+                </ng-container>
+                <!-- <button mat-button class="clear-btn" id="themeDark">
+                  <i class="material-icons plusIcon"> add </i>Show More
+                </button> -->
               </div>
             </div>
-          </div>
-        </div>
-        <div class="filter-box">
-          <div class="ft-head">
-            <span class="tf-left">Arrival Time</span>
-            <button mat-button class="clear-btn">Clear</button>
-          </div>
-          <div class="flight-timeing">
-            <div
-              class="time-item"
-              [ngClass]="{ active: item?.active }"
-              *ngFor="let item of timingList2"
-              (click)="onSelect(item, 'Arrival')"
-            >
-              <img [src]="item?.active ? item?.img1 : item.img" />
-              <div class="d-flex flex-column">
-                <label>{{ item.title }}</label>
-                <span>({{ item.type }})</span>
+          </ng-container>
+            <ng-container *ngSwitchCase="'Stops'">
+              <div class="filter-box">
+                <div class="ft-head">
+                  <span class="tf-left">Stops</span>
+                  <button
+                    mat-button
+                    class="clear-btn"
+                    (click)="clearFilter(filter)"
+                  >
+                    Clear
+                  </button>
+                </div>
+                <div class="flight-timeing">
+                  <div
+                    class="time-item stop"
+                    [ngClass]="{ active: filterValue.isApplied }"
+                    *ngFor="let filterValue of filterBy(filters, filter)"
+                    [attr.disabled]="filterValue.disabled ? 'disabled' : ''"
+                    (click)="modifyFilter(filterValue)"
+                  >
+                    <div class="d-flex flex-column">
+                      <label>{{ filterValue.name }}</label>
+                      <span [innerHTML]="filterValue.html"></span>
+                      <span>{{ filterValue.value }}</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="filter-box">
-          <div class="ft-head">
-            <span class="tf-left">Preferred Airline</span>
-            <button mat-button class="clear-btn">Clear</button>
-          </div>
-          <div class="checkbox-container airline">
-            <mat-checkbox class="customCheckbox">
-              <div>
-                <img src="assets/images/AK.gif" />
-                <span>Air Aisa</span>
+            </ng-container>
+            <ng-container *ngSwitchCase="'Departure Time'">
+              <div class="filter-box">
+                <div class="ft-head">
+                  <span class="tf-left">Departure Time</span>
+                  <button
+                    mat-button
+                    class="clear-btn"
+                    (click)="clearFilter(filter)"
+                  >
+                    Clear
+                  </button>
+                </div>
+                <div class="flight-timeing">
+                  <div
+                    class="time-item"
+                    [ngClass]="{ active: filterValue.isApplied }"
+                    *ngFor="let filterValue of filterBy(filters, filter)"
+                    [attr.disabled]="filterValue.disabled ? 'disabled' : ''"
+                    (click)="modifyFilter(filterValue)"
+                  >
+                    <img
+                      [src]="
+                        filterValue?.isApplied
+                          ? filterValue.activeImg
+                          : filterValue.inActiveImg
+                      "
+                    />
+                    <div class="d-flex flex-column">
+                      <label>{{ filterValue.name }}</label>
+                      <!-- <span [innerHTML]="(filterValue.html)"></span> -->
+                      <span>{{ filterValue.value }}</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <span>₹4444</span>
-            </mat-checkbox>
-            <mat-checkbox class="customCheckbox">
-              <div>
-                <img src="assets/images/ai.gif" />
-                <span>Air India</span>
+            </ng-container>
+            <ng-container *ngSwitchCase="'Arrival Time'">
+              <div class="filter-box">
+                <div class="ft-head">
+                  <span class="tf-left">Arrival Time</span>
+                  <button
+                    mat-button
+                    class="clear-btn"
+                    (click)="clearFilter(filter)"
+                  >
+                    Clear
+                  </button>
+                </div>
+                <div class="flight-timeing">
+                  <div
+                    class="time-item"
+                    [ngClass]="{ active: filterValue.isApplied }"
+                    *ngFor="let filterValue of filterBy(filters, filter)"
+                    [attr.disabled]="filterValue.disabled ? 'disabled' : ''"
+                    (click)="modifyFilter(filterValue)"
+                  >
+                    <img
+                      [src]="
+                        filterValue?.isApplied
+                          ? filterValue.activeImg
+                          : filterValue.inActiveImg
+                      "
+                    />
+                    <div class="d-flex flex-column">
+                      <label>{{ filterValue.name }}</label>
+                      <!-- <span [innerHTML]="(filterValue.html)"></span> -->
+                      <span>{{ filterValue.value }}</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <span>₹4444</span>
-            </mat-checkbox>
-            <mat-checkbox class="customCheckbox">
-              <div>
-                <img src="assets/images/6E.gif" />
-                <span>Indigo</span>
+            </ng-container>
+            <ng-container *ngSwitchCase="'Preferred Airline'">
+              <span *ngFor="let filterValue of filter;"> </span>
+              <div class="filter-box">
+                <div class="ft-head">
+                  <span class="tf-left">Preferred Airline</span>
+                  <button
+                    mat-button
+                    class="clear-btn"
+                    (click)="clearFilter(filter)"
+                  >
+                    Clear
+                  </button>
+                </div>
+                <div class="checkbox-container airline">
+                  <ng-container  *ngFor="let filterValue of filterBy(filters, filter); index as i">
+                  <mat-checkbox
+                    class="customCheckbox"
+                    [checked]="filterValue.isApplied"
+
+                    (change)="applyFilter($event.checked, filterValue.id)"
+                    [hidden]="i > filterValue.displayFilterLimit"
+                  >
+                    <div>
+                      <img src="assets/images/AK.gif" />
+                      <span>{{ filterValue.name }} </span>
+                    </div>
+                    <span>{{ filterValue.value }} </span>
+                  </mat-checkbox>
+                  <button *ngIf="filterValue.displayFilterLimit < i && i == (filterBy(filters, filter).length-1)   
+                  "mat-button class="clear-btn" id="themeDark" (click)="showMore(filterValue)" >
+                    <i class="material-icons plusIcon"> add </i>Show More
+                  </button>
+                </ng-container>
+                </div>
               </div>
-              <span>₹4444</span>
-            </mat-checkbox>
-            <mat-checkbox class="customCheckbox">
-              <div>
-                <img src="assets/images/6E.gif" />
-                <span>Indigo</span>
+            </ng-container>
+            <ng-container *ngSwitchCase="'Price'">
+              
+              <div class="filter-box" *ngFor="let filterValue of filterBy(filters, filter)">
+                <div class="ft-head">
+                  <span class="tf-left">Price Range </span>
+                  <button mat-button class="clear-btn" (click)="clearFilter(filterValue)" >Clear</button>
+                </div>
+                <div class="range-slider">
+                  <ngx-slider
+                    [(value)]="minPrice"
+                    [(highValue)]="maxPrice"
+                    [options]="priceOption"
+                    (userChangeEnd)="sliderOptionChange($event, filterValue)"
+                  ></ngx-slider>
+                  <div class="d-flex justify-content-between">
+                    <span>₹{{ minPrice }}</span>
+                    <span>₹{{ maxPrice }}</span>
+                  </div>
+                </div>
               </div>
-              <span>₹4444</span>
-            </mat-checkbox>
-            <mat-checkbox class="customCheckbox">
-              <div>
-                <img src="assets/images/6E.gif" />
-                <span>Indigo</span>
+            </ng-container>
+            <ng-container *ngSwitchCase="'Duration'">
+              
+
+              <div class="filter-box"  *ngFor="let filterValue of filterBy(filters, filter)">
+                <div class="ft-head">
+                  <span class="tf-left">Duration</span>
+                  <button mat-button class="clear-btn" (click)="clearFilter(filterValue)">Clear</button>
+                </div>
+                <div class="range-slider">
+                  <ngx-slider
+                    [(value)]="minDuration"
+                    [(highValue)]="maxDuration"
+                    [options]="durationOption"
+                    (userChangeEnd)="sliderOptionChange($event, filterValue)"
+                  ></ngx-slider>
+                  <div class="d-flex justify-content-between">
+                    <span class="time">{{ totalFlyTime(minDuration).replace(":","") }}</span>
+                    <span>{{ totalFlyTime(maxDuration).replace(":","") }}</span>
+                  </div>
+                </div>
               </div>
-              <span>₹4444</span>
-            </mat-checkbox>
-            <button mat-button class="clear-btn" id="themeDark">
-              <i class="material-icons plusIcon"> add </i>Show More
-            </button>
-          </div>
-        </div>
-        <div class="filter-box">
-          <div class="ft-head">
-            <span class="tf-left">Price Range</span>
-            <button mat-button class="clear-btn">Clear</button>
-          </div>
-          <div class="range-slider">
-            <ngx-slider
-              [(value)]="minValue"
-              [(highValue)]="maxValue"
-              [options]="option1"
-            ></ngx-slider>
-            <div class="d-flex justify-content-between">
-              <span>₹{{ minValue }}</span>
-              <span>₹{{ maxValue }}</span>
-            </div>
-          </div>
-        </div>
-        <div class="filter-box">
-          <div class="ft-head">
-            <span class="tf-left">Duration</span>
-            <button mat-button class="clear-btn">Clear</button>
-          </div>
-          <div class="range-slider">
-            <ngx-slider
-              [(value)]="lowValue"
-              [(highValue)]="highValue"
-              [options]="option2"
-            ></ngx-slider>
-            <div class="d-flex justify-content-between">
-              <span class="time">{{
-                lowValue.toString().replace(".", "h ") + "0m"
-              }}</span>
-              <span>{{ highValue.toString().replace(".", "h ") + "0m" }}</span>
-            </div>
-          </div>
-        </div>
+            </ng-container>
+          </ng-container>
+        </ng-container>
+
+      
+
       </div>
     </div>
   </div>
@@ -404,12 +517,13 @@
           <div class="flt-bar">
             <ul>
               <li>
-                {{
+                <!-- {{
                   dateDiff(
                     source(journey.flights).depDetail.time,
                     destination(journey.flights).arrDetail.time
                   )
-                }}
+                }}  -->
+                {{ totalFlyTime(journey.totalFlyTime) }}
               </li>
               <li *ngIf="journey.flights.length == 1">
                 <span class="hrbar"></span>
@@ -486,13 +600,33 @@
             >
               <mat-expansion-panel-header>
                 <mat-panel-title>
-                  <span class="tf-list-icon-label">
-                    <img src="assets/images/baggage.png" alt="baggage" />15Kgs
-                    Check-in / 7Kgs Cabin</span
+                  <ng-container
+                    *ngFor="let flight of journey.flights; index as i"
                   >
-                  <span class="tf-list-icon-label">
+                    <span
+                      class="tf-list-icon-label mr-0"
+                      *ngIf="
+                        i == 0 ||
+                        flight.amenities.baggage.checkin.adt.qty !=
+                          journey.flights[i - 1].amenities.baggage.checkin.adt
+                            .qty ||
+                        flight.amenities.baggage.cabin.adt.qty !=
+                          journey.flights[i - 1].amenities.baggage.cabin.adt.qty
+                      "
+                      >{{ i > 0 ? "," : "" }} &nbsp;
+                      {{ flight.carrier.code }} ({{ flight.flightNo }}) - &nbsp;
+                      <img src="assets/images/baggage.png" alt="baggage" />{{
+                        flight.amenities.baggage.checkin.adt.qty
+                      }}
+                      {{ flight.amenities.baggage.checkin.adt.unit }} Check-in /
+                      {{ flight.amenities.baggage.cabin.adt.qty }}
+                      {{ flight.amenities.baggage.cabin.adt.unit }} Cabin</span
+                    >
+                    <!-- Currently seats feature is not available in api -->
+                    <!-- <span class="tf-list-icon-label">
                     <img src="assets/images/seat.png" alt="seat" id="seat" />
                     {{journey.seatsLeft}} Seat (S)</span
+                  > --></ng-container
                   >
                 </mat-panel-title>
                 <mat-panel-description> Flight Details </mat-panel-description>
@@ -530,12 +664,14 @@
                       <div class="flt-bar">
                         <ul>
                           <li>
-                            {{
+                            <!-- {{
+
                               dateDiff(
                                 flight.depDetail.time,
                                 flight.arrDetail.time
                               )
-                            }}
+                            }} -->
+                            {{ totalFlyTime(journey.totalFlyTime) }}
                           </li>
                           <li><span class="hrbar"></span></li>
                           <li>Non Stop</li>
@@ -563,39 +699,90 @@
                       <tbody>
                         <tr>
                           <td class="bg-light">Base Fare (1 Adult)</td>
-                          <td>₹4,199</td>
+                          <!-- <td>₹4,199</td> -->
+                          <td>
+                            {{
+                              journey.fares.totalFare.base.amount
+                                | currency : "INR" : "symbol" : "1.0-0"
+                            }}
+                          </td>
                         </tr>
                         <tr>
                           <td class="bg-light">Taxes and Fees (1 Adult)</td>
-                          <td>₹846</td>
+                          <!-- <td>₹846</td> -->
+                          <td>
+                            {{
+                              journey.fares.totalFare.tax.amount
+                                | currency : "INR" : "symbol" : "1.0-0"
+                            }}
+                          </td>
                         </tr>
                         <tr>
                           <td class="bg-light">Total Fare (1 Adult)</td>
-                          <td>₹5,045</td>
+                          <!-- <td>₹5,045</td> -->
+                          <td>
+                            {{
+                              journey.fares.totalFare.total.amount
+                                | currency : "INR" : "symbol" : "1.0-0"
+                            }}
+                          </td>
                         </tr>
                       </tbody>
                     </table>
                   </mat-tab>
                   <mat-tab label="Baggage Info">
-                    <div class="flt-baggage">
-                      <img src="assets/images/6E.gif" />
-                      <p class="baggage-para-1">DEL-BLR</p>
-                      <p class="baggage-para-2">(6E-787)</p>
-                    </div>
-                    <table class="table table-bordered m-0">
-                      <tbody>
-                        <tr>
-                          <td class="bg-light">Baggage Type</td>
-                          <td>Check-In</td>
-                          <td>Cabin</td>
-                        </tr>
-                        <tr>
-                          <td class="bg-light">ADULT</td>
-                          <td>15 Kgs (1 piece only)</td>
-                          <td>7 Kgs (1 piece only)</td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    <mat-tab-group class="flightDetailTab">
+                      <ng-container
+                        *ngFor="let flight of journey.flights; index as i"
+                      >
+                        <mat-tab
+                          *ngIf="
+                            i == 0 ||
+                            flight.amenities.baggage.checkin.adt.qty !=
+                              journey.flights[i - 1].amenities.baggage.checkin
+                                .adt.qty ||
+                            flight.amenities.baggage.cabin.adt.qty !=
+                              journey.flights[i - 1].amenities.baggage.cabin.adt
+                                .qty
+                          "
+                        >
+                          <ng-template mat-tab-label>
+                            <div class="flt-baggage mt-2">
+                              <img src="assets/images/6E.gif" />
+                              <p class="baggage-para-1">
+                                {{ flight.depDetail.code }} -
+                                {{ flight.depDetail.code }}
+                              </p>
+                              <p class="baggage-para-2">
+                                {{ flight.flightNo }}
+                              </p>
+                            </div>
+                          </ng-template>
+                          <table class="table table-bordered m-0">
+                            <tbody>
+                              <tr>
+                                <td class="bg-light">Baggage Type</td>
+                                <td>Check-In</td>
+                                <td>Cabin</td>
+                              </tr>
+                              <tr>
+                                <td class="bg-light">ADULT</td>
+                                <td>
+                                  {{ flight.amenities.baggage.checkin.adt.qty }}
+                                  {{
+                                    flight.amenities.baggage.checkin.adt.unit
+                                  }}
+                                </td>
+                                <td>
+                                  {{ flight.amenities.baggage.cabin.adt.qty }}
+                                  {{ flight.amenities.baggage.cabin.adt.unit }}
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </mat-tab>
+                      </ng-container>
+                    </mat-tab-group>
                   </mat-tab>
                   <mat-tab label="Cancellation & Change Rule">
                     <div class="flt-baggage">

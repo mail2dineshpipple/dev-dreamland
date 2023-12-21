@@ -2572,7 +2572,7 @@
                   "adt": {
                     "desc": "20Kg Baggage included",
                     "unit": "kg",
-                    "qty": 20,
+                    "qty": 21,
                     "isAvl": true,
                     "code": "null"
                   }
@@ -5166,7 +5166,7 @@
                   "adt": {
                     "desc": "25Kg Baggage included",
                     "unit": "kg",
-                    "qty": 25,
+                    "qty": 26,
                     "isAvl": true,
                     "code": "null"
                   }

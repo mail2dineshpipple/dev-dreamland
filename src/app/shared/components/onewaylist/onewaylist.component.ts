@@ -2,17 +2,24 @@ import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges, ViewChil
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { OwlOptions, SlidesOutputData } from 'ngx-owl-carousel-o';
-import { ISFLEXI } from 'src/app/core/constants';
-import { Options } from '@angular-slider/ngx-slider';
+import { DISPLAYFILTERLIMIT, ISFLEXI } from 'src/app/core/constants';
+import { ChangeContext, Options } from '@angular-slider/ngx-slider';
 import { Time } from '@angular/common';
-import { Search } from 'src/app/core/model/search-view-model';
+import { Search, Segment } from 'src/app/core/model/search-view-model';
 import { PriceWithDate } from 'src/app/core/model/price-with-date';
-import { FlightType } from 'src/app/core/enum/enums';
+import { Category, FlightType } from 'src/app/core/enum/enums';
 import { NgbDate } from '@ng-bootstrap/ng-bootstrap';
 import { Flight, Journey, SearchResult } from 'src/app/core/model/search-result';
 import { FlightSearchService } from 'src/app/core/services/flight-search.service';
-import { SearchRequest } from 'src/app/core/model/search';
+import { AdvanceSearch, GeneralInfo, OrderBy, PaxDetails, SearchRequest, Segments } from 'src/app/core/model/search';
 import * as moment from 'moment';
+import { Filters } from 'src/app/core/utils/popular-filter'
+import { Filter, LayoverPoint } from 'src/app/core/model/filters';
+import { LoaderService } from 'src/app/core/services/loader.service';
+import { FormControl } from '@angular/forms';
+import { ItemsList } from '@ng-select/ng-select/lib/items-list';
+import { Observable, of } from 'rxjs';
+import { DataShareService } from 'src/app/core/services/data-share.service';
 
 @Component({
   selector: 'app-onewaylist',
@@ -22,9 +29,12 @@ import * as moment from 'moment';
 export class OnewaylistComponent implements OnInit {
 
   @Input() search: Search;
-  searchResult:SearchResult ;
+  searchResult: SearchResult;
   priceWithDates: PriceWithDate[] = [];
-
+  filters: Filter[] = Filters;
+  filterByCategory = Object.values;
+  filterCategories = Category;
+  showFilterLimit: number = 2;
 
   selectedType = '1';
   panelOpenState = false;
@@ -58,21 +68,26 @@ export class OnewaylistComponent implements OnInit {
     nav: true
   };
 
-  minValue: number = 17000;
-  maxValue: number = 48000;
-  option1: Options = {
-    floor: 17000,
+  minPrice: number = 0;
+  maxPrice: number = 1;
+  priceOption: Options = {
+    floor: 0,
     ceil: 48000,
-    minRange: 100
+    minRange: 1000
   };
 
-  lowValue: number = 2.20;
-  highValue: number = 12.30;
-  option2: Options = {
-    floor: 2.20,
-    ceil: 12.30,
-    minRange: 1
+  minDuration: number = 0;
+  maxDuration: number = 1;
+
+  durationOption: Options = {
+    floor: 0,
+    ceil: 300,
+    minRange: 60
   };
+
+  layOverViaPoint: LayoverPoint[] = [];
+
+  displayShowMoreLimit = DISPLAYFILTERLIMIT;
 
   stop: any = [
     { id: 0, title: '0', type: 'Non-Stop', price: '₹4444' },
@@ -161,42 +176,82 @@ export class OnewaylistComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private flightSearchService: FlightSearchService
-  ) { 
+    private flightSearchService: FlightSearchService,
+    private loaderService: LoaderService,
+    public dataShareService:DataShareService
+  ) {
 
   }
 
-  dateDiff(startDate:Date, endDate:Date): string {
+  dateDiff(startDate: Date, endDate: Date): string {
+    let startDateObj = moment(startDate);
+    let endDateObj = moment(endDate);
 
-    const date = moment();
-        let dateInFormat = date.format('YYYY.M.D');
-        console.log(dateInFormat);
+    var duration = moment.duration(endDateObj.diff(startDateObj));
 
-        let startDateObj =  moment(startDate);
-        let endDateObj =  moment(endDate);
-        
-        var duration = moment.duration(endDateObj.diff(startDate));
-
-      return duration.hours() + "h : " + duration.minutes() + "m" ;
-
+    return duration.hours() + "h : " + duration.minutes() + "m";
   }
 
-  stops(flight: Flight[]): string{
 
-    switch(flight.length){
+  sortBy(orderBy: string) {
+    this.search.orderBy = parseInt(orderBy);
+    this.fetchSearchFlights();
+  }
+
+  stops(flight: Flight[]): string {
+
+    switch (flight.length) {
       case 1:
         return "Non Stop"
       default:
-        return flight.length + " Stop"
+        return flight.length - 1 + " Stop"
     }
+  }
+
+  addFilter(filter: Filter) {
+
+    if (filter.isApplied) {
+      this.search.filter = this.search.filter ?? [];
+      this.search.filter.push(filter);
+    } else {
+      let index = this.search.filter.findIndex(f => f.name == filter.name);
+      if (index > -1) {
+        this.search.filter.splice(index, 1);
+      }
+    }
+
+    this.fetchSearchFlights();
+  }
+
+  applyFilter(isChecked: boolean, id: number) {
+    var index: number = this.filters.findIndex(f => f.id == id);
+    this.filters[index].isApplied = isChecked;
+    let name = this.filters[index].name;
+
+    // if (!isChecked && this.search.filter != undefined && this.search.filter.length > 0) {
+    //   // let index = this.search.filter.findIndex(f => f.name == name );
+    //   // // let index = this.search.filter.findIndex(f => f.name == name );
+    //   // if (index > -1) {
+    //   //   this.search.filter.splice(index, 1);
+    //   // // }
+    // } else {
+
+    //   // this.search.filter = this.search.filter ?? []
+    //   // this.search.filter.push(this.filters[index])
+    // }
+    this.addFilter(this.filters[index])
+
+  }
+
+  filterBy(array: any[], property) {
+    let arr = array.filter(f => f.category == property);
+    return arr
   }
 
   ngOnInit(): void {
 
     this.initializeCalendar();
     this.fetchSearchFlights();
-
-    // console.log( this.dateDiff('2023-12-12 07:05:00.000','2023-12-12 08:50:00.000'))
 
     let url = location.href;
     if (!url.includes('flights')) {
@@ -210,40 +265,294 @@ export class OnewaylistComponent implements OnInit {
     }
   }
 
-  source(flight: Flight[]):Flight {
-    return flight.filter(f=> f.key == 0)[0]
+  source(flight: Flight[]): Flight {
+    return flight.filter(f => f.key == 0)[0]
   }
 
-  destination(flight: Flight[]):Flight {
-    let keys = flight.map(m=> m.key);
-    return flight.filter(f=> f.key == Math.max.apply(Math,keys))[0]
+  destination(flight: Flight[]): Flight {
+    let keys = flight.map(m => m.key);
+    return flight.filter(f => f.key == Math.max.apply(Math, keys))[0]
   }
 
-  fetchSearchFlights(){
-    this.flightSearchService.fetchFlightSearchResult({} as SearchRequest).subscribe({
-      next:(response: SearchResult )=> {
+
+  durationChange(changeContext: ChangeContext): void {
+    this.minDuration = changeContext.value;
+    this.maxDuration = changeContext.highValue!;
+    this.fetchSearchFlights();
+  }
+
+  sliderOptionChange(changeContext: ChangeContext, filter: Filter): void {
+
+
+
+    switch (filter.category) {
+      case 'Price':
+        filter.minValue = this.minPrice = changeContext.value;
+        filter.maxValue = this.maxPrice = changeContext.highValue!;
+
+        if (this.priceOption.ceil == filter.maxValue && this.priceOption.floor == filter.minValue) {
+          filter.isApplied = false;
+        } else {
+          filter.isApplied = true;
+        }
+        break;
+      case 'Duration':
+        filter.minValue = this.minDuration = changeContext.value;
+        filter.maxValue = this.maxDuration = changeContext.highValue!;
+
+        if (this.durationOption.ceil == filter.maxValue && this.durationOption.floor == filter.minValue) {
+          filter.isApplied = false;
+        } else {
+          filter.isApplied = true;
+        }
+        break
+    }
+
+    this.fetchSearchFlights();
+  }
+
+
+  showMore(filter: Filter) {
+    this.filters.filter(f => f.category == filter.category).forEach(f => f.displayFilterLimit = 1000);
+  }
+
+  fetchSearchFlights() {
+
+    let searchRequest = {} as SearchRequest;
+    searchRequest.flightType = this.search.flightType;
+
+    searchRequest.advanceSearch = {} as AdvanceSearch;
+    searchRequest.advanceSearch.directFlight = false
+    searchRequest.advanceSearch.isFlexi = false
+    searchRequest.advanceSearch.maxStops = 0
+
+    searchRequest.generalInfo = {} as GeneralInfo;
+    searchRequest.generalInfo.cabin = 'EC';
+    searchRequest.generalInfo.currency = 'INR';
+    searchRequest.generalInfo.guid = '01c0010d-9f2e-45af-b8d7-424a33c0981d';
+    searchRequest.generalInfo.journeyType = 'DOM';
+    searchRequest.generalInfo.tripType = 'R';
+    searchRequest.generalInfo.username = 'Test';
+    searchRequest.generalInfo.password = 'Test1';
+
+    searchRequest.paxDetails = {} as PaxDetails;
+    searchRequest.paxDetails.adult = 1;
+    searchRequest.paxDetails.child = 0;
+    searchRequest.paxDetails.infant = 0;
+    searchRequest.paxDetails.youth = 0;
+
+    searchRequest.segments = [];
+
+    for (let index = 0; index < this.search.segment.length; index++) {
+      let segment: Segments = {} as Segments;
+      segment.arrivalApt = this.search.segment[0].toCityCode;
+      segment.departApt = this.search.segment[0].fromCityCode;
+      let date = moment();
+      date.month(this.search.segment[0].fromDate.month);
+      date.date(this.search.segment[0].fromDate.day);
+      date.year(this.search.segment[0].fromDate.year);
+      segment.departDate = date.format('YYYY-MM-DD');
+
+      searchRequest.segments.push(segment)
+
+    }
+
+    searchRequest.filter = [];
+    if (this.search.orderBy == undefined) {
+      searchRequest.orderBy = OrderBy.Cheapest;
+    } else {
+      searchRequest.orderBy = this.search.orderBy;
+    }
+
+    if (this.search.filter != null) {
+      for (let index = 0; index < this.search.filter.length; index++) {
+        searchRequest.filter.push(this.search.filter[index]);
+      }
+    }
+
+    searchRequest.minPrice = this.minPrice;
+    searchRequest.maxPrice = this.maxPrice;
+    searchRequest.minDuration = this.minDuration;
+    searchRequest.maxDuration = this.maxDuration;
+
+    searchRequest.layOverViaPoint = [];
+
+    let layOverFilter = this.filters.filter(f => f.category == "Layover Via Point" && f.isApplied)
+    for (let index = 0; index < layOverFilter.length; index++) {
+      if (layOverFilter[index].isApplied) {
+        searchRequest.layOverViaPoint.push(layOverFilter[index].name)
+      }
+    }
+
+    this.flightSearchService.fetchFlightSearchResult(searchRequest).subscribe({
+      next: (response: SearchResult) => {
         this.searchResult = response;
+        this.searchResult.isLive = response.isLive;
+        this.verifiveLiveData()
+        this.dataShareService.setVerifyLiveDataStatus(response.isLive)
+        // this.disabledFilter()
+
+ 
+        if (this.minPrice == 0 && this.maxPrice == 1) {
+          let priceArray = response.onwardJourneys.map(m => m.fares.totalFare.total.amount);
+          this.minPrice = Math.min.apply(Math, priceArray);
+          this.maxPrice = Math.max.apply(Math, priceArray);
+
+          const priceOptions: Options = Object.assign({}, this.priceOption);
+          priceOptions.floor = this.minPrice;
+          priceOptions.ceil = this.maxPrice;
+          this.priceOption = priceOptions;
+        }
+
+
+
+        if (this.minDuration == 0 && this.maxDuration == 1) {
+          let durationArray = response.onwardJourneys.map(m => m.totalFlyTime);
+
+          this.minDuration = Math.min.apply(Math, durationArray);
+          this.maxDuration = Math.max.apply(Math, durationArray);
+
+          const durationOptions: Options = Object.assign({}, this.durationOption);
+          durationOptions.floor = this.minDuration;
+          durationOptions.ceil = this.maxDuration;
+          this.durationOption = durationOptions;
+        }
+
+        this.addLayOverPoints(this.searchResult)
+
+        let flighNames: string[] = [];
+        this.searchResult.onwardJourneys.forEach(j => {
+          j.flights.filter(f => {
+            flighNames.push(f.carrier.name)
+          });
+        });
+        flighNames = flighNames.filter((el, i, a) => i === a.indexOf(el))
+
+        let lastId = Math.max.apply(Math, this.filters.map(f => f.id));
+
+        for (let index = 0; index < flighNames.length; index++) {
+          let filterObj: Filter = {
+            id: (lastId++) + 1,
+            name: flighNames[index],
+            value: undefined,
+            category: 'Preferred Airline',
+            isPopular: false,
+            isApplied: false,
+            html: '',
+            activeImg: '',
+            inActiveImg: '',
+            disabled: false,
+            layOverPoints: undefined,
+            minValue: 0,
+            maxValue: 0,
+            displayFilterLimit: DISPLAYFILTERLIMIT
+          };
+
+          let exists = this.filters.findIndex(f => f.name == filterObj.name)
+          if (exists == -1) {
+            this.filters.push(filterObj);
+          }
+        }
+
+        this.oneWayCalendarDate()
       }
     })
   }
 
+  applyLayOverPointFilter(isChecked: boolean, layoverPoint: Filter) {
+    layoverPoint.isApplied = isChecked;
+    this.fetchSearchFlights();
+
+  }
+
+  addLayOverPoints(searchResult: SearchResult) {
+    let hasMoreThanOneStop = searchResult.onwardJourneys.filter(f => f.flights.length > 1);
+    let lastId = Math.max.apply(Math, this.filters.map(f => f.id));
+
+    for (let index = 0; index < hasMoreThanOneStop.length; index++) {
+
+      for (let index2 = 0; index2 < hasMoreThanOneStop[index].flights.length; index2++) {
+        if (index2 > 0) {
+          let pointName = hasMoreThanOneStop[index].flights[index2].depDetail.name;
+          if (this.filters.findIndex(f => f.name == pointName) == -1) {
+
+            let filterObj: Filter = {
+              id: (lastId++) + 1,
+              name: pointName,
+              value: undefined,
+              category: 'Layover Via Point',
+              isPopular: false,
+              isApplied: false,
+              html: '',
+              activeImg: '',
+              inActiveImg: '',
+              disabled: false,
+              layOverPoints: undefined,
+              minValue: 0,
+              maxValue: 0,
+              displayFilterLimit: DISPLAYFILTERLIMIT
+            };
+
+            this.filters.push(filterObj);
+
+            // this.layOverViaPoint.push({
+            //   isApplied: false,
+            //   LayoverPointName: pointName
+            // })
+          }
+
+        }
+      }
+    }
+  }
+
+  groupBy(collection: any[], property: string) {
+
+    if (!collection) {
+      return [];
+    }
+
+    const groupedCollection = collection.reduce((previous, current) => {
+      if (!previous[current[property]]) {
+        previous[current[property]] = [current];
+      } else {
+        previous[current[property]].push(current);
+      }
+      return previous;
+    }, {});
+
+
+    // this will return an array of objects, each object containing a group of objects
+    return Object.keys(groupedCollection).map(key => ({ key, value: groupedCollection[key] }));
+  }
+
   oneWayCalendarDate() {
+
+    const searchDate = new Date(this.search.segment[0].fromDate.year, this.search.segment[0].fromDate.month - 1, this.search.segment[0].fromDate.day);
+    let lowestPrice = Math.min.apply(Math, this.searchResult.onwardJourneys.filter(f => f.fares.totalFare.total.amount).map(f => f.fares.totalFare.total.amount));
+
+
     this.priceWithDates = [];
 
     for (let index = 0; index < 12; index++) {
       let priceWithDateItem = {} as PriceWithDate;
       let date = new Date(this.search.segment[0].fromDate.year, this.search.segment[0].fromDate.month - 1, this.search.segment[0].fromDate.day);
 
-      if( index <= 2){
-        date.setDate(date.getDate() - (2-index));
-      }else{
-        date.setDate(date.getDate() + (index-2));
+      if (index <= 2) {
+        date.setDate(date.getDate() - (2 - index));
+      } else {
+        date.setDate(date.getDate() + (index - 2));
       }
 
       priceWithDateItem.Date = date
-      priceWithDateItem.Price = Math.random() * 10000;
-      this.priceWithDates.push(priceWithDateItem)
 
+      if (moment(searchDate).isSame(moment(date))) {
+        priceWithDateItem.Price = lowestPrice;
+      } else {
+        priceWithDateItem.Price = (index+2) * lowestPrice;
+      }
+
+      this.priceWithDates.push(priceWithDateItem)
     }
   }
 
@@ -254,23 +563,55 @@ export class OnewaylistComponent implements OnInit {
         //   this.search.segment[0].fromDate = new NgbDate(date!.getFullYear(), date!.getMonth() + 1, date!.getDate());
         // }
 
-        this.oneWayCalendarDate();
+        // this.oneWayCalendarDate();
         break;
       default:
-        this.oneWayCalendarDate();
+        // this.oneWayCalendarDate();
         break;
     }
 
   }
 
-  selectedCalendarDate(date:Date){
+  selectedCalendarDate(date: Date) {
     // this.initializeCalendar(date);
     this.search.segment[0].fromDate = new NgbDate(date!.getFullYear(), date!.getMonth() + 1, date!.getDate());
 
     // debugger;
   }
 
-  
+
+  modifyFilter(item: Filter) {
+    item.isApplied = item.isApplied ? false : true;
+    this.addFilter(item);
+  }
+
+  removeSingleFilter(item: Filter) {
+    item.isApplied = item.isApplied ? false : true;
+
+    if (item.category == "Price") {
+      this.minPrice = this.priceOption.floor!;
+      this.maxPrice = this.priceOption.ceil!;
+    }
+
+    if (item.category == "Duration") {
+      this.minDuration = this.durationOption.floor!;
+      this.maxDuration = this.durationOption.ceil!;
+    }
+
+    this.fetchSearchFlights();
+
+  }
+
+  clearFilter(categoryName: string) {
+    if (categoryName == '') {
+      this.filters.forEach(f => f.isApplied = false);
+    } else {
+      this.filters.filter(f => f.category == categoryName).forEach(f => f.isApplied = false);
+    }
+
+    this.fetchSearchFlights();
+  }
+
 
   onSelect(item, type) {
     if (type === 'Departure') {
@@ -316,7 +657,70 @@ export class OnewaylistComponent implements OnInit {
     item.displaySavingFaireType = !item.displaySavingFaireType
   }
 
+  totalFlyTime(totalFlyTime: number): string {
+    let hour = Math.floor(totalFlyTime / 60);
+    let minut = (totalFlyTime - (hour * 60));
+    return `${hour}h : ${minut}m`
+  }
+
   onCheckbox(event) {
     this.onClickCheckbox.emit(event)
   }
+
+  verifiveLiveData():Observable<any>{
+    return of(this.searchResult.isLive);
+  }
+
+  disabledFilter() {
+
+    this.filters.forEach(f => f.disabled = false);
+
+    let isRefundable = this.searchResult.onwardJourneys.findIndex(f => f.flights.findIndex(f1 => f1.refundable) > -1);
+
+    if (isRefundable == -1) {
+      this.filters.find(e => e.name == "Refundable")!.disabled = true;
+    }
+
+    let nonRefundable = this.searchResult.onwardJourneys.findIndex(f => f.flights.findIndex(f1 => f1.refundable == false) > -1);
+
+    if (nonRefundable == -1) {
+      this.filters.find(e => e.name == "Non-Refundable")!.disabled = true;
+    }
+
+    let stop0 = this.searchResult.onwardJourneys.findIndex(f => f.flights.length == 1);
+
+    if (stop0 == -1) {
+      this.filters.find(e => e.name == "0")!.disabled = true;
+    }
+
+    let stop1 = this.searchResult.onwardJourneys.findIndex(f => f.flights.length == 2);
+
+    if (stop1 == -1) {
+      this.filters.find(e => e.name == "1")!.disabled = true;
+    }
+
+    let stop2Plus = this.searchResult.onwardJourneys.findIndex(f => f.flights.length > 2);
+
+    if (stop2Plus == -1) {
+      this.filters.find(e => e.name == "2+")!.disabled = true;
+    }
+
+    var before6AMMoment = moment("06:00 AM", "HH:mm a");
+    var date = moment("05:00 AM", "HH:mm a");
+    var date1 = moment("2023-12-12 16:10:00.000", "HH:mm a");
+
+    console.log(date1.isBefore(before6AMMoment));
+
+    //  this.searchResult.onwardJourneys.
+    // findIndex(f=> console.log(moment(f.flights[0].depDetail.time).format("dd-MM-yyyy HH:mm a")) );
+
+    let before6AM = this.searchResult.onwardJourneys.
+      findIndex(f => moment(f.flights[0].depDetail.time, "HH:mm a").isBefore(before6AMMoment) == false);
+
+    if (before6AM == -1) {
+      this.filters.find(e => e.name == "Before 6AM")!.disabled = true;
+    }
+  }
 }
+
+

@@ -38,10 +38,14 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { FAQComponent } from './components/faq/faq.component';
 import { EnquiryComponent } from './modal/enquiry/enquiry.component';
 import { FilterComponent } from './modal/filter/filter.component';
-import {  HttpClientModule } from '@angular/common/http';
+import {  HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { CustomDatePipe } from '../core/pipe/custome-date.pipe';
 import { NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
 import { DiscountPipe } from '../core/pipe/discount.pipe';
+import { GroupbyPipe } from '../core/pipe/groupby.pipe';  
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { HeaderInterceptor } from '../core/interceptor/header.interceptor';
+import { LoaderInterceptor } from '../core/interceptor/loader.interceptor';
 
 @NgModule({
   imports: [
@@ -53,8 +57,8 @@ import { DiscountPipe } from '../core/pipe/discount.pipe';
     CarouselModule,
     NgxSliderModule,
     HttpClientModule,
-    NgbDatepickerModule
-
+    NgbDatepickerModule,
+    MatProgressSpinnerModule
   ],
   declarations: [
     BlankComponent,
@@ -85,8 +89,8 @@ import { DiscountPipe } from '../core/pipe/discount.pipe';
     EnquiryComponent,
     FilterComponent,
     CustomDatePipe,
-    DiscountPipe
-
+    DiscountPipe,
+    GroupbyPipe
   ],
   exports: [
     BlankComponent,
@@ -114,7 +118,13 @@ import { DiscountPipe } from '../core/pipe/discount.pipe';
     NgxSliderModule,
     EnquiryComponent,
     CustomDatePipe,
-    DiscountPipe
+    DiscountPipe,
+    GroupbyPipe,
+    MatProgressSpinnerModule
+  ],
+  providers:[
+    {provide:HTTP_INTERCEPTORS,useClass:HeaderInterceptor,multi:true},
+    {provide:HTTP_INTERCEPTORS,useClass:LoaderInterceptor,multi:true}
   ]
 })
 

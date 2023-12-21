@@ -5,3 +5,11 @@
     </div>
     <app-footer></app-footer>
 </main>
+
+<div class="overlay" *ngIf="loader">
+    <mat-progress-spinner
+      diameter="100"
+      mode="indeterminate"
+    >
+    </mat-progress-spinner>
+  </div>

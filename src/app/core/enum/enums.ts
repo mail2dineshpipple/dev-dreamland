@@ -19,3 +19,15 @@ export enum FairType {
     DoctorAndNurse = "5",
     DoubleSeat = "6"
 }
+
+
+export enum Category {
+    Popular = 'Popular',
+    LayoverViaPoint = 'Layover Via Point',
+    Stops= 'Stops',
+    DepartureTime= 'Departure Time',
+    ArrivalTime='Arrival Time',
+    PreferredAirline='Preferred Airline',
+    Price='Price',
+    Duration='Duration'
+}

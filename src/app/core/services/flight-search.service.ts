@@ -16,7 +16,7 @@ export class FlightSearchService {
   constructor(private httpClient: HttpClient) { }
 
   fetchFlightSearchResult(search: SearchRequest) : Observable<SearchResult> {
-    return this.httpClient.get<SearchResult>(this.baseUrl + "assets/data/search-result.json").pipe(
+    return this.httpClient.post<SearchResult>(this.baseUrl + "flight/search",search).pipe(
       map((response: any) => {
         return response;
       }));

@@ -2,6 +2,7 @@ export interface SearchResult {
     onwardJourneys: Journey[];
     returnJourneys: Journey[];
     isDomestic:     boolean;
+    isLive:boolean;
 }
 
 export enum SavingFaireType {
@@ -23,6 +24,7 @@ export interface Journey {
     isOnlyHandBaggage: boolean;
     seatsLeft:         number;
     flights:           Flight[];
+    totalFlyTime:      number;
     key:               string;
     messages:          Messages;
     journeyInfo:       JourneyInfo[];

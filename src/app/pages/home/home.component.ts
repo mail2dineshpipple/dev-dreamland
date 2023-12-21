@@ -6,6 +6,7 @@ import { Cabin, FairType, FlightType } from 'src/app/core/enum/enums';
 import { Airport } from 'src/app/core/model/airport';
 import { Search } from 'src/app/core/model/search-view-model';
 import { CommonService } from 'src/app/core/services/common.service';
+import { LoaderService } from 'src/app/core/services/loader.service';
 
 @Component({
   selector: 'app-home',
@@ -23,6 +24,7 @@ export class HomeComponent implements OnInit {
   constructor(
     private router: Router,
     public commonService: CommonService,
+    public loaderService: LoaderService,
   ) { }
 
   customSearchFn(term: string, item: Airport) {
@@ -151,6 +153,7 @@ export class HomeComponent implements OnInit {
   }
 
   searchSegments() {
+    // this.loaderService.showLoader(true);
     localStorage.setItem(SEARCH, JSON.stringify(this.search));
     this.router.navigate(['flightList']);
   }

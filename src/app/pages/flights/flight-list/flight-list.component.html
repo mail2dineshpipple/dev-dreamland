@@ -533,6 +533,16 @@
               <i class="material-icons">filter_alt</i>
             </button>
           </div>
+
+          <ng-container  [ngSwitch]="isLive">
+            <ng-container *ngSwitchCase="true">
+              <button mat-raised-button color="warn">Live</button>
+            </ng-container>
+            <ng-container *ngSwitchDefault>
+              <button mat-flat-button disabled>Cache</button>
+            </ng-container>
+          </ng-container>
+          
         </div>
         <!-- <div class="positionClass" *ngIf="travellerCabin">
           <div class="counter-container">
@@ -629,6 +639,7 @@
         *ngIf="flightType === 'OneWay'"
         [search] ="search"
         (onClickCheckbox)="changeCheckbox($event)"
+        
       ></app-onewaylist>
       <app-twowaylist
         *ngIf="flightType === 'RoundWay' || flightType === 'Multicity'"

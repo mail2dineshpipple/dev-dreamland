@@ -889,3 +889,12 @@
 .active .tf-dates  {
 	font-weight: 600 !important;
 }
+
+div[disabled=disabled] {
+    pointer-events: none;
+    opacity: 0.4;
+  }
+
+   .mat-radio-button-inline {
+    display: block !important;
+  }
