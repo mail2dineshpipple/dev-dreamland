@@ -17,7 +17,7 @@ export class HeaderInterceptor implements HttpInterceptor {
     request =  request.clone({
       setHeaders:{
         "withCredentials":"true",
-        "Access-Control-Allow-Origin":"*"
+        "Allow-Origin":"*"
       }
     })
 
